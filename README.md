@@ -3,8 +3,8 @@ This Repository is used for sharing log files during OPNFV deployment.
 Current to deploy OPNFV environment, there are three methods:
 
 
--- | Compass-Core | Compass4NFV baremetal | Compass4NFV virtual
--- | -------------| --------------------- | -------------------
+task | Compass-Core | Compass4NFV baremetal | Compass4NFV virtual
+---- | -------------| --------------------- | -------------------
 Deploy OpenStack  | worked | not worked | pending
 Deploy ONOS | Deployed with error | not worked | pending
 issues | After Openstack been deployed, it need manually start ansible to deploy ONOS | the VM created in JumpServer has an virtual IP can't go through physical L3 layer | pending
