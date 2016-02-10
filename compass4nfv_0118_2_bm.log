@@ -1,0 +1,918 @@
+Welcome to Secure Shell version 0.8.34.
+Answers to Frequently Asked Questions: http://goo.gl/TK7876
+
+[Pro Tip] Use 'Open as Window' to keep Control-W from closing your terminal!
+[Pro Tip] See http://goo.gl/TK7876 for more information.
+
+Connecting to onos@10.145.88.86...
+Loading NaCl plugin... done.
+onos@10.145.88.86's password: 
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Sun Jan 17 14:16:19 PST 2016
+
+  System load:                0.89
+  Usage of /:                 5.3% of 853.52GB
+  Memory usage:               8%
+  Swap usage:                 0%
+  Processes:                  309
+  Users logged in:            0
+  IP address for eth1:        192.168.204.2
+  IP address for virbr0:      192.168.122.1
+  IP address for br-external: 10.145.88.86
+  IP address for mgmt_vnic:   192.168.204.254
+  IP address for br_mgmt:     192.168.200.1
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+89 packages can be updated.
+39 updates are security updates.
+
+Last login: Sun Jan 17 14:16:22 2016 from 10.145.16.18
+onos@jumpserver:~$ ls
+compass4nfv  compass_machine.retry  opnfv-2016-01-04_16-45-58.iso  opnfv-2016-01-15_16-05-18.iso
+onos@jumpserver:~$ ssh root@192.168.200.2
+root@192.168.200.2's password: 
+Last login: Sun Jan 17 02:37:08 2016 from 192.168.200.1
+[root@compass ~]# ls
+anaconda-ks.cfg  ks-post.log  ks-pre.log
+[root@compass ~]# cd /var/
+[root@compass var]# ls
+adm      cache  db     games   kerberos  local  log         mail   nis  preserve  spool  www
+ansible  crash  empty  gopher  lib       lock   lost+found  named  opt  run       tmp    yp
+[root@compass var]# cd ansible/
+[root@compass ansible]# ls
+openstack_juno  openstack_kilo  openstack_liberty  roles  run
+[root@compass ansible]# cd roles/
+[root@compass roles]# ls
+ceilometer_compute     cinder-controller  dashboard    glance  keystone   mq               neutron-controller  nova-controller  open-contrail  storage
+ceilometer_controller  cinder-volume      database     ha      memcached  neutron-common   neutron-network     odl_cluster      secgroup
+ceph-deploy            common             ext-network  heat    monitor    neutron-compute  nova-compute        onos_cluster     setup-network
+[root@compass roles]# cd ..
+[root@compass ansible]# ls
+openstack_juno  openstack_kilo  openstack_liberty  roles  run
+[root@compass ansible]# cd run/
+[root@compass run]# ls
+openstack_liberty-opnfv2
+[root@compass run]# cd openstack_liberty-opnfv2/p
+-bash: cd: openstack_liberty-opnfv2/p: No such file or directory
+[root@compass run]# cd openstack_liberty-opnfv2/
+[root@compass openstack_liberty-opnfv2]# ls
+ansible.cfg  group_vars  HA-ansible-multinodes.yml  inventories  roles  templates
+[root@compass openstack_liberty-opnfv2]# cd group_vars/
+[root@compass group_vars]# ls
+all
+[root@compass group_vars]# cd all
+-bash: cd: all: Not a directory
+[root@compass group_vars]# cat all
+
+ 
+
+
+
+enable_secgroup: True
+enable_fwaas: False
+enable_vpnaas: False
+onos_nic: eth2
+ip_settings: {'host5': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.91', 'alias': 'br-prv', 'netmask': 22, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/22'}, 'storage': {'name': 'storage', 'ip': '192.168.204.17', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.204.7', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}}, 'host4': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.90', 'alias': 'br-prv', 'netmask': 22, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/22'}, 'storage': {'name': 'storage', 'ip': '192.168.204.16', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.204.6', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}}, 'host3': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.89', 'alias': 'br-prv', 'netmask': 22, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/22'}, 'storage': {'name': 'storage', 'ip': '192.168.204.15', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.204.5', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}}, 'host2': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.88', 'alias': 'br-prv', 'netmask': 22, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/22'}, 'storage': {'name': 'storage', 'ip': '192.168.204.14', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.204.4', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}}, 'host1': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.87', 'alias': 'br-prv', 'netmask': 22, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/22'}, 'storage': {'name': 'storage', 'ip': '192.168.204.13', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.204.3', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.204.0/24'}}}
+network_cfg: {'bond_mappings': [], 'internal_vip': {'interface': 'mgmt', 'ip': '192.168.204.222', 'netmask': '24'}, 'public_vip': {'interface': 'external', 'ip': '10.145.88.99', 'netmask': '22'}, 'provider_net_mappings': [{'interface': 'eth1', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'}], 'sys_intf_mappings': [{'interface': 'eth1', 'type': 'vlan', 'vlan_tag': 204, 'role': ['controller', 'compute'], 'name': 'mgmt'}, {'interface': 'eth1', 'type': 'vlan', 'vlan_tag': 204, 'role': ['controller', 'compute'], 'name': 'storage'}, {'interface': 'br-prv', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'external'}], 'ip_settings': [{'cidr': '192.168.204.0/24', 'role': ['controller', 'compute'], 'name': 'mgmt', 'ip_ranges': [['192.168.204.3', '192.168.204.254']]}, {'cidr': '192.168.204.0/24', 'role': ['controller', 'compute'], 'name': 'storage', 'ip_ranges': [['192.168.204.13', '192.168.204.254']]}, {'gw': '10.145.88.1', 'cidr': '10.145.88.0/22', 'role': ['controller', 'compute'], 'name': 'external', 'ip_ranges': [['10.145.88.87', '10.145.88.98']]}], 'nic_mappings': [], 'public_net_info': {'no_gateway': False, 'external_gw': '10.145.88.1', 'floating_ip_cidr': '10.145.88.0/24', 'network': 'ext-net', 'enable_dhcp': False, 'segment_id': 1000, 'subnet': 'ext-subnet', 'type': 'flat', 'enable': True, 'floating_ip_start': '10.145.88.92', 'floating_ip_end': '10.145.88.98', 'router': 'router-ext', 'provider_network': 'physnet'}, 'onos_nic': 'eth0'}
+sys_intf_mappings: {'storage': {'interface': 'eth1', 'type': 'vlan', 'vlan_tag': 204, 'role': ['controller', 'compute'], 'name': 'storage'}, 'external': {'interface': 'br-prv', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'external'}, 'mgmt': {'interface': 'eth1', 'type': 'vlan', 'vlan_tag': 204, 'role': ['controller', 'compute'], 'name': 'mgmt'}}
+deploy_type: baremetal
+
+public_cidr: 192.168.204.0/24
+storage_cidr: "{{ ip_settings[inventory_hostname]['storage']['cidr'] }}"
+mgmt_cidr: "{{ ip_settings[inventory_hostname]['mgmt']['cidr'] }}"
+
+public_net_info: "{{ network_cfg.public_net_info }}"
+host_ip_settings: "{{ ip_settings[inventory_hostname] }}"
+
+ntp_server: 10.1.0.12
+internal_vip:
+  ip: 192.168.204.222
+  netmask: 24
+  interface: mgmt
+
+public_vip:
+  ip: 10.145.88.99
+  netmask: 22
+  interface: br-prv
+
+db_host: "{{ internal_vip.ip }}"
+rabbit_host: "{{ internal_vip.ip }}"
+
+internal_ip: "{{ ip_settings[inventory_hostname]['mgmt']['ip'] }}"
+internal_nic: mgmt
+
+vrouter_id_internal: 171
+vrouter_id_public: 171
+
+identity_host: "{{ internal_ip }}"
+controllers_host: "{{ internal_ip }}"
+storage_controller_host: "{{ internal_ip }}"
+compute_controller_host: "{{ internal_ip }}"
+image_host: "{{ internal_ip }}"
+network_server_host: "{{ internal_ip }}"
+dashboard_host: "{{ internal_ip }}"
+
+haproxy_hosts:
+  host1: 192.168.204.3
+  host2: 192.168.204.4
+  host3: 192.168.204.5
+
+host_index:
+  host1: 0
+  host2: 1
+  host3: 2
+
+ERLANG_TOKEN: YOWSJSJIGGAUFZTIBRAD
+
+cluster_name: opnfv2
+
+odl_controller: 10.1.0.15
+
+DEBUG: true
+VERBOSE: true
+NTP_SERVER_LOCAL: "{{ controllers_host }}"
+DB_HOST: "{{ db_host }}"
+MQ_BROKER: rabbitmq
+
+OPENSTACK_REPO: cloudarchive-juno.list
+juno_cloud_archive: deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main
+ADMIN_TOKEN: admin
+CEILOMETER_TOKEN: c095d479023a0fd58a54
+erlang.cookie: DJJVECFMCJPVYQTJTDWG
+
+RABBIT_USER: service
+RABBIT_PASS: service
+KEYSTONE_DBPASS: service
+KEYSTONE_PASS: console
+CEILOMETER_DBPASS: service
+CEILOMETER_PASS: console
+GLANCE_DBPASS: service
+GLANCE_PASS: console
+NOVA_DBPASS: service
+NOVA_PASS: console
+DASH_DBPASS: service
+CINDER_DBPASS: service
+CINDER_PASS: console
+NEUTRON_DBPASS: service
+NEUTRON_PASS: console
+HEAT_DBPASS: heat_db_secret
+HEAT_PASS: heat_secret
+DEMO_PASS: console
+ADMIN_PASS: console
+
+
+
+
+NEUTRON_SERVICE_PLUGINS: ['router']
+NEUTRON_TYPE_DRIVERS: ['flat', 'gre', 'vxlan', 'vlan']
+NEUTRON_TENANT_NETWORK_TYPES: ['vxlan']
+NEUTRON_OVS_BRIDGE_MAPPINGS: ['physnet:br-prv']
+NEUTRON_VLAN_RANGES: ['physnet:1:4094']
+NEUTRON_TUNNEL_ID_RANGES: []
+
+#NEUTRON_MECHANISM_DRIVERS: ['opendaylight']
+NEUTRON_MECHANISM_DRIVERS: ['openvswitch']
+NEUTRON_TUNNEL_TYPES: ['vxlan']
+METADATA_SECRET: metadata_secret
+WSREP_SST_USER: wsrep_sst
+WSREP_SST_PASS: wsrep_sst_sercet
+
+INSTANCE_TUNNELS_INTERFACE_IP_ADDRESS: "{{ internal_ip }}"
+
+#build_in_image: http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img
+build_in_image: http://192.168.121.12:9999/img/cirros-0.3.3-x86_64-disk.img
+build_in_image_name: cirros-0.3.3-x86_64-disk.img
+
+physical_device: /dev/sdb
+
+odl_username: admin
+odl_password: admin
+odl_api_port: 8080
+
+odl_pkg_url: https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.2.2-Helium-SR2/distribution-karaf-0.2.2-Helium-SR2.tar.gz
+odl_pkg_name: karaf.tar.gz
+odl_home: "/opt/opendaylight-0.2.2/"
+odl_base_features: ['config', 'standard', 'region', 'package', 'kar', 'ssh', 'management', 'http', 'odl-base-all','odl-aaa-authn','odl-restconf','odl-nsf-all','odl-adsal-northbound','odl-mdsal-apidocs', 'odl-openflowplugin-all']
+odl_extra_features: ['odl-l2switch-switch', 'odl-ovsdb-plugin', 'odl-ovsdb-openstack', 'odl-ovsdb-northbound','odl-dlux-core', 'odl-restconf-all', 'odl-mdsal-clustering', 'odl-openflowplugin-flow-services', 'odl-netconf-connector', 'odl-netconf-connector-ssh', 'jolokia-osgi']
+odl_features: "{{ odl_base_features + odl_extra_features }}"
+odl_api_port: 8080
+[root@compass group_vars]# Write failed: Success
+NaCl plugin exited with status code 255.
+(R)econnect, (C)hoose another connection, or E(x)it?
+Connecting to onos@10.145.88.86...
+Loading NaCl plugin... done.
+onos@10.145.88.86's password: 
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Jan 18 10:40:11 PST 2016
+
+  System load:                0.96
+  Usage of /:                 5.3% of 853.52GB
+  Memory usage:               8%
+  Swap usage:                 0%
+  Processes:                  310
+  Users logged in:            0
+  IP address for eth1:        192.168.204.2
+  IP address for virbr0:      192.168.122.1
+  IP address for br-external: 10.145.88.86
+  IP address for mgmt_vnic:   192.168.204.254
+  IP address for br_mgmt:     192.168.200.1
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+89 packages can be updated.
+39 updates are security updates.
+
+Last login: Mon Jan 18 10:40:13 2016 from 10.145.15.4
+onos@jumpserver:~$ ssh root@192.168.200.2
+root@192.168.200.2's password: 
+Last login: Mon Jan 18 10:41:59 2016 from 192.168.200.1
+[root@compass ~]# ssh root@192.168.204.11
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Sun Jan 17 14:30:43 2016 from 192.168.204.2
+root@host1:~# ^C
+root@host1:~# logout
+Connection to 192.168.204.11 closed.
+[root@compass ~]# ssh root@192.168.204.12
+The authenticity of host '192.168.204.12 (192.168.204.12)' can't be established.
+ECDSA key fingerprint is c6:e0:2c:f5:07:e8:6e:d9:77:34:7e:fc:70:6e:73:b9.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.204.12' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@host2:~# ^C
+root@host2:~# ifconfig
+eth1      Link encap:Ethernet  HWaddr 7c:a2:3e:86:65:58  
+          inet addr:192.168.204.12  Bcast:192.168.204.255  Mask:255.255.255.0
+          inet6 addr: fe80::7ea2:3eff:fe86:6558/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:60447 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:141 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+top - 03:27:05 up 1 day, 11:31,  1 user,  load average: 0.00, 0.01, 0.05
+Tasks: 291 total,   1 running, 290 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:  65918664 total,   440084 used, 65478580 free,    35236 buffers
+KiB Swap: 88933376 total,        0 used, 88933376 free.    69144 cached Mem
+
+   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                                
+   193 root      20   0       0      0      0 S   0.3  0.0   0:00.03 kworker/2:1                                                                            
+     1 root      20   0   33384   3840   2628 S   0.0  0.0   0:01.61 init                                                                                   
+     2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd                                                                               
+     3 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/0                                                                            
+     5 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/0:0H                                                                           
+     6 root      20   0       0      0      0 S   0.0  0.0   0:06.72 kworker/u480:0                                                                         
+     8 root      20   0       0      0      0 S   0.0  0.0   0:05.08 rcu_sched                                                                              
+     9 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh                                                                                 
+    10 root      20   0       0      0      0 S   0.0  0.0   0:01.34 rcuos/0                                                                                
+    11 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcuob/0                                                                                
+    12 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 migration/0                                                                            
+    13 root      rt   0       0      0      0 S   0.0  0.0   0:00.44 watchdog/0                                                                             
+    14 root      rt   0       0      0      0 S   0.0  0.0   0:00.42 watchdog/1                                                                             
+    15 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 migration/1                                                                            
+    16 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/1                                                                            
+    18 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/1:0H                                                                           
+    19 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcuos/1                                                                                
+    20 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcuob/1                                                                                
+    21 root      rt   0       0      0      0 S   0.0  0.0   0:00.38 watchdog/2                                                                             
+    22 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 migration/2                                                                            
+    23 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/2                                                                            
+    24 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kworker/2:0                                                                            
+    25 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/2:0H                                                                           
+    26 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcuos/2                                                                                
+    27 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcuob/2                                                                                
+    28 root      rt   0       0      0      0 S   0.0  0.0   0:00.38 watchdog/3                                                                             
+    29 root      rt   0       0      0      0 S   0.0  0.0   0:00.07 migration/3                                                                            
+    30 root      20   0       0      0      0 S   0.0  0.0   0:00.00 ksoftirqd/3                                                                            
+    32 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker/3:0H                                                                           
+    33 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcuos/3                                                                                
+root@host2:/etc# ls
+adduser.conf            cron.monthly    gshadow          kernel-img.conf  manpath.config  popularity-contest.conf  rpc           sysctl.d
+[root@compass ~]# ls
+anaconda-ks.cfg  ks-post.log  ks-pre.log
+[root@compass ~]# cd /var/
+[root@compass var]# ls
+adm      cache  db     games   kerberos  local  log         mail   nis  preserve  spool  www
+ansible  crash  empty  gopher  lib       lock   lost+found  named  opt  run       tmp    yp
+[root@compass var]# cd cd ..
+-bash: cd: cd: No such file or directory
+[root@compass var]# logout
+Connection to 192.168.200.2 closed.
+onos@jumpserver:~$ ls
+compass4nfv  compass_machine.retry  opnfv-2016-01-04_16-45-58.iso  opnfv-2016-01-15_16-05-18.iso
+onos@jumpserver:~$ cat compass_machine.retry 
+compass_nodocker
+onos@jumpserver:~$ cd /var/
+onos@jumpserver:/var$ ls
+backups  cache  crash  lib  local  lock  log  mail  opt  run  spool  tmp
+onos@jumpserver:/var$ cd log
+onos@jumpserver:/var/log$ ls
+alternatives.log  auth.log.1     btmp          dmesg.0   fsck       kern.log.1  libvirt                syslog       syslog.3.gz  udev                 wtmp
+apt               boot.log       dist-upgrade  dpkg.log  installer  landscape   libvirt_hook_qemu.log  syslog.1     syslog.4.gz  unattended-upgrades
+auth.log          bootstrap.log  dmesg         faillog   kern.log   lastlog     openvswitch            syslog.2.gz  syslog.5.gz  upstart
+onos@jumpserver:/var/log$ tail -10 syslog
+Jan 18 07:17:01 jumpserver CRON[85000]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 18 08:17:01 jumpserver CRON[85008]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 18 09:17:01 jumpserver CRON[85013]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 18 10:17:01 jumpserver CRON[85021]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 18 11:17:01 jumpserver CRON[85157]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+onos@jumpserver:/var/log$ tail -20 syslog
+Jan 18 07:17:01 jumpserver CRON[85000]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 18 08:17:01 jumpserver CRON[85008]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 18 09:17:01 jumpserver CRON[85013]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 18 10:17:01 jumpserver CRON[85021]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Jan 18 11:17:01 jumpserver CRON[85157]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+onos@jumpserver:/var/log$ cd
+onos@jumpserver:~$ ls
+compass4nfv  compass_machine.retry  opnfv-2016-01-04_16-45-58.iso  opnfv-2016-01-15_16-05-18.iso
+onos@jumpserver:~$ cd compass4nfv/
+onos@jumpserver:~/compass4nfv$ ls
+build  build.sh  config  deploy  deploy_compass.sh  deploy_host.sh  deploy.sh  docs  INFO  LICENSE  __main__.log  README.md  redeploy_host.sh  util  work
+onos@jumpserver:~/compass4nfv$ cd config/
+2016-01-18 05:32:58,668 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:33:28,704 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:33:58,739 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:34:28,775 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:34:58,784 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:35:28,819 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:35:58,835 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:36:28,861 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:36:58,895 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:37:28,930 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:37:58,958 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:38:28,981 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:38:58,993 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:39:29,006 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:39:59,042 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+2016-01-18 05:40:29,077 - daemonize.py - 62 - INFO - will rerun after 30 seconds
+[root@compass compass]# cd /var/ansible/
+openstack_juno/    openstack_kilo/    openstack_liberty/ roles/             run/               
+[root@compass compass]# cd /var/ansible/run/openstack_liberty-opnfv2/
+ansible.cfg                HA-ansible-multinodes.yml  roles/                     
+group_vars/                inventories/               templates/                 
+[root@compass compass]# cd /var/ansible/run/openstack_liberty-opnfv2/
+ansible.cfg                HA-ansible-multinodes.yml  roles/                     
+group_vars/                inventories/               templates/                 
+[root@compass compass]# cd /var/ansible/run/openstack_liberty-opnfv2/
+[root@compass openstack_liberty-opnfv2]# ls -ltr
+total 24
+dr-xr-xr-x  2 root root 4096 Jan 16 23:38 templates
+dr-xr-xr-x 30 root root 4096 Jan 16 23:38 roles
+-r-xr-xr-x  1 root root 1333 Jan 16 23:39 HA-ansible-multinodes.yml
+drwxr-xr-x  2 root root 4096 Jan 16 23:39 inventories
+drwxr-xr-x  2 root root 4096 Jan 16 23:39 group_vars
+-rw-r--r--  1 root root  213 Jan 16 23:39 ansible.cfg
+[root@compass openstack_liberty-opnfv2]# 
+[root@compass openstack_liberty-opnfv2]# 
+[root@compass openstack_liberty-opnfv2]# vi HA-ansible-multinodes.yml 
+[root@compass openstack_liberty-opnfv2]# vi inventories/inventory.yml 
+[root@compass openstack_liberty-opnfv2]# vi inventories/inventory.yml 
+[root@compass openstack_liberty-opnfv2]# ping 192.168.204.11
+PING 192.168.204.11 (192.168.204.11) 56(84) bytes of data.
+64 bytes from 192.168.204.11: icmp_seq=1 ttl=63 time=0.309 ms
+64 bytes from 192.168.204.11: icmp_seq=2 ttl=63 time=0.502 ms
+^C
+--- 192.168.204.11 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 0.309/0.405/0.502/0.098 ms
+[root@compass openstack_liberty-opnfv2]# vi group_vars/all 
+[root@compass openstack_liberty-opnfv2]# cd /var/lo
+-bash: cd: /var/lo: No such file or directory
+[root@compass openstack_liberty-opnfv2]# cd /var/log
+[root@compass log]# ls -ltr
+total 6340
+drwx------. 2 root          root             4096 Jun  9  2014 ppp
+-rw-------. 1 root          root                0 Jan 16 23:23 tallylog
+-rw-------. 1 root          utmp                0 Jan 16 23:23 btmp
+-rw-------. 1 root          root                0 Jan 16 23:23 spooler
+drwxrwxrwx. 2 root          root             4096 Jan 16 23:27 coredump
+-rw-r--r--. 1 root          root               37 Jan 16 23:30 post_install.log
+drwxr-xr-x. 2 root          root             4096 Jan 16 23:30 anaconda
+drwxr-x---. 2 root          root             4096 Jan 16 23:30 audit
+-rw-r--r--  1 root          root            35047 Jan 16 23:30 dmesg
+-rw-r--r--  1 root          root            10576 Jan 16 23:30 boot.log
+-rw-r--r--  1 root          root               40 Jan 16 23:30 wpa_supplicant.log
+drwxr-xr-x. 2 root          root             4096 Jan 16 23:30 tuned
+drwx------  2 root          root             4096 Jan 16 23:32 httpd
+-rw-------  1 root          root            12441 Jan 16 23:36 yum.log
+drwxr-xr-x  2 root          root             4096 Jan 16 23:37 kibana
+drwxrwxr-x  2 logstash      root             4096 Jan 16 23:37 logstash
+-rw-r-----  1 mysql         mysql            2349 Jan 16 23:37 mysqld.log
+drwxr-x---  2 rabbitmq      rabbitmq         4096 Jan 16 23:37 rabbitmq
+drwxr-xr-x  2 redis         root             4096 Jan 16 23:38 redis
+drwxrwxrwx  4 root          root             4096 Jan 16 23:42 cobbler
+drwxr-xr-x  2 elasticsearch elasticsearch    4096 Jan 18 00:00 elasticsearch
+drwxrwxrwx  2 root          root             4096 Jan 18 05:40 compass
+-rw-------  1 root          root            17421 Jan 18 11:01 cron
+-rw-------. 1 root          root            68967 Jan 18 11:28 secure
+-rw-------. 1 root          root          5738574 Jan 18 11:28 messages
+-rw-rw-r--. 1 root          utmp           257280 Jan 18 11:28 wtmp
+-rw-r--r--. 1 root          root           291416 Jan 18 11:28 lastlog
+-rw-------. 1 root          root           201063 Jan 18 11:35 maillog
+[root@compass log]# 
+[root@compass log]# cd compass/
+[root@compass compass]# ls
+celery.log   manage_db.py.log        progress_update.py.log.2016-01-16_23  progress_update.py.log.2016-01-17_11  progress_update.py.log.2016-01-17_23
+compass.log  progress_update.py.log  progress_update.py.log.2016-01-17_05  progress_update.py.log.2016-01-17_17
+[root@compass compass]# ls -ltr
+total 338268
+-rw-r--r-- 1 root   root       25839 Jan 16 23:39 manage_db.py.log
+-rw-r--r-- 1 apache apache 201733406 Jan 17 02:09 compass.log
+-rw-r--r-- 1 root   root   143875717 Jan 17 04:14 celery.log
+-rw-r--r-- 1 root   root       59382 Jan 17 05:39 progress_update.py.log.2016-01-16_23
+-rw-r--r-- 1 root   root       58320 Jan 17 11:39 progress_update.py.log.2016-01-17_05
+-rw-r--r-- 1 root   root       58320 Jan 17 17:39 progress_update.py.log.2016-01-17_11
+-rw-r--r-- 1 root   root       58320 Jan 17 23:40 progress_update.py.log.2016-01-17_17
+-rw-r--r-- 1 root   root       58320 Jan 18 05:40 progress_update.py.log.2016-01-17_23
+-rw-r--r-- 1 root   root       57429 Jan 18 11:35 progress_update.py.log
+[root@compass compass]# 
+[root@compass compass]# vi celery.log 
+[root@compass compass]# cd /var/ansible/
+[root@compass ansible]# ls
+openstack_juno  openstack_kilo  openstack_liberty  roles  run
+[root@compass ansible]# cd run/
+[root@compass run]# ls
+openstack_liberty-opnfv2
+[root@compass run]# cd openstack_liberty-opnfv2/
+[root@compass openstack_liberty-opnfv2]# ls
+ansible.cfg  group_vars  HA-ansible-multinodes.yml  inventories  roles  templates
+[root@compass openstack_liberty-opnfv2]# /bin/ansible-p
+ansible-playbook  ansible-pull      
+[root@compass openstack_liberty-opnfv2]# /bin/ansible-p
+ansible-playbook  ansible-pull      
+[root@compass openstack_liberty-opnfv2]# /bin/ansible-playbook -i inventories/inventory.yml HA-ansible-multinodes.yml 
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host2]
+ok: [host5]
+ok: [host1]
+ok: [host4]
+ok: [host3]
+
+TASK: [common | include_vars {{ ansible_os_family }}.yml] ********************* 
+ok: [host5]
+ok: [host1]
+ok: [host3]
+ok: [host4]
+ok: [host2]
+
+TASK: [common | speed up ansible by purging landscape-common] ***************** 
+ok: [host4]
+ok: [host5]
+ok: [host2]
+ok: [host1]
+ok: [host3]
+
+TASK: [common | update hosts files to all hosts] ****************************** 
+changed: [host1]
+changed: [host4]
+changed: [host2]
+changed: [host3]
+changed: [host5]
+
+TASK: [common | get compass-core hostname] ************************************ 
+changed: [host5 -> 127.0.0.1]
+changed: [host2 -> 127.0.0.1]
+changed: [host1 -> 127.0.0.1]
+changed: [host4 -> 127.0.0.1]
+changed: [host3 -> 127.0.0.1]
+
+TASK: [common | get compass-core addr] **************************************** 
+changed: [host4]
+changed: [host5]
+changed: [host1]
+changed: [host3]
+changed: [host2]
+
+TASK: [common | update compass-core name and ip to hosts files] *************** 
+changed: [host5]
+changed: [host1]
+changed: [host4]
+changed: [host2]
+changed: [host3]
+
+TASK: [common | install packages] ********************************************* 
+failed: [host2] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+msg: Could not fetch updated apt files
+failed: [host5] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+msg: Could not fetch updated apt files
+failed: [host4] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+msg: Could not fetch updated apt files
+failed: [host3] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+msg: Could not fetch updated apt files
+failed: [host1] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+msg: Could not fetch updated apt files
+failed: [host2] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+msg: Could not fetch updated apt files
+failed: [host5] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+msg: Could not fetch updated apt files
+failed: [host3] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+msg: Could not fetch updated apt files
+failed: [host1] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+msg: Could not fetch updated apt files
+failed: [host4] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+msg: Could not fetch updated apt files
+failed: [host1] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+msg: Could not fetch updated apt files
+failed: [host2] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+msg: Could not fetch updated apt files
+failed: [host3] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+msg: Could not fetch updated apt files
+failed: [host5] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+msg: Could not fetch updated apt files
+failed: [host4] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+msg: Could not fetch updated apt files
+failed: [host3] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+msg: Could not fetch updated apt files
+failed: [host2] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+msg: Could not fetch updated apt files
+failed: [host4] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+msg: Could not fetch updated apt files
+failed: [host5] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+msg: Could not fetch updated apt files
+failed: [host1] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+msg: Could not fetch updated apt files
+failed: [host3] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+msg: Could not fetch updated apt files
+failed: [host4] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+msg: Could not fetch updated apt files
+failed: [host2] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+msg: Could not fetch updated apt files
+failed: [host5] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+msg: Could not fetch updated apt files
+failed: [host1] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+msg: Could not fetch updated apt files
+failed: [host3] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+msg: Could not fetch updated apt files
+failed: [host4] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+msg: Could not fetch updated apt files
+failed: [host5] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+msg: Could not fetch updated apt files
+failed: [host2] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+msg: Could not fetch updated apt files
+failed: [host1] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+msg: Could not fetch updated apt files
+failed: [host3] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+msg: Could not fetch updated apt files
+failed: [host4] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+msg: Could not fetch updated apt files
+failed: [host5] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+msg: Could not fetch updated apt files
+failed: [host2] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+msg: Could not fetch updated apt files
+failed: [host1] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+msg: Could not fetch updated apt files
+failed: [host3] => (item=ntp) => {"failed": true, "item": "ntp"}
+msg: Could not fetch updated apt files
+failed: [host4] => (item=ntp) => {"failed": true, "item": "ntp"}
+msg: Could not fetch updated apt files
+failed: [host5] => (item=ntp) => {"failed": true, "item": "ntp"}
+msg: Could not fetch updated apt files
+failed: [host1] => (item=ntp) => {"failed": true, "item": "ntp"}
+msg: Could not fetch updated apt files
+failed: [host2] => (item=ntp) => {"failed": true, "item": "ntp"}
+msg: Could not fetch updated apt files
+
+FATAL: all hosts have already failed -- aborting
+
+PLAY RECAP ******************************************************************** 
+           to retry, use: --limit @/root/HA-ansible-multinodes.retry
+
+host1                      : ok=7    changed=4    unreachable=0    failed=1   
+host2                      : ok=7    changed=4    unreachable=0    failed=1   
+host3                      : ok=7    changed=4    unreachable=0    failed=1   
+host4                      : ok=7    changed=4    unreachable=0    failed=1   
+host5                      : ok=7    changed=4    unreachable=0    failed=1   
+
+Exception TypeError: TypeError("'NoneType' object is not callable",) in <bound method Client.__del__ of <compass.apiclient.restful.Client object at 0x27069d0>> ignored
+[root@compass openstack_liberty-opnfv2]# ssh root@192.168.204.11
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Mon Jan 18 11:36:35 2016 from 192.168.204.2
+root@host1:~# ifconfig
+eth1      Link encap:Ethernet  HWaddr 7c:a2:3e:86:65:4e  
+          inet addr:192.168.204.11  Bcast:192.168.204.255  Mask:255.255.255.0
+          inet6 addr: fe80::7ea2:3eff:fe86:654e/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:62159 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1105 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:4108733 (4.1 MB)  TX bytes:202833 (202.8 KB)
+          Memory:94a00000-94afffff 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@host1:~# exit
+logout
+Connection to 192.168.204.11 closed.
+[root@compass openstack_liberty-opnfv2]# 
+[root@compass openstack_liberty-opnfv2]# vi /etc/dhcp/dhcpd.conf
+[root@compass openstack_liberty-opnfv2]# ls
+ansible.cfg  ansible.log  group_vars  HA-ansible-multinodes.yml  inventories  roles  templates
+[root@compass openstack_liberty-opnfv2]# vi ansible.log 
+[root@compass openstack_liberty-opnfv2]# ssh root@192.168.204.11
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Mon Jan 18 11:37:07 2016 from 192.168.204.2
+root@host1:~# ping 10.1.0.12
+connect: Network is unreachable
+root@host1:~# ping 192.168.204.12
+PING 192.168.204.12 (192.168.204.12) 56(84) bytes of data.
+64 bytes from 192.168.204.12: icmp_seq=1 ttl=64 time=0.203 ms
+64 bytes from 192.168.204.12: icmp_seq=2 ttl=64 time=0.109 ms
+64 bytes from 192.168.204.12: icmp_seq=3 ttl=64 time=0.108 ms
+^C
+--- 192.168.204.12 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 1998ms
+rtt min/avg/max/mdev = 0.108/0.140/0.203/0.044 ms
+root@host1:~# cat /etc/hosts
+
+# localhost
+127.0.0.1 localhost
+# controller
+192.168.204.3 host1
+192.168.204.4 host2
+192.168.204.5 host3
+# compute
+192.168.204.6 host4
+192.168.204.7 host5
+# compass
+10.1.0.12 compass
+root@host1:~# ping compass
+connect: Network is unreachable
+root@host1:~# logout
+Connection to 192.168.204.11 closed.
+[root@compass openstack_liberty-opnfv2]# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.200.2  netmask 255.255.255.0  broadcast 192.168.200.255
+        inet6 fe80::5054:ff:feb1:c30b  prefixlen 64  scopeid 0x20<link>
+        ether 52:54:00:b1:c3:0b  txqueuelen 1000  (Ethernet)
+        RX packets 179538  bytes 54793950 (52.2 MiB)
+        RX errors 0  dropped 65153  overruns 0  frame 0
+        TX packets 192406  bytes 87518833 (83.4 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.1.0.12  netmask 255.255.255.0  broadcast 10.1.0.255
+        inet6 fe80::5054:ff:fed6:7871  prefixlen 64  scopeid 0x20<link>
+        ether 52:54:00:d6:78:71  txqueuelen 1000  (Ethernet)
+        RX packets 289848  bytes 20890420 (19.9 MiB)
+        RX errors 0  dropped 159  overruns 0  frame 0
+        TX packets 140429  bytes 1252614774 (1.1 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::5054:ff:fef4:e5ca  prefixlen 64  scopeid 0x20<link>
+        ether 52:54:00:f4:e5:ca  txqueuelen 1000  (Ethernet)
+        RX packets 9992839  bytes 600877316 (573.0 MiB)
+        RX errors 0  dropped 12812  overruns 0  frame 0
+        TX packets 7  bytes 578 (578.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 0  (Local Loopback)
+        RX packets 10442009  bytes 4211763296 (3.9 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10442009  bytes 4211763296 (3.9 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@compass openstack_liberty-opnfv2]# trachpath 192.168.204.1
+-bash: trachpath: command not found
+[root@compass openstack_liberty-opnfv2]# tracepath 192.168.204.1
+ 1?: [LOCALHOST]                                         pmtu 1500
+ 1:  192.168.200.1                                         0.267ms 
+ 1:  192.168.200.1                                         0.171ms 
+ 2:  192.168.204.1                                         3.528ms reached
+     Resume: pmtu 1500 hops 2 back 2 
+[root@compass openstack_liberty-opnfv2]# traceroute 192.168.204.1
+-bash: traceroute: command not found
+[root@compass openstack_liberty-opnfv2]# 
+[root@compass openstack_liberty-opnfv2]# 
+[root@compass openstack_liberty-opnfv2]# ls
+ansible.cfg  ansible.log  group_vars  HA-ansible-multinodes.yml  inventories  roles  templates
+[root@compass openstack_liberty-opnfv2]# vi ansible.cfg 
+[root@compass openstack_liberty-opnfv2]# ls
+ansible.cfg  ansible.log  group_vars  HA-ansible-multinodes.yml  inventories  roles  templates
+[root@compass openstack_liberty-opnfv2]# vi ansible.
+[root@compass openstack_liberty-opnfv2]# vi ansible.log 
+[root@compass openstack_liberty-opnfv2]# cd roles/common/
+[root@compass common]# ls
+tasks  templates  vars
+[root@compass common]# vi tasks/main.yml 
+[root@compass common]# ls
+tasks  templates  vars
+[root@compass common]# cd vars/
+[root@compass vars]# ls
+Debian.yml  main.yml  RedHat.yml
+[root@compass vars]# vi Debian.yml 
+[root@compass vars]# ls
+Debian.yml  main.yml  RedHat.yml
+[root@compass vars]# cd ..
+[root@compass common]# ls
+tasks  templates  vars
+[root@compass common]# cd templates/
+[root@compass templates]# ls
+hosts  ntp.conf  pip.conf
+[root@compass templates]# vi pip.conf 
+[root@compass templates]# vi ntp.conf 
+[root@compass templates]# vi hosts 
+[root@compass templates]# vi pip.conf 
+[root@compass templates]# cd ..
+[root@compass common]# ls
+tasks  templates  vars
+[root@compass common]# cd ..
+[root@compass roles]# ls
+ceilometer_compute     cinder-controller  dashboard    glance  keystone   mq               neutron-controller  nova-controller  open-contrail  storage
+ceilometer_controller  cinder-volume      database     ha      memcached  neutron-common   neutron-network     odl_cluster      secgroup
+ceph-deploy            common             ext-network  heat    monitor    neutron-compute  nova-compute        onos_cluster     setup-network
+[root@compass roles]# cd ..
+[root@compass openstack_liberty-opnfv2]# ls
+ansible.cfg  ansible.log  group_vars  HA-ansible-multinodes.yml  inventories  roles  templates
+[root@compass openstack_liberty-opnfv2]# vi templates/
+dnsmasq-neutron.conf  ml2_conf.ini          neutron.conf          nova.conf             
+[root@compass openstack_liberty-opnfv2]# vi group_vars/all 
+[root@compass openstack_liberty-opnfv2]# 
+[root@compass openstack_liberty-opnfv2]# 
+[root@compass openstack_liberty-opnfv2]# ls
+ansible.cfg  ansible.log  group_vars  HA-ansible-multinodes.yml  inventories  roles  templates
+[root@compass openstack_liberty-opnfv2]# cd roles/
+[root@compass roles]# ls
+ceilometer_compute     cinder-controller  dashboard    glance  keystone   mq               neutron-controller  nova-controller  open-contrail  storage
+ceilometer_controller  cinder-volume      database     ha      memcached  neutron-common   neutron-network     odl_cluster      secgroup
+ceph-deploy            common             ext-network  heat    monitor    neutron-compute  nova-compute        onos_cluster     setup-network
+[root@compass roles]# cd common/
+[root@compass common]# ls
+tasks  templates  vars
+[root@compass common]# cd vte
+-bash: cd: vte: No such file or directory
+[root@compass common]# cd templates/
+[root@compass templates]# ls
+hosts  ntp.conf  pip.conf
+[root@compass templates]# vi hosts 
+[root@compass templates]# cd ..
+[root@compass common]# ls
+tasks  templates  vars
+[root@compass common]# cd tasks/
+[root@compass tasks]# ls
+main.yml
+[root@compass tasks]# vi main.yml 
+[root@compass tasks]# ssh root@192.168.204.11
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Mon Jan 18 11:40:08 2016 from 192.168.204.2
+root@host1:~# vi /etc/compass.conf 
+root@host1:~# ping 10.1.0.12
+connect: Network is unreachable
+root@host1:~# ifconfig
+eth1      Link encap:Ethernet  HWaddr 7c:a2:3e:86:65:4e  
+          inet addr:192.168.204.11  Bcast:192.168.204.255  Mask:255.255.255.0
+          inet6 addr: fe80::7ea2:3eff:fe86:654e/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:63180 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1433 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:4189723 (4.1 MB)  TX bytes:249347 (249.3 KB)
+          Memory:94a00000-94afffff 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+root@host1:~# ping 192.168.204.12
+PING 192.168.204.12 (192.168.204.12) 56(84) bytes of data.
+64 bytes from 192.168.204.12: icmp_seq=1 ttl=64 time=0.124 ms
+64 bytes from 192.168.204.12: icmp_seq=2 ttl=64 time=0.155 ms
+64 bytes from 192.168.204.12: icmp_seq=3 ttl=64 time=0.148 ms
+^C
+--- 192.168.204.12 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 1999ms
+rtt min/avg/max/mdev = 0.124/0.142/0.155/0.016 ms
+root@host1:~# ping 10.1.0.12
+connect: Network is unreachable
+root@host1:~# ping google.com
+ping: unknown host google.com
+root@host1:~# ping 192.168.200.2
+connect: Network is unreachable
+root@host1:~# logout
+Connection to 192.168.204.11 closed.
+[root@compass tasks]# logout
+Connection to 192.168.200.2 closed.
+onos@jumpserver:/var/log$ Write failed: Success
+NaCl plugin exited with status code 255.
+(R)econnect, (C)hoose another connection, or E(x)it?
+Connecting to onos@10.145.88.86...
+Loading NaCl plugin... done.
+ssh: connect to host 10.145.88.86 port 22: Connection refused
+NaCl plugin exited with status code 255.
+(R)econnect, (C)hoose another connection, or E(x)it?
+Connecting to onos@10.145.88.86...
+Loading NaCl plugin... done.
+ssh: connect to host 10.145.88.86 port 22: Connection refused
+NaCl plugin exited with status code 255.
+(R)econnect, (C)hoose another connection, or E(x)it?
+Connecting to onos@10.145.88.86...
+Loading NaCl plugin... done.
+onos@10.145.88.86's password: 
+Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-25-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+
+  System information as of Mon Jan 18 13:29:37 PST 2016
+
+  System load:                0.95
+  Usage of /:                 5.3% of 853.52GB
+  Memory usage:               8%
+  Swap usage:                 0%
+  Processes:                  315
+  Users logged in:            1
+  IP address for eth1:        192.168.204.2
+  IP address for virbr0:      192.168.122.1
+  IP address for br-external: 10.145.88.86
+  IP address for mgmt_vnic:   192.168.204.254
+  IP address for br_mgmt:     192.168.200.1
+
+  Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+89 packages can be updated.
+39 updates are security updates.
+
+Last login: Mon Jan 18 13:29:37 2016 from 10.145.15.4
+onos@jumpserver:~$ ssh root@192.168.200.2
+root@192.168.200.2's password: 
+Last login: Mon Jan 18 11:28:42 2016 from 192.168.200.1
+[root@compass ~]# ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.200.2  netmask 255.255.255.0  broadcast 192.168.200.255
+        inet6 fe80::5054:ff:feb1:c30b  prefixlen 64  scopeid 0x20<link>
+        ether 52:54:00:b1:c3:0b  txqueuelen 1000  (Ethernet)
+        RX packets 185510  bytes 55227810 (52.6 MiB)
+        RX errors 0  dropped 68438  overruns 0  frame 0
+        TX packets 194331  bytes 87855957 (83.7 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.1.0.12  netmask 255.255.255.0  broadcast 10.1.0.255
+        inet6 fe80::5054:ff:fed6:7871  prefixlen 64  scopeid 0x20<link>
+        ether 52:54:00:d6:78:71  txqueuelen 1000  (Ethernet)
+        RX packets 296551  bytes 21414624 (20.4 MiB)
+        RX errors 0  dropped 159  overruns 0  frame 0
+        TX packets 140429  bytes 1252614774 (1.1 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet6 fe80::5054:ff:fef4:e5ca  prefixlen 64  scopeid 0x20<link>
+        ether 52:54:00:f4:e5:ca  txqueuelen 1000  (Ethernet)
+        RX packets 10496981  bytes 631192166 (601.9 MiB)
+        RX errors 0  dropped 13456  overruns 0  frame 0
+        TX packets 7  bytes 578 (578.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 0  (Local Loopback)
+        RX packets 10535490  bytes 4226370523 (3.9 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10535490  bytes 4226370523 (3.9 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@compass ~]# 

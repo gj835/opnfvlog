@@ -1,0 +1,10 @@
+
+# localhost
+127.0.0.1 localhost
+# controller
+192.168.201.11 host-2
+192.168.201.12 host-1
+192.168.201.15 host-3
+# compute
+192.168.201.13 host-4
+192.168.201.14 host-5

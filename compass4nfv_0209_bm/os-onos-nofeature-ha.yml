@@ -1,0 +1,60 @@
+
+TYPE: baremetal
+FLAVOR: cluster
+POWER_TOOL: ipmitool
+
+ipmiUser: root
+ipmiVer: '2.0'
+
+hosts:
+  - name: host1
+    mac: 'FC:E3:3C:AF:C4:C7'
+    interfaces:
+       - eth1: '7C:A2:3E:86:65:4E'
+    ipmiIp: 10.145.88.81
+    ipmiPass: Huawei12#$
+    roles:
+      - controller
+      - ha
+      - onos
+
+  - name: host2
+    mac: 'FC:E3:3C:AF:C3:5B'
+    interfaces:
+      - eth1: '7C:A2:3E:86:65:58'
+    ipmiIp: 10.145.88.82
+    ipmiPass: Huawei12#$
+    roles:
+      - controller
+      - ha
+      - onos
+
+  - name: host3
+    mac: 'FC:E3:3C:AF:C6:37'
+    interfaces:
+      - eth1: '7C:A2:3E:86:65:38'
+    ipmiIp: 10.145.88.83
+    ipmiPass: Huawei12#$
+    roles:
+      - controller
+      - ha
+      - onos
+
+  - name: host4
+    mac: 'FC:E3:3C:AF:C4:89'
+    interfaces:
+      - eth1: '7C:A2:3E:86:65:30'
+    ipmiIp: 10.145.88.84
+    ipmiPass: Huawei12#$
+    roles:
+      - compute
+
+  - name: host5
+    mac: 'FC:E3:3C:AF:C5:AF'
+    interfaces:
+      - eth1: '7C:A2:3E:86:65:46'
+    ipmiIp: 10.145.88.85
+    ipmiPass: Huawei12#$
+    roles:
+      - compute
+

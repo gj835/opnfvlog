@@ -1,0 +1,12 @@
+---
+http_packages:
+  - httpd
+
+http_service: httpd
+
+packages:
+  - mod_wsgi
+
+services: []
+
+http_config_file: "/etc/httpd/conf/httpd.conf"

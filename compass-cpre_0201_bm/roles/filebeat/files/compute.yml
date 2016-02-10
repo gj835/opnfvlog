@@ -1,0 +1,18 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /var/log/*.log
+        - /var/log/nova/nova-compute.log
+        - /var/log/nova/nova-manage.log
+        - /var/log/ceilometer/ceilometer-agent-compute.log
+        - /var/log/neutron/neutron-netns-cleanup.log
+        - /var/log/neutron/openvswitch-agent.log
+        - /var/log/neutron/ovs-cleanup.log
+        - /var/log/cinder/cinder-volume.log
+      input_type: log
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - localhost.localdomain:5044

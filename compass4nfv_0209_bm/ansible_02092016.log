@@ -1,0 +1,350 @@
+2016-02-09 18:01:50,947 p=22102 u=root |   
+2016-02-09 18:01:50,947 p=22102 u=root |  /bin/ansible-playbook -i inventories/inventory.yml HA-ansible-multinodes.yml
+2016-02-09 18:01:50,947 p=22102 u=root |   
+2016-02-09 18:01:51,014 root create api client http://127.0.0.1/api
+2016-02-09 18:01:51,084 p=22102 u=root |   [WARNING]: non fatal error while trying to template play variables: Failed to
+template {{ lookup('file', 'item') }}: could not locate file in lookup: item
+
+2016-02-09 18:01:51,582 p=22102 u=root |  PLAY [all] ******************************************************************** 
+2016-02-09 18:01:51,582 p=22102 u=root |  GATHERING FACTS *************************************************************** 
+INFO:__main__:current_time=1455069712.71, deployment_timeout=1455077361.44
+2016-02-09 18:01:54,094 p=22102 u=root |  ok: [host4]
+2016-02-09 18:01:54,115 p=22102 u=root |  ok: [host2]
+2016-02-09 18:01:54,121 p=22102 u=root |  ok: [host1]
+2016-02-09 18:01:54,161 p=22102 u=root |  ok: [host3]
+2016-02-09 18:01:54,194 p=22102 u=root |  ok: [host5]
+2016-02-09 18:01:54,210 p=22102 u=root |  TASK: [make sure ssh dir exist] *********************************************** 
+2016-02-09 18:01:54,399 p=22102 u=root |  changed: [host4] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-09 18:01:54,413 p=22102 u=root |  changed: [host5] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-09 18:01:54,415 p=22102 u=root |  changed: [host1] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-09 18:01:54,415 p=22102 u=root |  changed: [host2] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-09 18:01:54,426 p=22102 u=root |  changed: [host3] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-09 18:01:54,435 p=22102 u=root |  TASK: [write ssh config] ****************************************************** 
+2016-02-09 18:01:54,766 p=22102 u=root |  changed: [host5] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-09 18:01:54,776 p=22102 u=root |  changed: [host4] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-09 18:01:54,779 p=22102 u=root |  changed: [host1] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-09 18:01:54,798 p=22102 u=root |  changed: [host3] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-09 18:01:54,802 p=22102 u=root |  changed: [host2] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-09 18:01:54,816 p=22102 u=root |  TASK: [generate ssh keys] ***************************************************** 
+2016-02-09 18:01:55,114 p=22102 u=root |  changed: [host4]
+2016-02-09 18:01:55,140 p=22102 u=root |  changed: [host3]
+2016-02-09 18:01:55,142 p=22102 u=root |  changed: [host5]
+2016-02-09 18:01:55,159 p=22102 u=root |  changed: [host1]
+2016-02-09 18:01:55,223 p=22102 u=root |  changed: [host2]
+2016-02-09 18:01:55,235 p=22102 u=root |  TASK: [fetch ssh keys] ******************************************************** 
+2016-02-09 18:01:55,409 p=22102 u=root |  changed: [host1]
+2016-02-09 18:01:55,442 p=22102 u=root |  changed: [host2]
+2016-02-09 18:01:55,443 p=22102 u=root |  changed: [host4]
+2016-02-09 18:01:55,444 p=22102 u=root |  changed: [host5]
+2016-02-09 18:01:55,485 p=22102 u=root |  changed: [host3]
+2016-02-09 18:01:55,498 p=22102 u=root |  TASK: [authorized_key ] ******************************************************* 
+2016-02-09 18:01:55,717 p=22102 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host3)
+2016-02-09 18:01:55,753 p=22102 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host3)
+2016-02-09 18:01:55,754 p=22102 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host3)
+2016-02-09 18:01:55,757 p=22102 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host3)
+2016-02-09 18:01:55,776 p=22102 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host3)
+2016-02-09 18:01:55,878 p=22102 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host4)
+2016-02-09 18:01:55,899 p=22102 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host4)
+2016-02-09 18:01:55,908 p=22102 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host4)
+2016-02-09 18:01:55,913 p=22102 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host4)
+2016-02-09 18:01:55,924 p=22102 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host4)
+2016-02-09 18:01:56,046 p=22102 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host2)
+2016-02-09 18:01:56,050 p=22102 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host2)
+2016-02-09 18:01:56,057 p=22102 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host2)
+2016-02-09 18:01:56,066 p=22102 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host2)
+2016-02-09 18:01:56,078 p=22102 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host2)
+2016-02-09 18:01:56,209 p=22102 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host1)
+2016-02-09 18:01:56,217 p=22102 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host1)
+2016-02-09 18:01:56,218 p=22102 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host1)
+2016-02-09 18:01:56,219 p=22102 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host1)
+2016-02-09 18:01:56,230 p=22102 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host1)
+2016-02-09 18:01:56,361 p=22102 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host5)
+2016-02-09 18:01:56,362 p=22102 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host5)
+2016-02-09 18:01:56,372 p=22102 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host5)
+2016-02-09 18:01:56,375 p=22102 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host5)
+2016-02-09 18:01:56,377 p=22102 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host5)
+2016-02-09 18:01:56,399 p=22102 u=root |  TASK: [common | include_vars {{ ansible_os_family }}.yml] ********************* 
+2016-02-09 18:01:56,446 p=22102 u=root |  ok: [host4]
+2016-02-09 18:01:56,456 p=22102 u=root |  ok: [host5]
+2016-02-09 18:01:56,457 p=22102 u=root |  ok: [host1]
+2016-02-09 18:01:56,457 p=22102 u=root |  ok: [host3]
+2016-02-09 18:01:56,465 p=22102 u=root |  ok: [host2]
+2016-02-09 18:01:56,475 p=22102 u=root |  TASK: [common | speed up ansible by purging landscape-common] ***************** 
+2016-02-09 18:01:56,858 p=22102 u=root |  ok: [host4]
+2016-02-09 18:01:56,872 p=22102 u=root |  ok: [host5]
+2016-02-09 18:01:56,912 p=22102 u=root |  ok: [host3]
+2016-02-09 18:01:56,921 p=22102 u=root |  ok: [host2]
+2016-02-09 18:01:56,967 p=22102 u=root |  ok: [host1]
+2016-02-09 18:01:56,988 p=22102 u=root |  TASK: [common | update hosts files to all hosts] ****************************** 
+2016-02-09 18:01:57,307 p=22102 u=root |  changed: [host1]
+2016-02-09 18:01:57,375 p=22102 u=root |  changed: [host2]
+INFO:__main__:current_time=1455069717.93, deployment_timeout=1455077361.44
+2016-02-09 18:01:57,384 p=22102 u=root |  changed: [host3]
+2016-02-09 18:01:57,384 p=22102 u=root |  changed: [host4]
+2016-02-09 18:01:57,390 p=22102 u=root |  changed: [host5]
+2016-02-09 18:01:57,406 p=22102 u=root |  TASK: [common | get compass-core hostname] ************************************ 
+2016-02-09 18:01:57,664 p=22102 u=root |  changed: [host4 -> 127.0.0.1]
+2016-02-09 18:01:57,681 p=22102 u=root |  changed: [host5 -> 127.0.0.1]
+2016-02-09 18:01:57,695 p=22102 u=root |  changed: [host3 -> 127.0.0.1]
+2016-02-09 18:01:57,698 p=22102 u=root |  changed: [host2 -> 127.0.0.1]
+2016-02-09 18:01:57,704 p=22102 u=root |  changed: [host1 -> 127.0.0.1]
+2016-02-09 18:01:57,719 p=22102 u=root |  TASK: [common | get compass-core addr] **************************************** 
+2016-02-09 18:01:57,954 p=22102 u=root |  changed: [host4]
+2016-02-09 18:01:57,958 p=22102 u=root |  changed: [host5]
+2016-02-09 18:01:58,148 p=22102 u=root |  changed: [host2]
+2016-02-09 18:01:58,154 p=22102 u=root |  changed: [host3]
+2016-02-09 18:01:58,157 p=22102 u=root |  changed: [host1]
+2016-02-09 18:01:58,176 p=22102 u=root |  TASK: [common | update compass-core name and ip to hosts files] *************** 
+2016-02-09 18:01:58,388 p=22102 u=root |  changed: [host4]
+2016-02-09 18:01:58,403 p=22102 u=root |  changed: [host1]
+2016-02-09 18:01:58,419 p=22102 u=root |  changed: [host5]
+2016-02-09 18:01:58,459 p=22102 u=root |  changed: [host3]
+2016-02-09 18:01:58,461 p=22102 u=root |  changed: [host2]
+2016-02-09 18:01:58,474 p=22102 u=root |  TASK: [common | install packages] ********************************************* 
+2016-02-09 18:01:58,785 p=22102 u=root |  failed: [host4] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+2016-02-09 18:01:58,785 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,785 root task_error: host=host4,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ubuntu-cloud-keyring state=latest update_cache=yes'}, 'item': 'ubuntu-cloud-keyring'}
+2016-02-09 18:01:58,786 root notify_host: host host4 with status failed is not supported
+2016-02-09 18:01:58,795 p=22102 u=root |  failed: [host5] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+2016-02-09 18:01:58,795 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,795 root task_error: host=host5,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ubuntu-cloud-keyring state=latest update_cache=yes'}, 'item': 'ubuntu-cloud-keyring'}
+2016-02-09 18:01:58,795 root notify_host: host host5 with status failed is not supported
+2016-02-09 18:01:58,807 p=22102 u=root |  failed: [host3] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+2016-02-09 18:01:58,808 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,808 root task_error: host=host3,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ubuntu-cloud-keyring state=latest update_cache=yes'}, 'item': 'ubuntu-cloud-keyring'}
+2016-02-09 18:01:58,808 root notify_host: host host3 with status failed is not supported
+2016-02-09 18:01:58,817 p=22102 u=root |  failed: [host1] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+2016-02-09 18:01:58,817 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,817 root task_error: host=host1,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ubuntu-cloud-keyring state=latest update_cache=yes'}, 'item': 'ubuntu-cloud-keyring'}
+2016-02-09 18:01:58,817 root notify_host: host host1 with status failed is not supported
+2016-02-09 18:01:58,841 p=22102 u=root |  failed: [host2] => (item=ubuntu-cloud-keyring) => {"failed": true, "item": "ubuntu-cloud-keyring"}
+2016-02-09 18:01:58,841 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,842 root task_error: host=host2,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ubuntu-cloud-keyring state=latest update_cache=yes'}, 'item': 'ubuntu-cloud-keyring'}
+2016-02-09 18:01:58,842 root notify_host: host host2 with status failed is not supported
+2016-02-09 18:01:58,963 p=22102 u=root |  failed: [host4] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+2016-02-09 18:01:58,964 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,964 root task_error: host=host4,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-datapath-dkms state=latest update_cache=yes'}, 'item': 'openvswitch-datapath-dkms'}
+2016-02-09 18:01:58,964 root notify_host: host host4 with status failed is not supported
+2016-02-09 18:01:58,980 p=22102 u=root |  failed: [host5] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+2016-02-09 18:01:58,980 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,980 root task_error: host=host5,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-datapath-dkms state=latest update_cache=yes'}, 'item': 'openvswitch-datapath-dkms'}
+2016-02-09 18:01:58,981 root notify_host: host host5 with status failed is not supported
+2016-02-09 18:01:58,988 p=22102 u=root |  failed: [host3] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+2016-02-09 18:01:58,988 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,988 root task_error: host=host3,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-datapath-dkms state=latest update_cache=yes'}, 'item': 'openvswitch-datapath-dkms'}
+2016-02-09 18:01:58,988 root notify_host: host host3 with status failed is not supported
+2016-02-09 18:01:58,998 p=22102 u=root |  failed: [host1] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+2016-02-09 18:01:58,999 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:58,999 root task_error: host=host1,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-datapath-dkms state=latest update_cache=yes'}, 'item': 'openvswitch-datapath-dkms'}
+2016-02-09 18:01:58,999 root notify_host: host host1 with status failed is not supported
+2016-02-09 18:01:59,012 p=22102 u=root |  failed: [host2] => (item=openvswitch-datapath-dkms) => {"failed": true, "item": "openvswitch-datapath-dkms"}
+2016-02-09 18:01:59,012 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,012 root task_error: host=host2,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-datapath-dkms state=latest update_cache=yes'}, 'item': 'openvswitch-datapath-dkms'}
+2016-02-09 18:01:59,012 root notify_host: host host2 with status failed is not supported
+2016-02-09 18:01:59,135 p=22102 u=root |  failed: [host4] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+2016-02-09 18:01:59,138 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,138 root task_error: host=host4,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-switch state=latest update_cache=yes'}, 'item': 'openvswitch-switch'}
+2016-02-09 18:01:59,138 root notify_host: host host4 with status failed is not supported
+2016-02-09 18:01:59,160 p=22102 u=root |  failed: [host5] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+2016-02-09 18:01:59,160 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,160 root task_error: host=host5,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-switch state=latest update_cache=yes'}, 'item': 'openvswitch-switch'}
+2016-02-09 18:01:59,160 root notify_host: host host5 with status failed is not supported
+2016-02-09 18:01:59,172 p=22102 u=root |  failed: [host3] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+2016-02-09 18:01:59,172 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,172 root task_error: host=host3,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-switch state=latest update_cache=yes'}, 'item': 'openvswitch-switch'}
+2016-02-09 18:01:59,172 root notify_host: host host3 with status failed is not supported
+2016-02-09 18:01:59,178 p=22102 u=root |  failed: [host1] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+2016-02-09 18:01:59,178 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,178 root task_error: host=host1,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-switch state=latest update_cache=yes'}, 'item': 'openvswitch-switch'}
+2016-02-09 18:01:59,178 root notify_host: host host1 with status failed is not supported
+2016-02-09 18:01:59,184 p=22102 u=root |  failed: [host2] => (item=openvswitch-switch) => {"failed": true, "item": "openvswitch-switch"}
+2016-02-09 18:01:59,185 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,185 root task_error: host=host2,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=openvswitch-switch state=latest update_cache=yes'}, 'item': 'openvswitch-switch'}
+2016-02-09 18:01:59,185 root notify_host: host host2 with status failed is not supported
+2016-02-09 18:01:59,322 p=22102 u=root |  failed: [host4] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+2016-02-09 18:01:59,323 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,323 root task_error: host=host4,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-memcache state=latest update_cache=yes'}, 'item': 'python-memcache'}
+2016-02-09 18:01:59,323 root notify_host: host host4 with status failed is not supported
+2016-02-09 18:01:59,339 p=22102 u=root |  failed: [host5] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+2016-02-09 18:01:59,340 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,340 root task_error: host=host5,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-memcache state=latest update_cache=yes'}, 'item': 'python-memcache'}
+2016-02-09 18:01:59,340 root notify_host: host host5 with status failed is not supported
+2016-02-09 18:01:59,351 p=22102 u=root |  failed: [host3] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+2016-02-09 18:01:59,352 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,352 root task_error: host=host3,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-memcache state=latest update_cache=yes'}, 'item': 'python-memcache'}
+2016-02-09 18:01:59,352 root notify_host: host host3 with status failed is not supported
+2016-02-09 18:01:59,356 p=22102 u=root |  failed: [host1] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+2016-02-09 18:01:59,356 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,356 root task_error: host=host1,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-memcache state=latest update_cache=yes'}, 'item': 'python-memcache'}
+2016-02-09 18:01:59,356 root notify_host: host host1 with status failed is not supported
+2016-02-09 18:01:59,369 p=22102 u=root |  failed: [host2] => (item=python-memcache) => {"failed": true, "item": "python-memcache"}
+2016-02-09 18:01:59,369 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,369 root task_error: host=host2,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-memcache state=latest update_cache=yes'}, 'item': 'python-memcache'}
+2016-02-09 18:01:59,369 root notify_host: host host2 with status failed is not supported
+2016-02-09 18:01:59,500 p=22102 u=root |  failed: [host4] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+2016-02-09 18:01:59,500 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,500 root task_error: host=host4,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-iniparse state=latest update_cache=yes'}, 'item': 'python-iniparse'}
+2016-02-09 18:01:59,500 root notify_host: host host4 with status failed is not supported
+2016-02-09 18:01:59,512 p=22102 u=root |  failed: [host5] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+2016-02-09 18:01:59,512 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,512 root task_error: host=host5,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-iniparse state=latest update_cache=yes'}, 'item': 'python-iniparse'}
+2016-02-09 18:01:59,513 root notify_host: host host5 with status failed is not supported
+2016-02-09 18:01:59,526 p=22102 u=root |  failed: [host3] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+2016-02-09 18:01:59,526 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,526 root task_error: host=host3,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-iniparse state=latest update_cache=yes'}, 'item': 'python-iniparse'}
+2016-02-09 18:01:59,526 root notify_host: host host3 with status failed is not supported
+2016-02-09 18:01:59,533 p=22102 u=root |  failed: [host1] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+2016-02-09 18:01:59,533 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,533 root task_error: host=host1,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-iniparse state=latest update_cache=yes'}, 'item': 'python-iniparse'}
+2016-02-09 18:01:59,533 root notify_host: host host1 with status failed is not supported
+2016-02-09 18:01:59,543 p=22102 u=root |  failed: [host2] => (item=python-iniparse) => {"failed": true, "item": "python-iniparse"}
+2016-02-09 18:01:59,544 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,544 root task_error: host=host2,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-iniparse state=latest update_cache=yes'}, 'item': 'python-iniparse'}
+2016-02-09 18:01:59,544 root notify_host: host host2 with status failed is not supported
+2016-02-09 18:01:59,679 p=22102 u=root |  failed: [host4] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+2016-02-09 18:01:59,680 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,681 root task_error: host=host4,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-d* state=latest update_cache=yes'}, 'item': 'python-d*'}
+2016-02-09 18:01:59,681 root notify_host: host host4 with status failed is not supported
+2016-02-09 18:01:59,703 p=22102 u=root |  failed: [host5] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+2016-02-09 18:01:59,703 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,704 root task_error: host=host5,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-d* state=latest update_cache=yes'}, 'item': 'python-d*'}
+2016-02-09 18:01:59,704 root notify_host: host host5 with status failed is not supported
+2016-02-09 18:01:59,707 p=22102 u=root |  failed: [host1] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+2016-02-09 18:01:59,707 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,708 root task_error: host=host1,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-d* state=latest update_cache=yes'}, 'item': 'python-d*'}
+2016-02-09 18:01:59,708 root notify_host: host host1 with status failed is not supported
+2016-02-09 18:01:59,720 p=22102 u=root |  failed: [host3] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+2016-02-09 18:01:59,721 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,721 root task_error: host=host3,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-d* state=latest update_cache=yes'}, 'item': 'python-d*'}
+2016-02-09 18:01:59,721 root notify_host: host host3 with status failed is not supported
+2016-02-09 18:01:59,721 p=22102 u=root |  failed: [host2] => (item=python-d*) => {"failed": true, "item": "python-d*"}
+2016-02-09 18:01:59,722 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,722 root task_error: host=host2,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-d* state=latest update_cache=yes'}, 'item': 'python-d*'}
+2016-02-09 18:01:59,722 root notify_host: host host2 with status failed is not supported
+2016-02-09 18:01:59,889 p=22102 u=root |  failed: [host4] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+2016-02-09 18:01:59,890 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,890 p=22102 u=root |  failed: [host1] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+2016-02-09 18:01:59,890 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,891 root task_error: host=host1,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-pip state=latest update_cache=yes'}, 'item': 'python-pip'}
+2016-02-09 18:01:59,891 root task_error: host=host4,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-pip state=latest update_cache=yes'}, 'item': 'python-pip'}
+2016-02-09 18:01:59,891 root notify_host: host host1 with status failed is not supported
+2016-02-09 18:01:59,891 root notify_host: host host4 with status failed is not supported
+2016-02-09 18:01:59,908 p=22102 u=root |  failed: [host3] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+2016-02-09 18:01:59,908 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,908 root task_error: host=host3,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-pip state=latest update_cache=yes'}, 'item': 'python-pip'}
+2016-02-09 18:01:59,909 root notify_host: host host3 with status failed is not supported
+2016-02-09 18:01:59,908 p=22102 u=root |  failed: [host2] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+2016-02-09 18:01:59,909 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,909 root task_error: host=host2,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-pip state=latest update_cache=yes'}, 'item': 'python-pip'}
+2016-02-09 18:01:59,909 root notify_host: host host2 with status failed is not supported
+2016-02-09 18:01:59,915 p=22102 u=root |  failed: [host5] => (item=python-pip) => {"failed": true, "item": "python-pip"}
+2016-02-09 18:01:59,915 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:01:59,915 root task_error: host=host5,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=python-pip state=latest update_cache=yes'}, 'item': 'python-pip'}
+2016-02-09 18:01:59,916 root notify_host: host host5 with status failed is not supported
+2016-02-09 18:02:00,086 p=22102 u=root |  failed: [host3] => (item=ntp) => {"failed": true, "item": "ntp"}
+2016-02-09 18:02:00,086 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:02:00,086 root task_error: host=host3,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ntp state=latest update_cache=yes'}, 'item': 'ntp'}
+2016-02-09 18:02:00,086 root notify_host: host host3 with status failed is not supported
+2016-02-09 18:02:00,086 p=22102 u=root |  failed: [host4] => (item=ntp) => {"failed": true, "item": "ntp"}
+2016-02-09 18:02:00,086 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:02:00,087 root task_error: host=host4,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ntp state=latest update_cache=yes'}, 'item': 'ntp'}
+2016-02-09 18:02:00,087 root notify_host: host host4 with status failed is not supported
+2016-02-09 18:02:00,087 p=22102 u=root |  failed: [host1] => (item=ntp) => {"failed": true, "item": "ntp"}
+2016-02-09 18:02:00,087 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:02:00,088 root task_error: host=host1,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ntp state=latest update_cache=yes'}, 'item': 'ntp'}
+2016-02-09 18:02:00,088 root notify_host: host host1 with status failed is not supported
+2016-02-09 18:02:00,093 p=22102 u=root |  failed: [host5] => (item=ntp) => {"failed": true, "item": "ntp"}
+2016-02-09 18:02:00,094 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:02:00,094 root task_error: host=host5,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ntp state=latest update_cache=yes'}, 'item': 'ntp'}
+2016-02-09 18:02:00,094 root notify_host: host host5 with status failed is not supported
+2016-02-09 18:02:00,097 p=22102 u=root |  failed: [host2] => (item=ntp) => {"failed": true, "item": "ntp"}
+2016-02-09 18:02:00,098 p=22102 u=root |  msg: Could not fetch updated apt files
+2016-02-09 18:02:00,098 root task_error: host=host2,data={'msg': 'Could not fetch updated apt files', 'failed': True, 'invocation': {'module_name': u'apt', 'module_args': u'name=ntp state=latest update_cache=yes'}, 'item': 'ntp'}
+2016-02-09 18:02:00,098 root notify_host: host host2 with status failed is not supported
+2016-02-09 18:02:00,116 p=22102 u=root |  FATAL: all hosts have already failed -- aborting
+2016-02-09 18:02:00,116 p=22102 u=root |  PLAY RECAP ******************************************************************** 
+2016-02-09 18:02:00,117 root playbook_on_stats enter
+2016-02-09 18:02:00,340 root host=localhost,url=/api/clusterhosts/1/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$iStpNo2b$QLCivWKGBWgAsYvr3k4Pw/'}
+2016-02-09 18:02:00,612 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-09 17:39:16",
+    "updated_at": "2016-02-09 18:02:00",
+    "id": 1,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-09 18:02:00,834 root host=localhost,url=/api/clusterhosts/2/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$5kX/ozvU$vcPAJcQ2nkd5cPkG8Py1o/'}
+2016-02-09 18:02:01,217 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-09 17:39:17",
+    "updated_at": "2016-02-09 18:02:00",
+    "id": 2,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-09 18:02:01,400 root host=localhost,url=/api/clusterhosts/3/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$cuX.laO/$waqYqAY/5wQ7RLy2ATiIo1'}
+2016-02-09 18:02:01,549 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-09 17:39:17",
+    "updated_at": "2016-02-09 18:02:01",
+    "id": 3,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-09 18:02:01,667 root host=localhost,url=/api/clusterhosts/4/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$BwtXVvyU$42QgsvfaaNKwXgBkCR6m..'}
+2016-02-09 18:02:01,779 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-09 17:39:17",
+    "updated_at": "2016-02-09 18:02:01",
+    "id": 4,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-09 18:02:01,886 root host=localhost,url=/api/clusterhosts/5/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$BthF07jK$fINxMd3gdUhDzc4dHr6/c.'}
+2016-02-09 18:02:01,997 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-09 17:39:17",
+    "updated_at": "2016-02-09 18:02:01",
+    "id": 5,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-09 18:02:01,999 p=22102 u=root |             to retry, use: --limit @/root/HA-ansible-multinodes.retry
+
+2016-02-09 18:02:01,999 p=22102 u=root |  host1                      : ok=12   changed=9    unreachable=0    failed=1   
+2016-02-09 18:02:01,999 p=22102 u=root |  host2                      : ok=12   changed=9    unreachable=0    failed=1   
+2016-02-09 18:02:02,000 p=22102 u=root |  host3                      : ok=12   changed=9    unreachable=0    failed=1   
+2016-02-09 18:02:02,000 p=22102 u=root |  host4                      : ok=12   changed=9    unreachable=0    failed=1   
+2016-02-09 18:02:02,000 p=22102 u=root |  host5                      : ok=12   changed=9    unreachable=0    failed=1   
+INFO:__main__:current_time=1455069723.15, deployment_timeout=1455077361.44
+INFO:__main__:current_time=1455069728.54, deployment_timeout=1455077361.44
+Traceback (most recent call last):
+  File "/home/onos/compass4nfv/deploy/client.py", line 961, in <module>
+    main()
+  File "/home/onos/compass4nfv/deploy/client.py", line 956, in main
+    deploy()
+  File "/home/onos/compass4nfv/deploy/client.py", line 939, in deploy
+    client.get_installing_progress(cluster_id)
+  File "/home/onos/compass4nfv/deploy/client.py", line 882, in get_installing_progress
+    _get_installing_progress()
+  File "/home/onos/compass4nfv/deploy/client.py", line 871, in _get_installing_progress
+    (cluster_id, status, cluster_state)
+RuntimeError: ('get cluster %s state status %s: %s, error', (1, 200, {u'status': {u'completed_hosts': 0, u'total_hosts': 5, u'installing_hosts': 0, u'failed_hosts': 5}, u'severity': u'ERROR', u'created_at': u'2016-02-09 17:39:16', u'message': u'total 5, installing 0, completed: 0, error 5', u'updated_at': u'2016-02-09 18:02:12', u'state': u'ERROR', u'ready': False, u'percentage': 0.0, u'id': 1}))
++ RET=1
++ sleep 25
++ exit 1

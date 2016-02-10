@@ -1,0 +1,11 @@
+---
+packages:
+  - openstack-glance
+
+nfs_services:
+  - rpcbind
+  - rpc-statd
+
+services:
+  - openstack-glance-api
+  - openstack-glance-registry

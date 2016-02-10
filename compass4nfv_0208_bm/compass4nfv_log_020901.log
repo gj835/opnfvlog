@@ -1,0 +1,1682 @@
+onos@jumpserver:~/compass4nfv$ export INSTALL_NIC=eth1
+onos@jumpserver:~/compass4nfv$ export OS_VERSION=trusty
+onos@jumpserver:~/compass4nfv$ export OPENSTACK_VERSION=liberty
+onos@jumpserver:~/compass4nfv$ export ISO_URL=file:///home/onos/opnfv-2016-02-08_14-01-04.iso
+onos@jumpserver:~/compass4nfv$ ./deploy.sh --dha os-onos-nofeature-ha.yml --network network.yml
+[sudo] password for onos: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python-pip is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 96 not upgraded.
+Requirement already up-to-date: virtualenv in /usr/local/lib/python2.7/dist-packages
+Cleaning up...
+New python executable in /home/onos/compass4nfv/work/deploy/venv/bin/python
+Installing setuptools, pip, wheel...done.
+Requirement already up-to-date: pip in ./work/deploy/venv/lib/python2.7/site-packages
+Collecting cheetah
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:315: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning.
+  SNIMissingWarning
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:120: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+Collecting Markdown>=2.0.1 (from cheetah)
+Installing collected packages: Markdown, cheetah
+Successfully installed Markdown-2.6.5 cheetah-2.4.4
+Collecting pyyaml
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:315: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning.
+  SNIMissingWarning
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:120: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+Installing collected packages: pyyaml
+Successfully installed pyyaml-3.11
+Collecting requests
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:315: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning.
+  SNIMissingWarning
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:120: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+  Using cached requests-2.9.1-py2.py3-none-any.whl
+Installing collected packages: requests
+Successfully installed requests-2.9.1
+Collecting netaddr
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:315: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning.
+  SNIMissingWarning
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:120: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+  Using cached netaddr-0.7.18-py2.py3-none-any.whl
+Installing collected packages: netaddr
+Successfully installed netaddr-0.7.18
+Collecting oslo.config
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:315: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning.
+  SNIMissingWarning
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:120: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+  Using cached oslo.config-3.5.0-py2.py3-none-any.whl
+Collecting stevedore>=1.5.0 (from oslo.config)
+  Using cached stevedore-1.10.0-py2.py3-none-any.whl
+Requirement already up-to-date: netaddr!=0.7.16,>=0.7.12 in ./work/deploy/venv/lib/python2.7/site-packages (from oslo.config)
+Collecting six>=1.9.0 (from oslo.config)
+  Using cached six-1.10.0-py2.py3-none-any.whl
+Collecting pbr>=1.6 (from stevedore>=1.5.0->oslo.config)
+  Using cached pbr-1.8.1-py2.py3-none-any.whl
+Collecting argparse (from stevedore>=1.5.0->oslo.config)
+  Using cached argparse-1.4.0-py2.py3-none-any.whl
+Installing collected packages: pbr, argparse, six, stevedore, oslo.config
+  Found existing installation: argparse 1.2.1
+    Not uninstalling argparse at /usr/lib/python2.7, outside environment /home/onos/compass4nfv/work/deploy/venv
+Successfully installed argparse-1.2.1 oslo.config-3.5.0 pbr-1.8.1 six-1.10.0 stevedore-1.10.0
+Collecting ansible==1.9.4
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:315: SNIMissingWarning: An HTTPS request has been made, but the SNI (Subject Name Indication) extension to TLS is not available on this platform. This may cause the server to present an incorrect TLS certificate, which can cause validation failures. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#snimissingwarning.
+  SNIMissingWarning
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:120: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+Collecting paramiko (from ansible==1.9.4)
+  Using cached paramiko-1.16.0-py2.py3-none-any.whl
+Requirement already up-to-date: setuptools in ./work/deploy/venv/lib/python2.7/site-packages (from ansible==1.9.4)
+Requirement already up-to-date: PyYAML in ./work/deploy/venv/lib/python2.7/site-packages (from ansible==1.9.4)
+Collecting pycrypto>=2.6 (from ansible==1.9.4)
+Collecting jinja2 (from ansible==1.9.4)
+  Using cached Jinja2-2.8-py2.py3-none-any.whl
+Collecting ecdsa>=0.11 (from paramiko->ansible==1.9.4)
+  Using cached ecdsa-0.13-py2.py3-none-any.whl
+Collecting MarkupSafe (from jinja2->ansible==1.9.4)
+Installing collected packages: ecdsa, pycrypto, paramiko, MarkupSafe, jinja2, ansible
+Successfully installed MarkupSafe-0.23 ansible-1.9.4 ecdsa-0.13 jinja2-2.8 paramiko-1.16.0 pycrypto-2.6.1
+++ process_input_para --dha os-onos-nofeature-ha.yml --network network.yml
++++ generate_input_env_file --dha os-onos-nofeature-ha.yml --network network.yml
++++ ofile=/home/onos/compass4nfv/work/deploy/script/deploy_input.sh
++++ echo '#input deployment  parameter'
+++++ ls /home/onos/compass4nfv/deploy/conf/base.conf /home/onos/compass4nfv/deploy/conf/_.conf /home/onos/compass4nfv/deploy/conf/.conf /home/onos/compass4nfv/deploy/conf/.conf /home/onos/compass4nfv/deploy/conf/compass.conf
++++ cfg_file='/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf'
+++++ get_option_name_list '/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf'
++++++ echo '/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf'
++++++ xargs -n 1 grep -oP 'export .*?='
++++++ awk '{print $2}'
++++++ sort
++++++ uniq
++++++ sed -e 's/=$//g'
+++++ echo CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OS_CONFIG_FILENAME PACKAGE_CONFIG_FILENAME PARTITIONS PROXY SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS TIMEZONE
++++ option_name='CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OS_CONFIG_FILENAME PACKAGE_CONFIG_FILENAME PARTITIONS PROXY SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS TIMEZONE'
+++++ get_option_flag_list 'CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OS_CONFIG_FILENAME PACKAGE_CONFIG_FILENAME PARTITIONS PROXY SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS TIMEZONE'
++++++ echo 'CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OS_CONFIG_FILENAME PACKAGE_CONFIG_FILENAME PARTITIONS PROXY SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS TIMEZONE'
++++++ xargs
++++++ tr '[:upper:]' '[:lower:]'
++++++ sed -e 's/ /:,/g' -e s/_/-/g
+++++ echo cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,os-config-filename:,package-config-filename:,partitions:,proxy:,search-path:,server-credential:,service-credentials:,subnets:,timezone
++++ option_flag=cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,os-config-filename:,package-config-filename:,partitions:,proxy:,search-path:,server-credential:,service-credentials:,subnets:,timezone
+++++ getopt -o h -l dha:,network:,neutron:,conf-dir:,cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,os-config-filename:,package-config-filename:,partitions:,proxy:,search-path:,server-credential:,service-credentials:,subnets:,timezone -n deploy_parameter.sh -- --dha os-onos-nofeature-ha.yml --network network.yml
++++ TEMP=' --dha '\''os-onos-nofeature-ha.yml'\'' --network '\''network.yml'\'' --'
++++ '[' 0 '!=' 0 ']'
++++ eval set -- ' --dha '\''os-onos-nofeature-ha.yml'\'' --network '\''network.yml'\'' --'
+++++ set -- --dha os-onos-nofeature-ha.yml --network network.yml --
++++ :
++++ [[ --dha == \-\- ]]
+++++ echo dha
+++++ sed s/-/_/g
+++++ tr '[:lower:]' '[:upper:]'
++++ option=DHA
++++ echo 'export DHA=os-onos-nofeature-ha.yml'
++++ shift 2
++++ continue
++++ :
++++ [[ --network == \-\- ]]
+++++ echo network
+++++ sed s/-/_/g
+++++ tr '[:lower:]' '[:upper:]'
++++ option=NETWORK
++++ echo 'export NETWORK=network.yml'
++++ shift 2
++++ continue
++++ :
++++ [[ -- == \-\- ]]
++++ shift
++++ break
++++ echo /home/onos/compass4nfv/work/deploy/script/deploy_input.sh
+++ input_file=/home/onos/compass4nfv/work/deploy/script/deploy_input.sh
+++ echo /home/onos/compass4nfv/work/deploy/script/deploy_input.sh
++ source /home/onos/compass4nfv/work/deploy/script/deploy_input.sh
+++ export DHA=os-onos-nofeature-ha.yml
+++ DHA=os-onos-nofeature-ha.yml
+++ export NETWORK=network.yml
+++ NETWORK=network.yml
+++ process_default_para --dha os-onos-nofeature-ha.yml --network network.yml
+++ [[ -z '' ]]
+++ local set conf_dir=/home/onos/compass4nfv/deploy/conf
+++ get_conf_name --dha os-onos-nofeature-ha.yml --network network.yml
+++ [[ -n os-onos-nofeature-ha.yml ]]
+++ return
+++ python /home/onos/compass4nfv/deploy/config_parse.py os-onos-nofeature-ha.yml /home/onos/compass4nfv/deploy/conf /home/onos/compass4nfv/deploy/template /home/onos/compass4nfv/work/deploy/script deploy_config.sh
+/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/Cheetah/Compiler.py:1509: UserWarning: 
+You don't have the C version of NameMapper installed! I'm disabling Cheetah's useStackFrames option as it is painfully slow with the Python version of NameMapper. You should get a copy of Cheetah with the compiled C version of NameMapper.
+  "\nYou don't have the C version of NameMapper installed! "
+++ echo /home/onos/compass4nfv/work/deploy/script/deploy_config.sh
++ source /home/onos/compass4nfv/work/deploy/script/deploy_config.sh
+++ export ipmiUser=root
+++ ipmiUser=root
+++ export NETWORK=network.yml
+++ NETWORK=network.yml
+++ export HOST_MACS=7C:A2:3E:86:65:4E,7C:A2:3E:86:65:58,7C:A2:3E:86:65:38,7C:A2:3E:86:65:30,7C:A2:3E:86:65:46
+++ HOST_MACS=7C:A2:3E:86:65:4E,7C:A2:3E:86:65:58,7C:A2:3E:86:65:38,7C:A2:3E:86:65:30,7C:A2:3E:86:65:46
+++ export HOSTNAMES=host1,host2,host3,host4,host5
+++ HOSTNAMES=host1,host2,host3,host4,host5
+++ export POWER_TOOL=ipmitool
+++ POWER_TOOL=ipmitool
+++ export ipmiVer=2.0
+++ ipmiVer=2.0
+++ export FLAVOR=cluster
+++ FLAVOR=cluster
+++ export TYPE=baremetal
+++ TYPE=baremetal
+++ export 'HOST_ROLES=host1=controller,ha,onos;host2=controller,ha,onos;host3=controller,ha,onos;host4=compute;host5=compute'
+++ HOST_ROLES='host1=controller,ha,onos;host2=controller,ha,onos;host3=controller,ha,onos;host4=compute;host5=compute'
+++ export NEUTRON=/home/onos/compass4nfv/deploy/conf/neutron_cfg.yaml
+++ NEUTRON=/home/onos/compass4nfv/deploy/conf/neutron_cfg.yaml
+++ export POWER_MANAGE=/home/onos/compass4nfv/work/deploy/script/ipmitool.sh
+++ POWER_MANAGE=/home/onos/compass4nfv/work/deploy/script/ipmitool.sh
++ source /home/onos/compass4nfv/deploy/conf/cluster.conf
+++ export 'ADAPTER_OS_PATTERN=(?i)ubuntu-14\.04\.3.*'
+++ ADAPTER_OS_PATTERN='(?i)ubuntu-14\.04\.3.*'
+++ export OS_VERSION=trusty
+++ OS_VERSION=trusty
+++ export OPENSTACK_VERSION=liberty
+++ OPENSTACK_VERSION=liberty
+++ export 'ADAPTER_TARGET_SYSTEM_PATTERN=^openstack$'
+++ ADAPTER_TARGET_SYSTEM_PATTERN='^openstack$'
+++ export REPO_NAME=trusty-liberty-ppa
+++ REPO_NAME=trusty-liberty-ppa
+++ export ADAPTER_NAME=openstack_liberty
+++ ADAPTER_NAME=openstack_liberty
+++ export ADAPTER_FLAVOR_PATTERN=HA-ansible-multinodes-liberty
+++ ADAPTER_FLAVOR_PATTERN=HA-ansible-multinodes-liberty
+++ export DEFAULT_ROLES=
+++ DEFAULT_ROLES=
+++ export VIP=10.1.0.222
+++ VIP=10.1.0.222
++ source /home/onos/compass4nfv/deploy/conf/baremetal.conf
+++ export SWITCH_IPS=10.145.88.4
+++ SWITCH_IPS=10.145.88.4
+++ export SWITCH_CREDENTIAL=version=2c,community=public
+++ SWITCH_CREDENTIAL=version=2c,community=public
+++ export DEPLOYMENT_TIMEOUT=150
+++ DEPLOYMENT_TIMEOUT=150
+++ export POLL_SWITCHES_FLAG=nopoll_switches
+++ POLL_SWITCHES_FLAG=nopoll_switches
+++ export INSTALL_NIC=eth1
+++ INSTALL_NIC=eth1
++ source /home/onos/compass4nfv/deploy/conf/base.conf
+++ export ISO_URL=file:///home/onos/opnfv-2016-02-08_14-01-04.iso
+++ ISO_URL=file:///home/onos/opnfv-2016-02-08_14-01-04.iso
+++ export INSTALL_IP=10.1.0.12
+++ INSTALL_IP=10.1.0.12
+++ export INSTALL_MASK=255.255.255.0
+++ INSTALL_MASK=255.255.255.0
+++ export INSTALL_GW=10.1.0.1
+++ INSTALL_GW=10.1.0.1
+++ export INSTALL_IP_START=10.1.0.1
+++ INSTALL_IP_START=10.1.0.1
+++ export INSTALL_IP_END=10.1.0.254
+++ INSTALL_IP_END=10.1.0.254
+++ export MGMT_IP=192.168.200.2
+++ MGMT_IP=192.168.200.2
+++ export MGMT_MASK=255.255.252.0
+++ MGMT_MASK=255.255.252.0
+++ export MGMT_GW=192.168.200.1
+++ MGMT_GW=192.168.200.1
+++ export MGMT_IP_START=192.168.200.3
+++ MGMT_IP_START=192.168.200.3
+++ export MGMT_IP_END=192.168.200.254
+++ MGMT_IP_END=192.168.200.254
+++ export EXTERNAL_NIC=eth0
+++ EXTERNAL_NIC=eth0
+++ export CLUSTER_NAME=opnfv2
+++ CLUSTER_NAME=opnfv2
+++ export DOMAIN=ods.com
+++ DOMAIN=ods.com
+++ export PARTITIONS=/=30%,/home=5%,/tmp=5%,/var=60%
+++ PARTITIONS=/=30%,/home=5%,/tmp=5%,/var=60%
+++ export SUBNETS=10.1.0.0/24,172.16.2.0/24,172.16.3.0/24,172.16.4.0/24
+++ SUBNETS=10.1.0.0/24,172.16.2.0/24,172.16.3.0/24,172.16.4.0/24
+++ export MANAGEMENT_IP_START=10.1.0.50
+++ MANAGEMENT_IP_START=10.1.0.50
+++ export MANAGEMENT_INTERFACE=eth0
+++ MANAGEMENT_INTERFACE=eth0
+++ export DASHBOARD_URL=
+++ DASHBOARD_URL=
+++ export ENABLE_SECGROUP=true
+++ ENABLE_SECGROUP=true
+++ export ENABLE_VPNAAS=false
+++ ENABLE_VPNAAS=false
+++ export ENABLE_FWAAS=false
+++ ENABLE_FWAAS=false
+++ '[' -z '' ']'
+++ IFS=,
+++ read -a HOSTNAME_LIST
+++ MANAGE_IP=10.1.0.50
+++ TENANT_IP=
+++ PUBLIC_IP=
+++ STORAGE_IP=
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z '' ']'
+++ HOST_NETWORKS='host1:eth0=10.1.0.50|is_mgmt'
++++ next_ip 10.1.0.50
++++ ip_addr=10.1.0.50
+++++ echo 10.1.0.50
+++++ cut -d. '-f1 2 3'
++++ ip_base=10.1.0
+++++ echo 10.1.0.50
+++++ cut -d. -f4
++++ ip_last=50
++++ let ip_last_next=50+1
++++ echo 10.1.0.51
+++ MANAGE_IP=10.1.0.51
++++ next_ip
++++ ip_addr=
+++++ echo
+++++ cut -d. '-f1 2 3'
++++ ip_base=
+++++ echo
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1
+++ TENANT_IP=.1
++++ next_ip
++++ ip_addr=
+++++ echo
+++++ cut -d. '-f1 2 3'
++++ ip_base=
+++++ echo
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1
+++ PUBLIC_IP=.1
++++ next_ip
++++ ip_addr=
+++++ echo
+++++ cut -d. '-f1 2 3'
++++ ip_base=
+++++ echo
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1
+++ STORAGE_IP=.1
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z 'host1:eth0=10.1.0.50|is_mgmt' ']'
+++ HOST_NETWORKS='host1:eth0=10.1.0.50|is_mgmt;host2:eth0=10.1.0.51|is_mgmt'
++++ next_ip 10.1.0.51
++++ ip_addr=10.1.0.51
+++++ echo 10.1.0.51
+++++ cut -d. '-f1 2 3'
++++ ip_base=10.1.0
+++++ echo 10.1.0.51
+++++ cut -d. -f4
++++ ip_last=51
++++ let ip_last_next=51+1
++++ echo 10.1.0.52
+++ MANAGE_IP=10.1.0.52
++++ next_ip .1
++++ ip_addr=.1
+++++ echo .1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1
+++++ echo .1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1
+++ TENANT_IP=.1.1
++++ next_ip .1
++++ ip_addr=.1
+++++ echo .1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1
+++++ echo .1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1
+++ PUBLIC_IP=.1.1
++++ next_ip .1
++++ ip_addr=.1
+++++ echo .1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1
+++++ echo .1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1
+++ STORAGE_IP=.1.1
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z 'host1:eth0=10.1.0.50|is_mgmt;host2:eth0=10.1.0.51|is_mgmt' ']'
+++ HOST_NETWORKS='host1:eth0=10.1.0.50|is_mgmt;host2:eth0=10.1.0.51|is_mgmt;host3:eth0=10.1.0.52|is_mgmt'
++++ next_ip 10.1.0.52
++++ ip_addr=10.1.0.52
+++++ echo 10.1.0.52
+++++ cut -d. '-f1 2 3'
++++ ip_base=10.1.0
+++++ echo 10.1.0.52
+++++ cut -d. -f4
++++ ip_last=52
++++ let ip_last_next=52+1
++++ echo 10.1.0.53
+++ MANAGE_IP=10.1.0.53
++++ next_ip .1.1
++++ ip_addr=.1.1
+++++ echo .1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1.1
+++ TENANT_IP=.1.1.1
++++ next_ip .1.1
++++ ip_addr=.1.1
+++++ echo .1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1.1
+++ PUBLIC_IP=.1.1.1
++++ next_ip .1.1
++++ ip_addr=.1.1
+++++ echo .1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1.1
+++ STORAGE_IP=.1.1.1
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z 'host1:eth0=10.1.0.50|is_mgmt;host2:eth0=10.1.0.51|is_mgmt;host3:eth0=10.1.0.52|is_mgmt' ']'
+++ HOST_NETWORKS='host1:eth0=10.1.0.50|is_mgmt;host2:eth0=10.1.0.51|is_mgmt;host3:eth0=10.1.0.52|is_mgmt;host4:eth0=10.1.0.53|is_mgmt'
++++ next_ip 10.1.0.53
++++ ip_addr=10.1.0.53
+++++ echo 10.1.0.53
+++++ cut -d. '-f1 2 3'
++++ ip_base=10.1.0
+++++ echo 10.1.0.53
+++++ cut -d. -f4
++++ ip_last=53
++++ let ip_last_next=53+1
++++ echo 10.1.0.54
+++ MANAGE_IP=10.1.0.54
++++ next_ip .1.1.1
++++ ip_addr=.1.1.1
+++++ echo .1.1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.1
+++++ cut -d. -f4
++++ ip_last=1
++++ let ip_last_next=1+1
++++ echo .1.1.2
+++ TENANT_IP=.1.1.2
++++ next_ip .1.1.1
++++ ip_addr=.1.1.1
+++++ echo .1.1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.1
+++++ cut -d. -f4
++++ ip_last=1
++++ let ip_last_next=1+1
++++ echo .1.1.2
+++ PUBLIC_IP=.1.1.2
++++ next_ip .1.1.1
++++ ip_addr=.1.1.1
+++++ echo .1.1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.1
+++++ cut -d. -f4
++++ ip_last=1
++++ let ip_last_next=1+1
++++ echo .1.1.2
+++ STORAGE_IP=.1.1.2
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z 'host1:eth0=10.1.0.50|is_mgmt;host2:eth0=10.1.0.51|is_mgmt;host3:eth0=10.1.0.52|is_mgmt;host4:eth0=10.1.0.53|is_mgmt' ']'
+++ HOST_NETWORKS='host1:eth0=10.1.0.50|is_mgmt;host2:eth0=10.1.0.51|is_mgmt;host3:eth0=10.1.0.52|is_mgmt;host4:eth0=10.1.0.53|is_mgmt;host5:eth0=10.1.0.54|is_mgmt'
++++ next_ip 10.1.0.54
++++ ip_addr=10.1.0.54
+++++ echo 10.1.0.54
+++++ cut -d. '-f1 2 3'
++++ ip_base=10.1.0
+++++ echo 10.1.0.54
+++++ cut -d. -f4
++++ ip_last=54
++++ let ip_last_next=54+1
++++ echo 10.1.0.55
+++ MANAGE_IP=10.1.0.55
++++ next_ip .1.1.2
++++ ip_addr=.1.1.2
+++++ cut -d. '-f1 2 3'
+++++ echo .1.1.2
++++ ip_base=.1.1
+++++ cut -d. -f4
+++++ echo .1.1.2
++++ ip_last=2
++++ let ip_last_next=2+1
++++ echo .1.1.3
+++ TENANT_IP=.1.1.3
++++ next_ip .1.1.2
++++ ip_addr=.1.1.2
+++++ echo .1.1.2
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.2
+++++ cut -d. -f4
++++ ip_last=2
++++ let ip_last_next=2+1
++++ echo .1.1.3
+++ PUBLIC_IP=.1.1.3
++++ next_ip .1.1.2
++++ ip_addr=.1.1.2
+++++ echo .1.1.2
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.2
+++++ cut -d. -f4
++++ ip_last=2
++++ let ip_last_next=2+1
++++ echo .1.1.3
+++ STORAGE_IP=.1.1.3
+++ export HOST_NETWORKS
+++ export NETWORK_MAPPING=install=eth0
+++ NETWORK_MAPPING=install=eth0
+++ export PROXY=
+++ PROXY=
+++ export IGNORE_PROXY=
+++ IGNORE_PROXY=
+++ export SEARCH_PATH=ods.com
+++ SEARCH_PATH=ods.com
+++ export GATEWAY=10.1.0.1
+++ GATEWAY=10.1.0.1
+++ export SERVER_CREDENTIAL=root=root
+++ SERVER_CREDENTIAL=root=root
+++ export LOCAL_REPO_URL=
+++ LOCAL_REPO_URL=
+++ export OS_CONFIG_FILENAME=
+++ OS_CONFIG_FILENAME=
+++ export SERVICE_CREDENTIALS=image:service=service,compute:service=service,dashboard:service=service,identity:service=service,image:service=service,metering:service=service,network:service=service,rabbitmq:service=service,volume:service=service,mysql:service=service,heat:heat=heat_db_secret
+++ SERVICE_CREDENTIALS=image:service=service,compute:service=service,dashboard:service=service,identity:service=service,image:service=service,metering:service=service,network:service=service,rabbitmq:service=service,volume:service=service,mysql:service=service,heat:heat=heat_db_secret
+++ export CONSOLE_CREDENTIALS=admin:console=console,demo:console=console,compute:console=console,dashboard:console=console,identity:console=console,image:console=console,metering:console=console,network:console=console,object-store:console=console,volume:console=console,heat:heat=heat_secret
+++ CONSOLE_CREDENTIALS=admin:console=console,demo:console=console,compute:console=console,dashboard:console=console,identity:console=console,image:console=console,metering:console=console,network:console=console,object-store:console=console,volume:console=console,heat:heat=heat_secret
+++ export PACKAGE_CONFIG_FILENAME=
+++ PACKAGE_CONFIG_FILENAME=
++ source /home/onos/compass4nfv/deploy/conf/compass.conf
+++ export COMPASS_VIRT_CPUS=4
+++ COMPASS_VIRT_CPUS=4
+++ export COMPASS_VIRT_MEM=4096
+++ COMPASS_VIRT_MEM=4096
+++ export COMPASS_SERVER=10.1.0.12
+++ COMPASS_SERVER=10.1.0.12
+++ export COMPASS_SERVER_URL=http://192.168.200.2/api
+++ COMPASS_SERVER_URL=http://192.168.200.2/api
+++ export HTTP_SERVER_URL=http://192.168.200.2/api
+++ HTTP_SERVER_URL=http://192.168.200.2/api
+++ export COMPASS_USER_EMAIL=admin@huawei.com
+++ COMPASS_USER_EMAIL=admin@huawei.com
+++ export COMPASS_USER_PASSWORD=admin
+++ COMPASS_USER_PASSWORD=admin
+++ export COMPASS_DNS1=8.8.8.8
+++ COMPASS_DNS1=8.8.8.8
+++ export COMPASS_DNS2=
+++ COMPASS_DNS2=
+++ export COMPASS_EXTERNAL_IP=
+++ COMPASS_EXTERNAL_IP=
+++ export COMPASS_EXTERNAL_MASK=
+++ COMPASS_EXTERNAL_MASK=
+++ export COMPASS_EXTERNAL_GW=
+++ COMPASS_EXTERNAL_GW=
+++ export LANGUAGE=EN
+++ LANGUAGE=EN
+++ export TIMEZONE=America/Los_Angeles
+++ TIMEZONE=America/Los_Angeles
+++ export NTP_SERVER=10.1.0.12
+++ NTP_SERVER=10.1.0.12
+++ export NAMESERVERS=10.1.0.12
+++ NAMESERVERS=10.1.0.12
++ source /home/onos/compass4nfv/deploy/network.sh
++ source /home/onos/compass4nfv/deploy/host_baremetal.sh
++ source /home/onos/compass4nfv/deploy/compass_vm.sh
+++ compass_vm_dir=/home/onos/compass4nfv/work/deploy/vm/compass
+++ rsa_file=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa
+++ ssh_args='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa'
++ source /home/onos/compass4nfv/deploy/deploy_host.sh
+++ rsa_file=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa
++ print_logo
++ apt --installed list
++ grep figlet
+figlet/trusty,now 2.2.5-2 amd64 [installed]
++ figlet -ctf slant Compass Installer
+                                      ______                                         ____           __        ____         
+                                     / ____/___  ____ ___  ____  ____ ___________   /  _/___  _____/ /_____ _/ / /__  _____
+                                    / /   / __ \/ __ `__ \/ __ \/ __ `/ ___/ ___/   / // __ \/ ___/ __/ __ `/ / / _ \/ ___/
+                                   / /___/ /_/ / / / / / / /_/ / /_/ (__  |__  )  _/ // / / (__  ) /_/ /_/ / / /  __/ /    
+                                   \____/\____/_/ /_/ /_/ .___/\__,_/____/____/  /___/_/ /_/____/\__/\__,_/_/_/\___/_/     
+                                                       /_/                                                                 
++ set +x
++ [[ ! -z '' ]]
++ log_info '########## get host mac begin #############'
++ echo -e '########## get host mac begin #############'
+########## get host mac begin #############
+++ get_host_macs
++++ echo 7C:A2:3E:86:65:4E,7C:A2:3E:86:65:58,7C:A2:3E:86:65:38,7C:A2:3E:86:65:30,7C:A2:3E:86:65:46
++++ sed -e 's/,/'\'','\''/g' -e 's/^/'\''/g' -e 's/$/'\''/g'
+++ machines=''\''7C:A2:3E:86:65:4E'\'','\''7C:A2:3E:86:65:58'\'','\''7C:A2:3E:86:65:38'\'','\''7C:A2:3E:86:65:30'\'','\''7C:A2:3E:86:65:46'\'''
+++ echo ''\''7C:A2:3E:86:65:4E'\'','\''7C:A2:3E:86:65:58'\'','\''7C:A2:3E:86:65:38'\'','\''7C:A2:3E:86:65:30'\'','\''7C:A2:3E:86:65:46'\'''
++ machines=''\''7C:A2:3E:86:65:4E'\'','\''7C:A2:3E:86:65:58'\'','\''7C:A2:3E:86:65:38'\'','\''7C:A2:3E:86:65:30'\'','\''7C:A2:3E:86:65:46'\'''
++ [[ -z '7C:A2:3E:86:65:4E','7C:A2:3E:86:65:58','7C:A2:3E:86:65:38','7C:A2:3E:86:65:30','7C:A2:3E:86:65:46' ]]
++ export machines
++ [[ true == \t\r\u\e ]]
++ prepare_env
++ export PYTHONPATH=/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages
++ PYTHONPATH=/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages
++ sudo apt-get update -y
+Ign http://us.archive.ubuntu.com trusty InRelease
+Get:1 http://us.archive.ubuntu.com trusty-updates InRelease [64.4 kB]
+Get:2 http://security.ubuntu.com trusty-security InRelease [64.4 kB]
+Get:3 http://us.archive.ubuntu.com trusty-backports InRelease [64.5 kB]        
+Get:4 http://security.ubuntu.com trusty-security/main Sources [102 kB]     
+Hit http://us.archive.ubuntu.com trusty Release.gpg    
+Get:5 http://us.archive.ubuntu.com trusty-updates/main Sources [250 kB]
+Get:6 http://security.ubuntu.com trusty-security/restricted Sources [4,035 B] 
+Get:7 http://security.ubuntu.com trusty-security/universe Sources [33.0 kB]  
+Get:8 http://us.archive.ubuntu.com trusty-updates/restricted Sources [5,359 B]
+Get:9 http://us.archive.ubuntu.com trusty-updates/universe Sources [148 kB]    
+Get:10 http://security.ubuntu.com trusty-security/multiverse Sources [2,350 B]
+Get:11 http://security.ubuntu.com trusty-security/main amd64 Packages [416 kB]
+Get:12 http://us.archive.ubuntu.com trusty-updates/multiverse Sources [5,151 B]
+Get:13 http://us.archive.ubuntu.com trusty-updates/main amd64 Packages [696 kB]
+Get:14 http://security.ubuntu.com trusty-security/restricted amd64 Packages [13.0 kB]
+Get:15 http://security.ubuntu.com trusty-security/universe amd64 Packages [123 kB]
+Get:16 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4,797 B]
+Get:17 http://security.ubuntu.com trusty-security/main i386 Packages [389 kB]  
+Get:18 http://us.archive.ubuntu.com trusty-updates/restricted amd64 Packages [15.9 kB]
+Get:19 http://us.archive.ubuntu.com trusty-updates/universe amd64 Packages [336 kB]
+Get:20 http://security.ubuntu.com trusty-security/restricted i386 Packages [12.7 kB]
+Get:21 http://security.ubuntu.com trusty-security/universe i386 Packages [123 kB]
+Get:22 http://us.archive.ubuntu.com trusty-updates/multiverse amd64 Packages [13.0 kB]
+Get:23 http://security.ubuntu.com trusty-security/multiverse i386 Packages [4,976 B]
+Hit http://security.ubuntu.com trusty-security/main Translation-en             
+Get:24 http://us.archive.ubuntu.com trusty-updates/main i386 Packages [671 kB] 
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en       
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en       
+Hit http://security.ubuntu.com trusty-security/universe Translation-en         
+Get:25 http://us.archive.ubuntu.com trusty-updates/restricted i386 Packages [15.6 kB]
+Get:26 http://us.archive.ubuntu.com trusty-updates/universe i386 Packages [337 kB]
+Get:27 http://us.archive.ubuntu.com trusty-updates/multiverse i386 Packages [13.2 kB]
+Hit http://us.archive.ubuntu.com trusty-updates/main Translation-en            
+Hit http://us.archive.ubuntu.com trusty-updates/multiverse Translation-en      
+Hit http://us.archive.ubuntu.com trusty-updates/restricted Translation-en      
+Hit http://us.archive.ubuntu.com trusty-updates/universe Translation-en        
+Get:28 http://us.archive.ubuntu.com trusty-backports/main Sources [8,236 B]    
+Get:29 http://us.archive.ubuntu.com trusty-backports/restricted Sources [28 B] 
+Get:30 http://us.archive.ubuntu.com trusty-backports/universe Sources [33.2 kB]
+Get:31 http://us.archive.ubuntu.com trusty-backports/multiverse Sources [1,898 B]
+Get:32 http://us.archive.ubuntu.com trusty-backports/main amd64 Packages [9,391 B]
+Get:33 http://us.archive.ubuntu.com trusty-backports/restricted amd64 Packages [28 B]
+Get:34 http://us.archive.ubuntu.com trusty-backports/universe amd64 Packages [39.8 kB]
+Get:35 http://us.archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1,571 B]
+Get:36 http://us.archive.ubuntu.com trusty-backports/main i386 Packages [9,442 B]
+Get:37 http://us.archive.ubuntu.com trusty-backports/restricted i386 Packages [28 B]
+Get:38 http://us.archive.ubuntu.com trusty-backports/universe i386 Packages [39.8 kB]
+Get:39 http://us.archive.ubuntu.com trusty-backports/multiverse i386 Packages [1,552 B]
+Hit http://us.archive.ubuntu.com trusty-backports/main Translation-en          
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Translation-en    
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Translation-en    
+Hit http://us.archive.ubuntu.com trusty-backports/universe Translation-en      
+Hit http://us.archive.ubuntu.com trusty Release                                
+Hit http://us.archive.ubuntu.com trusty/main Sources                           
+Hit http://us.archive.ubuntu.com trusty/restricted Sources                     
+Hit http://us.archive.ubuntu.com trusty/universe Sources                       
+Hit http://us.archive.ubuntu.com trusty/multiverse Sources                     
+Hit http://us.archive.ubuntu.com trusty/main amd64 Packages                    
+Hit http://us.archive.ubuntu.com trusty/restricted amd64 Packages              
+Hit http://us.archive.ubuntu.com trusty/universe amd64 Packages                
+Hit http://us.archive.ubuntu.com trusty/multiverse amd64 Packages              
+Hit http://us.archive.ubuntu.com trusty/main i386 Packages                     
+Hit http://us.archive.ubuntu.com trusty/restricted i386 Packages               
+Hit http://us.archive.ubuntu.com trusty/universe i386 Packages                 
+Hit http://us.archive.ubuntu.com trusty/multiverse i386 Packages               
+Hit http://us.archive.ubuntu.com trusty/main Translation-en                    
+Hit http://us.archive.ubuntu.com trusty/multiverse Translation-en              
+Hit http://us.archive.ubuntu.com trusty/restricted Translation-en              
+Hit http://us.archive.ubuntu.com trusty/universe Translation-en                
+Ign http://us.archive.ubuntu.com trusty/main Translation-en_US                 
+Ign http://us.archive.ubuntu.com trusty/main Translation-EN                    
+Ign http://us.archive.ubuntu.com trusty/multiverse Translation-en_US           
+Ign http://us.archive.ubuntu.com trusty/multiverse Translation-EN              
+Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US           
+Ign http://us.archive.ubuntu.com trusty/restricted Translation-EN              
+Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US             
+Ign http://us.archive.ubuntu.com trusty/universe Translation-EN                
+Fetched 4,073 kB in 18s (224 kB/s)                                             
+Reading package lists... Done
++ sudo apt-get install -y --force-yes mkisofs bc curl ipmitool openvswitch-switch
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'genisoimage' instead of 'mkisofs'
+bc is already the newest version.
+genisoimage is already the newest version.
+curl is already the newest version.
+openvswitch-switch is already the newest version.
+ipmitool is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 96 not upgraded.
++ sudo apt-get install -y --force-yes git python-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python-dev is already the newest version.
+git is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 96 not upgraded.
++ sudo apt-get install -y --force-yes libxslt-dev libxml2-dev libvirt-dev build-essential qemu-utils qemu-kvm libvirt-bin virtinst libmysqld-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'libxslt1-dev' instead of 'libxslt-dev'
+build-essential is already the newest version.
+libxslt1-dev is already the newest version.
+virtinst is already the newest version.
+libmysqld-dev is already the newest version.
+libvirt-bin is already the newest version.
+libvirt-dev is already the newest version.
+libxml2-dev is already the newest version.
+qemu-kvm is already the newest version.
+qemu-utils is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 96 not upgraded.
++ sudo service libvirt-bin restart
+libvirt-bin stop/waiting
+libvirt-bin start/running, process 39970
++ sudo service openvswitch-switch status
++ grep stop
++ rm -rf /home/onos/compass4nfv/work/deploy/installer /home/onos/compass4nfv/work/deploy/vm /home/onos/compass4nfv/work/deploy/network /home/onos/compass4nfv/work/deploy/iso
++ mkdir -p /home/onos/compass4nfv/work/deploy/installer
++ mkdir -p /home/onos/compass4nfv/work/deploy/vm
++ mkdir -p /home/onos/compass4nfv/work/deploy/network
++ mkdir -p /home/onos/compass4nfv/work/deploy/iso
++ mkdir -p /home/onos/compass4nfv/work/deploy/cache
++ download_iso
+++ basename file:///home/onos/opnfv-2016-02-08_14-01-04.iso
++ iso_name=opnfv-2016-02-08_14-01-04.iso
++ rm -f /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-02-08_14-01-04.iso.md5
++ curl --connect-timeout 10 -o /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-02-08_14-01-04.iso.md5 file:///home/onos/opnfv-2016-02-08_14-01-04.iso.md5
+curl: (37) Couldn't open file /home/onos/opnfv-2016-02-08_14-01-04.iso.md5
++ [[ -f /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-02-08_14-01-04.iso ]]
+++ md5sum /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-02-08_14-01-04.iso
+++ cut -d ' ' -f 1
++ local_md5=cbc62cea80b269a409768a8bbe09ccd2
+++ cat /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-02-08_14-01-04.iso.md5
+++ cut -d ' ' -f 1
+cat: /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-02-08_14-01-04.iso.md5: No such file or directory
++ repo_md5=
++ [[ cbc62cea80b269a409768a8bbe09ccd2 == '' ]]
++ curl --connect-timeout 10 -o /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-02-08_14-01-04.iso file:///home/onos/opnfv-2016-02-08_14-01-04.iso
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 3871M  100 3871M    0     0   752M      0  0:00:05  0:00:05 --:--:--  842M
+++ basename file:///home/onos/opnfv-2016-02-08_14-01-04.iso
++ cp /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-02-08_14-01-04.iso /home/onos/compass4nfv/work/deploy/iso/centos.iso -f
++ mkdir -p /home/onos/compass4nfv/work/deploy/mnt
++ sudo mount -o loop /home/onos/compass4nfv/work/deploy/iso/centos.iso /home/onos/compass4nfv/work/deploy/mnt
+mount: block device /home/onos/compass4nfv/work/deploy/iso/centos.iso is write-protected, mounting read-only
++ cp -rf /home/onos/compass4nfv/work/deploy/mnt/compass/compass-core /home/onos/compass4nfv/work/deploy/installer/
++ cp -rf /home/onos/compass4nfv/work/deploy/mnt/compass/compass-install /home/onos/compass4nfv/work/deploy/installer/
++ sudo umount /home/onos/compass4nfv/work/deploy/mnt
++ rm -rf /home/onos/compass4nfv/work/deploy/mnt
++ chmod 755 /home/onos/compass4nfv/work/deploy -R
++ sudo cp /home/onos/compass4nfv/deploy/qemu_hook.sh /etc/libvirt/hooks/qemu
++ log_info '########## set up network begin #############'
++ echo -e '########## set up network begin #############'
+########## set up network begin #############
++ create_nets
++ setup_nat_net mgmt 192.168.200.1 255.255.252.0 192.168.200.3 192.168.200.254
++ net_name=mgmt
++ gw=192.168.200.1
++ mask=255.255.252.0
++ ip_start=192.168.200.3
++ ip_end=192.168.200.254
++ sudo virsh net-destroy mgmt
+Network mgmt destroyed
+
++ sudo virsh net-undefine mgmt
+Network mgmt has been undefined
+
++ sed -e s/REPLACE_BRIDGE/br_mgmt/g -e s/REPLACE_NAME/mgmt/g -e s/REPLACE_GATEWAY/192.168.200.1/g -e s/REPLACE_MASK/255.255.252.0/g -e s/REPLACE_START/192.168.200.3/g -e s/REPLACE_END/192.168.200.254/g /home/onos/compass4nfv/deploy/template/network/nat.xml
++ sudo virsh net-define /home/onos/compass4nfv/work/deploy/network/mgmt.xml
+Network mgmt defined from /home/onos/compass4nfv/work/deploy/network/mgmt.xml
+
++ sudo virsh net-start mgmt
+Network mgmt started
+
++ [[ -n eth1 ]]
++ setup_bridge_net install eth1
++ net_name=install
++ nic=eth1
++ sudo virsh net-destroy install
+error: Failed to destroy network install
+error: Requested operation is not valid: network is not active
+
++ sudo virsh net-undefine install
+Network install has been undefined
+
++ sed -e s/REPLACE_NAME/install/g -e s/REPLACE_NIC/eth1/g /home/onos/compass4nfv/deploy/template/network/bridge_nic.xml
++ sudo virsh net-define /home/onos/compass4nfv/work/deploy/network/install.xml
+Network install defined from /home/onos/compass4nfv/work/deploy/network/install.xml
+
++ sudo virsh net-start install
+Network install started
+
++ setup_bridge_external
++ sudo virsh net-destroy external
+Network external destroyed
+
++ sudo virsh net-undefine external
+Network external has been undefined
+
++ save_network_info
++ sudo ovs-vsctl list-br
++ grep br-external
+br-external
++ br_exist=0
+++ ip route
+++ grep '^default'
+++ awk '{print $NF}'
++ external_nic=br-external
+++ ip route
+++ grep -Eo '^default via [^ ]+'
++ route_info='default via 10.145.88.1'
+++ ip addr show br-external
+++ grep -Eo '[^ ]+ brd [^ ]+ '
++ ip_info='10.145.88.86/23 brd 10.145.89.255 '
++ '[' 0 -eq 0 ']'
++ '[' br-external '!=' br-external ']'
++ sed -e s/REPLACE_NAME/external/g -e s/REPLACE_OVS/br-external/g /home/onos/compass4nfv/deploy/template/network/bridge_ovs.xml
++ sudo virsh net-define /home/onos/compass4nfv/work/deploy/network/external.xml
+Network external defined from /home/onos/compass4nfv/work/deploy/network/external.xml
+
++ sudo virsh net-start external
+Network external started
+
++ python /home/onos/compass4nfv/deploy/setup_vnic.py
++ clear_forward_rejct_rules
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
++ :
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ xargs sudo iptables -D FORWARD
++ awk '{print $1}'
++ :
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
++ :
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
++ :
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
+iptables: Bad rule (does a matching rule exist in that chain?).
++ launch_compass
++ local old_mnt=/home/onos/compass4nfv/work/deploy/vm/compass/old
++ local new_mnt=/home/onos/compass4nfv/work/deploy/vm/compass/new
++ local old_iso=/home/onos/compass4nfv/work/deploy/iso/centos.iso
++ local new_iso=/home/onos/compass4nfv/work/deploy/vm/compass/centos.iso
++ log_info 'launch_compass enter'
++ echo -e 'launch_compass enter'
+launch_compass enter
++ tear_down_compass
++ sudo virsh destroy compass
++ sudo virsh undefine compass
++ sudo umount /home/onos/compass4nfv/work/deploy/vm/compass/old
++ sudo umount /home/onos/compass4nfv/work/deploy/vm/compass/new
++ sudo rm -rf /home/onos/compass4nfv/work/deploy/vm/compass
++ log_info 'tear_down_compass success!!!'
++ echo -e 'tear_down_compass success!!!'
+tear_down_compass success!!!
++ set -e
++ mkdir -p /home/onos/compass4nfv/work/deploy/vm/compass /home/onos/compass4nfv/work/deploy/vm/compass/old
++ sudo mount -o loop /home/onos/compass4nfv/work/deploy/iso/centos.iso /home/onos/compass4nfv/work/deploy/vm/compass/old
+mount: block device /home/onos/compass4nfv/work/deploy/iso/centos.iso is write-protected, mounting read-only
++ cd /home/onos/compass4nfv/work/deploy/vm/compass/old
++ find .
++ cpio -pd /home/onos/compass4nfv/work/deploy/vm/compass/new
+7914840 blocks
++ cd -
+/home/onos/compass4nfv
++ sudo umount /home/onos/compass4nfv/work/deploy/vm/compass/old
++ chmod 755 -R /home/onos/compass4nfv/work/deploy/vm/compass/new
++ cp /home/onos/compass4nfv/util/isolinux.cfg /home/onos/compass4nfv/work/deploy/vm/compass/new/isolinux/ -f
++ cp /home/onos/compass4nfv/util/ks.cfg /home/onos/compass4nfv/work/deploy/vm/compass/new/isolinux/ -f
++ sed -i -e s/REPLACE_MGMT_IP/192.168.200.2/g -e s/REPLACE_MGMT_NETMASK/255.255.252.0/g -e s/REPLACE_GW/192.168.200.1/g -e s/REPLACE_INSTALL_IP/10.1.0.12/g -e s/REPLACE_INSTALL_NETMASK/255.255.255.0/g -e s/REPLACE_COMPASS_EXTERNAL_NETMASK//g -e s/REPLACE_COMPASS_EXTERNAL_IP//g -e s/REPLACE_COMPASS_EXTERNAL_GW//g /home/onos/compass4nfv/work/deploy/vm/compass/new/isolinux/isolinux.cfg
++ [[ -n 8.8.8.8 ]]
++ sed -i -e s/REPLACE_COMPASS_DNS1/8.8.8.8/g /home/onos/compass4nfv/work/deploy/vm/compass/new/isolinux/isolinux.cfg
++ [[ -n '' ]]
++ ssh-keygen -f /home/onos/compass4nfv/work/deploy/vm/compass/new/bootstrap/boot.rsa -t rsa -N ''
+Generating public/private rsa key pair.
+Your identification has been saved in /home/onos/compass4nfv/work/deploy/vm/compass/new/bootstrap/boot.rsa.
+Your public key has been saved in /home/onos/compass4nfv/work/deploy/vm/compass/new/bootstrap/boot.rsa.pub.
+The key fingerprint is:
+ee:50:6d:1a:9c:a9:93:fc:35:b8:bc:aa:99:29:b9:36 onos@jumpserver
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+|                 |
+|                 |
+|       . +       |
+|        S o      |
+|     . = =       |
+|   .  * + o      |
+|  E  + * o .     |
+| ..+=...*.       |
++-----------------+
++ cp /home/onos/compass4nfv/work/deploy/vm/compass/new/bootstrap/boot.rsa /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa
++ rm -rf /home/onos/compass4nfv/work/deploy/vm/compass/new/.rr_moved /home/onos/compass4nfv/work/deploy/vm/compass/new/rr_moved
++ sudo mkisofs -quiet -r -J -R -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -hide-rr-moved -x lost+found: -o /home/onos/compass4nfv/work/deploy/vm/compass/centos.iso /home/onos/compass4nfv/work/deploy/vm/compass/new
++ rm -rf /home/onos/compass4nfv/work/deploy/vm/compass/old /home/onos/compass4nfv/work/deploy/vm/compass/new
++ qemu-img create -f qcow2 /home/onos/compass4nfv/work/deploy/vm/compass/disk.img 100G
+Formatting '/home/onos/compass4nfv/work/deploy/vm/compass/disk.img', fmt=qcow2 size=107374182400 encryption=off cluster_size=65536 lazy_refcounts=off 
++ sed -e s/REPLACE_MEM/4096/g -e s/REPLACE_CPU/4/g -e s#REPLACE_IMAGE#/home/onos/compass4nfv/work/deploy/vm/compass/disk.img#g -e s#REPLACE_ISO#/home/onos/compass4nfv/work/deploy/vm/compass/centos.iso#g -e s/REPLACE_NET_MGMT/mgmt/g -e s/REPLACE_NET_INSTALL/install/g -e s/REPLACE_NET_EXTERNAL/external/g /home/onos/compass4nfv/deploy/template/vm/compass.xml
++ sudo virsh define /home/onos/compass4nfv/work/deploy/vm/compass/libvirt.xml
+Domain compass defined from /home/onos/compass4nfv/work/deploy/vm/compass/libvirt.xml
+
++ sudo virsh start compass
+Domain compass started
+
++ exit_status=0
++ '[' 0 '!=' 0 ']'
++ wait_ok 500
++ set +x
+wait_compass_ok enter
++ log_warn 'os install time used: 100%'
++ echo -e 'os install time used: 100%'
+os install time used: 100%
++ log_info 'wait_compass_ok exit'
++ echo -e 'wait_compass_ok exit'
+wait_compass_ok exit
++ install_compass_core
++ install_compass compass_nodocker.yml
++ local inventory_file=/home/onos/compass4nfv/work/deploy/vm/compass/inventory.file
++ sed -i 's/mgmt_next_ip:.*/mgmt_next_ip: 10.1.0.12/g' /home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
++ echo 'compass_nodocker ansible_ssh_host=192.168.200.2 ansible_ssh_port=22'
++ PYTHONUNBUFFERED=1
++ ANSIBLE_FORCE_COLOR=true
++ ANSIBLE_HOST_KEY_CHECKING=false
++ ANSIBLE_SSH_ARGS='-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s'
++ ansible-playbook -e pipeline=true --private-key=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa --user=root --connection=ssh --inventory-file=/home/onos/compass4nfv/work/deploy/vm/compass/inventory.file /home/onos/compass4nfv/work/deploy/installer/compass-install/install/compass_nodocker.yml
+
+PLAY [compass_nodocker] ******************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [compass_nodocker]
+
+TASK: [common | hostname name=compass] **************************************** 
+changed: [compass_nodocker]
+
+TASK: [common | lineinfile dest=/etc/hosts line="127.0.0.1 compass"] ********** 
+changed: [compass_nodocker]
+
+TASK: [common | ln libcrypto.so] ********************************************** 
+changed: [compass_nodocker]
+
+TASK: [common | get epel 6] *************************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get epel 7] *************************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get docker] *************************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get docker if el7] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | install brctl] ************************************************ 
+skipping: [compass_nodocker]
+
+TASK: [common | pip install dockerpy] ***************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | apt-get update] *********************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | find out if https exists in apt methods] ********************** 
+skipping: [compass_nodocker]
+
+TASK: [common | install apt-transport-https if https not in methods] ********** 
+skipping: [compass_nodocker]
+
+TASK: [common | add docker repository key] ************************************ 
+skipping: [compass_nodocker]
+
+TASK: [common | add a docker.list file to apt source list] ******************** 
+skipping: [compass_nodocker]
+
+TASK: [common | update again] ************************************************* 
+skipping: [compass_nodocker]
+
+TASK: [common | get docker and brctl] ***************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get all bridges] ********************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | bring down docker0 if found] ********************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | remove docker0 if found] ************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | bring down compass0 if found] ********************************* 
+skipping: [compass_nodocker]
+
+TASK: [common | remove compass0 if found] ************************************* 
+skipping: [compass_nodocker]
+
+TASK: [common | add bridge compass0] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get compass0 info] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | add ip addr to  compass0] ************************************* 
+skipping: [compass_nodocker]
+
+TASK: [common | bring up compass0] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | register compass0 to docker daemon] *************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | register compass0 when it's debian] *************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | start docker daemon] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | remove all containers] **************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | install packages] ******************************************** 
+changed: [compass_nodocker] => (item=yum,vim,wget,bind,gcc,httpd,lsof,rsync,dhcp,xinetd,syslinux,mkisofs,net-tools,createrepo,cobbler,cobbler-web,pykickstart,fence-agents,tftp-server)
+
+TASK: [cobbler | turn off iptables] ******************************************* 
+ok: [compass_nodocker]
+
+TASK: [cobbler | replace config files] **************************************** 
+changed: [compass_nodocker] => (item={'dest': '/etc/xinetd.d/rsync', 'name': 'rsync'})
+changed: [compass_nodocker] => (item={'dest': '/etc/debmirror.conf', 'name': 'debmirror.conf'})
+
+TASK: [cobbler | restart xinetd service] ************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | configure interface for dhcp] ******************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy httpd configuration files] ****************************** 
+ok: [compass_nodocker] => (item=cobbler_web.conf)
+ok: [compass_nodocker] => (item=ssl.conf)
+
+TASK: [cobbler | disable selinux] ********************************************* 
+ok: [compass_nodocker]
+
+TASK: [cobbler | copy cobbler configuration files] **************************** 
+changed: [compass_nodocker] => (item={'file_name': 'tftpd.template', 'name': 'tftpd.template'})
+ok: [compass_nodocker] => (item={'file_name': 'modules.conf', 'name': 'modules.conf'})
+changed: [compass_nodocker] => (item={'file_name': 'dhcp.template', 'name': 'dhcp.template.nodocker.j2'})
+changed: [compass_nodocker] => (item={'file_name': 'named.template', 'name': 'named.template.nodocker.j2'})
+changed: [compass_nodocker] => (item={'file_name': 'settings', 'name': 'settings.j2'})
+
+NOTIFIED: [cobbler | restart httpd] ******************************************* 
+changed: [compass_nodocker]
+
+NOTIFIED: [cobbler | restart cobbler] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | remove old cobbler folders] ********************************** 
+changed: [compass_nodocker] => (item=snippets)
+changed: [compass_nodocker] => (item=scripts)
+changed: [compass_nodocker] => (item=triggers)
+changed: [compass_nodocker] => (item=kickstarts)
+
+TASK: [cobbler | create cobbler folders] ************************************** 
+ok: [compass_nodocker] => (item=snippets)
+ok: [compass_nodocker] => (item=scripts)
+ok: [compass_nodocker] => (item=triggers)
+ok: [compass_nodocker] => (item=kickstarts)
+changed: [compass_nodocker] => (item=repo_mirror)
+
+TASK: [cobbler | copy snippets to cobbler folder] ***************************** 
+changed: [compass_nodocker] => (item=snippets)
+changed: [compass_nodocker] => (item=scripts)
+changed: [compass_nodocker] => (item=triggers)
+changed: [compass_nodocker] => (item=kickstarts)
+
+TASK: [cobbler | change snippets mode] **************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | create cblr_ks folder] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | change kickstart mode] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | clean cobbler log folder] ************************************ 
+changed: [compass_nodocker]
+
+TASK: [cobbler | create cobbler log directories] ****************************** 
+changed: [compass_nodocker] => (item=/var/log/cobbler)
+changed: [compass_nodocker] => (item=/var/log/cobbler/anamon)
+changed: [compass_nodocker] => (item=/var/log/cobbler/tasks)
+
+TASK: [cobbler | get all ppa file] ******************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | untar cobbler ppa repo] ************************************** 
+changed: [compass_nodocker] => (item=/opt/cobbler/ubuntu/ppa/trusty-liberty-ppa.tar.gz)
+
+TASK: [cobbler | get all ppa dir] ********************************************* 
+changed: [compass_nodocker]
+
+TASK: [cobbler | create repo conf directory] ********************************** 
+changed: [compass_nodocker] => (item=trusty-liberty-ppa)
+
+TASK: [cobbler | create repo conf file] *************************************** 
+changed: [compass_nodocker] => (item=trusty-liberty-ppa)
+
+TASK: [cobbler | start cobbler and httpd services] **************************** 
+changed: [compass_nodocker] => (item=httpd)
+changed: [compass_nodocker] => (item=cobblerd)
+
+TASK: [cobbler | import iso] ************************************************** 
+changed: [compass_nodocker] => (item={'key': 'centos', 'value': {'kickstart': 'default.ks', 'breed': 'redhat'}})
+changed: [compass_nodocker] => (item={'key': 'ubuntu', 'value': {'kopts': "netcfg/choose_interface=auto console='ttyS0,115200n8' console=tty0 biosdevname=0", 'kickstart': 'default.seed', 'breed': 'ubuntu', 'kopts_post': "console='ttyS0,115200n8' console=tty0 biosdevname=0", 'extra': '--apt-dists=trusty --apt-components=main'}})
+
+TASK: [cobbler | get default repo] ******************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | remove default repo] ***************************************** 
+changed: [compass_nodocker] => (item=   ubuntu-14.04.3-server-x86_64)
+
+TASK: [cobbler | add repos] *************************************************** 
+changed: [compass_nodocker] => (item={'key': 'centos', 'value': {'kickstart': 'default.ks', 'breed': 'redhat'}})
+changed: [compass_nodocker] => (item={'key': 'ubuntu', 'value': {'kopts': "netcfg/choose_interface=auto console='ttyS0,115200n8' console=tty0 biosdevname=0", 'kickstart': 'default.seed', 'breed': 'ubuntu', 'kopts_post': "console='ttyS0,115200n8' console=tty0 biosdevname=0", 'extra': '--apt-dists=trusty --apt-components=main'}})
+
+TASK: [cobbler | copy loader files] ******************************************* 
+changed: [compass_nodocker]
+
+TASK: [cobbler | untar loaders file] ****************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | cobbler get loaders] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | generate public key file for ssh] **************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | generate ssh key for root] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | make push_ssh_keys var] ************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | edit profiles] *********************************************** 
+changed: [compass_nodocker] => (item={'key': 'centos', 'value': {'kickstart': 'default.ks', 'breed': 'redhat'}})
+changed: [compass_nodocker] => (item={'key': 'ubuntu', 'value': {'kopts': "netcfg/choose_interface=auto console='ttyS0,115200n8' console=tty0 biosdevname=0", 'kickstart': 'default.seed', 'breed': 'ubuntu', 'kopts_post': "console='ttyS0,115200n8' console=tty0 biosdevname=0", 'extra': '--apt-dists=trusty --apt-components=main'}})
+
+TASK: [cobbler | cobbler repo sync again] ************************************* 
+changed: [compass_nodocker]
+
+TASK: [cobbler | cobbler sync] ************************************************ 
+changed: [compass_nodocker]
+
+TASK: [cobbler | restart xinetd] ********************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | restart dhcpd] *********************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | cobbler check] *********************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | get all systems] ********************************************* 
+changed: [compass_nodocker]
+
+TASK: [cobbler | remove all systems] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | install mkisofs] ********************************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | install mkisofs in debian] *********************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | clean up docker directory] *********************************** 
+skipping: [compass_nodocker] => (item=Dockerfile)
+skipping: [compass_nodocker] => (item=files)
+
+TASK: [cobbler | clean up log directory] ************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | create directory for docker and files] *********************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | create directories for images] ******************************* 
+skipping: [compass_nodocker] => (item=CentOS-6.5-x86_64)
+skipping: [compass_nodocker] => (item=Ubuntu-12.04-x86_64)
+skipping: [compass_nodocker] => (item=Ubuntu-14.04-x86_64)
+
+TASK: [cobbler | download images] ********************************************* 
+skipping: [compass_nodocker] => (item={'name': u'https://s3-us-west-1.amazonaws.com/compass-local-repo/centos/6.5/CentOS-6.5-x86_64.iso', 'filename': u'CentOS-6.5-x86_64.iso'})
+skipping: [compass_nodocker] => (item={'name': u'https://s3-us-west-1.amazonaws.com/compass-local-repo/ubuntu/12.04/Ubuntu-12.04-x86_64.iso', 'filename': u'Ubuntu-12.04-x86_64.iso'})
+skipping: [compass_nodocker] => (item={'name': u'https://s3-us-west-1.amazonaws.com/compass-local-repo/ubuntu/14.04/Ubuntu-14.04-x86_64.iso', 'filename': u'Ubuntu-14.04-x86_64.iso'})
+
+TASK: [cobbler | mount info] ************************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | mount images] ************************************************ 
+skipping: [compass_nodocker] => (item=CentOS-6.5-x86_64)
+skipping: [compass_nodocker] => (item=Ubuntu-12.04-x86_64)
+skipping: [compass_nodocker] => (item=Ubuntu-14.04-x86_64)
+
+TASK: [cobbler | copy Dockerfile to ~/docker-cobbler] ************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy dhcp.template] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy named.template] ***************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy start script] ******************************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy post sync script] *************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy admin key] ********************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy chef validator key] ************************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | cobbler container?] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | remove cobbler container if any] ***************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | check if 'cobbler' image already exists] ********************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | remove image 'cobbler' if it exists and --rebuild is specified] *** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | restart docker daemon if debian] ***************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | build a docker image for cobbler] **************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | fork image and run a new cobbler container] ****************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | extract cobbler ip info] ************************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | quote the ip first] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | add cobbler_docker_ip before cobbler ip] ********************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | write cobbler_ip to local var] ******************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | include cobbler dynamic vars] ******************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | install dhcp on cobbler host for relay] ********************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | configure dhcprelay] ***************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | get isc-dhcp-relay agent] ************************************ 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | make dhcp-relay agent listen to cobbler] ********************* 
+skipping: [compass_nodocker]
+
+TASK: [compass | install packages] ******************************************** 
+changed: [compass_nodocker] => (item=redis,mysql,mod_wsgi,nfs-utils,elasticsearch,logstash,kibana,java,mysql-devel,mysql-server,MySQL-python,nmap-ncat,python-devel,rabbitmq-server,libselinux-python,python-setuptools,python-paramiko,python-jinja2)
+
+TASK: [compass | auto set java env] ******************************************* 
+changed: [compass_nodocker] => (item=jdk.csh)
+changed: [compass_nodocker] => (item=jdk.sh)
+
+TASK: [compass | set java env] ************************************************ 
+changed: [compass_nodocker]
+
+TASK: [compass | copy elasticsearch config] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy kibana config] ****************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy kibana service scripts] ********************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | copy kibana autostart scripts] ******************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | modify kibana api base url] ********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy logstash config] **************************************** 
+changed: [compass_nodocker] => (item=ansible.conf)
+changed: [compass_nodocker] => (item=compass.conf)
+changed: [compass_nodocker] => (item=messages.conf)
+
+TASK: [compass | create logstash patterns directory] ************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy logstash patten] **************************************** 
+changed: [compass_nodocker] => (item=ansible.pat)
+
+TASK: [compass | copy httpd config] ******************************************* 
+changed: [compass_nodocker] => (item=ods-server.conf)
+changed: [compass_nodocker] => (item=http_pip.conf)
+changed: [compass_nodocker] => (item=images.conf)
+changed: [compass_nodocker] => (item=packages.conf)
+changed: [compass_nodocker] => (item=elk.conf)
+
+NOTIFIED: [compass | restart http service] ************************************ 
+changed: [compass_nodocker]
+
+TASK: [compass | stop iptables] *********************************************** 
+ok: [compass_nodocker]
+
+TASK: [compass | start elasticsearch] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | start logstash] ********************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | start kibana] ************************************************ 
+changed: [compass_nodocker]
+
+TASK: [compass | start mysqld] ************************************************ 
+changed: [compass_nodocker]
+
+TASK: [compass | start rabbitmq server] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | initialize mysql password] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | create compass database] ************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | install setuptools] ****************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | install pip] ************************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | create pip config directory] ********************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | update pip.conf] ********************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | install pip package] ***************************************** 
+changed: [compass_nodocker] => (item=lazypy)
+changed: [compass_nodocker] => (item=virtualenv)
+changed: [compass_nodocker] => (item=ansible)
+changed: [compass_nodocker] => (item=pycrypto-on-pypi)
+
+TASK: [compass | pip install compass into virtualenv] ************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | create compass directories] ********************************** 
+changed: [compass_nodocker] => (item=/etc/compass)
+changed: [compass_nodocker] => (item=/opt/compass/bin)
+changed: [compass_nodocker] => (item=/var/www/compass)
+changed: [compass_nodocker] => (item=/var/www/compass_web)
+
+TASK: [compass | create /var/log/compass] ************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | create ansible folder] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy ansible scripts into ansible folder] ******************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy ansible roles into ansible folder] ********************** 
+changed: [compass_nodocker]
+
+TASK: [compass | write python home into switch virtualenv] ******************** 
+changed: [compass_nodocker]
+
+TASK: [compass | rename switch_virtualenv template] *************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass config files] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy service init file] ************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass bin file] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass shell script] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass ansible callback] ******************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass executable] ************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | link compass check] ****************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | link compass wsgi] ******************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | change celery env] ******************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | change file mode] ******************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | add compass setting] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | add cobbler setting] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | link celery bin file] **************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | create redis folders] **************************************** 
+changed: [compass_nodocker] => (item=/var/log/redis)
+changed: [compass_nodocker] => (item=/var/lib/redis)
+changed: [compass_nodocker] => (item=/var/run/redis)
+
+TASK: [compass | make sure redis service not running] ************************* 
+failed: [compass_nodocker] => {"cmd": "killall -9 redis-server", "failed": true, "rc": 2}
+msg: [Errno 2] No such file or directory
+...ignoring
+
+TASK: [compass | restart redis service] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | initialize db for compass] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy web ui files] ******************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | create switch file if test mode enabled] ********************* 
+skipping: [compass_nodocker]
+
+TASK: [compass | install keyczar for accelerate] ****************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | inject switches and mac addresses] *************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | clean up docker directory] *********************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | clean up log directory] ************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | create directory for docker and files] *********************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy Dockerfile] ********************************************* 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy switch machines file] *********************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy start script] ******************************************* 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy compass.pem] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy chef config] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy cobber conf] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy compass setting] **************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | get containers] ********************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | remove compass container if any] ***************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | check if compass image already exists] *********************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | remove image 'compass' if it exists and --rebuild is specified] *** 
+skipping: [compass_nodocker]
+
+TASK: [compass | build a docker image for compass] **************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | fork image and run a new compass container] ****************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | remove dynamic generated vars] ******************************* 
+skipping: [compass_nodocker] => (item=dynamic.yml)
+skipping: [compass_nodocker] => (item=keys)
+
+NOTIFIED: [compass | restart compass service] ********************************* 
+changed: [compass_nodocker] => (item=compass-celeryd)
+changed: [compass_nodocker] => (item=compass-progress-updated)
+
+NOTIFIED: [compass | restart http service] ************************************ 
+changed: [compass_nodocker]
+
+PLAY RECAP ******************************************************************** 
+compass_nodocker           : ok=102  changed=91   unreachable=0    failed=0   
+
++ exit_status=0
++ rm /home/onos/compass4nfv/work/deploy/vm/compass/inventory.file
++ [[ 0 != 0 ]]
++ set +e
++ log_info 'launch_compass exit'
++ echo -e 'launch_compass exit'
+launch_compass exit
++ [[ -z '' ]]
++ set_compass_machine
++ local config_file=/home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
++ sed -i -e '/test: true/d' -e /pxe_boot_macs/d /home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
++ echo 'test: true'
++ echo 'pxe_boot_macs: ['\''7C:A2:3E:86:65:4E'\'','\''7C:A2:3E:86:65:58'\'','\''7C:A2:3E:86:65:38'\'','\''7C:A2:3E:86:65:30'\'','\''7C:A2:3E:86:65:46'\'']'
++ install_compass compass_machine.yml
++ local inventory_file=/home/onos/compass4nfv/work/deploy/vm/compass/inventory.file
++ sed -i 's/mgmt_next_ip:.*/mgmt_next_ip: 10.1.0.12/g' /home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
++ echo 'compass_nodocker ansible_ssh_host=192.168.200.2 ansible_ssh_port=22'
++ PYTHONUNBUFFERED=1
++ ANSIBLE_FORCE_COLOR=true
++ ANSIBLE_HOST_KEY_CHECKING=false
++ ANSIBLE_SSH_ARGS='-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s'
++ ansible-playbook -e pipeline=true --private-key=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa --user=root --connection=ssh --inventory-file=/home/onos/compass4nfv/work/deploy/vm/compass/inventory.file /home/onos/compass4nfv/work/deploy/installer/compass-install/install/compass_machine.yml
+
+PLAY [compass_nodocker] ******************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [compass_nodocker]
+
+TASK: [machines | create switch file if test mode enabled] ******************** 
+changed: [compass_nodocker]
+
+TASK: [machines | inject switches and mac addresses] ************************** 
+changed: [compass_nodocker]
+
+PLAY RECAP ******************************************************************** 
+compass_nodocker           : ok=3    changed=2    unreachable=0    failed=0   
+
++ exit_status=0
++ rm /home/onos/compass4nfv/work/deploy/vm/compass/inventory.file
++ [[ 0 != 0 ]]
++ [[ true == \t\r\u\e ]]
++ [[ ! -z '' ]]
++ deploy_host
++ export AYNC_TIMEOUT=20
++ AYNC_TIMEOUT=20
++ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa root@192.168.200.2 mkdir -p /opt/compass/bin/ansible_callbacks
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
++ scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa -r /home/onos/compass4nfv/deploy/status_callback.py root@192.168.200.2:/opt/compass/bin/ansible_callbacks/status_callback.py
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
+status_callback.py                                                                                                           100% 4385     4.3KB/s   00:00    
++ [[ '' == true ]]
++ deploy_flag=deploy
++ sleep 20
++ python /home/onos/compass4nfv/deploy/client.py --deploy_flag=deploy --compass_server=http://192.168.200.2/api --compass_user_email=admin@huawei.com --compass_user_password=admin --cluster_name=opnfv2 --language=EN --timezone=America/Los_Angeles --hostnames=host1,host2,host3,host4,host5 --partitions=/=30%,/home=5%,/tmp=5%,/var=60% --subnets=10.1.0.0/24,172.16.2.0/24,172.16.3.0/24,172.16.4.0/24 '--adapter_os_pattern=(?i)ubuntu-14\.04\.3.*' --adapter_name=openstack_liberty '--adapter_target_system_pattern=^openstack$' --adapter_flavor_pattern=HA-ansible-multinodes-liberty --repo_name=trusty-liberty-ppa --http_proxy= --https_proxy= --no_proxy= --ntp_server=10.1.0.12 --dns_servers=10.1.0.12 --domain=ods.com --search_path=ods.com --default_gateway=10.1.0.1 --server_credential=root=root --local_repo_url= --os_config_json_file= --service_credentials=image:service=service,compute:service=service,dashboard:service=service,identity:service=service,image:service=service,metering:service=service,network:service=service,rabbitmq:service=service,volume:service=service,mysql:service=service,heat:heat=heat_db_secret --console_credentials=admin:console=console,demo:console=console,compute:console=console,dashboard:console=console,identity:console=console,image:console=console,metering:console=console,network:console=console,object-store:console=console,volume:console=console,heat:heat=heat_secret '--host_networks=host1:eth0=10.1.0.50|is_mgmt;host2:eth0=10.1.0.51|is_mgmt;host3:eth0=10.1.0.52|is_mgmt;host4:eth0=10.1.0.53|is_mgmt;host5:eth0=10.1.0.54|is_mgmt' --network_mapping=install=eth0 --package_config_json_file= '--host_roles=host1=controller,ha,onos;host2=controller,ha,onos;host3=controller,ha,onos;host4=compute;host5=compute' --default_roles= --switch_ips=10.145.88.4 --machines=7C:A2:3E:86:65:4E,7C:A2:3E:86:65:58,7C:A2:3E:86:65:38,7C:A2:3E:86:65:30,7C:A2:3E:86:65:46 --switch_credential=version=2c,community=public --deploy_type=baremetal --deployment_timeout=150 --nopoll_switches --dashboard_url= --cluster_vip=10.1.0.222 --network_cfg=network.yml --neutron_cfg=/home/onos/compass4nfv/deploy/conf/neutron_cfg.yaml --enable_secgroup=true --enable_fwaas=false --rsa_file=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa --enable_vpnaas=false
+Traceback (most recent call last):
+  File "/home/onos/compass4nfv/deploy/client.py", line 38, in <module>
+    from oslo_config import cfg
+  File "/home/onos/compass4nfv/work/deploy/venv/local/lib/python2.7/site-packages/oslo_config/cfg.py", line 364, in <module>
+    from debtcollector import removals
+ImportError: No module named debtcollector
++ RET=1
++ sleep 25
++ rename_nics
++ python /home/onos/compass4nfv/deploy/rename_nics.py os-onos-nofeature-ha.yml /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa 192.168.200.2
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null                           -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa root@192.168.200.2                           'cobbler system edit --name=host1 --interface=eth1 --mac=7C:A2:3E:86:65:4E'
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
+exception on server: 'internal error, unknown system name host1'
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null                           -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa root@192.168.200.2                           'cobbler system edit --name=host2 --interface=eth1 --mac=7C:A2:3E:86:65:58'
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
+exception on server: 'internal error, unknown system name host2'
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null                           -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa root@192.168.200.2                           'cobbler system edit --name=host3 --interface=eth1 --mac=7C:A2:3E:86:65:38'
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
+exception on server: 'internal error, unknown system name host3'
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null                           -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa root@192.168.200.2                           'cobbler system edit --name=host4 --interface=eth1 --mac=7C:A2:3E:86:65:30'
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
+exception on server: 'internal error, unknown system name host4'
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null                           -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa root@192.168.200.2                           'cobbler system edit --name=host5 --interface=eth1 --mac=7C:A2:3E:86:65:46'
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
+exception on server: 'internal error, unknown system name host5'
+ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null               -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa root@192.168.200.2               'cobbler sync'
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
++ exit 1
+onos@jumpserver:~/compass4nfv$ task started: 2016-02-09_004530_sync
+task started (id=Sync, time=Tue Feb  9 00:45:30 2016)
+running pre-sync triggers
+cleaning trees
+removing: /var/www/cobbler/images/CentOS-7-Minimal-1511-x86_64
+removing: /var/www/cobbler/images/ubuntu-14.04.3-server-x86_64
+removing: /var/lib/tftpboot/pxelinux.cfg/default
+removing: /var/lib/tftpboot/grub/grub-x86_64.efi
+removing: /var/lib/tftpboot/grub/grub-x86.efi
+removing: /var/lib/tftpboot/grub/images
+removing: /var/lib/tftpboot/grub/efidefault
+removing: /var/lib/tftpboot/images/CentOS-7-Minimal-1511-x86_64
+removing: /var/lib/tftpboot/images/ubuntu-14.04.3-server-x86_64
+removing: /var/lib/tftpboot/s390x/profile_list
+copying bootloaders
+copying: /usr/share/syslinux/memdisk -> /var/lib/tftpboot/memdisk
+trying hardlink /var/lib/cobbler/loaders/grub-x86_64.efi -> /var/lib/tftpboot/grub/grub-x86_64.efi
+trying hardlink /var/lib/cobbler/loaders/grub-x86.efi -> /var/lib/tftpboot/grub/grub-x86.efi
+copying distros to tftpboot
+copying files for distro: ubuntu-14.04.3-server-x86_64
+trying hardlink /var/www/cobbler/ks_mirror/ubuntu-14.04.3-server-x86_64/install/netboot/ubuntu-installer/amd64/linux -> /var/lib/tftpboot/images/ubuntu-14.04.3-server-x86_64/linux
+trying hardlink /var/www/cobbler/ks_mirror/ubuntu-14.04.3-server-x86_64/install/netboot/ubuntu-installer/amd64/initrd.gz -> /var/lib/tftpboot/images/ubuntu-14.04.3-server-x86_64/initrd.gz
+copying files for distro: CentOS-7-Minimal-1511-x86_64
+trying hardlink /var/www/cobbler/ks_mirror/CentOS-7-Minimal-1511-x86_64/images/pxeboot/vmlinuz -> /var/lib/tftpboot/images/CentOS-7-Minimal-1511-x86_64/vmlinuz
+trying hardlink /var/www/cobbler/ks_mirror/CentOS-7-Minimal-1511-x86_64/images/pxeboot/initrd.img -> /var/lib/tftpboot/images/CentOS-7-Minimal-1511-x86_64/initrd.img
+copying images
+generating PXE configuration files
+generating PXE menu structure
+copying files for distro: ubuntu-14.04.3-server-x86_64
+trying hardlink /var/www/cobbler/ks_mirror/ubuntu-14.04.3-server-x86_64/install/netboot/ubuntu-installer/amd64/linux -> /var/www/cobbler/images/ubuntu-14.04.3-server-x86_64/linux
+trying hardlink /var/www/cobbler/ks_mirror/ubuntu-14.04.3-server-x86_64/install/netboot/ubuntu-installer/amd64/initrd.gz -> /var/www/cobbler/images/ubuntu-14.04.3-server-x86_64/initrd.gz
+Writing template files for ubuntu-14.04.3-server-x86_64
+copying files for distro: CentOS-7-Minimal-1511-x86_64
+trying hardlink /var/www/cobbler/ks_mirror/CentOS-7-Minimal-1511-x86_64/images/pxeboot/vmlinuz -> /var/www/cobbler/images/CentOS-7-Minimal-1511-x86_64/vmlinuz
+trying hardlink /var/www/cobbler/ks_mirror/CentOS-7-Minimal-1511-x86_64/images/pxeboot/initrd.img -> /var/www/cobbler/images/CentOS-7-Minimal-1511-x86_64/initrd.img
+Writing template files for CentOS-7-Minimal-1511-x86_64
+rendering DHCP files
+generating /etc/dhcp/dhcpd.conf
+rendering DNS files
+generating /etc/named.conf
+generating /etc/secondary.conf
+generating (forward) /var/named/ods.com
+generating (reverse) /var/named/10
+generating (reverse) /var/named/172.16
+rendering TFTPD files
+generating /etc/xinetd.d/tftp
+processing boot_files for distro: ubuntu-14.04.3-server-x86_64
+processing boot_files for distro: CentOS-7-Minimal-1511-x86_64
+cleaning link caches
+running post-sync triggers
+running python triggers from /var/lib/cobbler/triggers/sync/post/*
+running python trigger cobbler.modules.sync_post_restart_services
+running: dhcpd -t -q
+received on stdout: 
+received on stderr: 
+running: service dhcpd restart
+received on stdout: 
+received on stderr: Redirecting to /bin/systemctl restart  dhcpd.service
+
+running: service named restart
+received on stdout: 
+received on stderr: Redirecting to /bin/systemctl restart  named.service
+
+running shell triggers from /var/lib/cobbler/triggers/sync/post/*
+running shell trigger /var/lib/cobbler/triggers/sync/post/migrate_ks.py
+running: ['/var/lib/cobbler/triggers/sync/post/migrate_ks.py']
+received on stdout: 
+received on stderr: 
+running python triggers from /var/lib/cobbler/triggers/change/*
+running python trigger cobbler.modules.scm_track
+running shell triggers from /var/lib/cobbler/triggers/change/*
+*** TASK COMPLETE ***
++ reboot_hosts
++ '[' -z /home/onos/compass4nfv/work/deploy/script/ipmitool.sh ']'
++ /home/onos/compass4nfv/work/deploy/script/ipmitool.sh
+set pxe and reset 10.145.88.81 successsully
+set pxe and reset 10.145.88.82 successsully
+set pxe and reset 10.145.88.83 successsully
+set pxe and reset 10.145.88.84 successsully
+set pxe and reset 10.145.88.85 successsully

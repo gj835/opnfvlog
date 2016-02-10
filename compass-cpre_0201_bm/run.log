@@ -1,0 +1,2712 @@
+ [WARNING]: non fatal error while trying to template play variables: Failed to
+template {{ lookup('file', 'item') }}: could not locate file in lookup: item
+
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-5]
+ok: [host-4]
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [make sure ssh dir exist] *********************************************** 
+changed: [host-4] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+changed: [host-3] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+changed: [host-5] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+changed: [host-2] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+changed: [host-1] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+
+TASK: [write ssh config] ****************************************************** 
+changed: [host-4] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+changed: [host-3] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+changed: [host-2] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+changed: [host-1] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+changed: [host-5] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+
+TASK: [generate ssh keys] ***************************************************** 
+changed: [host-3]
+changed: [host-4]
+changed: [host-1]
+changed: [host-5]
+changed: [host-2]
+
+TASK: [fetch ssh keys] ******************************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-5]
+changed: [host-3]
+changed: [host-4]
+
+TASK: [authorized_key ] ******************************************************* 
+changed: [host-2] => (item=/tmp/ssh-keys-host-3)
+changed: [host-2] => (item=/tmp/ssh-keys-host-4)
+changed: [host-2] => (item=/tmp/ssh-keys-host-2)
+changed: [host-2] => (item=/tmp/ssh-keys-host-1)
+changed: [host-2] => (item=/tmp/ssh-keys-host-5)
+changed: [host-3] => (item=/tmp/ssh-keys-host-3)
+changed: [host-3] => (item=/tmp/ssh-keys-host-4)
+changed: [host-3] => (item=/tmp/ssh-keys-host-2)
+changed: [host-3] => (item=/tmp/ssh-keys-host-1)
+changed: [host-3] => (item=/tmp/ssh-keys-host-5)
+changed: [host-5] => (item=/tmp/ssh-keys-host-3)
+changed: [host-5] => (item=/tmp/ssh-keys-host-4)
+changed: [host-5] => (item=/tmp/ssh-keys-host-2)
+changed: [host-5] => (item=/tmp/ssh-keys-host-1)
+changed: [host-5] => (item=/tmp/ssh-keys-host-5)
+changed: [host-1] => (item=/tmp/ssh-keys-host-3)
+changed: [host-1] => (item=/tmp/ssh-keys-host-4)
+changed: [host-1] => (item=/tmp/ssh-keys-host-2)
+changed: [host-1] => (item=/tmp/ssh-keys-host-1)
+changed: [host-1] => (item=/tmp/ssh-keys-host-5)
+changed: [host-4] => (item=/tmp/ssh-keys-host-3)
+changed: [host-4] => (item=/tmp/ssh-keys-host-4)
+changed: [host-4] => (item=/tmp/ssh-keys-host-2)
+changed: [host-4] => (item=/tmp/ssh-keys-host-1)
+changed: [host-4] => (item=/tmp/ssh-keys-host-5)
+
+TASK: [common | include_vars {{ ansible_os_family }}.yml] ********************* 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+ok: [host-4]
+ok: [host-5]
+
+TASK: [common | speed up ansible by purging landscape-common] ***************** 
+ok: [host-4]
+ok: [host-5]
+ok: [host-3]
+ok: [host-2]
+ok: [host-1]
+
+TASK: [common | update hosts files to all hosts] ****************************** 
+changed: [host-5]
+changed: [host-1]
+changed: [host-4]
+changed: [host-3]
+changed: [host-2]
+
+TASK: [common | get compass-core hostname] ************************************ 
+changed: [host-4 -> 127.0.0.1]
+changed: [host-3 -> 127.0.0.1]
+changed: [host-1 -> 127.0.0.1]
+changed: [host-2 -> 127.0.0.1]
+changed: [host-5 -> 127.0.0.1]
+
+TASK: [common | get compass-core addr] **************************************** 
+changed: [host-4]
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+changed: [host-5]
+
+TASK: [common | update compass-core name and ip to hosts files] *************** 
+changed: [host-4]
+changed: [host-1]
+changed: [host-3]
+changed: [host-5]
+changed: [host-2]
+
+TASK: [common | install packages] ********************************************* 
+changed: [host-5] => (item=ubuntu-cloud-keyring)
+changed: [host-5] => (item=openvswitch-datapath-dkms)
+changed: [host-5] => (item=openvswitch-switch)
+changed: [host-5] => (item=python-memcache)
+changed: [host-5] => (item=python-iniparse)
+changed: [host-5] => (item=python-lxml)
+changed: [host-5] => (item=python-d*)
+changed: [host-5] => (item=python-pip)
+ok: [host-5] => (item=ntp)
+changed: [host-1] => (item=ubuntu-cloud-keyring)
+changed: [host-1] => (item=openvswitch-datapath-dkms)
+changed: [host-1] => (item=openvswitch-switch)
+changed: [host-1] => (item=python-memcache)
+changed: [host-1] => (item=python-iniparse)
+changed: [host-1] => (item=python-lxml)
+changed: [host-1] => (item=python-d*)
+changed: [host-1] => (item=python-pip)
+ok: [host-1] => (item=ntp)
+changed: [host-4] => (item=ubuntu-cloud-keyring)
+changed: [host-4] => (item=openvswitch-datapath-dkms)
+changed: [host-4] => (item=openvswitch-switch)
+changed: [host-4] => (item=python-memcache)
+changed: [host-4] => (item=python-iniparse)
+changed: [host-4] => (item=python-lxml)
+changed: [host-4] => (item=python-d*)
+changed: [host-4] => (item=python-pip)
+ok: [host-4] => (item=ntp)
+changed: [host-3] => (item=ubuntu-cloud-keyring)
+changed: [host-3] => (item=openvswitch-datapath-dkms)
+changed: [host-3] => (item=openvswitch-switch)
+changed: [host-3] => (item=python-memcache)
+changed: [host-3] => (item=python-iniparse)
+changed: [host-3] => (item=python-lxml)
+changed: [host-3] => (item=python-d*)
+changed: [host-3] => (item=python-pip)
+ok: [host-3] => (item=ntp)
+changed: [host-2] => (item=ubuntu-cloud-keyring)
+changed: [host-2] => (item=openvswitch-datapath-dkms)
+changed: [host-2] => (item=openvswitch-switch)
+changed: [host-2] => (item=python-memcache)
+changed: [host-2] => (item=python-iniparse)
+changed: [host-2] => (item=python-lxml)
+changed: [host-2] => (item=python-d*)
+changed: [host-2] => (item=python-pip)
+ok: [host-2] => (item=ntp)
+
+TASK: [common | make config template dir exist] ******************************* 
+changed: [host-1]
+changed: [host-3]
+changed: [host-5]
+changed: [host-4]
+changed: [host-2]
+
+TASK: [common | create pip config directory] ********************************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+changed: [host-4]
+changed: [host-5]
+
+TASK: [common | update pip.conf] ********************************************** 
+changed: [host-4]
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+changed: [host-5]
+
+TASK: [common | install pip packages] ***************************************** 
+changed: [host-5] => (item=crudini)
+changed: [host-5] => (item=python-keyczar)
+changed: [host-5] => (item=yang2tosca)
+changed: [host-4] => (item=crudini)
+changed: [host-4] => (item=python-keyczar)
+changed: [host-4] => (item=yang2tosca)
+changed: [host-1] => (item=crudini)
+changed: [host-1] => (item=python-keyczar)
+changed: [host-1] => (item=yang2tosca)
+changed: [host-2] => (item=crudini)
+changed: [host-2] => (item=python-keyczar)
+changed: [host-2] => (item=yang2tosca)
+changed: [host-3] => (item=crudini)
+changed: [host-3] => (item=python-keyczar)
+changed: [host-3] => (item=yang2tosca)
+
+TASK: [common | install keyczar for accelerate] ******************************* 
+ok: [host-1 -> 127.0.0.1]
+
+TASK: [common | update ntp conf] ********************************************** 
+changed: [host-2]
+changed: [host-4]
+changed: [host-5]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [common | use ntpdate once for initial sync time] *********************** 
+failed: [host-2] => {"changed": true, "cmd": "ntpdate 192.168.204.10", "delta": "0:00:00.003244", "end": "2016-01-27 17:05:36.558863", "rc": 1, "start": "2016-01-27 17:05:36.555619", "warnings": []}
+stderr: 27 Jan 17:05:36 ntpdate[14408]: the NTP socket is in use, exiting
+...ignoring
+failed: [host-1] => {"changed": true, "cmd": "ntpdate 192.168.204.10", "delta": "0:00:00.003234", "end": "2016-01-27 17:05:36.551759", "rc": 1, "start": "2016-01-27 17:05:36.548525", "warnings": []}
+stderr: 27 Jan 17:05:36 ntpdate[14397]: the NTP socket is in use, exiting
+...ignoring
+failed: [host-5] => {"changed": true, "cmd": "ntpdate 192.168.204.10", "delta": "0:00:00.003293", "end": "2016-01-27 17:05:36.770221", "rc": 1, "start": "2016-01-27 17:05:36.766928", "warnings": []}
+stderr: 27 Jan 17:05:36 ntpdate[14327]: the NTP socket is in use, exiting
+...ignoring
+failed: [host-4] => {"changed": true, "cmd": "ntpdate 192.168.204.10", "delta": "0:00:00.003262", "end": "2016-01-27 17:05:36.562916", "rc": 1, "start": "2016-01-27 17:05:36.559654", "warnings": []}
+stderr: 27 Jan 17:05:36 ntpdate[14430]: the NTP socket is in use, exiting
+...ignoring
+failed: [host-3] => {"changed": true, "cmd": "ntpdate 192.168.204.10", "delta": "0:00:00.003265", "end": "2016-01-27 17:05:36.565197", "rc": 1, "start": "2016-01-27 17:05:36.561932", "warnings": []}
+stderr: 27 Jan 17:05:36 ntpdate[14401]: the NTP socket is in use, exiting
+...ignoring
+
+TASK: [common | sync sys clock to hard clock] ********************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-4]
+changed: [host-1]
+changed: [host-5]
+
+TASK: [common | create fireball keys dir] ************************************* 
+ok: [host-1 -> 127.0.0.1]
+
+TASK: [common | restart services] ********************************************* 
+changed: [host-1] => (item=ntp)
+changed: [host-2] => (item=ntp)
+changed: [host-3] => (item=ntp)
+changed: [host-5] => (item=ntp)
+changed: [host-4] => (item=ntp)
+
+TASK: [common | write services to monitor list] ******************************* 
+changed: [host-2] => (item=ntp)
+changed: [host-3] => (item=ntp)
+changed: [host-1] => (item=ntp)
+changed: [host-4] => (item=ntp)
+changed: [host-5] => (item=ntp)
+
+TASK: [common | kill daemon for accelerate] *********************************** 
+changed: [host-4]
+changed: [host-1]
+changed: [host-2]
+changed: [host-5]
+changed: [host-3]
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+ok: [host-5]
+ok: [host-4]
+
+TASK: [setup-network | disable NetworkManager] ******************************** 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-5]
+skipping: [host-3]
+skipping: [host-4]
+
+TASK: [setup-network | enable network service] ******************************** 
+skipping: [host-1]
+skipping: [host-3]
+skipping: [host-2]
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [setup-network | add ovs bridge] **************************************** 
+changed: [host-1] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-4] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-2] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-3] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-5] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+
+TASK: [setup-network | add ovs uplink] **************************************** 
+changed: [host-3] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-5] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-1] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-2] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-4] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+
+TASK: [setup-network | add ovs uplink] **************************************** 
+changed: [host-2] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-1] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-3] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-4] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+changed: [host-5] => (item={'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'})
+
+TASK: [setup-network | ensure script dir exist] ******************************* 
+changed: [host-3]
+changed: [host-2]
+changed: [host-4]
+changed: [host-5]
+changed: [host-1]
+
+TASK: [setup-network | copy scripts] ****************************************** 
+changed: [host-1] => (item=setup_networks/log.py)
+changed: [host-1] => (item=setup_networks/setup_networks.py)
+changed: [host-3] => (item=setup_networks/log.py)
+changed: [host-3] => (item=setup_networks/setup_networks.py)
+changed: [host-4] => (item=setup_networks/log.py)
+changed: [host-4] => (item=setup_networks/setup_networks.py)
+changed: [host-2] => (item=setup_networks/log.py)
+changed: [host-2] => (item=setup_networks/setup_networks.py)
+changed: [host-5] => (item=setup_networks/log.py)
+changed: [host-5] => (item=setup_networks/setup_networks.py)
+
+TASK: [setup-network | copy boot scripts] ************************************* 
+changed: [host-1] => (item=setup_networks/net_init)
+changed: [host-2] => (item=setup_networks/net_init)
+changed: [host-4] => (item=setup_networks/net_init)
+changed: [host-3] => (item=setup_networks/net_init)
+changed: [host-5] => (item=setup_networks/net_init)
+
+TASK: [setup-network | copy config files] ************************************* 
+changed: [host-3]
+changed: [host-1]
+changed: [host-4]
+changed: [host-2]
+changed: [host-5]
+
+TASK: [setup-network | make sure python lib exist] **************************** 
+ok: [host-5] => (item=python-yaml)
+ok: [host-5] => (item=python-netaddr)
+ok: [host-4] => (item=python-yaml)
+ok: [host-4] => (item=python-netaddr)
+ok: [host-2] => (item=python-yaml)
+ok: [host-2] => (item=python-netaddr)
+ok: [host-1] => (item=python-yaml)
+ok: [host-1] => (item=python-netaddr)
+ok: [host-3] => (item=python-yaml)
+ok: [host-3] => (item=python-netaddr)
+
+TASK: [setup-network | run scripts] ******************************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-4]
+changed: [host-3]
+changed: [host-5]
+
+TASK: [setup-network | add to boot scripts] *********************************** 
+changed: [host-1]
+changed: [host-4]
+changed: [host-2]
+changed: [host-5]
+changed: [host-3]
+
+PLAY [ha] ********************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [ha | include_vars {{ ansible_os_family }}.yml] ************************* 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [ha | install keepalived xinet haproxy] ********************************* 
+changed: [host-1] => (item=keepalived)
+changed: [host-1] => (item=xinetd)
+changed: [host-1] => (item=haproxy)
+changed: [host-3] => (item=keepalived)
+changed: [host-3] => (item=xinetd)
+changed: [host-3] => (item=haproxy)
+changed: [host-2] => (item=keepalived)
+changed: [host-2] => (item=xinetd)
+changed: [host-2] => (item=haproxy)
+
+TASK: [ha | generate ha service list] ***************************************** 
+changed: [host-2] => (item=keepalived)
+changed: [host-2] => (item=xinetd)
+changed: [host-2] => (item=haproxy)
+changed: [host-1] => (item=keepalived)
+changed: [host-1] => (item=xinetd)
+changed: [host-1] => (item=haproxy)
+changed: [host-3] => (item=keepalived)
+changed: [host-3] => (item=xinetd)
+changed: [host-3] => (item=haproxy)
+
+TASK: [ha | install pexpect] ************************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ha | activate ip_nonlocal_bind] **************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ha | set net.ipv4.tcp_keepalive_intvl] ********************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ha | set net.ipv4.tcp_keepalive_probes] ******************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [ha | set net.ipv4.tcp_keepalive_time] ********************************** 
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [ha | update haproxy cfg] *********************************************** 
+changed: [host-1]
+changed: [host-3]
+changed: [host-2]
+
+TASK: [ha | set haproxy enable flag] ****************************************** 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [ha | set haproxy log] ************************************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [ha | set rsyslog udp module] ******************************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ha | set rsyslog udp port] ********************************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [ha | copy galera_chk file] ********************************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [ha | add network service] ********************************************** 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [ha | copy mysqlchk file] *********************************************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [ha | set keepalived start param] *************************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [ha | set keepalived log] *********************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ha | update keepalived info] ******************************************* 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [ha | restart rsyslog] ************************************************** 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+NOTIFIED: [ha | restart haproxy] ********************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+NOTIFIED: [ha | restart xinetd] *********************************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+NOTIFIED: [ha | restart keepalived] ******************************************* 
+changed: [host-1]
+changed: [host-3]
+changed: [host-2]
+
+PLAY [controller] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+
+TASK: [memcached | include_vars {{ ansible_os_family }}.yml] ****************** 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+
+TASK: [memcached | install packages] ****************************************** 
+ok: [host-3] => (item=python-memcache)
+ok: [host-3] => (item=memcached)
+ok: [host-1] => (item=python-memcache)
+ok: [host-1] => (item=memcached)
+ok: [host-2] => (item=python-memcache)
+ok: [host-2] => (item=memcached)
+
+TASK: [memcached | change memcache listen ip] ********************************* 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [memcached | restart services] ****************************************** 
+changed: [host-3] => (item=memcached)
+changed: [host-1] => (item=memcached)
+changed: [host-2] => (item=memcached)
+
+TASK: [database | include_vars {{ ansible_os_family }}.yml] ******************* 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [database | disable auto start] ***************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [database | install python-mysqldb] ************************************* 
+changed: [host-1] => (item=libaio1)
+changed: [host-1] => (item=libssl0.9.8)
+changed: [host-1] => (item=python-mysqldb)
+changed: [host-1] => (item=mysql-wsrep-server-5.5)
+changed: [host-1] => (item=galera-3)
+changed: [host-3] => (item=libaio1)
+changed: [host-3] => (item=libssl0.9.8)
+changed: [host-3] => (item=python-mysqldb)
+changed: [host-3] => (item=mysql-wsrep-server-5.5)
+changed: [host-3] => (item=galera-3)
+changed: [host-2] => (item=libaio1)
+changed: [host-2] => (item=libssl0.9.8)
+changed: [host-2] => (item=python-mysqldb)
+changed: [host-2] => (item=mysql-wsrep-server-5.5)
+changed: [host-2] => (item=galera-3)
+
+TASK: [database | change open file limit] ************************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [database | update mariadb config file] ********************************* 
+changed: [host-1] => (item={'dest': '/etc/mysql/my.cnf', 'src': 'my.cnf'})
+changed: [host-1] => (item={'dest': '/etc/mysql/conf.d/wsrep.cnf', 'src': 'wsrep.cnf'})
+changed: [host-2] => (item={'dest': '/etc/mysql/my.cnf', 'src': 'my.cnf'})
+changed: [host-2] => (item={'dest': '/etc/mysql/conf.d/wsrep.cnf', 'src': 'wsrep.cnf'})
+changed: [host-3] => (item={'dest': '/etc/mysql/my.cnf', 'src': 'my.cnf'})
+changed: [host-3] => (item={'dest': '/etc/mysql/conf.d/wsrep.cnf', 'src': 'wsrep.cnf'})
+
+TASK: [database | bugfix for rsync version 3.1] ******************************* 
+ok: [host-1] => (item=\s*uid = \$MYUID$)
+ok: [host-1] => (item=\s*gid = \$MYGID$)
+ok: [host-3] => (item=\s*uid = \$MYUID$)
+ok: [host-3] => (item=\s*gid = \$MYGID$)
+ok: [host-2] => (item=\s*uid = \$MYUID$)
+ok: [host-2] => (item=\s*gid = \$MYGID$)
+
+TASK: [database | stat path=/opt/mysql_init_complete] ************************* 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+
+TASK: [database | enable auto start] ****************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [database | rm old datafiles] ******************************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [database | set owner] ************************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [database | start first node to create new cluster] ********************* 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [database | wait for cluster ready] ************************************* 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [database | restart other nodes and join cluster] *********************** 
+skipping: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [database | restart first nodes] **************************************** 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [database | create all needed db] *************************************** 
+skipping: [host-1] => (item={'password': u'keystone', 'db': 'keystone', 'user': 'keystone'})
+skipping: [host-1] => (item={'password': u'neutron', 'db': 'neutron', 'user': 'neutron'})
+skipping: [host-1] => (item={'password': u'glance', 'db': 'glance', 'user': 'glance'})
+skipping: [host-1] => (item={'password': u'nova', 'db': 'nova', 'user': 'nova'})
+skipping: [host-1] => (item={'password': u'cinder', 'db': 'cinder', 'user': 'cinder'})
+skipping: [host-1] => (item={'password': u'heat', 'db': 'heat', 'user': 'heat'})
+skipping: [host-2] => (item={'password': u'keystone', 'db': 'keystone', 'user': 'keystone'})
+skipping: [host-2] => (item={'password': u'neutron', 'db': 'neutron', 'user': 'neutron'})
+skipping: [host-2] => (item={'password': u'glance', 'db': 'glance', 'user': 'glance'})
+skipping: [host-2] => (item={'password': u'nova', 'db': 'nova', 'user': 'nova'})
+skipping: [host-2] => (item={'password': u'cinder', 'db': 'cinder', 'user': 'cinder'})
+skipping: [host-2] => (item={'password': u'heat', 'db': 'heat', 'user': 'heat'})
+changed: [host-3] => (item={'password': u'keystone', 'db': 'keystone', 'user': 'keystone'})
+changed: [host-3] => (item={'password': u'neutron', 'db': 'neutron', 'user': 'neutron'})
+changed: [host-3] => (item={'password': u'glance', 'db': 'glance', 'user': 'glance'})
+changed: [host-3] => (item={'password': u'nova', 'db': 'nova', 'user': 'nova'})
+changed: [host-3] => (item={'password': u'cinder', 'db': 'cinder', 'user': 'cinder'})
+changed: [host-3] => (item={'password': u'heat', 'db': 'heat', 'user': 'heat'})
+
+TASK: [database | create service db user] ************************************* 
+skipping: [host-2] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, '%'])
+skipping: [host-2] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, 'localhost'])
+skipping: [host-2] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, 'inventory_hostname'])
+skipping: [host-2] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, '%'])
+skipping: [host-2] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, 'localhost'])
+skipping: [host-2] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, 'inventory_hostname'])
+skipping: [host-2] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, '%'])
+skipping: [host-2] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, 'localhost'])
+skipping: [host-2] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, 'inventory_hostname'])
+skipping: [host-2] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, '%'])
+skipping: [host-2] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, 'localhost'])
+skipping: [host-2] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, 'inventory_hostname'])
+skipping: [host-2] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, '%'])
+skipping: [host-2] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, 'localhost'])
+skipping: [host-2] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, 'inventory_hostname'])
+skipping: [host-2] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, '%'])
+skipping: [host-2] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, 'localhost'])
+skipping: [host-2] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, 'inventory_hostname'])
+skipping: [host-1] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, '%'])
+skipping: [host-1] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, 'localhost'])
+skipping: [host-1] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, 'inventory_hostname'])
+skipping: [host-1] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, '%'])
+skipping: [host-1] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, 'localhost'])
+skipping: [host-1] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, 'inventory_hostname'])
+skipping: [host-1] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, '%'])
+skipping: [host-1] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, 'localhost'])
+skipping: [host-1] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, 'inventory_hostname'])
+skipping: [host-1] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, '%'])
+skipping: [host-1] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, 'localhost'])
+skipping: [host-1] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, 'inventory_hostname'])
+skipping: [host-1] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, '%'])
+skipping: [host-1] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, 'localhost'])
+skipping: [host-1] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, 'inventory_hostname'])
+skipping: [host-1] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, '%'])
+skipping: [host-1] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, 'localhost'])
+skipping: [host-1] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, 'inventory_hostname'])
+changed: [host-3] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, '%'])
+changed: [host-3] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, 'localhost'])
+changed: [host-3] => (item=[{'password': u'keystone', 'db': 'keystone', 'user': 'keystone'}, 'inventory_hostname'])
+changed: [host-3] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, '%'])
+changed: [host-3] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, 'localhost'])
+changed: [host-3] => (item=[{'password': u'neutron', 'db': 'neutron', 'user': 'neutron'}, 'inventory_hostname'])
+changed: [host-3] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, '%'])
+changed: [host-3] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, 'localhost'])
+changed: [host-3] => (item=[{'password': u'glance', 'db': 'glance', 'user': 'glance'}, 'inventory_hostname'])
+changed: [host-3] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, '%'])
+changed: [host-3] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, 'localhost'])
+changed: [host-3] => (item=[{'password': u'nova', 'db': 'nova', 'user': 'nova'}, 'inventory_hostname'])
+changed: [host-3] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, '%'])
+changed: [host-3] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, 'localhost'])
+changed: [host-3] => (item=[{'password': u'cinder', 'db': 'cinder', 'user': 'cinder'}, 'inventory_hostname'])
+changed: [host-3] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, '%'])
+changed: [host-3] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, 'localhost'])
+changed: [host-3] => (item=[{'password': u'heat', 'db': 'heat', 'user': 'heat'}, 'inventory_hostname'])
+
+TASK: [database | create wsrep db user] *************************************** 
+skipping: [host-2] => (item=%)
+skipping: [host-2] => (item=localhost)
+skipping: [host-2] => (item=inventory_hostname)
+skipping: [host-1] => (item=%)
+skipping: [host-1] => (item=localhost)
+skipping: [host-1] => (item=inventory_hostname)
+changed: [host-3] => (item=%)
+changed: [host-3] => (item=localhost)
+changed: [host-3] => (item=inventory_hostname)
+
+TASK: [database | install mongodb packages] *********************************** 
+changed: [host-1] => (item=mongodb-server)
+ok: [host-1] => (item=mongodb-clients)
+changed: [host-1] => (item=python-pymongo)
+changed: [host-3] => (item=mongodb-server)
+ok: [host-3] => (item=mongodb-clients)
+changed: [host-3] => (item=python-pymongo)
+changed: [host-2] => (item=mongodb-server)
+ok: [host-2] => (item=mongodb-clients)
+changed: [host-2] => (item=python-pymongo)
+
+TASK: [database | install pymongod packages] ********************************** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-1]
+
+TASK: [database | copy ceilometer configs] ************************************ 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [database | update mongodb config file] ********************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [database | rm prealloc files] ****************************************** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-1]
+
+TASK: [database | manually restart mongodb server] **************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [database | write mongodb to monitor list] ****************************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [database | wait for mongod ready] ************************************** 
+ok: [host-1]
+ok: [host-3]
+ok: [host-2]
+
+TASK: [database | copy mongo js] ********************************************** 
+skipping: [host-2] => (item={'dest': '/opt/replica.js', 'src': 'replica.js'})
+skipping: [host-1] => (item={'dest': '/opt/replica.js', 'src': 'replica.js'})
+changed: [host-3] => (item={'dest': '/opt/replica.js', 'src': 'replica.js'})
+
+TASK: [database | init replica servers] *************************************** 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [database | wait replica servers are ready] ***************************** 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [database | debug msg='{{ servers.stdout |int }}'] ********************** 
+skipping: [host-2]
+skipping: [host-1]
+ok: [host-3] => {
+    "msg": "3"
+}
+
+TASK: [database | wait replica servers are ready] ***************************** 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [database | debug msg='{{ servers.stdout |int }}'] ********************** 
+skipping: [host-2]
+skipping: [host-1]
+ok: [host-3] => {
+    "msg": "1"
+}
+
+TASK: [database | create mongodb user and db] ********************************* 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [database | grant user privilege] *************************************** 
+skipping: [host-2]
+skipping: [host-1]
+ok: [host-3]
+
+TASK: [mq | include_vars {{ ansible_os_family }}.yml] ************************* 
+ok: [host-3]
+ok: [host-1]
+ok: [host-2]
+
+TASK: [mq | create rabbitmq directory] **************************************** 
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [mq | disable auto start] *********************************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [mq | install rabbitmq-server] ****************************************** 
+changed: [host-1] => (item=rabbitmq-server)
+changed: [host-3] => (item=rabbitmq-server)
+changed: [host-2] => (item=rabbitmq-server)
+
+TASK: [mq | enable auto start] ************************************************ 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [mq | make sure rabbitmq-server stopped] ******************************** 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+
+TASK: [mq | replace cookie] *************************************************** 
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [mq | replace config] *************************************************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [mq | add rabbitmq.config to allow external access] ********************* 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [mq | set open file limit for rabbitmq] ********************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [mq | restart rabbitmq-server] ****************************************** 
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [mq | enable queue mirroring] ******************************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [mq | stop rabbitmq app] ************************************************ 
+skipping: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [mq | join cluster] ***************************************************** 
+skipping: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [mq | start rabbitmq app] *********************************************** 
+skipping: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [mq | generate mq service list] ***************************************** 
+changed: [host-2] => (item=rabbitmq-server)
+changed: [host-1] => (item=rabbitmq-server)
+changed: [host-3] => (item=rabbitmq-server)
+
+TASK: [mq | remove default guest user is removed] ***************************** 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [mq | add rabbitmq user] ************************************************ 
+skipping: [host-2]
+skipping: [host-1]
+changed: [host-3]
+
+TASK: [keystone | include_vars {{ ansible_os_family }}.yml] ******************* 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+
+TASK: [keystone | install keystone packages] ********************************** 
+changed: [host-1] => (item=keystone)
+ok: [host-1] => (item=python-keystoneclient)
+changed: [host-3] => (item=keystone)
+ok: [host-3] => (item=python-keystoneclient)
+changed: [host-2] => (item=keystone)
+ok: [host-2] => (item=python-keystoneclient)
+
+TASK: [keystone | generate keystone service list] ***************************** 
+changed: [host-1] => (item=keystone)
+changed: [host-3] => (item=keystone)
+changed: [host-2] => (item=keystone)
+
+TASK: [keystone | update keystone conf] *************************************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [keystone | delete sqlite database] ************************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [keystone | keystone source files] ************************************** 
+changed: [host-3] => (item=admin-openrc.sh)
+changed: [host-3] => (item=demo-openrc.sh)
+changed: [host-1] => (item=admin-openrc.sh)
+changed: [host-1] => (item=demo-openrc.sh)
+changed: [host-2] => (item=admin-openrc.sh)
+changed: [host-2] => (item=demo-openrc.sh)
+
+TASK: [keystone | restart keystone services] ********************************** 
+changed: [host-3] => (item=keystone)
+changed: [host-1] => (item=keystone)
+changed: [host-2] => (item=keystone)
+
+TASK: [keystone | keystone-manage db-sync] ************************************ 
+skipping: [host-1]
+skipping: [host-3]
+changed: [host-2]
+
+TASK: [keystone | wait for keystone ready] ************************************ 
+skipping: [host-1]
+skipping: [host-3]
+ok: [host-2]
+
+TASK: [keystone | cron job to purge expired tokens hourly] ******************** 
+skipping: [host-3]
+skipping: [host-1]
+changed: [host-2]
+
+TASK: [keystone | add tenants] ************************************************ 
+skipping: [host-3] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+skipping: [host-1] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+changed: [host-2] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+ok: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+ok: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+ok: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+ok: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+ok: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+ok: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+
+TASK: [keystone | add users] ************************************************** 
+skipping: [host-1] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+skipping: [host-3] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+changed: [host-2] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+
+TASK: [keystone | grant roles] ************************************************ 
+skipping: [host-1] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+skipping: [host-1] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+skipping: [host-3] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+skipping: [host-3] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+changed: [host-2] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'admin', 'email': 'admin@admin.com', 'tenant': 'admin'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'glance', 'email': 'glance@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'nova', 'email': 'nova@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'keystone', 'email': 'keystone@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'quantum', 'email': 'neutron@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'ceilometer', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'cinder', 'email': 'cinder@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat', 'email': 'heat@admin.com', 'tenant': 'service'})
+changed: [host-2] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+
+TASK: [keystone | add endpoints] ********************************************** 
+skipping: [host-1] => (item={'name': 'keystone', 'adminurl': u'http://192.168.201.99:35357/v2.0', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:5000/v2.0', 'type': 'identity', 'internalurl': u'http://192.168.201.99:5000/v2.0', 'description': 'OpenStack Identity'})
+skipping: [host-1] => (item={'name': 'glance', 'adminurl': u'http://192.168.201.99:9292', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9292', 'type': 'image', 'internalurl': u'http://192.168.201.99:9292', 'description': 'OpenStack Image Service'})
+skipping: [host-1] => (item={'name': 'nova', 'adminurl': u'http://192.168.201.99:8774/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8774/v2/%(tenant_id)s', 'type': 'compute', 'internalurl': u'http://192.168.201.99:8774/v2/%(tenant_id)s', 'description': 'OpenStack Compute'})
+skipping: [host-1] => (item={'name': 'neutron', 'adminurl': u'http://192.168.201.99:9696', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9696', 'type': 'network', 'internalurl': u'http://192.168.201.99:9696', 'description': 'OpenStack Networking'})
+skipping: [host-1] => (item={'name': 'ceilometer', 'adminurl': u'http://192.168.201.99:8777', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8777', 'type': 'metering', 'internalurl': u'http://192.168.201.99:8777', 'description': 'OpenStack Telemetry'})
+skipping: [host-1] => (item={'name': 'cinder', 'adminurl': u'http://192.168.201.99:8776/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v1/%(tenant_id)s', 'type': 'volume', 'internalurl': u'http://192.168.201.99:8776/v1/%(tenant_id)s', 'description': 'OpenStack Block Storage'})
+skipping: [host-1] => (item={'name': 'cinderv2', 'adminurl': u'http://192.168.201.99:8776/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v2/%(tenant_id)s', 'type': 'volumev2', 'internalurl': u'http://192.168.201.99:8776/v2/%(tenant_id)s', 'description': 'OpenStack Block Storage v2'})
+skipping: [host-1] => (item={'name': 'heat', 'adminurl': u'http://192.168.201.99:8004/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8004/v1/%(tenant_id)s', 'type': 'orchestration', 'internalurl': u'http://192.168.201.99:8004/v1/%(tenant_id)s', 'description': 'OpenStack Orchestration'})
+skipping: [host-1] => (item={'name': 'heat-cfn', 'adminurl': u'http://192.168.201.99:8000/v1', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8000/v1', 'type': 'cloudformation', 'internalurl': u'http://192.168.201.99:8000/v1', 'description': 'OpenStack CloudFormation Orchestration'})
+skipping: [host-3] => (item={'name': 'keystone', 'adminurl': u'http://192.168.201.99:35357/v2.0', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:5000/v2.0', 'type': 'identity', 'internalurl': u'http://192.168.201.99:5000/v2.0', 'description': 'OpenStack Identity'})
+skipping: [host-3] => (item={'name': 'glance', 'adminurl': u'http://192.168.201.99:9292', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9292', 'type': 'image', 'internalurl': u'http://192.168.201.99:9292', 'description': 'OpenStack Image Service'})
+skipping: [host-3] => (item={'name': 'nova', 'adminurl': u'http://192.168.201.99:8774/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8774/v2/%(tenant_id)s', 'type': 'compute', 'internalurl': u'http://192.168.201.99:8774/v2/%(tenant_id)s', 'description': 'OpenStack Compute'})
+skipping: [host-3] => (item={'name': 'neutron', 'adminurl': u'http://192.168.201.99:9696', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9696', 'type': 'network', 'internalurl': u'http://192.168.201.99:9696', 'description': 'OpenStack Networking'})
+skipping: [host-3] => (item={'name': 'ceilometer', 'adminurl': u'http://192.168.201.99:8777', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8777', 'type': 'metering', 'internalurl': u'http://192.168.201.99:8777', 'description': 'OpenStack Telemetry'})
+skipping: [host-3] => (item={'name': 'cinder', 'adminurl': u'http://192.168.201.99:8776/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v1/%(tenant_id)s', 'type': 'volume', 'internalurl': u'http://192.168.201.99:8776/v1/%(tenant_id)s', 'description': 'OpenStack Block Storage'})
+skipping: [host-3] => (item={'name': 'cinderv2', 'adminurl': u'http://192.168.201.99:8776/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v2/%(tenant_id)s', 'type': 'volumev2', 'internalurl': u'http://192.168.201.99:8776/v2/%(tenant_id)s', 'description': 'OpenStack Block Storage v2'})
+skipping: [host-3] => (item={'name': 'heat', 'adminurl': u'http://192.168.201.99:8004/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8004/v1/%(tenant_id)s', 'type': 'orchestration', 'internalurl': u'http://192.168.201.99:8004/v1/%(tenant_id)s', 'description': 'OpenStack Orchestration'})
+skipping: [host-3] => (item={'name': 'heat-cfn', 'adminurl': u'http://192.168.201.99:8000/v1', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8000/v1', 'type': 'cloudformation', 'internalurl': u'http://192.168.201.99:8000/v1', 'description': 'OpenStack CloudFormation Orchestration'})
+changed: [host-2] => (item={'name': 'keystone', 'adminurl': u'http://192.168.201.99:35357/v2.0', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:5000/v2.0', 'type': 'identity', 'internalurl': u'http://192.168.201.99:5000/v2.0', 'description': 'OpenStack Identity'})
+changed: [host-2] => (item={'name': 'glance', 'adminurl': u'http://192.168.201.99:9292', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9292', 'type': 'image', 'internalurl': u'http://192.168.201.99:9292', 'description': 'OpenStack Image Service'})
+changed: [host-2] => (item={'name': 'nova', 'adminurl': u'http://192.168.201.99:8774/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8774/v2/%(tenant_id)s', 'type': 'compute', 'internalurl': u'http://192.168.201.99:8774/v2/%(tenant_id)s', 'description': 'OpenStack Compute'})
+changed: [host-2] => (item={'name': 'neutron', 'adminurl': u'http://192.168.201.99:9696', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9696', 'type': 'network', 'internalurl': u'http://192.168.201.99:9696', 'description': 'OpenStack Networking'})
+changed: [host-2] => (item={'name': 'ceilometer', 'adminurl': u'http://192.168.201.99:8777', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8777', 'type': 'metering', 'internalurl': u'http://192.168.201.99:8777', 'description': 'OpenStack Telemetry'})
+changed: [host-2] => (item={'name': 'cinder', 'adminurl': u'http://192.168.201.99:8776/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v1/%(tenant_id)s', 'type': 'volume', 'internalurl': u'http://192.168.201.99:8776/v1/%(tenant_id)s', 'description': 'OpenStack Block Storage'})
+changed: [host-2] => (item={'name': 'cinderv2', 'adminurl': u'http://192.168.201.99:8776/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v2/%(tenant_id)s', 'type': 'volumev2', 'internalurl': u'http://192.168.201.99:8776/v2/%(tenant_id)s', 'description': 'OpenStack Block Storage v2'})
+changed: [host-2] => (item={'name': 'heat', 'adminurl': u'http://192.168.201.99:8004/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8004/v1/%(tenant_id)s', 'type': 'orchestration', 'internalurl': u'http://192.168.201.99:8004/v1/%(tenant_id)s', 'description': 'OpenStack Orchestration'})
+changed: [host-2] => (item={'name': 'heat-cfn', 'adminurl': u'http://192.168.201.99:8000/v1', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8000/v1', 'type': 'cloudformation', 'internalurl': u'http://192.168.201.99:8000/v1', 'description': 'OpenStack CloudFormation Orchestration'})
+
+TASK: [nova-controller | include_vars {{ ansible_os_family }}.yml] ************ 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [nova-controller | install nova related packages] *********************** 
+changed: [host-1] => (item=nova-api)
+changed: [host-1] => (item=nova-cert)
+changed: [host-1] => (item=nova-conductor)
+changed: [host-1] => (item=nova-consoleauth)
+changed: [host-1] => (item=nova-novncproxy)
+changed: [host-1] => (item=nova-scheduler)
+ok: [host-1] => (item=python-oslo.rootwrap)
+changed: [host-3] => (item=nova-api)
+changed: [host-3] => (item=nova-cert)
+changed: [host-3] => (item=nova-conductor)
+changed: [host-3] => (item=nova-consoleauth)
+changed: [host-3] => (item=nova-novncproxy)
+changed: [host-3] => (item=nova-scheduler)
+ok: [host-3] => (item=python-oslo.rootwrap)
+changed: [host-2] => (item=nova-api)
+changed: [host-2] => (item=nova-cert)
+changed: [host-2] => (item=nova-conductor)
+changed: [host-2] => (item=nova-consoleauth)
+changed: [host-2] => (item=nova-novncproxy)
+changed: [host-2] => (item=nova-scheduler)
+ok: [host-2] => (item=python-oslo.rootwrap)
+
+TASK: [nova-controller | generate nova control service list] ****************** 
+changed: [host-3] => (item=nova-api)
+changed: [host-3] => (item=nova-cert)
+changed: [host-3] => (item=nova-conductor)
+changed: [host-3] => (item=nova-consoleauth)
+changed: [host-3] => (item=nova-novncproxy)
+changed: [host-3] => (item=nova-scheduler)
+changed: [host-2] => (item=nova-api)
+changed: [host-2] => (item=nova-cert)
+changed: [host-2] => (item=nova-conductor)
+changed: [host-2] => (item=nova-consoleauth)
+changed: [host-2] => (item=nova-novncproxy)
+changed: [host-2] => (item=nova-scheduler)
+changed: [host-1] => (item=nova-api)
+changed: [host-1] => (item=nova-cert)
+changed: [host-1] => (item=nova-conductor)
+changed: [host-1] => (item=nova-consoleauth)
+changed: [host-1] => (item=nova-novncproxy)
+changed: [host-1] => (item=nova-scheduler)
+
+TASK: [nova-controller | update nova conf] ************************************ 
+changed: [host-1]
+changed: [host-3]
+changed: [host-2]
+
+TASK: [nova-controller | nova db sync] **************************************** 
+skipping: [host-1]
+skipping: [host-3]
+changed: [host-2]
+
+NOTIFIED: [nova-controller | restart nova service] **************************** 
+changed: [host-1] => (item=nova-api)
+changed: [host-1] => (item=nova-cert)
+changed: [host-1] => (item=nova-conductor)
+changed: [host-1] => (item=nova-consoleauth)
+changed: [host-1] => (item=nova-novncproxy)
+changed: [host-1] => (item=nova-scheduler)
+changed: [host-2] => (item=nova-api)
+changed: [host-2] => (item=nova-cert)
+changed: [host-2] => (item=nova-conductor)
+changed: [host-2] => (item=nova-consoleauth)
+changed: [host-2] => (item=nova-novncproxy)
+changed: [host-2] => (item=nova-scheduler)
+changed: [host-3] => (item=nova-api)
+changed: [host-3] => (item=nova-cert)
+changed: [host-3] => (item=nova-conductor)
+changed: [host-3] => (item=nova-consoleauth)
+changed: [host-3] => (item=nova-novncproxy)
+changed: [host-3] => (item=nova-scheduler)
+
+NOTIFIED: [nova-controller | remove nova-sqlite-db] *************************** 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [neutron-controller | include_vars {{ ansible_os_family }}.yml] ********* 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [neutron-controller | install controller-related neutron packages] ****** 
+changed: [host-1] => (item=neutron-server)
+ok: [host-1] => (item=neutron-plugin-ml2)
+changed: [host-2] => (item=neutron-server)
+ok: [host-2] => (item=neutron-plugin-ml2)
+changed: [host-3] => (item=neutron-server)
+ok: [host-3] => (item=neutron-plugin-ml2)
+
+TASK: [neutron-controller | generate neutron control service list] ************ 
+changed: [host-1] => (item=neutron-server)
+changed: [host-3] => (item=neutron-server)
+changed: [host-2] => (item=neutron-server)
+
+TASK: [neutron-controller | get tenant id to fill neutron.conf] *************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [neutron-controller | update neutron conf] ****************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [neutron-controller | update ml2 plugin conf] *************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [neutron-controller | ln plugin.ini] ************************************ 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [neutron-controller | neutron-db-manage upgrade to Juno] **************** 
+changed: [host-2]
+
+TASK: [neutron-controller | restart first neutron-server] ********************* 
+skipping: [host-1]
+skipping: [host-3]
+changed: [host-2]
+
+TASK: [neutron-controller | restart other neutron-server] ********************* 
+skipping: [host-1]
+skipping: [host-3]
+changed: [host-2]
+
+NOTIFIED: [neutron-controller | restart neutron control services] ************* 
+skipping: [host-2] => (item=neutron-server)
+skipping: [host-1] => (item=neutron-server)
+skipping: [host-3] => (item=neutron-server)
+
+TASK: [cinder-controller | include_vars {{ ansible_os_family }}.yml] ********** 
+ok: [host-2]
+ok: [host-3]
+ok: [host-1]
+
+TASK: [cinder-controller | install cinder packages] *************************** 
+changed: [host-1] => (item=cinder-api)
+changed: [host-1] => (item=cinder-scheduler)
+ok: [host-1] => (item=python-cinderclient)
+changed: [host-3] => (item=cinder-api)
+changed: [host-3] => (item=cinder-scheduler)
+ok: [host-3] => (item=python-cinderclient)
+changed: [host-2] => (item=cinder-api)
+changed: [host-2] => (item=cinder-scheduler)
+ok: [host-2] => (item=python-cinderclient)
+
+TASK: [cinder-controller | generate common cinder service list] *************** 
+changed: [host-2] => (item=cinder-api)
+changed: [host-2] => (item=cinder-scheduler)
+changed: [host-1] => (item=cinder-api)
+changed: [host-1] => (item=cinder-scheduler)
+changed: [host-3] => (item=cinder-api)
+changed: [host-3] => (item=cinder-scheduler)
+
+TASK: [cinder-controller | upload cinder conf] ******************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [cinder-controller | upload cinder conf] ******************************** 
+skipping: [host-1]
+skipping: [host-3]
+ok: [host-2]
+
+TASK: [cinder-controller | sync cinder db] ************************************ 
+skipping: [host-1]
+skipping: [host-3]
+changed: [host-2]
+
+NOTIFIED: [cinder-controller | restart cinder control serveice] *************** 
+changed: [host-1] => (item=cinder-api)
+changed: [host-1] => (item=cinder-scheduler)
+changed: [host-2] => (item=cinder-api)
+changed: [host-2] => (item=cinder-scheduler)
+changed: [host-3] => (item=cinder-api)
+changed: [host-3] => (item=cinder-scheduler)
+
+TASK: [glance | include_vars {{ ansible_os_family }}.yml] ********************* 
+ok: [host-2]
+ok: [host-3]
+ok: [host-1]
+
+TASK: [glance | install glance packages] ************************************** 
+changed: [host-1] => (item=glance)
+changed: [host-1] => (item=nfs-common)
+ok: [host-1] => (item=python-glanceclient)
+changed: [host-2] => (item=glance)
+changed: [host-2] => (item=nfs-common)
+ok: [host-2] => (item=python-glanceclient)
+changed: [host-3] => (item=glance)
+changed: [host-3] => (item=nfs-common)
+ok: [host-3] => (item=python-glanceclient)
+
+TASK: [glance | generate glance service list] ********************************* 
+changed: [host-2] => (item=glance-registry)
+changed: [host-2] => (item=glance-api)
+changed: [host-1] => (item=glance-registry)
+changed: [host-1] => (item=glance-api)
+changed: [host-3] => (item=glance-registry)
+changed: [host-3] => (item=glance-api)
+
+TASK: [glance | update glance conf] ******************************************* 
+changed: [host-1] => (item=glance-api.conf)
+changed: [host-1] => (item=glance-registry.conf)
+changed: [host-2] => (item=glance-api.conf)
+changed: [host-2] => (item=glance-registry.conf)
+changed: [host-3] => (item=glance-api.conf)
+changed: [host-3] => (item=glance-registry.conf)
+
+TASK: [glance | remove default sqlite db] ************************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [glance | install nfs] ************************************************** 
+ok: [host-2 -> 127.0.0.1] => (item=rpcbind,nfs-utils)
+
+TASK: [glance | create image directory] *************************************** 
+ok: [host-2 -> 127.0.0.1]
+
+TASK: [glance | remove nfs config item if exist] ****************************** 
+changed: [host-2 -> 127.0.0.1]
+
+TASK: [glance | update nfs config] ******************************************** 
+changed: [host-2 -> 127.0.0.1]
+
+TASK: [glance | restart compass nfs service] ********************************** 
+changed: [host-2 -> 127.0.0.1] => (item=rpcbind)
+changed: [host-2 -> 127.0.0.1] => (item=nfs-server)
+
+TASK: [glance | get mount info] *********************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [glance | get nfs server] *********************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [glance | restart host nfs service] ************************************* 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-1]
+
+TASK: [glance | mount image directory] **************************************** 
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [glance | sync glance db] *********************************************** 
+skipping: [host-1]
+skipping: [host-3]
+changed: [host-2]
+
+NOTIFIED: [glance | restart glance services] ********************************** 
+changed: [host-2] => (item=glance-registry)
+changed: [host-2] => (item=glance-api)
+
+TASK: [neutron-network | include_vars {{ ansible_os_family }}.yml] ************ 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [neutron-network | activate ipv4 forwarding] **************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [neutron-network | deactivate ipv4 rp filter] *************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [neutron-network | deactivate ipv4 default rp filter] ******************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [neutron-network | assert kernel support for vxlan] ********************* 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [neutron-network | assert iproute2 suppport for vxlan] ****************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [neutron-network | install neutron network related packages] ************ 
+ok: [host-1] => (item=neutron-plugin-ml2)
+ok: [host-1] => (item=openvswitch-datapath-dkms)
+ok: [host-1] => (item=openvswitch-switch)
+changed: [host-1] => (item=neutron-l3-agent)
+changed: [host-1] => (item=neutron-dhcp-agent)
+changed: [host-1] => (item=neutron-plugin-openvswitch-agent)
+ok: [host-2] => (item=neutron-plugin-ml2)
+ok: [host-2] => (item=openvswitch-datapath-dkms)
+ok: [host-2] => (item=openvswitch-switch)
+changed: [host-2] => (item=neutron-l3-agent)
+changed: [host-2] => (item=neutron-dhcp-agent)
+changed: [host-2] => (item=neutron-plugin-openvswitch-agent)
+ok: [host-3] => (item=neutron-plugin-ml2)
+ok: [host-3] => (item=openvswitch-datapath-dkms)
+ok: [host-3] => (item=openvswitch-switch)
+changed: [host-3] => (item=neutron-l3-agent)
+changed: [host-3] => (item=neutron-dhcp-agent)
+changed: [host-3] => (item=neutron-plugin-openvswitch-agent)
+
+TASK: [neutron-network | generate neutron network service list] *************** 
+changed: [host-3] => (item=openvswitch-switch)
+changed: [host-3] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-3] => (item=neutron-l3-agent)
+changed: [host-3] => (item=neutron-dhcp-agent)
+changed: [host-3] => (item=neutron-metadata-agent)
+changed: [host-2] => (item=openvswitch-switch)
+changed: [host-2] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-2] => (item=neutron-l3-agent)
+changed: [host-2] => (item=neutron-dhcp-agent)
+changed: [host-2] => (item=neutron-metadata-agent)
+changed: [host-1] => (item=openvswitch-switch)
+changed: [host-1] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-1] => (item=neutron-l3-agent)
+changed: [host-1] => (item=neutron-dhcp-agent)
+changed: [host-1] => (item=neutron-metadata-agent)
+
+TASK: [neutron-network | fix openstack neutron plugin config file] ************ 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+TASK: [neutron-network | config l3 agent] ************************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [neutron-network | config dhcp agent] *********************************** 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [neutron-network | update dnsmasq-neutron.conf] ************************* 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [neutron-network | config metadata agent] ******************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [neutron-network | config ml2 plugin] *********************************** 
+ok: [host-1]
+ok: [host-3]
+ok: [host-2]
+
+TASK: [neutron-network | ln plugin.ini] *************************************** 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [neutron-network | config neutron] ************************************** 
+ok: [host-3]
+ok: [host-2]
+ok: [host-1]
+
+TASK: [neutron-network | force mtu to 1450 for vxlan] ************************* 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [neutron-network | include_vars {{ ansible_os_family }}.yml] ************ 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-1]
+
+TASK: [neutron-network | install firewall packages] *************************** 
+skipping: [host-2] => (item=firewall_packages)
+skipping: [host-3] => (item=firewall_packages)
+skipping: [host-1] => (item=firewall_packages)
+
+TASK: [neutron-network | update firewall related conf] ************************ 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+TASK: [neutron-network | include_vars {{ ansible_os_family }}.yml] ************ 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+TASK: [neutron-network | install vpn packages] ******************************** 
+skipping: [host-2] => (item=vpn_packages)
+skipping: [host-3] => (item=vpn_packages)
+skipping: [host-1] => (item=vpn_packages)
+
+TASK: [neutron-network | update vpn related conf] ***************************** 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+TASK: [neutron-network | make sure rootwrap.d dir exist] ********************** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-1]
+
+TASK: [neutron-network | update rootwrap] ************************************* 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+TASK: [neutron-network | enable vpn service] ********************************** 
+skipping: [host-2] => (item=neutron-vpn-agent)
+skipping: [host-2] => (item=strongswan)
+skipping: [host-3] => (item=neutron-vpn-agent)
+skipping: [host-3] => (item=strongswan)
+skipping: [host-1] => (item=neutron-vpn-agent)
+skipping: [host-1] => (item=strongswan)
+
+TASK: [neutron-network | ovs set manager] ************************************* 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+TASK: [neutron-network | get ovs uuid] **************************************** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-1]
+
+TASK: [neutron-network | set bridge_mappings] ********************************* 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+TASK: [neutron-network | set local ip] **************************************** 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+TASK: [neutron-network | restart neutron network relation service] ************ 
+changed: [host-2] => (item=neutron-l3-agent)
+changed: [host-2] => (item=neutron-dhcp-agent)
+changed: [host-2] => (item=neutron-metadata-agent)
+changed: [host-2] => (item=openvswitch-switch)
+changed: [host-2] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-1] => (item=neutron-l3-agent)
+changed: [host-1] => (item=neutron-dhcp-agent)
+changed: [host-1] => (item=neutron-metadata-agent)
+changed: [host-1] => (item=openvswitch-switch)
+changed: [host-1] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-3] => (item=neutron-l3-agent)
+changed: [host-3] => (item=neutron-dhcp-agent)
+changed: [host-3] => (item=neutron-metadata-agent)
+changed: [host-3] => (item=openvswitch-switch)
+changed: [host-3] => (item=neutron-plugin-openvswitch-agent)
+
+TASK: [ceilometer_controller | include_vars {{ ansible_os_family }}.yml] ****** 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [ceilometer_controller | install ceilometer packages] ******************* 
+changed: [host-1] => (item=ceilometer-api)
+changed: [host-1] => (item=ceilometer-collector)
+changed: [host-1] => (item=ceilometer-agent-central)
+changed: [host-1] => (item=ceilometer-agent-notification)
+changed: [host-1] => (item=ceilometer-alarm-evaluator)
+changed: [host-1] => (item=ceilometer-alarm-notifier)
+ok: [host-1] => (item=python-ceilometerclient)
+changed: [host-2] => (item=ceilometer-api)
+changed: [host-2] => (item=ceilometer-collector)
+changed: [host-2] => (item=ceilometer-agent-central)
+changed: [host-2] => (item=ceilometer-agent-notification)
+changed: [host-2] => (item=ceilometer-alarm-evaluator)
+changed: [host-2] => (item=ceilometer-alarm-notifier)
+ok: [host-2] => (item=python-ceilometerclient)
+changed: [host-3] => (item=ceilometer-api)
+changed: [host-3] => (item=ceilometer-collector)
+changed: [host-3] => (item=ceilometer-agent-central)
+changed: [host-3] => (item=ceilometer-agent-notification)
+changed: [host-3] => (item=ceilometer-alarm-evaluator)
+changed: [host-3] => (item=ceilometer-alarm-notifier)
+ok: [host-3] => (item=python-ceilometerclient)
+
+TASK: [ceilometer_controller | copy ceilometer configs] *********************** 
+changed: [host-1] => (item={'dest': ['/etc/ceilometer/ceilometer.conf'], 'src': 'ceilometer.j2'})
+changed: [host-1] => (item={'dest': ['/etc/cinder/cinder.conf'], 'src': 'cinder.j2'})
+changed: [host-1] => (item={'dest': ['/etc/glance/glance-api.conf', '/etc/glance/glance-registry.conf'], 'src': 'glance.j2'})
+changed: [host-2] => (item={'dest': ['/etc/ceilometer/ceilometer.conf'], 'src': 'ceilometer.j2'})
+changed: [host-2] => (item={'dest': ['/etc/cinder/cinder.conf'], 'src': 'cinder.j2'})
+changed: [host-2] => (item={'dest': ['/etc/glance/glance-api.conf', '/etc/glance/glance-registry.conf'], 'src': 'glance.j2'})
+changed: [host-3] => (item={'dest': ['/etc/ceilometer/ceilometer.conf'], 'src': 'ceilometer.j2'})
+changed: [host-3] => (item={'dest': ['/etc/cinder/cinder.conf'], 'src': 'cinder.j2'})
+changed: [host-3] => (item={'dest': ['/etc/glance/glance-api.conf', '/etc/glance/glance-registry.conf'], 'src': 'glance.j2'})
+
+TASK: [ceilometer_controller | update ceilometer configs] ********************* 
+changed: [host-3] => (item=({'src': 'ceilometer.j2'}, '/etc/ceilometer/ceilometer.conf'))
+changed: [host-3] => (item=({'src': 'cinder.j2'}, '/etc/cinder/cinder.conf'))
+changed: [host-3] => (item=({'src': 'glance.j2'}, '/etc/glance/glance-api.conf'))
+changed: [host-3] => (item=({'src': 'glance.j2'}, '/etc/glance/glance-registry.conf'))
+changed: [host-2] => (item=({'src': 'ceilometer.j2'}, '/etc/ceilometer/ceilometer.conf'))
+changed: [host-2] => (item=({'src': 'cinder.j2'}, '/etc/cinder/cinder.conf'))
+changed: [host-2] => (item=({'src': 'glance.j2'}, '/etc/glance/glance-api.conf'))
+changed: [host-2] => (item=({'src': 'glance.j2'}, '/etc/glance/glance-registry.conf'))
+changed: [host-1] => (item=({'src': 'ceilometer.j2'}, '/etc/ceilometer/ceilometer.conf'))
+changed: [host-1] => (item=({'src': 'cinder.j2'}, '/etc/cinder/cinder.conf'))
+changed: [host-1] => (item=({'src': 'glance.j2'}, '/etc/glance/glance-api.conf'))
+changed: [host-1] => (item=({'src': 'glance.j2'}, '/etc/glance/glance-registry.conf'))
+
+TASK: [ceilometer_controller | change meter polling interval to 300s] ********* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ceilometer_controller | write services to monitor list] **************** 
+changed: [host-3] => (item=ceilometer-agent-central)
+changed: [host-3] => (item=ceilometer-agent-notification)
+changed: [host-3] => (item=ceilometer-api)
+changed: [host-3] => (item=ceilometer-collector)
+changed: [host-3] => (item=ceilometer-alarm-evaluator)
+changed: [host-3] => (item=ceilometer-alarm-notifier)
+changed: [host-1] => (item=ceilometer-agent-central)
+changed: [host-1] => (item=ceilometer-agent-notification)
+changed: [host-1] => (item=ceilometer-api)
+changed: [host-1] => (item=ceilometer-collector)
+changed: [host-1] => (item=ceilometer-alarm-evaluator)
+changed: [host-1] => (item=ceilometer-alarm-notifier)
+changed: [host-2] => (item=ceilometer-agent-central)
+changed: [host-2] => (item=ceilometer-agent-notification)
+changed: [host-2] => (item=ceilometer-api)
+changed: [host-2] => (item=ceilometer-collector)
+changed: [host-2] => (item=ceilometer-alarm-evaluator)
+changed: [host-2] => (item=ceilometer-alarm-notifier)
+
+NOTIFIED: [ceilometer_controller | restart ceilometer relation service] ******* 
+changed: [host-1] => (item=ceilometer-agent-central)
+changed: [host-1] => (item=ceilometer-agent-notification)
+changed: [host-1] => (item=ceilometer-api)
+changed: [host-1] => (item=ceilometer-collector)
+changed: [host-1] => (item=ceilometer-alarm-evaluator)
+changed: [host-1] => (item=ceilometer-alarm-notifier)
+changed: [host-2] => (item=ceilometer-agent-central)
+changed: [host-2] => (item=ceilometer-agent-notification)
+changed: [host-2] => (item=ceilometer-api)
+changed: [host-2] => (item=ceilometer-collector)
+changed: [host-2] => (item=ceilometer-alarm-evaluator)
+changed: [host-2] => (item=ceilometer-alarm-notifier)
+changed: [host-3] => (item=ceilometer-agent-central)
+changed: [host-3] => (item=ceilometer-agent-notification)
+changed: [host-3] => (item=ceilometer-api)
+changed: [host-3] => (item=ceilometer-collector)
+changed: [host-3] => (item=ceilometer-alarm-evaluator)
+changed: [host-3] => (item=ceilometer-alarm-notifier)
+
+TASK: [dashboard | include_vars {{ ansible_os_family }}.yml] ****************** 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [dashboard | install http packages] ************************************* 
+changed: [host-1] => (item=apache2)
+changed: [host-1] => (item=libapache2-mod-wsgi)
+changed: [host-2] => (item=apache2)
+changed: [host-2] => (item=libapache2-mod-wsgi)
+changed: [host-3] => (item=apache2)
+changed: [host-3] => (item=libapache2-mod-wsgi)
+
+TASK: [dashboard | set http config] ******************************************* 
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [dashboard | restart http services] ************************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [dashboard | write services to monitor list] **************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [dashboard | install dashboard packages] ******************************** 
+changed: [host-3] => (item=openstack-dashboard)
+changed: [host-2] => (item=openstack-dashboard)
+changed: [host-1] => (item=openstack-dashboard)
+
+TASK: [dashboard | remove ubuntu theme] *************************************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [dashboard | update ubuntu horizon settings] **************************** 
+changed: [host-2] => (item={'regexp': '^WEBROOT[ \\t]*=.*', 'line': 'WEBROOT = "/horizon"'})
+changed: [host-2] => (item={'regexp': '^COMPRESS_OFFLINE[ \\t]*=.*', 'line': 'COMPRESS_OFFLINE=True'})
+changed: [host-2] => (item={'regexp': '^ALLOWED_HOSTS[ \\t]*=.*', 'line': 'ALLOWED_HOSTS = ["*"]'})
+changed: [host-2] => (item={'regexp': '^OPENSTACK_HOST[ \\t]*=.*', 'line': u'OPENSTACK_HOST = "192.168.201.11"'})
+changed: [host-1] => (item={'regexp': '^WEBROOT[ \\t]*=.*', 'line': 'WEBROOT = "/horizon"'})
+changed: [host-1] => (item={'regexp': '^COMPRESS_OFFLINE[ \\t]*=.*', 'line': 'COMPRESS_OFFLINE=True'})
+changed: [host-1] => (item={'regexp': '^ALLOWED_HOSTS[ \\t]*=.*', 'line': 'ALLOWED_HOSTS = ["*"]'})
+changed: [host-1] => (item={'regexp': '^OPENSTACK_HOST[ \\t]*=.*', 'line': u'OPENSTACK_HOST = "192.168.201.12"'})
+changed: [host-3] => (item={'regexp': '^WEBROOT[ \\t]*=.*', 'line': 'WEBROOT = "/horizon"'})
+changed: [host-3] => (item={'regexp': '^COMPRESS_OFFLINE[ \\t]*=.*', 'line': 'COMPRESS_OFFLINE=True'})
+changed: [host-3] => (item={'regexp': '^ALLOWED_HOSTS[ \\t]*=.*', 'line': 'ALLOWED_HOSTS = ["*"]'})
+changed: [host-3] => (item={'regexp': '^OPENSTACK_HOST[ \\t]*=.*', 'line': u'OPENSTACK_HOST = "192.168.201.15"'})
+
+TASK: [dashboard | precompile horizon css] ************************************ 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [dashboard | update redhat version horizon settings] ******************** 
+skipping: [host-2] => (item={'regexp': '^WEBROOT[ \\t]*=.*', 'line': 'WEBROOT = "/horizon"'})
+skipping: [host-2] => (item={'regexp': '^COMPRESS_OFFLINE[ \\t]*=.*', 'line': 'COMPRESS_OFFLINE=False'})
+skipping: [host-2] => (item={'regexp': '^ALLOWED_HOSTS[ \\t]*=.*', 'line': 'ALLOWED_HOSTS = ["*"]'})
+skipping: [host-2] => (item={'regexp': '^OPENSTACK_HOST[ \\t]*=.*', 'line': u'OPENSTACK_HOST = "192.168.201.11"'})
+skipping: [host-1] => (item={'regexp': '^WEBROOT[ \\t]*=.*', 'line': 'WEBROOT = "/horizon"'})
+skipping: [host-1] => (item={'regexp': '^COMPRESS_OFFLINE[ \\t]*=.*', 'line': 'COMPRESS_OFFLINE=False'})
+skipping: [host-1] => (item={'regexp': '^ALLOWED_HOSTS[ \\t]*=.*', 'line': 'ALLOWED_HOSTS = ["*"]'})
+skipping: [host-1] => (item={'regexp': '^OPENSTACK_HOST[ \\t]*=.*', 'line': u'OPENSTACK_HOST = "192.168.201.12"'})
+skipping: [host-3] => (item={'regexp': '^WEBROOT[ \\t]*=.*', 'line': 'WEBROOT = "/horizon"'})
+skipping: [host-3] => (item={'regexp': '^COMPRESS_OFFLINE[ \\t]*=.*', 'line': 'COMPRESS_OFFLINE=False'})
+skipping: [host-3] => (item={'regexp': '^ALLOWED_HOSTS[ \\t]*=.*', 'line': 'ALLOWED_HOSTS = ["*"]'})
+skipping: [host-3] => (item={'regexp': '^OPENSTACK_HOST[ \\t]*=.*', 'line': u'OPENSTACK_HOST = "192.168.201.15"'})
+
+TASK: [dashboard | restart dashboard services] ******************************** 
+changed: [host-3] => (item=memcached)
+changed: [host-2] => (item=memcached)
+changed: [host-1] => (item=memcached)
+
+TASK: [heat | include_vars {{ ansible_os_family }}.yml] *********************** 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [heat | install heat related packages] ********************************** 
+changed: [host-1] => (item=heat-api)
+changed: [host-1] => (item=heat-api-cfn)
+changed: [host-1] => (item=heat-engine)
+ok: [host-1] => (item=python-heatclient)
+changed: [host-3] => (item=heat-api)
+changed: [host-3] => (item=heat-api-cfn)
+changed: [host-3] => (item=heat-engine)
+ok: [host-3] => (item=python-heatclient)
+changed: [host-2] => (item=heat-api)
+changed: [host-2] => (item=heat-api-cfn)
+changed: [host-2] => (item=heat-engine)
+ok: [host-2] => (item=python-heatclient)
+
+TASK: [heat | generate heat service list] ************************************* 
+changed: [host-2] => (item=heat-api)
+changed: [host-2] => (item=heat-api-cfn)
+changed: [host-2] => (item=heat-engine)
+changed: [host-1] => (item=heat-api)
+changed: [host-1] => (item=heat-api-cfn)
+changed: [host-1] => (item=heat-engine)
+changed: [host-3] => (item=heat-api)
+changed: [host-3] => (item=heat-api-cfn)
+changed: [host-3] => (item=heat-engine)
+
+TASK: [heat | update heat conf] *********************************************** 
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [heat | heat db sync] *************************************************** 
+failed: [host-2] => {"changed": true, "cmd": "su -s /bin/sh -c \"heat-manage db_sync\" heat", "delta": "0:00:01.346930", "end": "2016-01-27 17:36:27.639958", "rc": 1, "start": "2016-01-27 17:36:26.293028", "warnings": []}
+stderr: 2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters [-] DBAPIError exception wrapped from (pymysql.err.InternalError) (1050, u"Table 'migrate_version' already exists") [SQL: u'\nCREATE TABLE migrate_version (\n\trepository_id VARCHAR(250) NOT NULL, \n\trepository_path TEXT, \n\tversion INTEGER, \n\tPRIMARY KEY (repository_id)\n)\n\n']
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters Traceback (most recent call last):
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1139, in _execute_context
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     context)
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 450, in do_execute
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     cursor.execute(statement, parameters)
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/cursors.py", line 132, in execute
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     result = self._query(query)
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/cursors.py", line 271, in _query
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     conn.query(q)
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 726, in query
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 861, in _read_query_result
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     result.read()
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 1064, in read
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     first_packet = self.connection._read_packet()
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 826, in _read_packet
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     packet.check_error()
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 370, in check_error
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     raise_mysql_exception(self._data)
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/err.py", line 116, in raise_mysql_exception
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     _check_mysql_exception(errinfo)
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters     raise InternalError(errno, errorvalue)
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters InternalError: (1050, u"Table 'migrate_version' already exists")
+2016-01-27 17:36:27.570 44130 ERROR oslo_db.sqlalchemy.exc_filters 
+ERROR: (pymysql.err.InternalError) (1050, u"Table 'migrate_version' already exists") [SQL: u'\nCREATE TABLE migrate_version (\n\trepository_id VARCHAR(250) NOT NULL, \n\trepository_path TEXT, \n\tversion INTEGER, \n\tPRIMARY KEY (repository_id)\n)\n\n']
+...ignoring
+failed: [host-3] => {"changed": true, "cmd": "su -s /bin/sh -c \"heat-manage db_sync\" heat", "delta": "0:00:01.429094", "end": "2016-01-27 17:36:27.723037", "rc": 1, "start": "2016-01-27 17:36:26.293943", "warnings": []}
+stderr: 2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters [-] DBAPIError exception wrapped from (pymysql.err.InternalError) (1050, u"Table 'migrate_version' already exists") [SQL: u'\nCREATE TABLE migrate_version (\n\trepository_id VARCHAR(250) NOT NULL, \n\trepository_path TEXT, \n\tversion INTEGER, \n\tPRIMARY KEY (repository_id)\n)\n\n']
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters Traceback (most recent call last):
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1139, in _execute_context
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     context)
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 450, in do_execute
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     cursor.execute(statement, parameters)
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/cursors.py", line 132, in execute
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     result = self._query(query)
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/cursors.py", line 271, in _query
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     conn.query(q)
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 726, in query
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 861, in _read_query_result
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     result.read()
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 1064, in read
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     first_packet = self.connection._read_packet()
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 826, in _read_packet
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     packet.check_error()
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 370, in check_error
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     raise_mysql_exception(self._data)
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/err.py", line 116, in raise_mysql_exception
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     _check_mysql_exception(errinfo)
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters     raise InternalError(errno, errorvalue)
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters InternalError: (1050, u"Table 'migrate_version' already exists")
+2016-01-27 17:36:27.671 45603 ERROR oslo_db.sqlalchemy.exc_filters 
+ERROR: (pymysql.err.InternalError) (1050, u"Table 'migrate_version' already exists") [SQL: u'\nCREATE TABLE migrate_version (\n\trepository_id VARCHAR(250) NOT NULL, \n\trepository_path TEXT, \n\tversion INTEGER, \n\tPRIMARY KEY (repository_id)\n)\n\n']
+...ignoring
+failed: [host-1] => {"changed": true, "cmd": "su -s /bin/sh -c \"heat-manage db_sync\" heat", "delta": "0:00:01.382523", "end": "2016-01-27 17:36:27.677856", "rc": 1, "start": "2016-01-27 17:36:26.295333", "warnings": []}
+stderr: 2016-01-27 17:36:27.631 43381 ERROR oslo_db.sqlalchemy.exc_filters [-] DB exception wrapped.
+2016-01-27 17:36:27.631 43381 ERROR oslo_db.sqlalchemy.exc_filters Traceback (most recent call last):
+2016-01-27 17:36:27.631 43381 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 316, in connection
+2016-01-27 17:36:27.631 43381 ERROR oslo_db.sqlalchemy.exc_filters     return self._revalidate_connection()
+2016-01-27 17:36:27.631 43381 ERROR oslo_db.sqlalchemy.exc_filters   File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 396, in _revalidate_connection
+2016-01-27 17:36:27.631 43381 ERROR oslo_db.sqlalchemy.exc_filters     raise exc.ResourceClosedError("This Connection is closed")
+2016-01-27 17:36:27.631 43381 ERROR oslo_db.sqlalchemy.exc_filters ResourceClosedError: This Connection is closed
+2016-01-27 17:36:27.631 43381 ERROR oslo_db.sqlalchemy.exc_filters 
+ERROR: This Connection is closed
+...ignoring
+
+NOTIFIED: [heat | restart heat service] *************************************** 
+changed: [host-1] => (item=heat-api)
+changed: [host-1] => (item=heat-api-cfn)
+changed: [host-1] => (item=heat-engine)
+changed: [host-3] => (item=heat-api)
+changed: [host-3] => (item=heat-api-cfn)
+changed: [host-3] => (item=heat-engine)
+changed: [host-2] => (item=heat-api)
+changed: [host-2] => (item=heat-api-cfn)
+changed: [host-2] => (item=heat-engine)
+
+NOTIFIED: [heat | remove heat-sqlite-db] ************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [filebeat | include_vars {{ item }}] ************************************ 
+ok: [host-3] => (item=/var/ansible/run/openstack_liberty-onos/roles/filebeat/vars/Debian.yml)
+ok: [host-1] => (item=/var/ansible/run/openstack_liberty-onos/roles/filebeat/vars/Debian.yml)
+ok: [host-2] => (item=/var/ansible/run/openstack_liberty-onos/roles/filebeat/vars/Debian.yml)
+
+TASK: [filebeat | add rpm key for elastic.co] ********************************* 
+skipping: [host-3]
+skipping: [host-2]
+skipping: [host-1]
+
+TASK: [filebeat | Add filebeat repository] ************************************ 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-1]
+
+TASK: [filebeat | install filebeat] ******************************************* 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-1]
+
+TASK: [filebeat | add elastic gpg key] **************************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [filebeat | add beats repository] *************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [filebeat | install filebeat] ******************************************* 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [filebeat | create filebeat.yml for controller] ************************* 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [filebeat | create filebeat.yml for compute] **************************** 
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+
+NOTIFIED: [filebeat | restart filebeat] *************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [filebeat | start and enable filebeat] ********************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-4]
+ok: [host-5]
+ok: [host-1]
+ok: [host-3]
+ok: [host-2]
+
+TASK: [storage | check if physical device exists] ***************************** 
+ok: [host-4]
+ok: [host-1]
+ok: [host-5]
+ok: [host-3]
+ok: [host-2]
+
+TASK: [storage | get available /var partition size] *************************** 
+skipping: [host-5]
+changed: [host-1]
+changed: [host-4]
+changed: [host-3]
+changed: [host-2]
+
+TASK: [storage | create image file if not exitst] ***************************** 
+skipping: [host-5]
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+changed: [host-4]
+
+TASK: [storage | do a losetup on storage volumes] ***************************** 
+skipping: [host-5]
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+changed: [host-4]
+
+TASK: [storage | debug loop device] ******************************************* 
+skipping: [host-5]
+ok: [host-1] => {
+    "msg": "/dev/loop0"
+}
+ok: [host-3] => {
+    "msg": "/dev/loop0"
+}
+ok: [host-2] => {
+    "msg": "/dev/loop0"
+}
+ok: [host-4] => {
+    "msg": "/dev/loop0"
+}
+
+TASK: [storage | get device] ************************************************** 
+skipping: [host-5]
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+changed: [host-4]
+
+TASK: [storage | create physical and group volumes] *************************** 
+skipping: [host-5]
+changed: [host-4]
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [storage | destroy GPT lable] ******************************************* 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-4]
+skipping: [host-1]
+changed: [host-5]
+
+TASK: [storage | create physical and group volumes] *************************** 
+skipping: [host-4]
+skipping: [host-2]
+skipping: [host-1]
+skipping: [host-3]
+changed: [host-5]
+
+PLAY [compute] **************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-4]
+ok: [host-5]
+
+TASK: [nova-compute | include_vars {{ ansible_os_family }}.yml] *************** 
+ok: [host-4]
+ok: [host-5]
+
+TASK: [nova-compute | install nova-compute related packages] ****************** 
+changed: [host-4] => (item=nova-compute-kvm)
+changed: [host-5] => (item=nova-compute-kvm)
+
+TASK: [nova-compute | update nova-compute conf] ******************************* 
+changed: [host-5] => (item=nova.conf)
+changed: [host-4] => (item=nova.conf)
+
+TASK: [nova-compute | update nova-compute conf] ******************************* 
+changed: [host-5] => (item=nova-compute.conf)
+changed: [host-4] => (item=nova-compute.conf)
+
+TASK: [nova-compute | generate neutron control service list] ****************** 
+changed: [host-4] => (item=nova-compute)
+changed: [host-5] => (item=nova-compute)
+
+TASK: [nova-compute | remove nova sqlite db] ********************************** 
+changed: [host-5]
+changed: [host-4]
+
+NOTIFIED: [nova-compute | restart nova-compute services] ********************** 
+changed: [host-4] => (item=nova-compute)
+changed: [host-5] => (item=nova-compute)
+
+TASK: [neutron-compute | include_vars {{ ansible_os_family }}.yml] ************ 
+ok: [host-4]
+ok: [host-5]
+
+TASK: [neutron-compute | activate ipv4 forwarding] **************************** 
+changed: [host-4]
+changed: [host-5]
+
+TASK: [neutron-compute | deactivate ipv4 rp filter] *************************** 
+changed: [host-5]
+changed: [host-4]
+
+TASK: [neutron-compute | deactivate ipv4 default rp filter] ******************* 
+changed: [host-5]
+changed: [host-4]
+
+TASK: [neutron-compute | install compute-related neutron packages] ************ 
+changed: [host-4] => (item=neutron-common)
+changed: [host-4] => (item=neutron-plugin-ml2)
+ok: [host-4] => (item=openvswitch-datapath-dkms)
+ok: [host-4] => (item=openvswitch-switch)
+changed: [host-4] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-5] => (item=neutron-common)
+changed: [host-5] => (item=neutron-plugin-ml2)
+ok: [host-5] => (item=openvswitch-datapath-dkms)
+ok: [host-5] => (item=openvswitch-switch)
+changed: [host-5] => (item=neutron-plugin-openvswitch-agent)
+
+TASK: [neutron-compute | fix openstack neutron plugin config file] ************ 
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [neutron-compute | generate neutron compute service list] *************** 
+changed: [host-4] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-5] => (item=neutron-plugin-openvswitch-agent)
+
+TASK: [neutron-compute | config ml2 plugin] *********************************** 
+changed: [host-4]
+changed: [host-5]
+
+TASK: [neutron-compute | ln plugin.ini] *************************************** 
+changed: [host-4]
+changed: [host-5]
+
+TASK: [neutron-compute | config neutron] ************************************** 
+changed: [host-4]
+changed: [host-5]
+
+NOTIFIED: [nova-compute | restart nova-compute services] ********************** 
+changed: [host-4] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-5] => (item=neutron-plugin-openvswitch-agent)
+
+NOTIFIED: [neutron-compute | restart neutron compute service] ***************** 
+changed: [host-5] => (item=neutron-plugin-openvswitch-agent)
+changed: [host-4] => (item=neutron-plugin-openvswitch-agent)
+
+TASK: [neutron-compute | ovs set manager] ************************************* 
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [neutron-compute | get ovs uuid] **************************************** 
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [neutron-compute | set bridge_mappings] ********************************* 
+skipping: [host-5]
+skipping: [host-4]
+
+TASK: [neutron-compute | set local ip] **************************************** 
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [cinder-volume | include_vars {{ ansible_os_family }}.yml] ************** 
+ok: [host-4]
+ok: [host-5]
+
+TASK: [cinder-volume | install cinder-volume and lvm2 packages] *************** 
+changed: [host-5] => (item=cinder-volume)
+ok: [host-5] => (item=lvm2)
+changed: [host-4] => (item=cinder-volume)
+ok: [host-4] => (item=lvm2)
+
+TASK: [cinder-volume | generate cinder volume service list] ******************* 
+changed: [host-5] => (item=cinder-volume)
+changed: [host-4] => (item=cinder-volume)
+
+TASK: [cinder-volume | upload cinder-volume configuration] ******************** 
+changed: [host-4]
+changed: [host-5]
+
+NOTIFIED: [cinder-volume | restart cinder-volume services] ******************** 
+changed: [host-4] => (item=cinder-volume)
+changed: [host-5] => (item=cinder-volume)
+
+TASK: [ceilometer_compute | include_vars {{ ansible_os_family }}.yml] ********* 
+ok: [host-4]
+ok: [host-5]
+
+TASK: [ceilometer_compute | install ceilometer packages] ********************** 
+changed: [host-4] => (item=ceilometer-agent-compute)
+changed: [host-5] => (item=ceilometer-agent-compute)
+
+TASK: [ceilometer_compute | copy ceilometer configs] ************************** 
+changed: [host-4] => (item={'dest': ['/etc/ceilometer/ceilometer.conf'], 'src': 'ceilometer.j2'})
+changed: [host-4] => (item={'dest': ['/etc/nova/nova.conf'], 'src': 'nova.j2'})
+changed: [host-5] => (item={'dest': ['/etc/ceilometer/ceilometer.conf'], 'src': 'ceilometer.j2'})
+changed: [host-5] => (item={'dest': ['/etc/nova/nova.conf'], 'src': 'nova.j2'})
+
+TASK: [ceilometer_compute | update ceilometer configs] ************************ 
+changed: [host-4] => (item=({'src': 'ceilometer.j2'}, '/etc/ceilometer/ceilometer.conf'))
+changed: [host-4] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+changed: [host-5] => (item=({'src': 'ceilometer.j2'}, '/etc/ceilometer/ceilometer.conf'))
+changed: [host-5] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+
+TASK: [ceilometer_compute | write services to monitor list] ******************* 
+changed: [host-5] => (item=ceilometer-agent-compute)
+ok: [host-5] => (item=nova-compute)
+changed: [host-4] => (item=ceilometer-agent-compute)
+ok: [host-4] => (item=nova-compute)
+
+NOTIFIED: [ceilometer_compute | restart ceilometer relation service] ********** 
+changed: [host-5] => (item=ceilometer-agent-compute)
+changed: [host-5] => (item=nova-compute)
+changed: [host-4] => (item=ceilometer-agent-compute)
+changed: [host-4] => (item=nova-compute)
+
+TASK: [filebeat | include_vars {{ item }}] ************************************ 
+ok: [host-4] => (item=/var/ansible/run/openstack_liberty-onos/roles/filebeat/vars/Debian.yml)
+ok: [host-5] => (item=/var/ansible/run/openstack_liberty-onos/roles/filebeat/vars/Debian.yml)
+
+TASK: [filebeat | add rpm key for elastic.co] ********************************* 
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [filebeat | Add filebeat repository] ************************************ 
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [filebeat | install filebeat] ******************************************* 
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [filebeat | add elastic gpg key] **************************************** 
+changed: [host-4]
+changed: [host-5]
+
+TASK: [filebeat | add beats repository] *************************************** 
+changed: [host-5]
+changed: [host-4]
+
+TASK: [filebeat | install filebeat] ******************************************* 
+changed: [host-5]
+changed: [host-4]
+
+TASK: [filebeat | create filebeat.yml for controller] ************************* 
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [filebeat | create filebeat.yml for compute] **************************** 
+changed: [host-4]
+changed: [host-5]
+
+NOTIFIED: [filebeat | restart filebeat] *************************************** 
+changed: [host-4]
+changed: [host-5]
+
+TASK: [filebeat | start and enable filebeat] ********************************** 
+changed: [host-4]
+changed: [host-5]
+
+PLAY [controller] ************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+
+TASK: [ext-network | create external net] ************************************* 
+skipping: [host-2]
+
+TASK: [ext-network | create external subnet] ********************************** 
+skipping: [host-2]
+
+PLAY [ceph_adm] *************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-1]
+
+PLAY [ceph] ******************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-2]
+ok: [host-3]
+ok: [host-5]
+ok: [host-4]
+ok: [host-1]
+
+TASK: [ceph-purge | clear tmp files] ****************************************** 
+changed: [host-1 -> 127.0.0.1]
+changed: [host-4 -> 127.0.0.1]
+changed: [host-2 -> 127.0.0.1]
+changed: [host-5 -> 127.0.0.1]
+changed: [host-3 -> 127.0.0.1]
+
+TASK: [ceph-purge | install ceph-related packages] **************************** 
+changed: [host-4] => (item=ceph-deploy)
+changed: [host-5] => (item=ceph-deploy)
+changed: [host-1] => (item=ceph-deploy)
+changed: [host-3] => (item=ceph-deploy)
+changed: [host-2] => (item=ceph-deploy)
+
+TASK: [ceph-purge | purge ceph] *********************************************** 
+changed: [host-4]
+changed: [host-5]
+changed: [host-3]
+changed: [host-2]
+changed: [host-1]
+
+TASK: [ceph-purge | remove monmap] ******************************************** 
+ok: [host-1]
+ok: [host-2]
+ok: [host-4]
+ok: [host-5]
+ok: [host-3]
+
+TASK: [ceph-config | gen ceph fsid] ******************************************* 
+skipping: [host-2]
+skipping: [host-4]
+skipping: [host-3]
+skipping: [host-5]
+changed: [host-1]
+
+TASK: [ceph-config | gen ceph conf] ******************************************* 
+skipping: [host-3]
+skipping: [host-2]
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1 -> 127.0.0.1]
+
+TASK: [ceph-config | make directory for ceph config file] ********************* 
+changed: [host-1]
+changed: [host-2]
+changed: [host-4]
+changed: [host-5]
+changed: [host-3]
+
+TASK: [ceph-config | copy ceph conf to dest mon node] ************************* 
+changed: [host-5]
+changed: [host-2]
+changed: [host-1]
+changed: [host-4]
+changed: [host-3]
+
+TASK: [ceph-config | install ceph-related packages] *************************** 
+changed: [host-5] => (item=ceph)
+changed: [host-4] => (item=ceph)
+changed: [host-1] => (item=ceph)
+changed: [host-3] => (item=ceph)
+changed: [host-2] => (item=ceph)
+
+TASK: [ceph-config | gen create monmap script] ******************************** 
+skipping: [host-3]
+skipping: [host-2]
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1 -> 127.0.0.1]
+
+TASK: [ceph-config | create monmap] ******************************************* 
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1]
+changed: [host-3]
+changed: [host-2]
+
+TASK: [ceph-config | create mon.keyring] ************************************** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-5]
+skipping: [host-4]
+changed: [host-1]
+
+TASK: [ceph-config | create admin.keyring] ************************************ 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1]
+
+TASK: [ceph-config | Add the client.admin key to the ceph.mon.keyring] ******** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1]
+
+TASK: [ceph-config | fetch mon.keyring to local] ****************************** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1]
+
+TASK: [ceph-config | fetch client.admin.keyring to local] ********************* 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1]
+
+TASK: [ceph-config | copy mon.keyring to remote nodes] ************************ 
+ok: [host-1]
+changed: [host-2]
+changed: [host-4]
+changed: [host-5]
+changed: [host-3]
+
+TASK: [ceph-config | copy admin.keyring to remote nodes] ********************** 
+ok: [host-1]
+changed: [host-4]
+changed: [host-2]
+changed: [host-3]
+changed: [host-5]
+
+PLAY [ceph_mon] *************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-1]
+ok: [host-2]
+ok: [host-3]
+
+TASK: [ceph-mon | Create a default data directory] **************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [ceph-mon | Populate the monitor daemon] ******************************** 
+changed: [host-3]
+changed: [host-1]
+changed: [host-2]
+
+TASK: [ceph-mon | Touch the done file] **************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ceph-mon | start mon daemon] ******************************************* 
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [ceph-mon | auto start ceph-mon] **************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ceph-mon | wait for creating osd keyring] ****************************** 
+ok: [host-2]
+ok: [host-1]
+ok: [host-3]
+
+TASK: [ceph-mon | fetch osd keyring] ****************************************** 
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+PLAY [ceph_osd] *************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-4]
+ok: [host-5]
+
+TASK: [ceph-osd | create osd lv and mount it on /var/local/osd] *************** 
+changed: [host-4]
+changed: [host-5]
+
+TASK: [ceph-osd | copy osd keyring] ******************************************* 
+changed: [host-5]
+changed: [host-4]
+
+TASK: [ceph-osd | prepare osd disk] ******************************************* 
+changed: [host-5]
+changed: [host-4]
+
+TASK: [ceph-osd | activate osd node] ****************************************** 
+changed: [host-4]
+changed: [host-5]
+
+PLAY [ceph] ******************************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-1]
+ok: [host-4]
+ok: [host-3]
+ok: [host-2]
+ok: [host-5]
+
+TASK: [ceph-openstack | include_vars {{ ansible_os_family }}.yml] ************* 
+ok: [host-1]
+ok: [host-2]
+ok: [host-4]
+ok: [host-5]
+ok: [host-3]
+
+TASK: [ceph-openstack | gen ceph uuid] **************************************** 
+changed: [host-1]
+
+TASK: [ceph-openstack | gen template secret.xml] ****************************** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1 -> 127.0.0.1]
+
+TASK: [ceph-openstack | create pool] ****************************************** 
+skipping: [host-3] => (item=volumes)
+skipping: [host-3] => (item=images)
+skipping: [host-3] => (item=backups)
+skipping: [host-3] => (item=vms)
+skipping: [host-2] => (item=volumes)
+skipping: [host-2] => (item=images)
+skipping: [host-2] => (item=backups)
+skipping: [host-2] => (item=vms)
+skipping: [host-4] => (item=volumes)
+skipping: [host-4] => (item=images)
+skipping: [host-4] => (item=backups)
+skipping: [host-4] => (item=vms)
+skipping: [host-5] => (item=volumes)
+skipping: [host-5] => (item=images)
+skipping: [host-5] => (item=backups)
+skipping: [host-5] => (item=vms)
+changed: [host-1] => (item=volumes)
+changed: [host-1] => (item=images)
+changed: [host-1] => (item=backups)
+changed: [host-1] => (item=vms)
+
+TASK: [ceph-openstack | create ceph users for openstack] ********************** 
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1]
+
+TASK: [ceph-openstack | send glance key to controller nodes] ****************** 
+skipping: [host-5]
+skipping: [host-4]
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [ceph-openstack | send cinder key to compute nodes] ********************* 
+skipping: [host-1]
+skipping: [host-2]
+skipping: [host-3]
+changed: [host-5]
+changed: [host-4]
+
+TASK: [ceph-openstack | copy cinder key to compute node] ********************** 
+skipping: [host-1]
+skipping: [host-2]
+skipping: [host-3]
+changed: [host-4]
+changed: [host-5]
+
+TASK: [ceph-openstack | copy secret.xml to compute nodes] ********************* 
+skipping: [host-1]
+skipping: [host-2]
+skipping: [host-3]
+changed: [host-4]
+changed: [host-5]
+
+TASK: [ceph-openstack | undefine libvirt secret in case of repeatedly execute ceph_deploy] *** 
+skipping: [host-1]
+skipping: [host-2]
+skipping: [host-3]
+failed: [host-4] => {"changed": true, "cmd": "virsh secret-list | awk '$1 ~ /[0-9]+/ {print $1}' | xargs virsh secret-undefine", "delta": "0:00:00.020627", "end": "2016-01-27 17:43:09.782020", "rc": 123, "start": "2016-01-27 17:43:09.761393", "warnings": []}
+stderr: error: command 'secret-undefine' requires <secret> option
+...ignoring
+failed: [host-5] => {"changed": true, "cmd": "virsh secret-list | awk '$1 ~ /[0-9]+/ {print $1}' | xargs virsh secret-undefine", "delta": "0:00:00.020842", "end": "2016-01-27 17:43:09.836396", "rc": 123, "start": "2016-01-27 17:43:09.815554", "warnings": []}
+stderr: error: command 'secret-undefine' requires <secret> option
+...ignoring
+
+TASK: [ceph-openstack | create key for libvirt on compute nodes] ************** 
+skipping: [host-1]
+skipping: [host-2]
+skipping: [host-3]
+changed: [host-4]
+changed: [host-5]
+
+TASK: [ceph-openstack | chown of glance/api.log] ****************************** 
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-2]
+changed: [host-3]
+changed: [host-1]
+
+TASK: [ceph-openstack | modify glance-api.conf for ceph] ********************** 
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-1]
+changed: [host-2]
+changed: [host-3]
+
+TASK: [ceph-openstack | restart glance] *************************************** 
+skipping: [host-4]
+skipping: [host-5]
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [ceph-openstack | modify cinder.conf for ceph] ************************** 
+skipping: [host-1]
+skipping: [host-2]
+skipping: [host-3]
+changed: [host-4]
+changed: [host-5]
+
+TASK: [ceph-openstack | modify nova.conf for ceph] **************************** 
+skipping: [host-1]
+skipping: [host-3]
+skipping: [host-2]
+changed: [host-4]
+changed: [host-5]
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-5]
+ok: [host-2]
+ok: [host-1]
+ok: [host-4]
+ok: [host-3]
+
+TASK: [monitor | include_vars {{ ansible_os_family }}.yml] ******************** 
+ok: [host-3]
+ok: [host-2]
+ok: [host-1]
+ok: [host-4]
+ok: [host-5]
+
+TASK: [monitor | copy service check file] ************************************* 
+changed: [host-3]
+changed: [host-5]
+changed: [host-2]
+changed: [host-1]
+changed: [host-4]
+
+TASK: [monitor | copy cron file] ********************************************** 
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+changed: [host-5]
+changed: [host-4]
+
+TASK: [monitor | restart cron] ************************************************ 
+changed: [host-4]
+changed: [host-3]
+changed: [host-5]
+changed: [host-1]
+changed: [host-2]
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-2]
+ok: [host-1]
+ok: [host-4]
+ok: [host-3]
+ok: [host-5]
+
+TASK: [secgroup | include_vars {{ ansible_os_family }}.yml] ******************* 
+ok: [host-2]
+ok: [host-3]
+ok: [host-1]
+ok: [host-4]
+ok: [host-5]
+
+TASK: [secgroup | debug msg={{ enable_secgroup }}] **************************** 
+ok: [host-1] => {
+    "msg": "True"
+}
+ok: [host-3] => {
+    "msg": "True"
+}
+ok: [host-2] => {
+    "msg": "True"
+}
+ok: [host-5] => {
+    "msg": "True"
+}
+ok: [host-4] => {
+    "msg": "True"
+}
+
+TASK: [secgroup | make sure template dir exits] ******************************* 
+skipping: [host-1]
+skipping: [host-2]
+skipping: [host-3]
+skipping: [host-4]
+skipping: [host-5]
+
+TASK: [secgroup | copy configs] *********************************************** 
+skipping: [host-1] => (item={'dest': ['/etc/nova/nova.conf'], 'src': 'nova.j2'})
+skipping: [host-1] => (item={'dest': ['/etc/neutron/plugins/ml2/ml2_conf.ini', '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini', '/etc/neutron/plugins/ml2/restproxy.ini'], 'src': 'neutron.j2'})
+skipping: [host-2] => (item={'dest': ['/etc/nova/nova.conf'], 'src': 'nova.j2'})
+skipping: [host-2] => (item={'dest': ['/etc/neutron/plugins/ml2/ml2_conf.ini', '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini', '/etc/neutron/plugins/ml2/restproxy.ini'], 'src': 'neutron.j2'})
+skipping: [host-3] => (item={'dest': ['/etc/nova/nova.conf'], 'src': 'nova.j2'})
+skipping: [host-3] => (item={'dest': ['/etc/neutron/plugins/ml2/ml2_conf.ini', '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini', '/etc/neutron/plugins/ml2/restproxy.ini'], 'src': 'neutron.j2'})
+skipping: [host-5] => (item={'dest': ['/etc/nova/nova.conf'], 'src': 'nova.j2'})
+skipping: [host-5] => (item={'dest': ['/etc/neutron/plugins/ml2/ml2_conf.ini', '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini', '/etc/neutron/plugins/ml2/restproxy.ini'], 'src': 'neutron.j2'})
+skipping: [host-4] => (item={'dest': ['/etc/nova/nova.conf'], 'src': 'nova.j2'})
+skipping: [host-4] => (item={'dest': ['/etc/neutron/plugins/ml2/ml2_conf.ini', '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini', '/etc/neutron/plugins/ml2/restproxy.ini'], 'src': 'neutron.j2'})
+
+TASK: [secgroup | update controller configs] ********************************** 
+skipping: [host-1] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-1] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-1] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-1] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+skipping: [host-2] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-2] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-2] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-2] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+skipping: [host-3] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-3] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-3] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-3] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+skipping: [host-4] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-4] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-4] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-4] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+skipping: [host-5] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-5] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-5] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-5] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+
+TASK: [secgroup | update compute configs] ************************************* 
+skipping: [host-1] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-1] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-1] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-1] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+skipping: [host-3] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-3] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-3] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-3] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+skipping: [host-4] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-4] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-4] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-4] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+skipping: [host-2] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-2] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-2] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-2] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+skipping: [host-5] => (item=({'src': 'nova.j2'}, '/etc/nova/nova.conf'))
+skipping: [host-5] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/ml2_conf.ini'))
+skipping: [host-5] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'))
+skipping: [host-5] => (item=({'src': 'neutron.j2'}, '/etc/neutron/plugins/ml2/restproxy.ini'))
+
+PLAY [all] ******************************************************************** 
+
+GATHERING FACTS *************************************************************** 
+ok: [host-2]
+ok: [host-3]
+ok: [host-1]
+ok: [host-4]
+ok: [host-5]
+
+TASK: [set bash to nova] ****************************************************** 
+changed: [host-5]
+changed: [host-4]
+changed: [host-1]
+changed: [host-3]
+changed: [host-2]
+
+TASK: [make sure ssh dir exist] *********************************************** 
+changed: [host-4] => (item={'owner': 'nova', 'path': '/var/lib/nova/.ssh', 'group': 'nova'})
+changed: [host-5] => (item={'owner': 'nova', 'path': '/var/lib/nova/.ssh', 'group': 'nova'})
+changed: [host-3] => (item={'owner': 'nova', 'path': '/var/lib/nova/.ssh', 'group': 'nova'})
+changed: [host-1] => (item={'owner': 'nova', 'path': '/var/lib/nova/.ssh', 'group': 'nova'})
+changed: [host-2] => (item={'owner': 'nova', 'path': '/var/lib/nova/.ssh', 'group': 'nova'})
+
+TASK: [copy ssh keys for nova] ************************************************ 
+changed: [host-4]
+changed: [host-5]
+changed: [host-2]
+changed: [host-1]
+changed: [host-3]
+
+TASK: [write ssh config] ****************************************************** 
+changed: [host-4] => (item={'dest': '/var/lib/nova/.ssh/config', 'owner': 'nova', 'group': 'nova'})
+changed: [host-5] => (item={'dest': '/var/lib/nova/.ssh/config', 'owner': 'nova', 'group': 'nova'})
+changed: [host-1] => (item={'dest': '/var/lib/nova/.ssh/config', 'owner': 'nova', 'group': 'nova'})
+changed: [host-2] => (item={'dest': '/var/lib/nova/.ssh/config', 'owner': 'nova', 'group': 'nova'})
+changed: [host-3] => (item={'dest': '/var/lib/nova/.ssh/config', 'owner': 'nova', 'group': 'nova'})
+
+TASK: [authorized_key ] ******************************************************* 
+changed: [host-5] => (item=/tmp/ssh-keys-host-3)
+changed: [host-5] => (item=/tmp/ssh-keys-host-4)
+changed: [host-5] => (item=/tmp/ssh-keys-host-2)
+changed: [host-5] => (item=/tmp/ssh-keys-host-1)
+changed: [host-5] => (item=/tmp/ssh-keys-host-5)
+changed: [host-4] => (item=/tmp/ssh-keys-host-3)
+changed: [host-4] => (item=/tmp/ssh-keys-host-4)
+changed: [host-4] => (item=/tmp/ssh-keys-host-2)
+changed: [host-4] => (item=/tmp/ssh-keys-host-1)
+changed: [host-4] => (item=/tmp/ssh-keys-host-5)
+changed: [host-1] => (item=/tmp/ssh-keys-host-3)
+changed: [host-1] => (item=/tmp/ssh-keys-host-4)
+changed: [host-1] => (item=/tmp/ssh-keys-host-2)
+changed: [host-1] => (item=/tmp/ssh-keys-host-1)
+changed: [host-1] => (item=/tmp/ssh-keys-host-5)
+changed: [host-3] => (item=/tmp/ssh-keys-host-3)
+changed: [host-3] => (item=/tmp/ssh-keys-host-4)
+changed: [host-3] => (item=/tmp/ssh-keys-host-2)
+changed: [host-3] => (item=/tmp/ssh-keys-host-1)
+changed: [host-3] => (item=/tmp/ssh-keys-host-5)
+changed: [host-2] => (item=/tmp/ssh-keys-host-3)
+changed: [host-2] => (item=/tmp/ssh-keys-host-4)
+changed: [host-2] => (item=/tmp/ssh-keys-host-2)
+changed: [host-2] => (item=/tmp/ssh-keys-host-1)
+changed: [host-2] => (item=/tmp/ssh-keys-host-5)
+
+TASK: [chown ssh file] ******************************************************** 
+changed: [host-1]
+changed: [host-5]
+changed: [host-2]
+changed: [host-4]
+changed: [host-3]
+
+PLAY RECAP ******************************************************************** 
+host-1                     : ok=263  changed=195  unreachable=0    failed=0   
+host-2                     : ok=262  changed=198  unreachable=0    failed=0   
+host-3                     : ok=260  changed=195  unreachable=0    failed=0   
+host-4                     : ok=125  changed=94   unreachable=0    failed=0   
+host-5                     : ok=121  changed=91   unreachable=0    failed=0   
+
+Exception TypeError: TypeError("'NoneType' object is not callable",) in <bound method Client.__del__ of <compass.apiclient.restful.Client object at 0x31cd1d0>> ignored

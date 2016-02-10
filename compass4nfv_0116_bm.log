@@ -1,0 +1,1668 @@
+onos@jumpserver:~/compass4nfv$ sudo ./deploy.sh baremetal_cluster_sh --iso-url=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+[sudo] password for onos: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python-cheetah is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 85 not upgraded.
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python-yaml is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 85 not upgraded.
+++ process_input_para baremetal_cluster_sh --iso-url=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
++++ generate_input_env_file baremetal_cluster_sh --iso-url=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
++++ ofile=/home/onos/compass4nfv/work/deploy/script/deploy_input.sh
++++ echo '#input deployment  parameter'
+++++ ls /home/onos/compass4nfv/deploy/conf/base.conf /home/onos/compass4nfv/deploy/conf/_.conf /home/onos/compass4nfv/deploy/conf/.conf /home/onos/compass4nfv/deploy/conf/.conf /home/onos/compass4nfv/deploy/conf/compass.conf
++++ cfg_file='/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf'
+++++ get_option_name_list '/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf'
++++++ echo '/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf'
++++++ xargs -n 1 grep -oP 'export .*?='
++++++ awk '{print $2}'
++++++ sort
++++++ uniq
++++++ sed -e 's/=$//g'
+++++ echo CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OS_CONFIG_FILENAME PACKAGE_CONFIG_FILENAME PARTITIONS PROXY SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS TIMEZONE
++++ option_name='CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OS_CONFIG_FILENAME PACKAGE_CONFIG_FILENAME PARTITIONS PROXY SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS TIMEZONE'
+++++ get_option_flag_list 'CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OS_CONFIG_FILENAME PACKAGE_CONFIG_FILENAME PARTITIONS PROXY SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS TIMEZONE'
++++++ echo 'CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OS_CONFIG_FILENAME PACKAGE_CONFIG_FILENAME PARTITIONS PROXY SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS TIMEZONE'
++++++ xargs
++++++ tr '[:upper:]' '[:lower:]'
++++++ sed -e 's/ /:,/g' -e s/_/-/g
+++++ echo cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,os-config-filename:,package-config-filename:,partitions:,proxy:,search-path:,server-credential:,service-credentials:,subnets:,timezone
++++ option_flag=cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,os-config-filename:,package-config-filename:,partitions:,proxy:,search-path:,server-credential:,service-credentials:,subnets:,timezone
+++++ getopt -o h -l dha:,network:,neutron:,conf-dir:,cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,os-config-filename:,package-config-filename:,partitions:,proxy:,search-path:,server-credential:,service-credentials:,subnets:,timezone -n deploy_parameter.sh -- baremetal_cluster_sh --iso-url=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
++++ TEMP=' --iso-url '\''file:///home/onos/opnfv-2016-01-04_16-45-58.iso'\'' -- '\''baremetal_cluster_sh'\'''
++++ '[' 0 '!=' 0 ']'
++++ eval set -- ' --iso-url '\''file:///home/onos/opnfv-2016-01-04_16-45-58.iso'\'' -- '\''baremetal_cluster_sh'\'''
+++++ set -- --iso-url file:///home/onos/opnfv-2016-01-04_16-45-58.iso -- baremetal_cluster_sh
++++ :
++++ [[ --iso-url == \-\- ]]
+++++ echo iso-url
+++++ sed s/-/_/g
+++++ tr '[:lower:]' '[:upper:]'
++++ option=ISO_URL
++++ echo 'export ISO_URL=file:///home/onos/opnfv-2016-01-04_16-45-58.iso'
++++ shift 2
++++ continue
++++ :
++++ [[ -- == \-\- ]]
++++ shift
++++ break
++++ echo /home/onos/compass4nfv/work/deploy/script/deploy_input.sh
+++ input_file=/home/onos/compass4nfv/work/deploy/script/deploy_input.sh
+++ echo /home/onos/compass4nfv/work/deploy/script/deploy_input.sh
++ source /home/onos/compass4nfv/work/deploy/script/deploy_input.sh
+++ export ISO_URL=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+++ ISO_URL=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+++ process_default_para baremetal_cluster_sh --iso-url=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+++ [[ -z '' ]]
+++ local set conf_dir=/home/onos/compass4nfv/deploy/conf
+++ get_conf_name baremetal_cluster_sh --iso-url=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+++ [[ -n '' ]]
++++ ls /home/onos/compass4nfv/deploy/conf/baremetal.conf /home/onos/compass4nfv/deploy/conf/base.conf /home/onos/compass4nfv/deploy/conf/cluster.conf /home/onos/compass4nfv/deploy/conf/compass.conf /home/onos/compass4nfv/deploy/conf/five.conf /home/onos/compass4nfv/deploy/conf/virtual.conf
+++ cfg_file='/home/onos/compass4nfv/deploy/conf/baremetal.conf
+/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/cluster.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf
+/home/onos/compass4nfv/deploy/conf/five.conf
+/home/onos/compass4nfv/deploy/conf/virtual.conf'
++++ get_option_name_list '/home/onos/compass4nfv/deploy/conf/baremetal.conf
+/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/cluster.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf
+/home/onos/compass4nfv/deploy/conf/five.conf
+/home/onos/compass4nfv/deploy/conf/virtual.conf'
+++++ echo '/home/onos/compass4nfv/deploy/conf/baremetal.conf
+/home/onos/compass4nfv/deploy/conf/base.conf
+/home/onos/compass4nfv/deploy/conf/cluster.conf
+/home/onos/compass4nfv/deploy/conf/compass.conf
+/home/onos/compass4nfv/deploy/conf/five.conf
+/home/onos/compass4nfv/deploy/conf/virtual.conf'
+++++ xargs -n 1 grep -oP 'export .*?='
+++++ awk '{print $2}'
+++++ sort
+++++ uniq
+++++ sed -e 's/=$//g'
++++ echo ADAPTER_FLAVOR_PATTERN ADAPTER_NAME ADAPTER_OS_PATTERN ADAPTER_TARGET_SYSTEM_PATTERN CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DEFAULT_ROLES DEPLOYMENT_TIMEOUT DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK INSTALL_NIC ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OPENSTACK_VERSION OS_CONFIG_FILENAME OS_VERSION PACKAGE_CONFIG_FILENAME PARTITIONS POLL_SWITCHES_FLAG PROXY REPO_NAME SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS SWITCH_CREDENTIAL SWITCH_IPS TIMEZONE VIP VIRT_CPUS VIRT_DISK VIRT_MEM VIRT_NUMBER
+++ option_name='ADAPTER_FLAVOR_PATTERN ADAPTER_NAME ADAPTER_OS_PATTERN ADAPTER_TARGET_SYSTEM_PATTERN CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DEFAULT_ROLES DEPLOYMENT_TIMEOUT DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK INSTALL_NIC ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OPENSTACK_VERSION OS_CONFIG_FILENAME OS_VERSION PACKAGE_CONFIG_FILENAME PARTITIONS POLL_SWITCHES_FLAG PROXY REPO_NAME SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS SWITCH_CREDENTIAL SWITCH_IPS TIMEZONE VIP VIRT_CPUS VIRT_DISK VIRT_MEM VIRT_NUMBER'
++++ get_option_flag_list 'ADAPTER_FLAVOR_PATTERN ADAPTER_NAME ADAPTER_OS_PATTERN ADAPTER_TARGET_SYSTEM_PATTERN CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DEFAULT_ROLES DEPLOYMENT_TIMEOUT DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK INSTALL_NIC ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OPENSTACK_VERSION OS_CONFIG_FILENAME OS_VERSION PACKAGE_CONFIG_FILENAME PARTITIONS POLL_SWITCHES_FLAG PROXY REPO_NAME SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS SWITCH_CREDENTIAL SWITCH_IPS TIMEZONE VIP VIRT_CPUS VIRT_DISK VIRT_MEM VIRT_NUMBER'
+++++ echo 'ADAPTER_FLAVOR_PATTERN ADAPTER_NAME ADAPTER_OS_PATTERN ADAPTER_TARGET_SYSTEM_PATTERN CLUSTER_NAME COMPASS_DNS1 COMPASS_DNS2 COMPASS_EXTERNAL_GW COMPASS_EXTERNAL_IP COMPASS_EXTERNAL_MASK COMPASS_SERVER COMPASS_SERVER_URL COMPASS_USER_EMAIL COMPASS_USER_PASSWORD COMPASS_VIRT_CPUS COMPASS_VIRT_MEM CONSOLE_CREDENTIALS DASHBOARD_URL DEFAULT_ROLES DEPLOYMENT_TIMEOUT DOMAIN ENABLE_FWAAS ENABLE_SECGROUP ENABLE_VPNAAS EXTERNAL_NIC GATEWAY HTTP_SERVER_URL IGNORE_PROXY INSTALL_GW INSTALL_IP INSTALL_IP_END INSTALL_IP_START INSTALL_MASK INSTALL_NIC ISO_URL LANGUAGE LOCAL_REPO_URL MANAGEMENT_INTERFACE MANAGEMENT_IP_START MGMT_GW MGMT_IP MGMT_IP_END MGMT_IP_START MGMT_MASK NAMESERVERS NETWORK_MAPPING NTP_SERVER OPENSTACK_VERSION OS_CONFIG_FILENAME OS_VERSION PACKAGE_CONFIG_FILENAME PARTITIONS POLL_SWITCHES_FLAG PROXY REPO_NAME SEARCH_PATH SERVER_CREDENTIAL SERVICE_CREDENTIALS SUBNETS SWITCH_CREDENTIAL SWITCH_IPS TIMEZONE VIP VIRT_CPUS VIRT_DISK VIRT_MEM VIRT_NUMBER'
+++++ xargs
+++++ tr '[:upper:]' '[:lower:]'
+++++ sed -e 's/ /:,/g' -e s/_/-/g
++++ echo adapter-flavor-pattern:,adapter-name:,adapter-os-pattern:,adapter-target-system-pattern:,cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,default-roles:,deployment-timeout:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,install-nic:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,openstack-version:,os-config-filename:,os-version:,package-config-filename:,partitions:,poll-switches-flag:,proxy:,repo-name:,search-path:,server-credential:,service-credentials:,subnets:,switch-credential:,switch-ips:,timezone:,vip:,virt-cpus:,virt-disk:,virt-mem:,virt-number
+++ option_flag=adapter-flavor-pattern:,adapter-name:,adapter-os-pattern:,adapter-target-system-pattern:,cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,default-roles:,deployment-timeout:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,install-nic:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,openstack-version:,os-config-filename:,os-version:,package-config-filename:,partitions:,poll-switches-flag:,proxy:,repo-name:,search-path:,server-credential:,service-credentials:,subnets:,switch-credential:,switch-ips:,timezone:,vip:,virt-cpus:,virt-disk:,virt-mem:,virt-number
++++ getopt -o h -l dha:,network:,neutron:,conf-dir:,adapter-flavor-pattern:,adapter-name:,adapter-os-pattern:,adapter-target-system-pattern:,cluster-name:,compass-dns1:,compass-dns2:,compass-external-gw:,compass-external-ip:,compass-external-mask:,compass-server:,compass-server-url:,compass-user-email:,compass-user-password:,compass-virt-cpus:,compass-virt-mem:,console-credentials:,dashboard-url:,default-roles:,deployment-timeout:,domain:,enable-fwaas:,enable-secgroup:,enable-vpnaas:,external-nic:,gateway:,http-server-url:,ignore-proxy:,install-gw:,install-ip:,install-ip-end:,install-ip-start:,install-mask:,install-nic:,iso-url:,language:,local-repo-url:,management-interface:,management-ip-start:,mgmt-gw:,mgmt-ip:,mgmt-ip-end:,mgmt-ip-start:,mgmt-mask:,nameservers:,network-mapping:,ntp-server:,openstack-version:,os-config-filename:,os-version:,package-config-filename:,partitions:,poll-switches-flag:,proxy:,repo-name:,search-path:,server-credential:,service-credentials:,subnets:,switch-credential:,switch-ips:,timezone:,vip:,virt-cpus:,virt-disk:,virt-mem:,virt-number -n deploy_parameter.sh -- baremetal_cluster_sh --iso-url=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+++ TEMP=' --iso-url '\''file:///home/onos/opnfv-2016-01-04_16-45-58.iso'\'' -- '\''baremetal_cluster_sh'\'''
+++ '[' 0 '!=' 0 ']'
+++ eval set -- ' --iso-url '\''file:///home/onos/opnfv-2016-01-04_16-45-58.iso'\'' -- '\''baremetal_cluster_sh'\'''
++++ set -- --iso-url file:///home/onos/opnfv-2016-01-04_16-45-58.iso -- baremetal_cluster_sh
+++ :
+++ [[ --iso-url == \-\- ]]
+++ shift
+++ :
+++ [[ file:///home/onos/opnfv-2016-01-04_16-45-58.iso == \-\- ]]
+++ shift
+++ :
+++ [[ -- == \-\- ]]
+++ shift
+++ break
+++ [[ 1 -eq 0 ]]
+++ [[ baremetal_cluster_sh == \f\i\v\e ]]
+++ file=baremetal_cluster_sh.yml
+++ [[ -f baremetal_cluster_sh.yml ]]
+++ [[ -f /baremetal_cluster_sh.yml ]]
+++ [[ -f /home/onos/compass4nfv/deploy/conf/baremetal_cluster_sh.yml ]]
+++ export DHA=/home/onos/compass4nfv/deploy/conf/baremetal_cluster_sh.yml
+++ DHA=/home/onos/compass4nfv/deploy/conf/baremetal_cluster_sh.yml
+++ python /home/onos/compass4nfv/deploy/config_parse.py /home/onos/compass4nfv/deploy/conf/baremetal_cluster_sh.yml /home/onos/compass4nfv/deploy/conf /home/onos/compass4nfv/deploy/template /home/onos/compass4nfv/work/deploy/script deploy_config.sh
+++ echo /home/onos/compass4nfv/work/deploy/script/deploy_config.sh
++ source /home/onos/compass4nfv/work/deploy/script/deploy_config.sh
+++ export ipmiUser=root
+++ ipmiUser=root
+++ export NETWORK=/home/onos/compass4nfv/deploy/conf/network_cfg.yaml
+++ NETWORK=/home/onos/compass4nfv/deploy/conf/network_cfg.yaml
+++ export 'ipmiPass=Huawei12#$'
+++ ipmiPass='Huawei12#$'
+++ export HOST_MACS=7C:A2:3E:86:65:4E,7C:A2:3E:86:65:58,7C:A2:3E:86:65:38,7C:A2:3E:86:65:30,7C:A2:3E:86:65:46
+++ HOST_MACS=7C:A2:3E:86:65:4E,7C:A2:3E:86:65:58,7C:A2:3E:86:65:38,7C:A2:3E:86:65:30,7C:A2:3E:86:65:46
+++ export HOSTNAMES=host1,host2,host3,host4,host5
+++ HOSTNAMES=host1,host2,host3,host4,host5
+++ export POWER_TOOL=ipmitool
+++ POWER_TOOL=ipmitool
+++ export ipmiVer=2.0
+++ ipmiVer=2.0
+++ export FLAVOR=cluster
+++ FLAVOR=cluster
+++ export TYPE=baremetal
+++ TYPE=baremetal
+++ export 'HOST_ROLES=host1=controller,ha;host2=controller,ha;host3=controller,ha;host4=compute;host5=compute'
+++ HOST_ROLES='host1=controller,ha;host2=controller,ha;host3=controller,ha;host4=compute;host5=compute'
+++ export NEUTRON=/home/onos/compass4nfv/deploy/conf/neutron_cfg.yaml
+++ NEUTRON=/home/onos/compass4nfv/deploy/conf/neutron_cfg.yaml
+++ export POWER_MANAGE=/home/onos/compass4nfv/work/deploy/script/ipmitool.sh
+++ POWER_MANAGE=/home/onos/compass4nfv/work/deploy/script/ipmitool.sh
++ source /home/onos/compass4nfv/deploy/conf/cluster.conf
+++ export 'ADAPTER_OS_PATTERN=(?i)ubuntu-14\.04\.3.*'
+++ ADAPTER_OS_PATTERN='(?i)ubuntu-14\.04\.3.*'
+++ export OS_VERSION=trusty
+++ OS_VERSION=trusty
+++ export OPENSTACK_VERSION=liberty
+++ OPENSTACK_VERSION=liberty
+++ export 'ADAPTER_TARGET_SYSTEM_PATTERN=^openstack$'
+++ ADAPTER_TARGET_SYSTEM_PATTERN='^openstack$'
+++ export REPO_NAME=trusty-liberty-ppa
+++ REPO_NAME=trusty-liberty-ppa
+++ export ADAPTER_NAME=openstack_liberty
+++ ADAPTER_NAME=openstack_liberty
+++ export ADAPTER_FLAVOR_PATTERN=HA-ansible-multinodes-liberty
+++ ADAPTER_FLAVOR_PATTERN=HA-ansible-multinodes-liberty
+++ export DEFAULT_ROLES=
+++ DEFAULT_ROLES=
+++ export VIP=10.1.0.222
+++ VIP=10.1.0.222
++ source /home/onos/compass4nfv/deploy/conf/baremetal.conf
+++ export SWITCH_IPS=10.145.88.4
+++ SWITCH_IPS=10.145.88.4
+++ export SWITCH_CREDENTIAL=version=2c,community=public
+++ SWITCH_CREDENTIAL=version=2c,community=public
+++ export DEPLOYMENT_TIMEOUT=150
+++ DEPLOYMENT_TIMEOUT=150
+++ export POLL_SWITCHES_FLAG=nopoll_switches
+++ POLL_SWITCHES_FLAG=nopoll_switches
+++ export INSTALL_NIC=eth1
+++ INSTALL_NIC=eth1
++ source /home/onos/compass4nfv/deploy/conf/base.conf
+++ export ISO_URL=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+++ ISO_URL=file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+++ export INSTALL_IP=10.1.0.12
+++ INSTALL_IP=10.1.0.12
+++ export INSTALL_MASK=255.255.255.0
+++ INSTALL_MASK=255.255.255.0
+++ export INSTALL_GW=10.1.0.1
+++ INSTALL_GW=10.1.0.1
+++ export INSTALL_IP_START=10.1.0.1
+++ INSTALL_IP_START=10.1.0.1
+++ export INSTALL_IP_END=10.1.0.254
+++ INSTALL_IP_END=10.1.0.254
+++ export MGMT_IP=192.168.200.2
+++ MGMT_IP=192.168.200.2
+++ export MGMT_MASK=255.255.255.0
+++ MGMT_MASK=255.255.255.0
+++ export MGMT_GW=192.168.200.1
+++ MGMT_GW=192.168.200.1
+++ export MGMT_IP_START=192.168.200.1
+++ MGMT_IP_START=192.168.200.1
+++ export MGMT_IP_END=192.168.200.254
+++ MGMT_IP_END=192.168.200.254
+++ export EXTERNAL_NIC=eth0
+++ EXTERNAL_NIC=eth0
+++ export CLUSTER_NAME=opnfv2
+++ CLUSTER_NAME=opnfv2
+++ export DOMAIN=ods.com
+++ DOMAIN=ods.com
+++ export PARTITIONS=/=30%,/home=5%,/tmp=5%,/var=60%
+++ PARTITIONS=/=30%,/home=5%,/tmp=5%,/var=60%
+++ export SUBNETS=10.1.0.0/24,192.168.204.0/24,10.145.88.0/23
+++ SUBNETS=10.1.0.0/24,192.168.204.0/24,10.145.88.0/23
+++ export MANAGEMENT_IP_START=192.168.204.11
+++ MANAGEMENT_IP_START=192.168.204.11
+++ export MANAGEMENT_INTERFACE=eth1
+++ MANAGEMENT_INTERFACE=eth1
+++ export DASHBOARD_URL=
+++ DASHBOARD_URL=
+++ export ENABLE_SECGROUP=true
+++ ENABLE_SECGROUP=true
+++ export ENABLE_VPNAAS=false
+++ ENABLE_VPNAAS=false
+++ export ENABLE_FWAAS=false
+++ ENABLE_FWAAS=false
+++ '[' -z '' ']'
+++ IFS=,
+++ read -a HOSTNAME_LIST
+++ MANAGE_IP=192.168.204.11
+++ TENANT_IP=
+++ PUBLIC_IP=
+++ STORAGE_IP=
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z '' ']'
+++ HOST_NETWORKS='host1:eth1=192.168.204.11|is_mgmt'
++++ next_ip 192.168.204.11
++++ ip_addr=192.168.204.11
+++++ echo 192.168.204.11
+++++ cut -d. '-f1 2 3'
++++ ip_base=192.168.204
+++++ echo 192.168.204.11
+++++ cut -d. -f4
++++ ip_last=11
++++ let ip_last_next=11+1
++++ echo 192.168.204.12
+++ MANAGE_IP=192.168.204.12
++++ next_ip
++++ ip_addr=
+++++ echo
+++++ cut -d. '-f1 2 3'
++++ ip_base=
+++++ echo
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1
+++ TENANT_IP=.1
++++ next_ip
++++ ip_addr=
+++++ echo
+++++ cut -d. '-f1 2 3'
++++ ip_base=
+++++ echo
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1
+++ PUBLIC_IP=.1
++++ next_ip
++++ ip_addr=
+++++ echo
+++++ cut -d. '-f1 2 3'
++++ ip_base=
+++++ echo
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1
+++ STORAGE_IP=.1
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z 'host1:eth1=192.168.204.11|is_mgmt' ']'
+++ HOST_NETWORKS='host1:eth1=192.168.204.11|is_mgmt;host2:eth1=192.168.204.12|is_mgmt'
++++ next_ip 192.168.204.12
++++ ip_addr=192.168.204.12
+++++ echo 192.168.204.12
+++++ cut -d. '-f1 2 3'
++++ ip_base=192.168.204
+++++ echo 192.168.204.12
+++++ cut -d. -f4
++++ ip_last=12
++++ let ip_last_next=12+1
++++ echo 192.168.204.13
+++ MANAGE_IP=192.168.204.13
++++ next_ip .1
++++ ip_addr=.1
+++++ echo .1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1
+++++ echo .1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1
+++ TENANT_IP=.1.1
++++ next_ip .1
++++ ip_addr=.1
+++++ echo .1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1
+++++ echo .1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1
+++ PUBLIC_IP=.1.1
++++ next_ip .1
++++ ip_addr=.1
+++++ echo .1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1
+++++ echo .1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1
+++ STORAGE_IP=.1.1
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z 'host1:eth1=192.168.204.11|is_mgmt;host2:eth1=192.168.204.12|is_mgmt' ']'
+++ HOST_NETWORKS='host1:eth1=192.168.204.11|is_mgmt;host2:eth1=192.168.204.12|is_mgmt;host3:eth1=192.168.204.13|is_mgmt'
++++ next_ip 192.168.204.13
++++ ip_addr=192.168.204.13
+++++ echo 192.168.204.13
+++++ cut -d. '-f1 2 3'
++++ ip_base=192.168.204
+++++ echo 192.168.204.13
+++++ cut -d. -f4
++++ ip_last=13
++++ let ip_last_next=13+1
++++ echo 192.168.204.14
+++ MANAGE_IP=192.168.204.14
++++ next_ip .1.1
++++ ip_addr=.1.1
+++++ echo .1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1.1
+++ TENANT_IP=.1.1.1
++++ next_ip .1.1
++++ ip_addr=.1.1
+++++ echo .1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1.1
+++ PUBLIC_IP=.1.1.1
++++ next_ip .1.1
++++ ip_addr=.1.1
+++++ echo .1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1
+++++ cut -d. -f4
++++ ip_last=
++++ let ip_last_next=+1
++++ echo .1.1.1
+++ STORAGE_IP=.1.1.1
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z 'host1:eth1=192.168.204.11|is_mgmt;host2:eth1=192.168.204.12|is_mgmt;host3:eth1=192.168.204.13|is_mgmt' ']'
+++ HOST_NETWORKS='host1:eth1=192.168.204.11|is_mgmt;host2:eth1=192.168.204.12|is_mgmt;host3:eth1=192.168.204.13|is_mgmt;host4:eth1=192.168.204.14|is_mgmt'
++++ next_ip 192.168.204.14
++++ ip_addr=192.168.204.14
+++++ echo 192.168.204.14
+++++ cut -d. '-f1 2 3'
++++ ip_base=192.168.204
+++++ echo 192.168.204.14
+++++ cut -d. -f4
++++ ip_last=14
++++ let ip_last_next=14+1
++++ echo 192.168.204.15
+++ MANAGE_IP=192.168.204.15
++++ next_ip .1.1.1
++++ ip_addr=.1.1.1
+++++ echo .1.1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.1
+++++ cut -d. -f4
++++ ip_last=1
++++ let ip_last_next=1+1
++++ echo .1.1.2
+++ TENANT_IP=.1.1.2
++++ next_ip .1.1.1
++++ ip_addr=.1.1.1
+++++ echo .1.1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.1
+++++ cut -d. -f4
++++ ip_last=1
++++ let ip_last_next=1+1
++++ echo .1.1.2
+++ PUBLIC_IP=.1.1.2
++++ next_ip .1.1.1
++++ ip_addr=.1.1.1
+++++ echo .1.1.1
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.1
+++++ cut -d. -f4
++++ ip_last=1
++++ let ip_last_next=1+1
++++ echo .1.1.2
+++ STORAGE_IP=.1.1.2
+++ for HOSTNAME in '${HOSTNAME_LIST[@]}'
+++ '[' -z 'host1:eth1=192.168.204.11|is_mgmt;host2:eth1=192.168.204.12|is_mgmt;host3:eth1=192.168.204.13|is_mgmt;host4:eth1=192.168.204.14|is_mgmt' ']'
+++ HOST_NETWORKS='host1:eth1=192.168.204.11|is_mgmt;host2:eth1=192.168.204.12|is_mgmt;host3:eth1=192.168.204.13|is_mgmt;host4:eth1=192.168.204.14|is_mgmt;host5:eth1=192.168.204.15|is_mgmt'
++++ next_ip 192.168.204.15
++++ ip_addr=192.168.204.15
+++++ echo 192.168.204.15
+++++ cut -d. '-f1 2 3'
++++ ip_base=192.168.204
+++++ echo 192.168.204.15
+++++ cut -d. -f4
++++ ip_last=15
++++ let ip_last_next=15+1
++++ echo 192.168.204.16
+++ MANAGE_IP=192.168.204.16
++++ next_ip .1.1.2
++++ ip_addr=.1.1.2
+++++ echo .1.1.2
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.2
+++++ cut -d. -f4
++++ ip_last=2
++++ let ip_last_next=2+1
++++ echo .1.1.3
+++ TENANT_IP=.1.1.3
++++ next_ip .1.1.2
++++ ip_addr=.1.1.2
+++++ echo .1.1.2
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.2
+++++ cut -d. -f4
++++ ip_last=2
++++ let ip_last_next=2+1
++++ echo .1.1.3
+++ PUBLIC_IP=.1.1.3
++++ next_ip .1.1.2
++++ ip_addr=.1.1.2
+++++ echo .1.1.2
+++++ cut -d. '-f1 2 3'
++++ ip_base=.1.1
+++++ echo .1.1.2
+++++ cut -d. -f4
++++ ip_last=2
++++ let ip_last_next=2+1
++++ echo .1.1.3
+++ STORAGE_IP=.1.1.3
+++ export HOST_NETWORKS
+++ export NETWORK_MAPPING=install=eth1
+++ NETWORK_MAPPING=install=eth1
+++ export PROXY=
+++ PROXY=
+++ export IGNORE_PROXY=
+++ IGNORE_PROXY=
+++ export SEARCH_PATH=ods.com
+++ SEARCH_PATH=ods.com
+++ export GATEWAY=10.1.0.1
+++ GATEWAY=10.1.0.1
+++ export SERVER_CREDENTIAL=root=root
+++ SERVER_CREDENTIAL=root=root
+++ export LOCAL_REPO_URL=
+++ LOCAL_REPO_URL=
+++ export OS_CONFIG_FILENAME=
+++ OS_CONFIG_FILENAME=
+++ export SERVICE_CREDENTIALS=image:service=service,compute:service=service,dashboard:service=service,identity:service=service,image:service=service,metering:service=service,network:service=service,rabbitmq:service=service,volume:service=service,mysql:service=service,heat:heat=heat_db_secret
+++ SERVICE_CREDENTIALS=image:service=service,compute:service=service,dashboard:service=service,identity:service=service,image:service=service,metering:service=service,network:service=service,rabbitmq:service=service,volume:service=service,mysql:service=service,heat:heat=heat_db_secret
+++ export CONSOLE_CREDENTIALS=admin:console=console,demo:console=console,compute:console=console,dashboard:console=console,identity:console=console,image:console=console,metering:console=console,network:console=console,object-store:console=console,volume:console=console,heat:heat=heat_secret
+++ CONSOLE_CREDENTIALS=admin:console=console,demo:console=console,compute:console=console,dashboard:console=console,identity:console=console,image:console=console,metering:console=console,network:console=console,object-store:console=console,volume:console=console,heat:heat=heat_secret
+++ export PACKAGE_CONFIG_FILENAME=
+++ PACKAGE_CONFIG_FILENAME=
++ source /home/onos/compass4nfv/deploy/conf/compass.conf
+++ export COMPASS_VIRT_CPUS=4
+++ COMPASS_VIRT_CPUS=4
+++ export COMPASS_VIRT_MEM=4096
+++ COMPASS_VIRT_MEM=4096
+++ export COMPASS_SERVER=10.1.0.12
+++ COMPASS_SERVER=10.1.0.12
+++ export COMPASS_SERVER_URL=http://192.168.200.2/api
+++ COMPASS_SERVER_URL=http://192.168.200.2/api
+++ export HTTP_SERVER_URL=http://192.168.200.2/api
+++ HTTP_SERVER_URL=http://192.168.200.2/api
+++ export COMPASS_USER_EMAIL=admin@huawei.com
+++ COMPASS_USER_EMAIL=admin@huawei.com
+++ export COMPASS_USER_PASSWORD=admin
+++ COMPASS_USER_PASSWORD=admin
+++ export COMPASS_DNS1=8.8.8.8
+++ COMPASS_DNS1=8.8.8.8
+++ export COMPASS_DNS2=
+++ COMPASS_DNS2=
+++ export COMPASS_EXTERNAL_IP=
+++ COMPASS_EXTERNAL_IP=
+++ export COMPASS_EXTERNAL_MASK=
+++ COMPASS_EXTERNAL_MASK=
+++ export COMPASS_EXTERNAL_GW=
+++ COMPASS_EXTERNAL_GW=
+++ export LANGUAGE=EN
+++ LANGUAGE=EN
+++ export TIMEZONE=America/Los_Angeles
+++ TIMEZONE=America/Los_Angeles
+++ export NTP_SERVER=10.1.0.12
+++ NTP_SERVER=10.1.0.12
+++ export NAMESERVERS=10.1.0.12
+++ NAMESERVERS=10.1.0.12
++ source /home/onos/compass4nfv/deploy/prepare.sh
++ source /home/onos/compass4nfv/deploy/network.sh
++ source /home/onos/compass4nfv/deploy/host_baremetal.sh
++ source /home/onos/compass4nfv/deploy/compass_vm.sh
+++ compass_vm_dir=/home/onos/compass4nfv/work/deploy/vm/compass
+++ rsa_file=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa
+++ ssh_args='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa'
++ source /home/onos/compass4nfv/deploy/deploy_host.sh
+++ rsa_file=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa
++ print_logo
++ apt --installed list
++ grep figlet
+figlet/trusty,now 2.2.5-2 amd64 [installed]
++ figlet -ctf slant Compass Installer
+                    ______                                     
+                   / ____/___  ____ ___  ____  ____ ___________
+                  / /   / __ \/ __ `__ \/ __ \/ __ `/ ___/ ___/
+                 / /___/ /_/ / / / / / / /_/ / /_/ (__  |__  ) 
+                 \____/\____/_/ /_/ /_/ .___/\__,_/____/____/  
+                                     /_/                       
+                       ____           __        ____         
+                      /  _/___  _____/ /_____ _/ / /__  _____
+                      / // __ \/ ___/ __/ __ `/ / / _ \/ ___/
+                    _/ // / / (__  ) /_/ /_/ / / /  __/ /    
+                   /___/_/ /_/____/\__/\__,_/_/_/\___/_/     
+                                                             
++ set +x
++ [[ ! -z '' ]]
++ log_info '########## get host mac begin #############'
++ echo -e '########## get host mac begin #############'
+########## get host mac begin #############
+++ get_host_macs
++++ echo 7C:A2:3E:86:65:4E,7C:A2:3E:86:65:58,7C:A2:3E:86:65:38,7C:A2:3E:86:65:30,7C:A2:3E:86:65:46
++++ sed -e 's/,/'\'','\''/g' -e 's/^/'\''/g' -e 's/$/'\''/g'
+++ machines=''\''7C:A2:3E:86:65:4E'\'','\''7C:A2:3E:86:65:58'\'','\''7C:A2:3E:86:65:38'\'','\''7C:A2:3E:86:65:30'\'','\''7C:A2:3E:86:65:46'\'''
+++ echo ''\''7C:A2:3E:86:65:4E'\'','\''7C:A2:3E:86:65:58'\'','\''7C:A2:3E:86:65:38'\'','\''7C:A2:3E:86:65:30'\'','\''7C:A2:3E:86:65:46'\'''
++ machines=''\''7C:A2:3E:86:65:4E'\'','\''7C:A2:3E:86:65:58'\'','\''7C:A2:3E:86:65:38'\'','\''7C:A2:3E:86:65:30'\'','\''7C:A2:3E:86:65:46'\'''
++ [[ -z '7C:A2:3E:86:65:4E','7C:A2:3E:86:65:58','7C:A2:3E:86:65:38','7C:A2:3E:86:65:30','7C:A2:3E:86:65:46' ]]
++ export machines
++ [[ true == \t\r\u\e ]]
++ prepare_env
++ export PYTHONPATH=/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages
++ PYTHONPATH=/usr/lib/python2.7/dist-packages:/usr/local/lib/python2.7/dist-packages
++ sudo apt-get update -y
+Ign http://us.archive.ubuntu.com trusty InRelease
+Get:1 http://us.archive.ubuntu.com trusty-updates InRelease [64.4 kB]
+Hit http://security.ubuntu.com trusty-security InRelease 
+Hit http://security.ubuntu.com trusty-security/main Sources                
+Hit http://us.archive.ubuntu.com trusty-backports InRelease      
+Get:2 http://us.archive.ubuntu.com trusty Release.gpg [933 B]            
+Hit http://security.ubuntu.com trusty-security/restricted Sources
+Get:3 http://us.archive.ubuntu.com trusty-updates/main Sources [248 kB]
+Hit http://security.ubuntu.com trusty-security/universe Sources
+Hit http://security.ubuntu.com trusty-security/multiverse Sources       
+Get:4 http://us.archive.ubuntu.com trusty-updates/restricted Sources [5,359 B] 
+Get:5 http://us.archive.ubuntu.com trusty-updates/universe Sources [147 kB]    
+Hit http://security.ubuntu.com trusty-security/main amd64 Packages
+Hit http://security.ubuntu.com trusty-security/restricted amd64 Packages   
+Hit http://security.ubuntu.com trusty-security/universe amd64 Packages    
+Hit http://security.ubuntu.com trusty-security/multiverse amd64 Packages  
+Hit http://security.ubuntu.com trusty-security/main i386 Packages          
+Hit http://security.ubuntu.com trusty-security/restricted i386 Packages     
+Get:6 http://us.archive.ubuntu.com trusty-updates/multiverse Sources [5,161 B]
+Hit http://security.ubuntu.com trusty-security/universe i386 Packages 
+Get:7 http://us.archive.ubuntu.com trusty-updates/main amd64 Packages [683 kB]
+Hit http://security.ubuntu.com trusty-security/multiverse i386 Packages
+Hit http://security.ubuntu.com trusty-security/main Translation-en         
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en       
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en       
+Get:8 http://us.archive.ubuntu.com trusty-updates/restricted amd64 Packages [15.9 kB]
+Get:9 http://us.archive.ubuntu.com trusty-updates/universe amd64 Packages [334 kB]
+Hit http://security.ubuntu.com trusty-security/universe Translation-en         
+Get:10 http://us.archive.ubuntu.com trusty-updates/multiverse amd64 Packages [13.0 kB]
+Get:11 http://us.archive.ubuntu.com trusty-updates/main i386 Packages [659 kB]
+Get:12 http://us.archive.ubuntu.com trusty-updates/restricted i386 Packages [15.6 kB]
+Get:13 http://us.archive.ubuntu.com trusty-updates/universe i386 Packages [336 kB]
+Get:14 http://us.archive.ubuntu.com trusty-updates/multiverse i386 Packages [13.1 kB]
+Hit http://us.archive.ubuntu.com trusty-updates/main Translation-en
+Hit http://us.archive.ubuntu.com trusty-updates/multiverse Translation-en
+Hit http://us.archive.ubuntu.com trusty-updates/restricted Translation-en
+Hit http://us.archive.ubuntu.com trusty-updates/universe Translation-en
+Hit http://us.archive.ubuntu.com trusty-backports/main Sources
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Sources
+Hit http://us.archive.ubuntu.com trusty-backports/universe Sources
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Sources
+Hit http://us.archive.ubuntu.com trusty-backports/main amd64 Packages
+Hit http://us.archive.ubuntu.com trusty-backports/restricted amd64 Packages
+Hit http://us.archive.ubuntu.com trusty-backports/universe amd64 Packages
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse amd64 Packages
+Hit http://us.archive.ubuntu.com trusty-backports/main i386 Packages
+Hit http://us.archive.ubuntu.com trusty-backports/restricted i386 Packages
+Hit http://us.archive.ubuntu.com trusty-backports/universe i386 Packages
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse i386 Packages
+Hit http://us.archive.ubuntu.com trusty-backports/main Translation-en
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Translation-en
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Translation-en
+Hit http://us.archive.ubuntu.com trusty-backports/universe Translation-en
+Hit http://us.archive.ubuntu.com trusty Release   
+Hit http://us.archive.ubuntu.com trusty/main Sources
+Hit http://us.archive.ubuntu.com trusty/restricted Sources
+Hit http://us.archive.ubuntu.com trusty/universe Sources
+Hit http://us.archive.ubuntu.com trusty/multiverse Sources
+Hit http://us.archive.ubuntu.com trusty/main amd64 Packages
+Hit http://us.archive.ubuntu.com trusty/restricted amd64 Packages              
+Hit http://us.archive.ubuntu.com trusty/universe amd64 Packages                
+Hit http://us.archive.ubuntu.com trusty/multiverse amd64 Packages              
+Hit http://us.archive.ubuntu.com trusty/main i386 Packages                     
+Hit http://us.archive.ubuntu.com trusty/restricted i386 Packages               
+Hit http://us.archive.ubuntu.com trusty/universe i386 Packages                 
+Hit http://us.archive.ubuntu.com trusty/multiverse i386 Packages               
+Hit http://us.archive.ubuntu.com trusty/main Translation-en                    
+Hit http://us.archive.ubuntu.com trusty/multiverse Translation-en              
+Hit http://us.archive.ubuntu.com trusty/restricted Translation-en              
+Hit http://us.archive.ubuntu.com trusty/universe Translation-en                
+Ign http://us.archive.ubuntu.com trusty/main Translation-en_US                 
+Ign http://us.archive.ubuntu.com trusty/main Translation-EN                    
+Ign http://us.archive.ubuntu.com trusty/multiverse Translation-en_US           
+Ign http://us.archive.ubuntu.com trusty/multiverse Translation-EN              
+Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US           
+Ign http://us.archive.ubuntu.com trusty/restricted Translation-EN              
+Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US             
+Ign http://us.archive.ubuntu.com trusty/universe Translation-EN                
+Fetched 2,539 kB in 10s (243 kB/s)                                             
+Reading package lists... Done
++ sudo apt-get install -y --force-yes mkisofs bc curl ipmitool openvswitch-switch
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'genisoimage' instead of 'mkisofs'
+bc is already the newest version.
+genisoimage is already the newest version.
+curl is already the newest version.
+openvswitch-switch is already the newest version.
+ipmitool is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 85 not upgraded.
++ sudo apt-get install -y --force-yes git python-pip python-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python-dev is already the newest version.
+git is already the newest version.
+python-pip is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 85 not upgraded.
++ sudo apt-get install -y --force-yes libxslt-dev libxml2-dev libvirt-dev build-essential qemu-utils qemu-kvm libvirt-bin virtinst libmysqld-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Note, selecting 'libxslt1-dev' instead of 'libxslt-dev'
+build-essential is already the newest version.
+libxslt1-dev is already the newest version.
+virtinst is already the newest version.
+libmysqld-dev is already the newest version.
+libvirt-bin is already the newest version.
+libvirt-dev is already the newest version.
+libxml2-dev is already the newest version.
+qemu-kvm is already the newest version.
+qemu-utils is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 85 not upgraded.
++ sudo pip install --upgrade pip
+The directory '/home/onos/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/onos/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+Requirement already up-to-date: pip in /usr/local/lib/python2.7/dist-packages
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
++ sudo pip install --upgrade ansible==1.9.4
+The directory '/home/onos/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/onos/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+Requirement already up-to-date: ansible==1.9.4 in /usr/local/lib/python2.7/dist-packages
+Requirement already up-to-date: paramiko in /usr/local/lib/python2.7/dist-packages (from ansible==1.9.4)
+Requirement already up-to-date: jinja2 in /usr/local/lib/python2.7/dist-packages (from ansible==1.9.4)
+Requirement already up-to-date: PyYAML in /usr/local/lib/python2.7/dist-packages (from ansible==1.9.4)
+Requirement already up-to-date: setuptools in /usr/local/lib/python2.7/dist-packages (from ansible==1.9.4)
+Requirement already up-to-date: pycrypto>=2.6 in /usr/local/lib/python2.7/dist-packages (from ansible==1.9.4)
+Requirement already up-to-date: ecdsa>=0.11 in /usr/local/lib/python2.7/dist-packages (from paramiko->ansible==1.9.4)
+Requirement already up-to-date: MarkupSafe in /usr/local/lib/python2.7/dist-packages (from jinja2->ansible==1.9.4)
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
++ sudo pip install --upgrade virtualenv
+The directory '/home/onos/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/onos/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+Requirement already up-to-date: virtualenv in /usr/local/lib/python2.7/dist-packages
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
++ sudo pip install --upgrade netaddr
+The directory '/home/onos/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/onos/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+Requirement already up-to-date: netaddr in /usr/local/lib/python2.7/dist-packages
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
++ sudo pip install --upgrade oslo.config
+The directory '/home/onos/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/onos/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+Requirement already up-to-date: oslo.config in /usr/local/lib/python2.7/dist-packages
+Requirement already up-to-date: argparse in /usr/local/lib/python2.7/dist-packages (from oslo.config)
+Requirement already up-to-date: netaddr!=0.7.16,>=0.7.12 in /usr/local/lib/python2.7/dist-packages (from oslo.config)
+Requirement already up-to-date: stevedore>=1.5.0 in /usr/local/lib/python2.7/dist-packages (from oslo.config)
+Requirement already up-to-date: six>=1.9.0 in /usr/local/lib/python2.7/dist-packages (from oslo.config)
+Requirement already up-to-date: pbr>=1.6 in /usr/local/lib/python2.7/dist-packages (from stevedore>=1.5.0->oslo.config)
+/usr/local/lib/python2.7/dist-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
++ sudo service libvirt-bin restart
+libvirt-bin stop/waiting
+libvirt-bin start/running, process 81321
++ rm -rf /home/onos/compass4nfv/work/deploy/installer /home/onos/compass4nfv/work/deploy/vm /home/onos/compass4nfv/work/deploy/network /home/onos/compass4nfv/work/deploy/iso /home/onos/compass4nfv/work/deploy/venv
++ mkdir -p /home/onos/compass4nfv/work/deploy/installer
++ mkdir -p /home/onos/compass4nfv/work/deploy/vm
++ mkdir -p /home/onos/compass4nfv/work/deploy/network
++ mkdir -p /home/onos/compass4nfv/work/deploy/iso
++ mkdir -p /home/onos/compass4nfv/work/deploy/venv
++ mkdir -p /home/onos/compass4nfv/work/deploy/cache
++ download_iso
+++ basename file:///home/onos/opnfv-2016-01-04_16-45-58.iso
++ iso_name=opnfv-2016-01-04_16-45-58.iso
++ rm -f /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-01-04_16-45-58.iso.md5
++ curl --connect-timeout 10 -o /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-01-04_16-45-58.iso.md5 file:///home/onos/opnfv-2016-01-04_16-45-58.iso.md5
+curl: (37) Couldn't open file /home/onos/opnfv-2016-01-04_16-45-58.iso.md5
++ [[ -f /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-01-04_16-45-58.iso ]]
+++ md5sum /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-01-04_16-45-58.iso
+++ cut -d ' ' -f 1
++ local_md5=715cc19865e5c755c7996e122a6658fa
+++ cat /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-01-04_16-45-58.iso.md5
+++ cut -d ' ' -f 1
+cat: /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-01-04_16-45-58.iso.md5: No such file or directory
++ repo_md5=
++ [[ 715cc19865e5c755c7996e122a6658fa == '' ]]
++ curl --connect-timeout 10 -o /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-01-04_16-45-58.iso file:///home/onos/opnfv-2016-01-04_16-45-58.iso
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 4534M  100 4534M    0     0   705M      0  0:00:06  0:00:06 --:--:--  790M
+++ basename file:///home/onos/opnfv-2016-01-04_16-45-58.iso
++ cp /home/onos/compass4nfv/work/deploy/cache/opnfv-2016-01-04_16-45-58.iso /home/onos/compass4nfv/work/deploy/iso/centos.iso -f
++ mkdir -p /home/onos/compass4nfv/work/deploy/mnt
++ sudo mount -o loop /home/onos/compass4nfv/work/deploy/iso/centos.iso /home/onos/compass4nfv/work/deploy/mnt
+mount: block device /home/onos/compass4nfv/work/deploy/iso/centos.iso is write-protected, mounting read-only
++ cp -rf /home/onos/compass4nfv/work/deploy/mnt/compass/compass-core /home/onos/compass4nfv/work/deploy/installer/
++ cp -rf /home/onos/compass4nfv/work/deploy/mnt/compass/compass-install /home/onos/compass4nfv/work/deploy/installer/
++ sudo umount /home/onos/compass4nfv/work/deploy/mnt
++ rm -rf /home/onos/compass4nfv/work/deploy/mnt
++ chmod 755 /home/onos/compass4nfv/work/deploy -R
++ virtualenv /home/onos/compass4nfv/work/deploy/venv
+New python executable in /home/onos/compass4nfv/work/deploy/venv/bin/python
+Installing setuptools, pip, wheel...done.
++ sudo cp /home/onos/compass4nfv/deploy/qemu_hook.sh /etc/libvirt/hooks/qemu
++ log_info '########## set up network begin #############'
++ echo -e '########## set up network begin #############'
+########## set up network begin #############
++ create_nets
++ setup_nat_net mgmt 192.168.200.1 255.255.255.0 192.168.200.1 192.168.200.254
++ net_name=mgmt
++ gw=192.168.200.1
++ mask=255.255.255.0
++ ip_start=192.168.200.1
++ ip_end=192.168.200.254
++ sudo virsh net-destroy mgmt
+Network mgmt destroyed
+
++ sudo virsh net-undefine mgmt
+Network mgmt has been undefined
+
++ sed -e s/REPLACE_BRIDGE/br_mgmt/g -e s/REPLACE_NAME/mgmt/g -e s/REPLACE_GATEWAY/192.168.200.1/g -e s/REPLACE_MASK/255.255.255.0/g -e s/REPLACE_START/192.168.200.1/g -e s/REPLACE_END/192.168.200.254/g /home/onos/compass4nfv/deploy/template/network/nat.xml
++ sudo virsh net-define /home/onos/compass4nfv/work/deploy/network/mgmt.xml
+Network mgmt defined from /home/onos/compass4nfv/work/deploy/network/mgmt.xml
+
++ sudo virsh net-start mgmt
+Network mgmt started
+
++ [[ -n eth1 ]]
++ setup_bridge_net install eth1
++ net_name=install
++ nic=eth1
++ sudo virsh net-destroy install
+error: Failed to destroy network install
+error: Requested operation is not valid: network is not active
+
++ sudo virsh net-undefine install
+Network install has been undefined
+
++ sed -e s/REPLACE_NAME/install/g -e s/REPLACE_NIC/eth1/g /home/onos/compass4nfv/deploy/template/network/bridge_nic.xml
++ sudo virsh net-define /home/onos/compass4nfv/work/deploy/network/install.xml
+Network install defined from /home/onos/compass4nfv/work/deploy/network/install.xml
+
++ sudo virsh net-start install
+Network install started
+
++ setup_bridge_external
++ sudo virsh net-destroy external
+Network external destroyed
+
++ sudo virsh net-undefine external
+Network external has been undefined
+
++ save_network_info
++ sudo ovs-vsctl list-br
++ grep br-external
+br-external
++ br_exist=0
+++ ip route
+++ grep '^default'
+++ awk '{print $NF}'
++ external_nic=br-external
+++ ip route
+++ grep -Eo '^default via [^ ]+'
++ route_info='default via 10.145.88.1'
+++ ip addr show br-external
+++ grep -Eo '[^ ]+ brd [^ ]+ '
++ ip_info='10.145.88.86/23 brd 10.145.89.255 '
++ '[' 0 -eq 0 ']'
++ '[' br-external '!=' br-external ']'
++ sed -e s/REPLACE_NAME/external/g -e s/REPLACE_OVS/br-external/g /home/onos/compass4nfv/deploy/template/network/bridge_ovs.xml
++ sudo virsh net-define /home/onos/compass4nfv/work/deploy/network/external.xml
+Network external defined from /home/onos/compass4nfv/work/deploy/network/external.xml
+
++ sudo virsh net-start external
+Network external started
+
++ python /home/onos/compass4nfv/deploy/setup_vnic.py
++ clear_forward_rejct_rules
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
++ :
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
++ :
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
++ :
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
++ :
++ sudo iptables -nL FORWARD --line-number
++ grep -E 'REJECT +all +-- +0.0.0.0/0 +0.0.0.0/0 +reject-with icmp-port-unreachable'
++ head -1
++ awk '{print $1}'
++ xargs sudo iptables -D FORWARD
+iptables: Bad rule (does a matching rule exist in that chain?).
++ log_info '########## launch compass begin #############'
++ echo -e '########## launch compass begin #############'
+########## launch compass begin #############
++ launch_compass
++ local old_mnt=/home/onos/compass4nfv/work/deploy/vm/compass/old
++ local new_mnt=/home/onos/compass4nfv/work/deploy/vm/compass/new
++ local old_iso=/home/onos/compass4nfv/work/deploy/iso/centos.iso
++ local new_iso=/home/onos/compass4nfv/work/deploy/vm/compass/centos.iso
++ log_info 'launch_compass enter'
++ echo -e 'launch_compass enter'
+launch_compass enter
++ tear_down_compass
++ sudo virsh destroy compass
++ sudo virsh undefine compass
++ sudo umount /home/onos/compass4nfv/work/deploy/vm/compass/old
++ sudo umount /home/onos/compass4nfv/work/deploy/vm/compass/new
++ sudo rm -rf /home/onos/compass4nfv/work/deploy/vm/compass
++ log_info 'tear_down_compass success!!!'
++ echo -e 'tear_down_compass success!!!'
+tear_down_compass success!!!
++ set -e
++ mkdir -p /home/onos/compass4nfv/work/deploy/vm/compass /home/onos/compass4nfv/work/deploy/vm/compass/old
++ sudo mount -o loop /home/onos/compass4nfv/work/deploy/iso/centos.iso /home/onos/compass4nfv/work/deploy/vm/compass/old
+mount: block device /home/onos/compass4nfv/work/deploy/iso/centos.iso is write-protected, mounting read-only
++ cd /home/onos/compass4nfv/work/deploy/vm/compass/old
++ find .
++ cpio -pd /home/onos/compass4nfv/work/deploy/vm/compass/new
+9272282 blocks
++ cd -
+/home/onos/compass4nfv
++ sudo umount /home/onos/compass4nfv/work/deploy/vm/compass/old
++ chmod 755 -R /home/onos/compass4nfv/work/deploy/vm/compass/new
++ cp /home/onos/compass4nfv/util/isolinux.cfg /home/onos/compass4nfv/work/deploy/vm/compass/new/isolinux/ -f
++ cp /home/onos/compass4nfv/util/ks.cfg /home/onos/compass4nfv/work/deploy/vm/compass/new/isolinux/ -f
++ sed -i -e s/REPLACE_MGMT_IP/192.168.200.2/g -e s/REPLACE_MGMT_NETMASK/255.255.255.0/g -e s/REPLACE_GW/192.168.200.1/g -e s/REPLACE_INSTALL_IP/10.1.0.12/g -e s/REPLACE_INSTALL_NETMASK/255.255.255.0/g -e s/REPLACE_COMPASS_EXTERNAL_NETMASK//g -e s/REPLACE_COMPASS_EXTERNAL_IP//g -e s/REPLACE_COMPASS_EXTERNAL_GW//g /home/onos/compass4nfv/work/deploy/vm/compass/new/isolinux/isolinux.cfg
++ [[ -n 8.8.8.8 ]]
++ sed -i -e s/REPLACE_COMPASS_DNS1/8.8.8.8/g /home/onos/compass4nfv/work/deploy/vm/compass/new/isolinux/isolinux.cfg
++ [[ -n '' ]]
++ ssh-keygen -f /home/onos/compass4nfv/work/deploy/vm/compass/new/bootstrap/boot.rsa -t rsa -N ''
+Generating public/private rsa key pair.
+Your identification has been saved in /home/onos/compass4nfv/work/deploy/vm/compass/new/bootstrap/boot.rsa.
+Your public key has been saved in /home/onos/compass4nfv/work/deploy/vm/compass/new/bootstrap/boot.rsa.pub.
+The key fingerprint is:
+6c:ea:f9:97:8b:0a:ab:c0:18:98:5d:38:ec:70:ec:9a root@jumpserver
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+| o .             |
+|. * .            |
+|.B o   .         |
+|+ +     S        |
+|o+     o         |
+|E.  . .    .     |
+| .   + . .o      |
+|  ... +oo...     |
++-----------------+
++ cp /home/onos/compass4nfv/work/deploy/vm/compass/new/bootstrap/boot.rsa /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa
++ rm -rf /home/onos/compass4nfv/work/deploy/vm/compass/new/.rr_moved /home/onos/compass4nfv/work/deploy/vm/compass/new/rr_moved
++ sudo mkisofs -quiet -r -J -R -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -hide-rr-moved -x lost+found: -o /home/onos/compass4nfv/work/deploy/vm/compass/centos.iso /home/onos/compass4nfv/work/deploy/vm/compass/new
++ rm -rf /home/onos/compass4nfv/work/deploy/vm/compass/old /home/onos/compass4nfv/work/deploy/vm/compass/new
++ qemu-img create -f qcow2 /home/onos/compass4nfv/work/deploy/vm/compass/disk.img 100G
+Formatting '/home/onos/compass4nfv/work/deploy/vm/compass/disk.img', fmt=qcow2 size=107374182400 encryption=off cluster_size=65536 lazy_refcounts=off 
++ sed -e s/REPLACE_MEM/4096/g -e s/REPLACE_CPU/4/g -e s#REPLACE_IMAGE#/home/onos/compass4nfv/work/deploy/vm/compass/disk.img#g -e s#REPLACE_ISO#/home/onos/compass4nfv/work/deploy/vm/compass/centos.iso#g -e s/REPLACE_NET_MGMT/mgmt/g -e s/REPLACE_NET_INSTALL/install/g -e s/REPLACE_NET_EXTERNAL/external/g /home/onos/compass4nfv/deploy/template/vm/compass.xml
++ sudo virsh define /home/onos/compass4nfv/work/deploy/vm/compass/libvirt.xml
+Domain compass defined from /home/onos/compass4nfv/work/deploy/vm/compass/libvirt.xml
+
++ sudo virsh start compass
+Domain compass started
+
++ exit_status=0
++ '[' 0 '!=' 0 ']'
++ wait_ok 500
++ set +x
+wait_compass_ok enter
++ log_warn 'os install time used: 100%'
++ echo -e 'os install time used: 100%'
+os install time used: 100%
++ log_info 'wait_compass_ok exit'
++ echo -e 'wait_compass_ok exit'
+wait_compass_ok exit
++ install_compass_core
++ install_compass compass_nodocker.yml
++ local inventory_file=/home/onos/compass4nfv/work/deploy/vm/compass/inventory.file
++ sed -i 's/mgmt_next_ip:.*/mgmt_next_ip: 10.1.0.12/g' /home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
++ echo 'compass_nodocker ansible_ssh_host=192.168.200.2 ansible_ssh_port=22'
++ PYTHONUNBUFFERED=1
++ ANSIBLE_FORCE_COLOR=true
++ ANSIBLE_HOST_KEY_CHECKING=false
++ ANSIBLE_SSH_ARGS='-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s'
++ python /usr/local/bin/ansible-playbook -e pipeline=true --private-key=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa --user=root --connection=ssh --inventory-file=/home/onos/compass4nfv/work/deploy/vm/compass/inventory.file /home/onos/compass4nfv/work/deploy/installer/compass-install/install/compass_nodocker.yml
+
+PLAY [compass_nodocker] ******************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [compass_nodocker]
+
+TASK: [common | hostname name=compass] **************************************** 
+changed: [compass_nodocker]
+
+TASK: [common | lineinfile dest=/etc/hosts line="127.0.0.1 compass"] ********** 
+changed: [compass_nodocker]
+
+TASK: [common | ln libcrypto.so] ********************************************** 
+changed: [compass_nodocker]
+
+TASK: [common | get epel 6] *************************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get epel 7] *************************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get docker] *************************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get docker if el7] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | install brctl] ************************************************ 
+skipping: [compass_nodocker]
+
+TASK: [common | pip install dockerpy] ***************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | apt-get update] *********************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | find out if https exists in apt methods] ********************** 
+skipping: [compass_nodocker]
+
+TASK: [common | install apt-transport-https if https not in methods] ********** 
+skipping: [compass_nodocker]
+
+TASK: [common | add docker repository key] ************************************ 
+skipping: [compass_nodocker]
+
+TASK: [common | add a docker.list file to apt source list] ******************** 
+skipping: [compass_nodocker]
+
+TASK: [common | update again] ************************************************* 
+skipping: [compass_nodocker]
+
+TASK: [common | get docker and brctl] ***************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get all bridges] ********************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | bring down docker0 if found] ********************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | remove docker0 if found] ************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | bring down compass0 if found] ********************************* 
+skipping: [compass_nodocker]
+
+TASK: [common | remove compass0 if found] ************************************* 
+skipping: [compass_nodocker]
+
+TASK: [common | add bridge compass0] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | get compass0 info] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | add ip addr to  compass0] ************************************* 
+skipping: [compass_nodocker]
+
+TASK: [common | bring up compass0] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | register compass0 to docker daemon] *************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | register compass0 when it's debian] *************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | start docker daemon] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [common | remove all containers] **************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | install packages] ******************************************** 
+changed: [compass_nodocker] => (item=yum,vim,wget,bind,gcc,httpd,lsof,rsync,dhcp,xinetd,syslinux,mkisofs,net-tools,createrepo,cobbler,cobbler-web,pykickstart,fence-agents,tftp-server)
+
+TASK: [cobbler | turn off iptables] ******************************************* 
+ok: [compass_nodocker]
+
+TASK: [cobbler | replace config files] **************************************** 
+changed: [compass_nodocker] => (item={'dest': '/etc/xinetd.d/rsync', 'name': 'rsync'})
+changed: [compass_nodocker] => (item={'dest': '/etc/debmirror.conf', 'name': 'debmirror.conf'})
+
+TASK: [cobbler | restart xinetd service] ************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | configure interface for dhcp] ******************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy httpd configuration files] ****************************** 
+ok: [compass_nodocker] => (item=cobbler_web.conf)
+ok: [compass_nodocker] => (item=ssl.conf)
+
+TASK: [cobbler | disable selinux] ********************************************* 
+ok: [compass_nodocker]
+
+TASK: [cobbler | copy cobbler configuration files] **************************** 
+changed: [compass_nodocker] => (item={'file_name': 'tftpd.template', 'name': 'tftpd.template'})
+ok: [compass_nodocker] => (item={'file_name': 'modules.conf', 'name': 'modules.conf'})
+changed: [compass_nodocker] => (item={'file_name': 'dhcp.template', 'name': 'dhcp.template.nodocker.j2'})
+changed: [compass_nodocker] => (item={'file_name': 'named.template', 'name': 'named.template.nodocker.j2'})
+changed: [compass_nodocker] => (item={'file_name': 'settings', 'name': 'settings.j2'})
+
+NOTIFIED: [cobbler | restart httpd] ******************************************* 
+changed: [compass_nodocker]
+
+NOTIFIED: [cobbler | restart cobbler] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | remove old cobbler folders] ********************************** 
+changed: [compass_nodocker] => (item=snippets)
+changed: [compass_nodocker] => (item=scripts)
+changed: [compass_nodocker] => (item=triggers)
+changed: [compass_nodocker] => (item=kickstarts)
+
+TASK: [cobbler | create cobbler folders] ************************************** 
+ok: [compass_nodocker] => (item=snippets)
+ok: [compass_nodocker] => (item=scripts)
+ok: [compass_nodocker] => (item=triggers)
+ok: [compass_nodocker] => (item=kickstarts)
+changed: [compass_nodocker] => (item=repo_mirror)
+
+TASK: [cobbler | copy snippets to cobbler folder] ***************************** 
+changed: [compass_nodocker] => (item=snippets)
+changed: [compass_nodocker] => (item=scripts)
+changed: [compass_nodocker] => (item=triggers)
+changed: [compass_nodocker] => (item=kickstarts)
+
+TASK: [cobbler | change snippets mode] **************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | create cblr_ks folder] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | change kickstart mode] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | clean cobbler log folder] ************************************ 
+changed: [compass_nodocker]
+
+TASK: [cobbler | create cobbler log directories] ****************************** 
+changed: [compass_nodocker] => (item=/var/log/cobbler)
+changed: [compass_nodocker] => (item=/var/log/cobbler/anamon)
+changed: [compass_nodocker] => (item=/var/log/cobbler/tasks)
+
+TASK: [cobbler | get all ppa file] ******************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | untar cobbler ppa repo] ************************************** 
+changed: [compass_nodocker] => (item=/opt/cobbler/ubuntu/ppa/trusty-liberty-ppa.tar.gz)
+changed: [compass_nodocker] => (item=/opt/cobbler/ubuntu/ppa/trusty-juno-ppa.tar.gz)
+changed: [compass_nodocker] => (item=/opt/cobbler/centos/ppa/centos7-juno-ppa.tar.gz)
+
+TASK: [cobbler | get all ppa dir] ********************************************* 
+changed: [compass_nodocker]
+
+TASK: [cobbler | create repo conf directory] ********************************** 
+changed: [compass_nodocker] => (item=centos7-juno-ppa)
+changed: [compass_nodocker] => (item=trusty-juno-ppa)
+changed: [compass_nodocker] => (item=trusty-liberty-ppa)
+
+TASK: [cobbler | create repo conf file] *************************************** 
+changed: [compass_nodocker] => (item=centos7-juno-ppa)
+changed: [compass_nodocker] => (item=trusty-juno-ppa)
+changed: [compass_nodocker] => (item=trusty-liberty-ppa)
+
+TASK: [cobbler | start cobbler and httpd services] **************************** 
+changed: [compass_nodocker] => (item=httpd)
+changed: [compass_nodocker] => (item=cobblerd)
+
+TASK: [cobbler | import iso] ************************************************** 
+changed: [compass_nodocker] => (item={'key': 'centos', 'value': {'kickstart': 'default.ks', 'breed': 'redhat'}})
+changed: [compass_nodocker] => (item={'key': 'ubuntu', 'value': {'kopts': "netcfg/choose_interface=auto console='ttyS0,115200n8' console=tty0 biosdevname=0", 'kickstart': 'default.seed', 'breed': 'ubuntu', 'kopts_post': "console='ttyS0,115200n8' console=tty0 biosdevname=0", 'extra': '--apt-dists=trusty --apt-components=main'}})
+
+TASK: [cobbler | get default repo] ******************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | remove default repo] ***************************************** 
+changed: [compass_nodocker] => (item=   ubuntu-14.04.3-server-x86_64)
+
+TASK: [cobbler | add repos] *************************************************** 
+changed: [compass_nodocker] => (item={'key': 'centos', 'value': {'kickstart': 'default.ks', 'breed': 'redhat'}})
+changed: [compass_nodocker] => (item={'key': 'ubuntu', 'value': {'kopts': "netcfg/choose_interface=auto console='ttyS0,115200n8' console=tty0 biosdevname=0", 'kickstart': 'default.seed', 'breed': 'ubuntu', 'kopts_post': "console='ttyS0,115200n8' console=tty0 biosdevname=0", 'extra': '--apt-dists=trusty --apt-components=main'}})
+
+TASK: [cobbler | copy loader files] ******************************************* 
+changed: [compass_nodocker]
+
+TASK: [cobbler | untar loaders file] ****************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | cobbler get loaders] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | generate public key file for ssh] **************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | generate ssh key for root] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | make push_ssh_keys var] ************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | edit profiles] *********************************************** 
+changed: [compass_nodocker] => (item={'key': 'centos', 'value': {'kickstart': 'default.ks', 'breed': 'redhat'}})
+changed: [compass_nodocker] => (item={'key': 'ubuntu', 'value': {'kopts': "netcfg/choose_interface=auto console='ttyS0,115200n8' console=tty0 biosdevname=0", 'kickstart': 'default.seed', 'breed': 'ubuntu', 'kopts_post': "console='ttyS0,115200n8' console=tty0 biosdevname=0", 'extra': '--apt-dists=trusty --apt-components=main'}})
+
+TASK: [cobbler | cobbler repo sync again] ************************************* 
+changed: [compass_nodocker]
+
+TASK: [cobbler | cobbler sync] ************************************************ 
+changed: [compass_nodocker]
+
+TASK: [cobbler | restart xinetd] ********************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | restart dhcpd] *********************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | cobbler check] *********************************************** 
+changed: [compass_nodocker]
+
+TASK: [cobbler | get all systems] ********************************************* 
+changed: [compass_nodocker]
+
+TASK: [cobbler | remove all systems] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | install mkisofs] ********************************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | install mkisofs in debian] *********************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | clean up docker directory] *********************************** 
+skipping: [compass_nodocker] => (item=Dockerfile)
+skipping: [compass_nodocker] => (item=files)
+
+TASK: [cobbler | clean up log directory] ************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | create directory for docker and files] *********************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | create directories for images] ******************************* 
+skipping: [compass_nodocker] => (item=CentOS-6.5-x86_64)
+skipping: [compass_nodocker] => (item=Ubuntu-12.04-x86_64)
+skipping: [compass_nodocker] => (item=Ubuntu-14.04-x86_64)
+
+TASK: [cobbler | download images] ********************************************* 
+skipping: [compass_nodocker] => (item={'name': u'https://s3-us-west-1.amazonaws.com/compass-local-repo/centos/6.5/CentOS-6.5-x86_64.iso', 'filename': u'CentOS-6.5-x86_64.iso'})
+skipping: [compass_nodocker] => (item={'name': u'https://s3-us-west-1.amazonaws.com/compass-local-repo/ubuntu/12.04/Ubuntu-12.04-x86_64.iso', 'filename': u'Ubuntu-12.04-x86_64.iso'})
+skipping: [compass_nodocker] => (item={'name': u'https://s3-us-west-1.amazonaws.com/compass-local-repo/ubuntu/14.04/Ubuntu-14.04-x86_64.iso', 'filename': u'Ubuntu-14.04-x86_64.iso'})
+
+TASK: [cobbler | mount info] ************************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | mount images] ************************************************ 
+skipping: [compass_nodocker] => (item=CentOS-6.5-x86_64)
+skipping: [compass_nodocker] => (item=Ubuntu-12.04-x86_64)
+skipping: [compass_nodocker] => (item=Ubuntu-14.04-x86_64)
+
+TASK: [cobbler | copy Dockerfile to ~/docker-cobbler] ************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy dhcp.template] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy named.template] ***************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy start script] ******************************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy post sync script] *************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy admin key] ********************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | copy chef validator key] ************************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | cobbler container?] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | remove cobbler container if any] ***************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | check if 'cobbler' image already exists] ********************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | remove image 'cobbler' if it exists and --rebuild is specified] *** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | restart docker daemon if debian] ***************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | build a docker image for cobbler] **************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | fork image and run a new cobbler container] ****************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | extract cobbler ip info] ************************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | quote the ip first] ****************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | add cobbler_docker_ip before cobbler ip] ********************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | write cobbler_ip to local var] ******************************* 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | include cobbler dynamic vars] ******************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | install dhcp on cobbler host for relay] ********************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | configure dhcprelay] ***************************************** 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | get isc-dhcp-relay agent] ************************************ 
+skipping: [compass_nodocker]
+
+TASK: [cobbler | make dhcp-relay agent listen to cobbler] ********************* 
+skipping: [compass_nodocker]
+
+TASK: [compass | install packages] ******************************************** 
+changed: [compass_nodocker] => (item=redis,mysql,mod_wsgi,nfs-utils,elasticsearch,logstash,kibana,java,mysql-devel,mysql-server,MySQL-python,nmap-ncat,python-devel,rabbitmq-server,libselinux-python,python-setuptools,python-paramiko,python-jinja2)
+
+TASK: [compass | auto set java env] ******************************************* 
+changed: [compass_nodocker] => (item=jdk.csh)
+changed: [compass_nodocker] => (item=jdk.sh)
+
+TASK: [compass | set java env] ************************************************ 
+changed: [compass_nodocker]
+
+TASK: [compass | copy elasticsearch config] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy kibana config] ****************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy kibana service scripts] ********************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | copy kibana autostart scripts] ******************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | modify kibana api base url] ********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy logstash config] **************************************** 
+changed: [compass_nodocker] => (item=ansible.conf)
+changed: [compass_nodocker] => (item=compass.conf)
+changed: [compass_nodocker] => (item=messages.conf)
+
+TASK: [compass | create logstash patterns directory] ************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy logstash patten] **************************************** 
+changed: [compass_nodocker] => (item=ansible.pat)
+
+TASK: [compass | copy httpd config] ******************************************* 
+changed: [compass_nodocker] => (item=ods-server.conf)
+changed: [compass_nodocker] => (item=http_pip.conf)
+changed: [compass_nodocker] => (item=images.conf)
+changed: [compass_nodocker] => (item=packages.conf)
+changed: [compass_nodocker] => (item=elk.conf)
+
+NOTIFIED: [compass | restart http service] ************************************ 
+changed: [compass_nodocker]
+
+TASK: [compass | stop iptables] *********************************************** 
+ok: [compass_nodocker]
+
+TASK: [compass | start elasticsearch] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | start logstash] ********************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | start kibana] ************************************************ 
+changed: [compass_nodocker]
+
+TASK: [compass | start mysqld] ************************************************ 
+changed: [compass_nodocker]
+
+TASK: [compass | start rabbitmq server] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | initialize mysql password] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | create compass database] ************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | install setuptools] ****************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | install pip] ************************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | create pip config directory] ********************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | update pip.conf] ********************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | install pip package] ***************************************** 
+changed: [compass_nodocker] => (item=lazypy)
+changed: [compass_nodocker] => (item=virtualenv)
+changed: [compass_nodocker] => (item=ansible)
+changed: [compass_nodocker] => (item=pycrypto-on-pypi)
+
+TASK: [compass | pip install compass into virtualenv] ************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | create compass directories] ********************************** 
+changed: [compass_nodocker] => (item=/etc/compass)
+changed: [compass_nodocker] => (item=/opt/compass/bin)
+changed: [compass_nodocker] => (item=/var/www/compass)
+changed: [compass_nodocker] => (item=/var/www/compass_web)
+
+TASK: [compass | create /var/log/compass] ************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | create ansible folder] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy ansible scripts into ansible folder] ******************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy ansible roles into ansible folder] ********************** 
+changed: [compass_nodocker]
+
+TASK: [compass | write python home into switch virtualenv] ******************** 
+changed: [compass_nodocker]
+
+TASK: [compass | rename switch_virtualenv template] *************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass config files] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy service init file] ************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass bin file] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass shell script] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass ansible callback] ******************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | copy compass executable] ************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | link compass check] ****************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | link compass wsgi] ******************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | change celery env] ******************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | change file mode] ******************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | add compass setting] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | add cobbler setting] ***************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | link celery bin file] **************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | create redis folders] **************************************** 
+changed: [compass_nodocker] => (item=/var/log/redis)
+changed: [compass_nodocker] => (item=/var/lib/redis)
+changed: [compass_nodocker] => (item=/var/run/redis)
+
+TASK: [compass | make sure redis service not running] ************************* 
+failed: [compass_nodocker] => {"cmd": "killall -9 redis-server", "failed": true, "rc": 2}
+msg: [Errno 2] No such file or directory
+...ignoring
+
+TASK: [compass | restart redis service] *************************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | initialize db for compass] *********************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | copy web ui files] ******************************************* 
+changed: [compass_nodocker]
+
+TASK: [compass | create switch file if test mode enabled] ********************* 
+skipping: [compass_nodocker]
+
+TASK: [compass | install keyczar for accelerate] ****************************** 
+changed: [compass_nodocker]
+
+TASK: [compass | inject switches and mac addresses] *************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | clean up docker directory] *********************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | clean up log directory] ************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | create directory for docker and files] *********************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy Dockerfile] ********************************************* 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy switch machines file] *********************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy start script] ******************************************* 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy compass.pem] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy chef config] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy cobber conf] ******************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | copy compass setting] **************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | get containers] ********************************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | remove compass container if any] ***************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | check if compass image already exists] *********************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | remove image 'compass' if it exists and --rebuild is specified] *** 
+skipping: [compass_nodocker]
+
+TASK: [compass | build a docker image for compass] **************************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | fork image and run a new compass container] ****************** 
+skipping: [compass_nodocker]
+
+TASK: [compass | remove dynamic generated vars] ******************************* 
+skipping: [compass_nodocker] => (item=dynamic.yml)
+skipping: [compass_nodocker] => (item=keys)
+
+NOTIFIED: [compass | restart compass service] ********************************* 
+changed: [compass_nodocker] => (item=compass-celeryd)
+changed: [compass_nodocker] => (item=compass-progress-updated)
+
+NOTIFIED: [compass | restart http service] ************************************ 
+changed: [compass_nodocker]
+
+PLAY RECAP ******************************************************************** 
+compass_nodocker           : ok=102  changed=91   unreachable=0    failed=0   
+
++ exit_status=0
++ rm /home/onos/compass4nfv/work/deploy/vm/compass/inventory.file
++ [[ 0 != 0 ]]
++ set +e
++ log_info 'launch_compass exit'
++ echo -e 'launch_compass exit'
+launch_compass exit
++ [[ -z '' ]]
++ log_info '########## set compass machine begin #############'
++ echo -e '########## set compass machine begin #############'
+########## set compass machine begin #############
++ set_compass_machine
++ local config_file=/home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
++ sed -i -e '/test: true/d' -e /pxe_boot_macs/d /home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
++ echo 'test: true'
++ echo 'pxe_boot_macs: ['\''7C:A2:3E:86:65:4E'\'','\''7C:A2:3E:86:65:58'\'','\''7C:A2:3E:86:65:38'\'','\''7C:A2:3E:86:65:30'\'','\''7C:A2:3E:86:65:46'\'']'
++ install_compass compass_machine.yml
++ local inventory_file=/home/onos/compass4nfv/work/deploy/vm/compass/inventory.file
++ sed -i 's/mgmt_next_ip:.*/mgmt_next_ip: 10.1.0.12/g' /home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
++ echo 'compass_nodocker ansible_ssh_host=192.168.200.2 ansible_ssh_port=22'
++ PYTHONUNBUFFERED=1
++ ANSIBLE_FORCE_COLOR=true
++ ANSIBLE_HOST_KEY_CHECKING=false
++ ANSIBLE_SSH_ARGS='-o UserKnownHostsFile=/dev/null -o ControlMaster=auto -o ControlPersist=60s'
++ python /usr/local/bin/ansible-playbook -e pipeline=true --private-key=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa --user=root --connection=ssh --inventory-file=/home/onos/compass4nfv/work/deploy/vm/compass/inventory.file /home/onos/compass4nfv/work/deploy/installer/compass-install/install/compass_machine.yml
+
+PLAY [compass_nodocker] ******************************************************* 
+
+GATHERING FACTS *************************************************************** 
+ok: [compass_nodocker]
+
+TASK: [machines | create switch file if test mode enabled] ******************** 
+changed: [compass_nodocker]
+
+TASK: [machines | inject switches and mac addresses] ************************** 
+changed: [compass_nodocker]
+
+PLAY RECAP ******************************************************************** 
+compass_nodocker           : ok=3    changed=2    unreachable=0    failed=0   
+
++ exit_status=0
++ rm /home/onos/compass4nfv/work/deploy/vm/compass/inventory.file
++ [[ 0 != 0 ]]
++ [[ true == \t\r\u\e ]]
++ [[ ! -z '' ]]
++ deploy_host
++ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa root@192.168.200.2 mkdir -p /opt/compass/bin/ansible_callbacks
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
++ scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa -r /home/onos/compass4nfv/deploy/status_callback.py root@192.168.200.2:/opt/compass/bin/ansible_callbacks/status_callback.py
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
+status_callback.py                            100% 5094     5.0KB/s   00:00    
++ reboot_hosts
++ '[' -z /home/onos/compass4nfv/work/deploy/script/ipmitool.sh ']'
++ /home/onos/compass4nfv/work/deploy/script/ipmitool.sh
+set pxe and reset 10.145.88.81 successsully
+set pxe and reset 10.145.88.82 successsully
+set pxe and reset 10.145.88.83 successsully
+set pxe and reset 10.145.88.84 successsully
+set pxe and reset 10.145.88.85 successsully
++ [[ '' == true ]]
++ deploy_flag=deploy
++ python /home/onos/compass4nfv/deploy/client.py --deploy_flag=deploy --compass_server=http://192.168.200.2/api --compass_user_email=admin@huawei.com --compass_user_password=admin --cluster_name=opnfv2 --language=EN --timezone=America/Los_Angeles --hostnames=host1,host2,host3,host4,host5 --partitions=/=30%,/home=5%,/tmp=5%,/var=60% --subnets=10.1.0.0/24,192.168.204.0/24,10.145.88.0/23 '--adapter_os_pattern=(?i)ubuntu-14\.04\.3.*' --adapter_name=openstack_liberty '--adapter_target_system_pattern=^openstack$' --adapter_flavor_pattern=HA-ansible-multinodes-liberty --repo_name=trusty-liberty-ppa --http_proxy= --https_proxy= --no_proxy= --ntp_server=10.1.0.12 --dns_servers=10.1.0.12 --domain=ods.com --search_path=ods.com --default_gateway=10.1.0.1 --server_credential=root=root --local_repo_url= --os_config_json_file= --service_credentials=image:service=service,compute:service=service,dashboard:service=service,identity:service=service,image:service=service,metering:service=service,network:service=service,rabbitmq:service=service,volume:service=service,mysql:service=service,heat:heat=heat_db_secret --console_credentials=admin:console=console,demo:console=console,compute:console=console,dashboard:console=console,identity:console=console,image:console=console,metering:console=console,network:console=console,object-store:console=console,volume:console=console,heat:heat=heat_secret '--host_networks=host1:eth1=192.168.204.11|is_mgmt;host2:eth1=192.168.204.12|is_mgmt;host3:eth1=192.168.204.13|is_mgmt;host4:eth1=192.168.204.14|is_mgmt;host5:eth1=192.168.204.15|is_mgmt' --network_mapping=install=eth1 --package_config_json_file= '--host_roles=host1=controller,ha;host2=controller,ha;host3=controller,ha;host4=compute;host5=compute' --default_roles= --switch_ips=10.145.88.4 --machines=7C:A2:3E:86:65:4E,7C:A2:3E:86:65:58,7C:A2:3E:86:65:38,7C:A2:3E:86:65:30,7C:A2:3E:86:65:46 --switch_credential=version=2c,community=public --deploy_type=baremetal --deployment_timeout=150 --nopoll_switches --dashboard_url= --cluster_vip=10.1.0.222 --network_cfg=/home/onos/compass4nfv/deploy/conf/network_cfg.yaml --neutron_cfg=/home/onos/compass4nfv/deploy/conf/neutron_cfg.yaml --enable_secgroup=true --enable_fwaas=false --rsa_file=/home/onos/compass4nfv/work/deploy/vm/compass/boot.rsa --enable_vpnaas=false
+INFO:__main__:login status: 200, resp: {u'expire_timestamp': u'2016-01-17 01:39:23', u'token': u'$1$n.xP4DTz$ilG4IClkcsY0bkT4SEe9w/', u'user_id': 1, u'id': 1}
+INFO:__main__:machines in db: ['7C:A2:3E:86:65:4E', '7C:A2:3E:86:65:58', '7C:A2:3E:86:65:38', '7C:A2:3E:86:65:30', '7C:A2:3E:86:65:46']
+ to add: ['7C:A2:3E:86:65:58', '7C:A2:3E:86:65:46', '7C:A2:3E:86:65:4E', '7C:A2:3E:86:65:30', '7C:A2:3E:86:65:38']
+INFO:__main__:machines are [1, 2, 3, 4, 5]
+INFO:__main__:add subnet 10.1.0.0/24 status 200 response {u'subnet': u'10.1.0.0/24', u'created_at': u'2016-01-16 23:39:23', u'updated_at': u'2016-01-16 23:39:23', u'name': u'10.1.0.0/24', u'id': 1}
+INFO:__main__:add subnet 192.168.204.0/24 status 200 response {u'subnet': u'192.168.204.0/24', u'created_at': u'2016-01-16 23:39:23', u'updated_at': u'2016-01-16 23:39:23', u'name': u'192.168.204.0/24', u'id': 2}
+INFO:__main__:add subnet 10.145.88.0/23 status 200 response {u'subnet': u'10.145.88.0/23', u'created_at': u'2016-01-16 23:39:24', u'updated_at': u'2016-01-16 23:39:24', u'name': u'10.145.88.0/23', u'id': 3}
+INFO:__main__:get all adapters status: 200, resp: [{u'flavors': [{u'display_name': u'Single Controller', u'name': u'single-controller', u'roles': [{u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'name': u'controller', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'flavor_id': u'openstack_liberty:single-controller'}, {u'display_name': u'compute node', u'description': u'Compute Node', u'adapter_id': u'openstack_liberty', u'name': u'compute', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute', u'flavor_id': u'openstack_liberty:single-controller'}, {u'display_name': u'network node', u'description': u'Network Node', u'adapter_id': u'openstack_liberty', u'name': u'network', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:network', u'flavor_id': u'openstack_liberty:single-controller'}, {u'display_name': u'storage node', u'description': u'Storage Node', u'adapter_id': u'openstack_liberty', u'name': u'storage', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:storage', u'flavor_id': u'openstack_liberty:single-controller'}, {u'display_name': u'odl', u'description': u'odl node', u'adapter_id': u'openstack_liberty', u'name': u'odl', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:odl', u'flavor_id': u'openstack_liberty:single-controller'}, {u'display_name': u'onos', u'description': u'onos node', u'adapter_id': u'openstack_liberty', u'name': u'onos', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:onos', u'flavor_id': u'openstack_liberty:single-controller'}], u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'template': u'single-controller.tmpl', u'id': u'openstack_liberty:single-controller'}, {u'display_name': u'Multi-nodes', u'name': u'multinodes', u'roles': [{u'display_name': u'Compute controller node', u'description': u'Compute controller node', u'adapter_id': u'openstack_liberty', u'name': u'compute-controller', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute-controller', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'Compute worker node', u'description': u'Compute worker node', u'adapter_id': u'openstack_liberty', u'name': u'compute-worker', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute-worker', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'Network server node', u'description': u'Network server node', u'adapter_id': u'openstack_liberty', u'name': u'network-server', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:network-server', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'network-worker', u'description': u'Network worker node', u'adapter_id': u'openstack_liberty', u'name': u'network-worker', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:network-worker', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'Database node', u'description': u'Database node', u'adapter_id': u'openstack_liberty', u'name': u'database', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:database', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'Messaging queue node', u'description': u'Messaging queue node', u'adapter_id': u'openstack_liberty', u'name': u'messaging', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:messaging', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'image', u'description': u'Image node', u'adapter_id': u'openstack_liberty', u'name': u'image', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:image', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'odl', u'description': u'odl node', u'adapter_id': u'openstack_liberty', u'name': u'odl', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:odl', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'dashboard', u'description': u'Dashboard node', u'adapter_id': u'openstack_liberty', u'name': u'dashboard', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:dashboard', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'identity', u'description': u'Identity node', u'adapter_id': u'openstack_liberty', u'name': u'identity', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:identity', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'storage-controller', u'description': u'Storage controller node', u'adapter_id': u'openstack_liberty', u'name': u'storage-controller', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:storage-controller', u'flavor_id': u'openstack_liberty:multinodes'}, {u'display_name': u'storage-volume', u'description': u'Storage volume node', u'adapter_id': u'openstack_liberty', u'name': u'storage-volume', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:storage-volume', u'flavor_id': u'openstack_liberty:multinodes'}], u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'template': u'multinodes.tmpl', u'id': u'openstack_liberty:multinodes'}, {u'display_name': u'All-In-One', u'name': u'allinone', u'roles': [{u'display_name': u'all in one', u'description': u'All in One', u'adapter_id': u'openstack_liberty', u'name': u'allinone-compute', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:allinone-compute', u'flavor_id': u'openstack_liberty:allinone'}], u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'template': u'allinone.tmpl', u'id': u'openstack_liberty:allinone'}, {u'display_name': u'HA-ansible-multinodes-liberty', u'name': u'HA-ansible-multinodes-liberty', u'roles': [{u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'name': u'controller', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'compute node', u'description': u'Compute Node', u'adapter_id': u'openstack_liberty', u'name': u'compute', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ha', u'description': u'Cluster with HA node', u'adapter_id': u'openstack_liberty', u'name': u'ha', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:ha', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'odl', u'description': u'odl node', u'adapter_id': u'openstack_liberty', u'name': u'odl', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:odl', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'onos', u'description': u'onos node', u'adapter_id': u'openstack_liberty', u'name': u'onos', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:onos', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph', u'description': u'ceph node', u'adapter_id': u'openstack_liberty', u'name': u'ceph', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph-adm', u'description': u'Ceph Admin Node', u'adapter_id': u'openstack_liberty', u'name': u'ceph-adm', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph-adm', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph-mon', u'description': u'Ceph Monitor Node', u'adapter_id': u'openstack_liberty', u'name': u'ceph-mon', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph-mon', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph-osd', u'description': u'Ceph Storage Node', u'adapter_id': u'openstack_liberty', u'name': u'ceph-osd', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph-osd', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'sec-patch', u'description': u'Security Patch Node', u'adapter_id': u'openstack_liberty', u'name': u'sec-patch', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:sec-patch', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph-osd-node', u'description': u'', u'adapter_id': u'openstack_liberty', u'name': u'ceph-osd-node', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph-osd-node', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}], u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'template': u'HA-ansible-multinodes.tmpl', u'id': u'openstack_liberty:HA-ansible-multinodes-liberty'}], u'package_installer': {u'alias': u'ansible_installer_liberty', u'id': u'ansible_installer_liberty', u'name': u'ansible_installer', u'settings': {u'inventory_file': u'inventory.yml', u'ansible_config': u'ansible.cfg', u'etc_hosts_path': u'roles/common/templates/hosts', u'ansible_run_dir': u'/var/ansible/run', u'ansible_dir': u'/var/ansible', u'runner_dirs': [u'roles', u'openstack_liberty/templates:templates'], u'playbook_file': u'site.yml', u'group_variable': u'all'}}, u'name': u'openstack_liberty', u'roles': [{u'display_name': u'image', u'optional': False, u'description': u'Image node', u'name': u'image', u'id': u'openstack_liberty:image'}, {u'display_name': u'ceph', u'optional': True, u'description': u'ceph node', u'name': u'ceph', u'id': u'openstack_liberty:ceph'}, {u'display_name': u'ceph-adm', u'optional': True, u'description': u'Ceph Admin Node', u'name': u'ceph-adm', u'id': u'openstack_liberty:ceph-adm'}, {u'display_name': u'odl', u'optional': True, u'description': u'odl node', u'name': u'odl', u'id': u'openstack_liberty:odl'}, {u'display_name': u'network-worker', u'optional': False, u'description': u'Network worker node', u'name': u'network-worker', u'id': u'openstack_liberty:network-worker'}, {u'display_name': u'storage-controller', u'optional': False, u'description': u'Storage controller node', u'name': u'storage-controller', u'id': u'openstack_liberty:storage-controller'}, {u'display_name': u'sec-patch', u'optional': True, u'description': u'Security Patch Node', u'name': u'sec-patch', u'id': u'openstack_liberty:sec-patch'}, {u'display_name': u'network node', u'optional': False, u'description': u'Network Node', u'name': u'network', u'id': u'openstack_liberty:network'}, {u'display_name': u'Compute controller node', u'optional': False, u'description': u'Compute controller node', u'name': u'compute-controller', u'id': u'openstack_liberty:compute-controller'}, {u'display_name': u'Compute worker node', u'optional': False, u'description': u'Compute worker node', u'name': u'compute-worker', u'id': u'openstack_liberty:compute-worker'}, {u'display_name': u'storage node', u'optional': False, u'description': u'Storage Node', u'name': u'storage', u'id': u'openstack_liberty:storage'}, {u'display_name': u'ceph-mon', u'optional': True, u'description': u'Ceph Monitor Node', u'name': u'ceph-mon', u'id': u'openstack_liberty:ceph-mon'}, {u'display_name': u'storage-volume', u'optional': False, u'description': u'Storage volume node', u'name': u'storage-volume', u'id': u'openstack_liberty:storage-volume'}, {u'display_name': u'controller node', u'optional': False, u'description': u'Controller Node', u'name': u'controller', u'id': u'openstack_liberty:controller'}, {u'display_name': u'ceph-osd', u'optional': True, u'description': u'Ceph Storage Node', u'name': u'ceph-osd', u'id': u'openstack_liberty:ceph-osd'}, {u'display_name': u'ha', u'optional': False, u'description': u'Cluster with HA node', u'name': u'ha', u'id': u'openstack_liberty:ha'}, {u'display_name': u'Network server node', u'optional': False, u'description': u'Network server node', u'name': u'network-server', u'id': u'openstack_liberty:network-server'}, {u'display_name': u'identity', u'optional': False, u'description': u'Identity node', u'name': u'identity', u'id': u'openstack_liberty:identity'}, {u'display_name': u'ceph-osd-node', u'optional': True, u'description': u'', u'name': u'ceph-osd-node', u'id': u'openstack_liberty:ceph-osd-node'}, {u'display_name': u'compute node', u'optional': False, u'description': u'Compute Node', u'name': u'compute', u'id': u'openstack_liberty:compute'}, {u'display_name': u'onos', u'optional': True, u'description': u'onos node', u'name': u'onos', u'id': u'openstack_liberty:onos'}, {u'display_name': u'Database node', u'optional': False, u'description': u'Database node', u'name': u'database', u'id': u'openstack_liberty:database'}, {u'display_name': u'all in one', u'optional': False, u'description': u'All in One', u'name': u'allinone-compute', u'id': u'openstack_liberty:allinone-compute'}, {u'display_name': u'dashboard', u'optional': False, u'description': u'Dashboard node', u'name': u'dashboard', u'id': u'openstack_liberty:dashboard'}, {u'display_name': u'Messaging queue node', u'optional': False, u'description': u'Messaging queue node', u'name': u'messaging', u'id': u'openstack_liberty:messaging'}], u'os_installer': {u'alias': u'cobbler', u'id': u'cobbler', u'name': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}}, u'supported_oses': [{u'os_id': u'CentOS-7-Minimal-1511-x86_64', u'id': u'CentOS-7-Minimal-1511-x86_64', u'name': u'CentOS-7-Minimal-1511-x86_64'}, {u'os_id': u'ubuntu-14.04.3-server-x86_64', u'id': u'ubuntu-14.04.3-server-x86_64', u'name': u'ubuntu-14.04.3-server-x86_64'}, {u'os_id': u'Ubuntu-14.04-x86_64', u'id': u'Ubuntu-14.04-x86_64', u'name': u'Ubuntu-14.04-x86_64'}], u'display_name': u'Openstack Liberty', u'id': u'openstack_liberty'}]
+INFO:__main__:add cluster opnfv2 status: 200 resp:{u'os_name': u'ubuntu-14.04.3-server-x86_64', u'name': u'opnfv2', u'reinstall_distributed_system': True, u'created_at': u'2016-01-16 23:39:24', u'adapter_name': u'openstack_liberty', u'adapter_id': u'openstack_liberty', u'updated_at': u'2016-01-16 23:39:24', u'os_id': u'ubuntu-14.04.3-server-x86_64', u'id': 1, u'flavor_name': u'HA-ansible-multinodes-liberty', u'owner': u'admin@huawei.com', u'distributed_system_installed': False, u'flavor': {u'display_name': u'HA-ansible-multinodes-liberty', u'name': u'HA-ansible-multinodes-liberty', u'roles': [{u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'name': u'controller', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'compute node', u'description': u'Compute Node', u'adapter_id': u'openstack_liberty', u'name': u'compute', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ha', u'description': u'Cluster with HA node', u'adapter_id': u'openstack_liberty', u'name': u'ha', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:ha', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'odl', u'description': u'odl node', u'adapter_id': u'openstack_liberty', u'name': u'odl', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:odl', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'onos', u'description': u'onos node', u'adapter_id': u'openstack_liberty', u'name': u'onos', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:onos', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph', u'description': u'ceph node', u'adapter_id': u'openstack_liberty', u'name': u'ceph', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph-adm', u'description': u'Ceph Admin Node', u'adapter_id': u'openstack_liberty', u'name': u'ceph-adm', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph-adm', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph-mon', u'description': u'Ceph Monitor Node', u'adapter_id': u'openstack_liberty', u'name': u'ceph-mon', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph-mon', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph-osd', u'description': u'Ceph Storage Node', u'adapter_id': u'openstack_liberty', u'name': u'ceph-osd', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph-osd', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'sec-patch', u'description': u'Security Patch Node', u'adapter_id': u'openstack_liberty', u'name': u'sec-patch', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:sec-patch', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, {u'display_name': u'ceph-osd-node', u'description': u'', u'adapter_id': u'openstack_liberty', u'name': u'ceph-osd-node', u'adapter_name': u'openstack_liberty', u'optional': True, u'id': u'openstack_liberty:ceph-osd-node', u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}], u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'template': u'HA-ansible-multinodes.tmpl', u'id': u'openstack_liberty:HA-ansible-multinodes-liberty'}, u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty'}
+INFO:__main__:add machines [{'machine_id': 1, 'name': 'host1'}, {'machine_id': 2, 'name': 'host2'}, {'machine_id': 3, 'name': 'host3'}, {'machine_id': 4, 'name': 'host4'}, {'machine_id': 5, 'name': 'host5'}] to cluster 1 status: 200, resp: {u'hosts': [{u'os_installer': {u'alias': u'cobbler', u'id': u'cobbler', u'name': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}}, u'clusterhost_id': 1, u'updated_at': u'2016-01-16 23:39:24', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 1, u'hostname': u'host1', u'reinstall_os': True, u'networks': [], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:4E', u'host_id': 1, u'distributed_system_installed': False, u'name': u'host1.opnfv2', u'roles': [], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:24', u'patched_roles': [], u'machine_id': 1}, {u'os_installer': {u'alias': u'cobbler', u'id': u'cobbler', u'name': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}}, u'clusterhost_id': 2, u'updated_at': u'2016-01-16 23:39:24', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 2, u'hostname': u'host2', u'reinstall_os': True, u'networks': [], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:58', u'host_id': 2, u'distributed_system_installed': False, u'name': u'host2.opnfv2', u'roles': [], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:24', u'patched_roles': [], u'machine_id': 2}, {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'clusterhost_id': 3, u'updated_at': u'2016-01-16 23:39:25', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 3, u'hostname': u'host3', u'reinstall_os': True, u'networks': [], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:38', u'host_id': 3, u'distributed_system_installed': False, u'name': u'host3.opnfv2', u'roles': [], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 3}, {u'os_installer': {u'alias': u'cobbler', u'id': u'cobbler', u'name': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}}, u'clusterhost_id': 4, u'updated_at': u'2016-01-16 23:39:24', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 4, u'hostname': u'host4', u'reinstall_os': True, u'networks': [], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:30', u'host_id': 4, u'distributed_system_installed': False, u'name': u'host4.opnfv2', u'roles': [], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:24', u'patched_roles': [], u'machine_id': 4}, {u'os_installer': {u'alias': u'cobbler', u'id': u'cobbler', u'name': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}}, u'clusterhost_id': 5, u'updated_at': u'2016-01-16 23:39:24', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 5, u'hostname': u'host5', u'reinstall_os': True, u'networks': [], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:46', u'host_id': 5, u'distributed_system_installed': False, u'name': u'host5.opnfv2', u'roles': [], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:24', u'patched_roles': [], u'machine_id': 5}]}
+INFO:__main__:subnets: [u'192.168.204.0/24', u'10.145.88.0/23', u'10.1.0.0/24']
+INFO:__main__:add host host1 interface eth1 ip 192.168.204.11 network proprties {'is_mgmt': True}
+INFO:__main__:add host host1 interface eth1 ip 192.168.204.11 network properties {'is_mgmt': True} status 200: {u'ip': u'192.168.204.11', u'created_at': u'2016-01-16 23:39:25', u'is_promiscuous': False, u'updated_at': u'2016-01-16 23:39:25', u'netmask': u'255.255.255.0', u'is_mgmt': True, u'interface': u'eth1', u'id': 1}
+INFO:__main__:subnets: [u'192.168.204.0/24', u'10.145.88.0/23', u'10.1.0.0/24']
+INFO:__main__:add host host2 interface eth1 ip 192.168.204.12 network proprties {'is_mgmt': True}
+INFO:__main__:add host host2 interface eth1 ip 192.168.204.12 network properties {'is_mgmt': True} status 200: {u'ip': u'192.168.204.12', u'created_at': u'2016-01-16 23:39:25', u'is_promiscuous': False, u'updated_at': u'2016-01-16 23:39:25', u'netmask': u'255.255.255.0', u'is_mgmt': True, u'interface': u'eth1', u'id': 2}
+INFO:__main__:subnets: [u'192.168.204.0/24', u'10.145.88.0/23', u'10.1.0.0/24']
+INFO:__main__:add host host3 interface eth1 ip 192.168.204.13 network proprties {'is_mgmt': True}
+INFO:__main__:add host host3 interface eth1 ip 192.168.204.13 network properties {'is_mgmt': True} status 200: {u'ip': u'192.168.204.13', u'created_at': u'2016-01-16 23:39:25', u'is_promiscuous': False, u'updated_at': u'2016-01-16 23:39:25', u'netmask': u'255.255.255.0', u'is_mgmt': True, u'interface': u'eth1', u'id': 3}
+INFO:__main__:subnets: [u'192.168.204.0/24', u'10.145.88.0/23', u'10.1.0.0/24']
+INFO:__main__:add host host4 interface eth1 ip 192.168.204.14 network proprties {'is_mgmt': True}
+INFO:__main__:add host host4 interface eth1 ip 192.168.204.14 network properties {'is_mgmt': True} status 200: {u'ip': u'192.168.204.14', u'created_at': u'2016-01-16 23:39:25', u'is_promiscuous': False, u'updated_at': u'2016-01-16 23:39:25', u'netmask': u'255.255.255.0', u'is_mgmt': True, u'interface': u'eth1', u'id': 4}
+INFO:__main__:subnets: [u'192.168.204.0/24', u'10.145.88.0/23', u'10.1.0.0/24']
+INFO:__main__:add host host5 interface eth1 ip 192.168.204.15 network proprties {'is_mgmt': True}
+INFO:__main__:add host host5 interface eth1 ip 192.168.204.15 network properties {'is_mgmt': True} status 200: {u'ip': u'192.168.204.15', u'created_at': u'2016-01-16 23:39:25', u'is_promiscuous': False, u'updated_at': u'2016-01-16 23:39:25', u'netmask': u'255.255.255.0', u'is_mgmt': True, u'interface': u'eth1', u'id': 5}
+INFO:__main__:set os config {'partition': {'/var': {'percentage': 60}, '/tmp': {'percentage': 5}, '/': {'percentage': 30}, '/home': {'percentage': 5}}, 'server_credentials': {'username': 'root', 'password': 'root'}, 'general': {'domain': 'ods.com', 'dns_servers': ['10.1.0.12'], 'language': 'EN', 'default_gateway': '10.1.0.1', 'search_path': ['ods.com'], 'timezone': 'America/Los_Angeles', 'ntp_server': '10.1.0.12', 'deploy_type': 'baremetal', 'repo_name': 'trusty-liberty-ppa'}} to cluster 1 status: 200, resp: {u'created_at': u'2016-01-16 23:39:24', u'package_config': {}, u'updated_at': u'2016-01-16 23:39:26', u'config_step': u'', u'os_config': {u'partition': {u'/': {u'percentage': 30}, u'/var': {u'percentage': 60}, u'/tmp': {u'percentage': 5}, u'/home': {u'percentage': 5}}, u'server_credentials': {u'username': u'root', u'password': u'root'}, u'general': {u'domain': u'ods.com', u'dns_servers': [u'10.1.0.12'], u'language': u'EN', u'default_gateway': u'10.1.0.1', u'search_path': [u'ods.com'], u'timezone': u'America/Los_Angeles', u'ntp_server': u'10.1.0.12', u'deploy_type': u'baremetal', u'repo_name': u'trusty-liberty-ppa'}}, u'config_validated': False}
+INFO:__main__:service credentials: ['image:service=service', 'compute:service=service', 'dashboard:service=service', 'identity:service=service', 'image:service=service', 'metering:service=service', 'network:service=service', 'rabbitmq:service=service', 'volume:service=service', 'mysql:service=service', 'heat:heat=heat_db_secret']
+INFO:__main__:console credentials: ['admin:console=console', 'demo:console=console', 'compute:console=console', 'dashboard:console=console', 'identity:console=console', 'image:console=console', 'metering:console=console', 'network:console=console', 'object-store:console=console', 'volume:console=console', 'heat:heat=heat_secret']
+INFO:__main__:set package config {'neutron_config': {'openvswitch': {'tenant_network_type': 'vxlan', 'network_vlan_ranges': ['physnet:1:4094'], 'bridge_mappings': ['physnet:br-prv']}}, 'enable_vpnaas': False, 'network_mapping': {'install': 'eth1'}, 'enable_secgroup': True, 'ha_proxy': {'vip': '10.1.0.222'}, 'enable_fwaas': False, 'network_cfg': {'bond_mappings': [], 'internal_vip': {'interface': 'mgmt', 'ip': '192.168.204.222', 'netmask': '24'}, 'public_vip': {'interface': 'external', 'ip': '10.145.88.99', 'netmask': '22'}, 'provider_net_mappings': [{'interface': 'eth1', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'}], 'sys_intf_mappings': [{'interface': 'eth1', 'type': 'vlan', 'vlan_tag': 204, 'role': ['controller', 'compute'], 'name': 'mgmt'}, {'interface': 'eth1', 'type': 'vlan', 'vlan_tag': 204, 'role': ['controller', 'compute'], 'name': 'storage'}, {'interface': 'br-prv', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'external'}], 'ip_settings': [{'cidr': '192.168.204.0/24', 'role': ['controller', 'compute'], 'name': 'mgmt', 'ip_ranges': [['192.168.204.3', '192.168.204.254']]}, {'cidr': '192.168.204.0/24', 'role': ['controller', 'compute'], 'name': 'storage', 'ip_ranges': [['192.168.204.13', '192.168.204.254']]}, {'gw': '10.145.88.1', 'cidr': '10.145.88.0/22', 'role': ['controller', 'compute'], 'name': 'external', 'ip_ranges': [['10.145.88.87', '10.145.88.98']]}], 'nic_mappings': [], 'public_net_info': {'no_gateway': False, 'subnet': 'ext-subnet', 'enable': True, 'network': 'ext-net', 'enable_dhcp': False, 'segment_id': 1000, 'provider_network': 'physnet', 'floating_ip_start': '10.145.88.92', 'floating_ip_cidr': '10.145.88.0/24', 'floating_ip_end': '10.145.88.98', 'external_gw': '10.145.88.1', 'router': 'router-ext', 'type': 'flat'}, 'onos_nic': 'eth0'}, 'security': {'service_credentials': {'compute': {'username': 'service', 'password': 'service'}, 'network': {'username': 'service', 'password': 'service'}, 'image': {'username': 'service', 'password': 'service'}, 'metering': {'username': 'service', 'password': 'service'}, 'rabbitmq': {'username': 'service', 'password': 'service'}, 'volume': {'username': 'service', 'password': 'service'}, 'heat': {'username': 'heat', 'password': 'heat_db_secret'}, 'dashboard': {'username': 'service', 'password': 'service'}, 'mysql': {'username': 'service', 'password': 'service'}, 'identity': {'username': 'service', 'password': 'service'}}, 'console_credentials': {'compute': {'username': 'console', 'password': 'console'}, 'network': {'username': 'console', 'password': 'console'}, 'admin': {'username': 'console', 'password': 'console'}, 'demo': {'username': 'console', 'password': 'console'}, 'image': {'username': 'console', 'password': 'console'}, 'metering': {'username': 'console', 'password': 'console'}, 'volume': {'username': 'console', 'password': 'console'}, 'heat': {'username': 'heat', 'password': 'heat_secret'}, 'dashboard': {'username': 'console', 'password': 'console'}, 'object-store': {'username': 'console', 'password': 'console'}, 'identity': {'username': 'console', 'password': 'console'}}}} to cluster 1 status: 200, resp: {u'created_at': u'2016-01-16 23:39:24', u'package_config': {u'neutron_config': {u'openvswitch': {u'tenant_network_type': u'vxlan', u'network_vlan_ranges': [u'physnet:1:4094'], u'bridge_mappings': [u'physnet:br-prv']}}, u'enable_vpnaas': False, u'network_mapping': {u'install': u'eth1'}, u'enable_secgroup': True, u'ha_proxy': {u'vip': u'10.1.0.222'}, u'enable_fwaas': False, u'network_cfg': {u'bond_mappings': [], u'internal_vip': {u'interface': u'mgmt', u'ip': u'192.168.204.222', u'netmask': u'24'}, u'public_vip': {u'interface': u'external', u'ip': u'10.145.88.99', u'netmask': u'22'}, u'provider_net_mappings': [{u'interface': u'eth1', u'type': u'ovs', u'role': [u'controller', u'compute'], u'name': u'br-prv', u'network': u'physnet'}], u'sys_intf_mappings': [{u'interface': u'eth1', u'type': u'vlan', u'vlan_tag': 204, u'role': [u'controller', u'compute'], u'name': u'mgmt'}, {u'interface': u'eth1', u'type': u'vlan', u'vlan_tag': 204, u'role': [u'controller', u'compute'], u'name': u'storage'}, {u'interface': u'br-prv', u'type': u'ovs', u'role': [u'controller', u'compute'], u'name': u'external'}], u'ip_settings': [{u'cidr': u'192.168.204.0/24', u'role': [u'controller', u'compute'], u'name': u'mgmt', u'ip_ranges': [[u'192.168.204.3', u'192.168.204.254']]}, {u'cidr': u'192.168.204.0/24', u'role': [u'controller', u'compute'], u'name': u'storage', u'ip_ranges': [[u'192.168.204.13', u'192.168.204.254']]}, {u'gw': u'10.145.88.1', u'cidr': u'10.145.88.0/22', u'role': [u'controller', u'compute'], u'name': u'external', u'ip_ranges': [[u'10.145.88.87', u'10.145.88.98']]}], u'nic_mappings': [], u'public_net_info': {u'no_gateway': False, u'subnet': u'ext-subnet', u'enable': True, u'network': u'ext-net', u'enable_dhcp': False, u'segment_id': 1000, u'provider_network': u'physnet', u'floating_ip_start': u'10.145.88.92', u'floating_ip_cidr': u'10.145.88.0/24', u'floating_ip_end': u'10.145.88.98', u'external_gw': u'10.145.88.1', u'router': u'router-ext', u'type': u'flat'}, u'onos_nic': u'eth0'}, u'security': {u'service_credentials': {u'compute': {u'username': u'service', u'password': u'service'}, u'network': {u'username': u'service', u'password': u'service'}, u'image': {u'username': u'service', u'password': u'service'}, u'metering': {u'username': u'service', u'password': u'service'}, u'rabbitmq': {u'username': u'service', u'password': u'service'}, u'volume': {u'username': u'service', u'password': u'service'}, u'heat': {u'username': u'heat', u'password': u'heat_db_secret'}, u'dashboard': {u'username': u'service', u'password': u'service'}, u'mysql': {u'username': u'service', u'password': u'service'}, u'identity': {u'username': u'service', u'password': u'service'}}, u'console_credentials': {u'compute': {u'username': u'console', u'password': u'console'}, u'network': {u'username': u'console', u'password': u'console'}, u'admin': {u'username': u'console', u'password': u'console'}, u'demo': {u'username': u'console', u'password': u'console'}, u'image': {u'username': u'console', u'password': u'console'}, u'metering': {u'username': u'console', u'password': u'console'}, u'volume': {u'username': u'console', u'password': u'console'}, u'heat': {u'username': u'heat', u'password': u'heat_secret'}, u'dashboard': {u'username': u'console', u'password': u'console'}, u'object-store': {u'username': u'console', u'password': u'console'}, u'identity': {u'username': u'console', u'password': u'console'}}}}, u'updated_at': u'2016-01-16 23:39:26', u'config_step': u'', u'os_config': {u'partition': {u'/tmp': {u'percentage': 5}, u'/var': {u'percentage': 60}, u'/': {u'percentage': 30}, u'/home': {u'percentage': 5}}, u'server_credentials': {u'username': u'root', u'password': u'root'}, u'general': {u'domain': u'ods.com', u'dns_servers': [u'10.1.0.12'], u'language': u'EN', u'default_gateway': u'10.1.0.1', u'search_path': [u'ods.com'], u'timezone': u'America/Los_Angeles', u'ntp_server': u'10.1.0.12', u'repo_name': u'trusty-liberty-ppa', u'deploy_type': u'baremetal'}}, u'config_validated': False}
+INFO:__main__:set cluster 1 host 1 roles ['controller', 'ha'] status 200: {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.11', u'clusterhost_id': 1, u'updated_at': u'2016-01-16 23:39:27', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 1, u'hostname': u'host1', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.11', u'created_at': u'2016-01-16 23:39:25', u'updated_at': u'2016-01-16 23:39:25', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287755, u'interface': u'eth1', u'host_id': 1, u'netmask': u'255.255.255.0', u'id': 1}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:4E', u'host_id': 1, u'distributed_system_installed': False, u'name': u'host1.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'name': u'controller'}, {u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'ha', u'description': u'Cluster with HA node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:ha', u'name': u'ha'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 1}
+INFO:__main__:set cluster 1 host 2 roles ['controller', 'ha'] status 200: {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.12', u'clusterhost_id': 2, u'updated_at': u'2016-01-16 23:39:27', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 2, u'hostname': u'host2', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.12', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287756, u'interface': u'eth1', u'host_id': 2, u'netmask': u'255.255.255.0', u'id': 2}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:58', u'host_id': 2, u'distributed_system_installed': False, u'name': u'host2.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'name': u'controller'}, {u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'ha', u'description': u'Cluster with HA node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:ha', u'name': u'ha'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 2}
+INFO:__main__:set cluster 1 host 3 roles ['controller', 'ha'] status 200: {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.13', u'clusterhost_id': 3, u'updated_at': u'2016-01-16 23:39:27', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 3, u'hostname': u'host3', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.13', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287757, u'interface': u'eth1', u'host_id': 3, u'netmask': u'255.255.255.0', u'id': 3}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:38', u'host_id': 3, u'distributed_system_installed': False, u'name': u'host3.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'name': u'controller'}, {u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'ha', u'description': u'Cluster with HA node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:ha', u'name': u'ha'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 3}
+INFO:__main__:set cluster 1 host 4 roles ['compute'] status 200: {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.14', u'clusterhost_id': 4, u'updated_at': u'2016-01-16 23:39:27', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 4, u'hostname': u'host4', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.14', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287758, u'interface': u'eth1', u'host_id': 4, u'netmask': u'255.255.255.0', u'id': 4}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:30', u'host_id': 4, u'distributed_system_installed': False, u'name': u'host4.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'compute node', u'description': u'Compute Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute', u'name': u'compute'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 4}
+INFO:__main__:set cluster 1 host 5 roles ['compute'] status 200: {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.15', u'clusterhost_id': 5, u'updated_at': u'2016-01-16 23:39:27', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 5, u'hostname': u'host5', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.15', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287759, u'interface': u'eth1', u'host_id': 5, u'netmask': u'255.255.255.0', u'id': 5}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:46', u'host_id': 5, u'distributed_system_installed': False, u'name': u'host5.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'compute node', u'description': u'Compute Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute', u'name': u'compute'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 5}
+INFO:__main__:review cluster 1 hosts [5, 4, 3, 2, 1], status 200: {u'cluster': {u'created_at': u'2016-01-16 23:39:24', u'package_config': {u'neutron_config': {u'openvswitch': {u'tenant_network_type': u'vxlan', u'network_vlan_ranges': [u'physnet:1:4094'], u'bridge_mappings': [u'physnet:br-prv']}}, u'enable_vpnaas': False, u'network_mapping': {u'install': {u'interface': u'eth1', u'subnet': u'192.168.204.0/24'}}, u'enable_secgroup': True, u'ha_proxy': {u'vip': u'10.1.0.222'}, u'enable_fwaas': False, u'network_cfg': {u'bond_mappings': [], u'internal_vip': {u'interface': u'mgmt', u'ip': u'192.168.204.222', u'netmask': u'24'}, u'public_vip': {u'interface': u'external', u'ip': u'10.145.88.99', u'netmask': u'22'}, u'provider_net_mappings': [{u'interface': u'eth1', u'type': u'ovs', u'role': [u'controller', u'compute'], u'name': u'br-prv', u'network': u'physnet'}], u'sys_intf_mappings': [{u'interface': u'eth1', u'type': u'vlan', u'vlan_tag': 204, u'role': [u'controller', u'compute'], u'name': u'mgmt'}, {u'interface': u'eth1', u'type': u'vlan', u'vlan_tag': 204, u'role': [u'controller', u'compute'], u'name': u'storage'}, {u'interface': u'br-prv', u'type': u'ovs', u'role': [u'controller', u'compute'], u'name': u'external'}], u'ip_settings': [{u'cidr': u'192.168.204.0/24', u'role': [u'controller', u'compute'], u'name': u'mgmt', u'ip_ranges': [[u'192.168.204.3', u'192.168.204.254']]}, {u'cidr': u'192.168.204.0/24', u'role': [u'controller', u'compute'], u'name': u'storage', u'ip_ranges': [[u'192.168.204.13', u'192.168.204.254']]}, {u'gw': u'10.145.88.1', u'cidr': u'10.145.88.0/22', u'role': [u'controller', u'compute'], u'name': u'external', u'ip_ranges': [[u'10.145.88.87', u'10.145.88.98']]}], u'nic_mappings': [], u'public_net_info': {u'no_gateway': False, u'subnet': u'ext-subnet', u'enable': True, u'network': u'ext-net', u'enable_dhcp': False, u'segment_id': 1000, u'provider_network': u'physnet', u'floating_ip_start': u'10.145.88.92', u'floating_ip_cidr': u'10.145.88.0/24', u'floating_ip_end': u'10.145.88.98', u'external_gw': u'10.145.88.1', u'router': u'router-ext', u'type': u'flat'}, u'onos_nic': u'eth0'}, u'security': {u'service_credentials': {u'compute': {u'username': u'service', u'password': u'service'}, u'network': {u'username': u'service', u'password': u'service'}, u'image': {u'username': u'service', u'password': u'service'}, u'metering': {u'username': u'service', u'password': u'service'}, u'rabbitmq': {u'username': u'service', u'password': u'service'}, u'volume': {u'username': u'service', u'password': u'service'}, u'heat': {u'username': u'heat', u'password': u'heat_db_secret'}, u'dashboard': {u'username': u'service', u'password': u'service'}, u'mysql': {u'username': u'service', u'password': u'service'}, u'identity': {u'username': u'service', u'password': u'service'}}, u'console_credentials': {u'compute': {u'username': u'console', u'password': u'console'}, u'network': {u'username': u'console', u'password': u'console'}, u'admin': {u'username': u'console', u'password': u'console'}, u'demo': {u'username': u'console', u'password': u'console'}, u'image': {u'username': u'console', u'password': u'console'}, u'metering': {u'username': u'console', u'password': u'console'}, u'volume': {u'username': u'console', u'password': u'console'}, u'heat': {u'username': u'heat', u'password': u'heat_secret'}, u'dashboard': {u'username': u'console', u'password': u'console'}, u'object-store': {u'username': u'console', u'password': u'console'}, u'identity': {u'username': u'console', u'password': u'console'}}}}, u'updated_at': u'2016-01-16 23:39:28', u'config_step': u'', u'os_config': {u'partition': {u'/home': {u'percentage': 5}, u'/var': {u'percentage': 60}, u'/tmp': {u'percentage': 5}, u'/': {u'percentage': 30}}, u'server_credentials': {u'username': u'root', u'password': u'root'}, u'general': {u'domain': u'ods.com', u'dns_servers': [u'10.1.0.12'], u'language': u'EN', u'default_gateway': u'10.1.0.1', u'no_proxy': [u'127.0.0.1', u'host1', u'192.168.204.11', u'host2', u'192.168.204.12', u'host3', u'192.168.204.13', u'host4', u'192.168.204.14', u'host5', u'192.168.204.15'], u'search_path': [u'ods.com'], u'timezone': u'America/Los_Angeles', u'ntp_server': u'10.1.0.12', u'deploy_type': u'baremetal', u'repo_name': u'trusty-liberty-ppa'}}, u'config_validated': True}, u'hosts': [{u'created_at': u'2016-01-16 23:39:25', u'package_config': {}, u'updated_at': u'2016-01-16 23:39:28', u'config_step': u'', u'os_config': {}, u'config_validated': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.11', u'created_at': u'2016-01-16 23:39:25', u'updated_at': u'2016-01-16 23:39:25', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287755, u'interface': u'eth1', u'host_id': 1, u'netmask': u'255.255.255.0', u'id': 1}]}, {u'created_at': u'2016-01-16 23:39:25', u'package_config': {}, u'updated_at': u'2016-01-16 23:39:28', u'config_step': u'', u'os_config': {}, u'config_validated': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.12', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287756, u'interface': u'eth1', u'host_id': 2, u'netmask': u'255.255.255.0', u'id': 2}]}, {u'created_at': u'2016-01-16 23:39:25', u'package_config': {}, u'updated_at': u'2016-01-16 23:39:28', u'config_step': u'', u'os_config': {}, u'config_validated': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.13', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287757, u'interface': u'eth1', u'host_id': 3, u'netmask': u'255.255.255.0', u'id': 3}]}, {u'created_at': u'2016-01-16 23:39:25', u'package_config': {}, u'updated_at': u'2016-01-16 23:39:28', u'config_step': u'', u'os_config': {}, u'config_validated': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.14', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287758, u'interface': u'eth1', u'host_id': 4, u'netmask': u'255.255.255.0', u'id': 4}]}, {u'created_at': u'2016-01-16 23:39:25', u'package_config': {}, u'updated_at': u'2016-01-16 23:39:28', u'config_step': u'', u'os_config': {}, u'config_validated': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.15', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287759, u'interface': u'eth1', u'host_id': 5, u'netmask': u'255.255.255.0', u'id': 5}]}]}
+INFO:__main__:deploy cluster 1 hosts [5, 4, 3, 2, 1] status 202: {u'status': u'deploy action sent', u'cluster': {u'created_at': u'2016-01-16 23:39:24', u'package_config': {u'neutron_config': {u'openvswitch': {u'tenant_network_type': u'vxlan', u'network_vlan_ranges': [u'physnet:1:4094'], u'bridge_mappings': [u'physnet:br-prv']}}, u'enable_vpnaas': False, u'network_mapping': {u'install': {u'interface': u'eth1', u'subnet': u'192.168.204.0/24'}}, u'enable_secgroup': True, u'ha_proxy': {u'vip': u'10.1.0.222'}, u'enable_fwaas': False, u'network_cfg': {u'bond_mappings': [], u'internal_vip': {u'interface': u'mgmt', u'ip': u'192.168.204.222', u'netmask': u'24'}, u'public_vip': {u'interface': u'external', u'ip': u'10.145.88.99', u'netmask': u'22'}, u'provider_net_mappings': [{u'interface': u'eth1', u'role': [u'controller', u'compute'], u'type': u'ovs', u'name': u'br-prv', u'network': u'physnet'}], u'sys_intf_mappings': [{u'interface': u'eth1', u'role': [u'controller', u'compute'], u'vlan_tag': 204, u'type': u'vlan', u'name': u'mgmt'}, {u'interface': u'eth1', u'role': [u'controller', u'compute'], u'vlan_tag': 204, u'type': u'vlan', u'name': u'storage'}, {u'interface': u'br-prv', u'role': [u'controller', u'compute'], u'type': u'ovs', u'name': u'external'}], u'onos_nic': u'eth0', u'nic_mappings': [], u'public_net_info': {u'no_gateway': False, u'subnet': u'ext-subnet', u'enable': True, u'network': u'ext-net', u'enable_dhcp': False, u'segment_id': 1000, u'type': u'flat', u'floating_ip_start': u'10.145.88.92', u'floating_ip_end': u'10.145.88.98', u'floating_ip_cidr': u'10.145.88.0/24', u'external_gw': u'10.145.88.1', u'router': u'router-ext', u'provider_network': u'physnet'}, u'ip_settings': [{u'cidr': u'192.168.204.0/24', u'role': [u'controller', u'compute'], u'name': u'mgmt', u'ip_ranges': [[u'192.168.204.3', u'192.168.204.254']]}, {u'cidr': u'192.168.204.0/24', u'role': [u'controller', u'compute'], u'name': u'storage', u'ip_ranges': [[u'192.168.204.13', u'192.168.204.254']]}, {u'gw': u'10.145.88.1', u'cidr': u'10.145.88.0/22', u'role': [u'controller', u'compute'], u'name': u'external', u'ip_ranges': [[u'10.145.88.87', u'10.145.88.98']]}]}, u'security': {u'service_credentials': {u'compute': {u'username': u'service', u'password': u'service'}, u'network': {u'username': u'service', u'password': u'service'}, u'image': {u'username': u'service', u'password': u'service'}, u'metering': {u'username': u'service', u'password': u'service'}, u'rabbitmq': {u'username': u'service', u'password': u'service'}, u'volume': {u'username': u'service', u'password': u'service'}, u'heat': {u'username': u'heat', u'password': u'heat_db_secret'}, u'dashboard': {u'username': u'service', u'password': u'service'}, u'mysql': {u'username': u'service', u'password': u'service'}, u'identity': {u'username': u'service', u'password': u'service'}}, u'console_credentials': {u'compute': {u'username': u'console', u'password': u'console'}, u'network': {u'username': u'console', u'password': u'console'}, u'admin': {u'username': u'console', u'password': u'console'}, u'demo': {u'username': u'console', u'password': u'console'}, u'image': {u'username': u'console', u'password': u'console'}, u'metering': {u'username': u'console', u'password': u'console'}, u'volume': {u'username': u'console', u'password': u'console'}, u'heat': {u'username': u'heat', u'password': u'heat_secret'}, u'dashboard': {u'username': u'console', u'password': u'console'}, u'object-store': {u'username': u'console', u'password': u'console'}, u'identity': {u'username': u'console', u'password': u'console'}}}}, u'updated_at': u'2016-01-16 23:39:28', u'config_step': u'', u'os_config': {u'partition': {u'/': {u'percentage': 30}, u'/tmp': {u'percentage': 5}, u'/var': {u'percentage': 60}, u'/home': {u'percentage': 5}}, u'server_credentials': {u'username': u'root', u'password': u'root'}, u'general': {u'domain': u'ods.com', u'dns_servers': [u'10.1.0.12'], u'language': u'EN', u'default_gateway': u'10.1.0.1', u'no_proxy': [u'127.0.0.1', u'host1', u'192.168.204.11', u'host2', u'192.168.204.12', u'host3', u'192.168.204.13', u'host4', u'192.168.204.14', u'host5', u'192.168.204.15'], u'search_path': [u'ods.com'], u'timezone': u'America/Los_Angeles', u'ntp_server': u'10.1.0.12', u'repo_name': u'trusty-liberty-ppa', u'deploy_type': u'baremetal'}}, u'config_validated': True}, u'hosts': [{u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.11', u'clusterhost_id': 1, u'updated_at': u'2016-01-16 23:39:28', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 1, u'hostname': u'host1', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.11', u'created_at': u'2016-01-16 23:39:25', u'updated_at': u'2016-01-16 23:39:25', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287755, u'interface': u'eth1', u'host_id': 1, u'netmask': u'255.255.255.0', u'id': 1}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:4E', u'host_id': 1, u'distributed_system_installed': False, u'name': u'host1.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'name': u'controller'}, {u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'ha', u'description': u'Cluster with HA node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:ha', u'name': u'ha'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 1}, {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.12', u'clusterhost_id': 2, u'updated_at': u'2016-01-16 23:39:28', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 2, u'hostname': u'host2', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.12', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287756, u'interface': u'eth1', u'host_id': 2, u'netmask': u'255.255.255.0', u'id': 2}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:58', u'host_id': 2, u'distributed_system_installed': False, u'name': u'host2.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'name': u'controller'}, {u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'ha', u'description': u'Cluster with HA node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:ha', u'name': u'ha'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 2}, {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.13', u'clusterhost_id': 3, u'updated_at': u'2016-01-16 23:39:28', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 3, u'hostname': u'host3', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.13', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287757, u'interface': u'eth1', u'host_id': 3, u'netmask': u'255.255.255.0', u'id': 3}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:38', u'host_id': 3, u'distributed_system_installed': False, u'name': u'host3.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'controller node', u'description': u'Controller Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:controller', u'name': u'controller'}, {u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'ha', u'description': u'Cluster with HA node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:ha', u'name': u'ha'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 3}, {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.14', u'clusterhost_id': 4, u'updated_at': u'2016-01-16 23:39:28', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 4, u'hostname': u'host4', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.14', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287758, u'interface': u'eth1', u'host_id': 4, u'netmask': u'255.255.255.0', u'id': 4}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:30', u'host_id': 4, u'distributed_system_installed': False, u'name': u'host4.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'compute node', u'description': u'Compute Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute', u'name': u'compute'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 4}, {u'os_installer': {u'alias': u'cobbler', u'settings': {u'credentials': {u'username': u'cobbler', u'password': u'cobbler'}, u'cobbler_url': u'http://10.1.0.12/cobbler_api'}, u'id': u'cobbler', u'name': u'cobbler'}, u'ip': u'192.168.204.15', u'clusterhost_id': 5, u'updated_at': u'2016-01-16 23:39:28', u'switches': [{u'switch_ip': u'1.1.1.1', u'vlans': [], u'port': u'8'}], u'os_installed': False, u'tag': {}, u'cluster_id': 1, u'owner': u'admin@huawei.com', u'switch_ip': u'1.1.1.1', u'port': u'8', u'id': 5, u'hostname': u'host5', u'reinstall_os': True, u'networks': [{u'subnet': u'192.168.204.0/24', u'subnet_id': 2, u'ip': u'192.168.204.15', u'created_at': u'2016-01-16 23:39:26', u'updated_at': u'2016-01-16 23:39:26', u'is_promiscuous': False, u'is_mgmt': True, u'ip_int': 3232287759, u'interface': u'eth1', u'host_id': 5, u'netmask': u'255.255.255.0', u'id': 5}], u'os_id': u'ubuntu-14.04.3-server-x86_64', u'location': {}, u'os_name': u'ubuntu-14.04.3-server-x86_64', u'reinstall_distributed_system': True, u'mac': u'7C:A2:3E:86:65:46', u'host_id': 5, u'distributed_system_installed': False, u'name': u'host5.opnfv2', u'roles': [{u'flavor_id': u'openstack_liberty:HA-ansible-multinodes-liberty', u'display_name': u'compute node', u'description': u'Compute Node', u'adapter_id': u'openstack_liberty', u'adapter_name': u'openstack_liberty', u'optional': False, u'id': u'openstack_liberty:compute', u'name': u'compute'}], u'clustername': u'opnfv2', u'created_at': u'2016-01-16 23:39:25', u'patched_roles': [], u'machine_id': 5}]}
+INFO:__main__:********************************Hello from Jin****************************
+INFO:__main__:compass OS installtion is begin
+1
+Warning: Permanently added '192.168.200.2' (ECDSA) to the list of known hosts.
+0.0
+2
+7

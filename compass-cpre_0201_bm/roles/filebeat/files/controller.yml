@@ -1,0 +1,43 @@
+filebeat:
+  prospectors:
+    -
+      paths:
+        - /var/log/*.log
+        - /var/log/nova/nova-api.log
+        - /var/log/nova/nova-conductor.log
+        - /var/log/nova/nova-manage.log
+        - /var/log/nova/nova-scheduler.log
+        - /var/log/nova/nova-novncproxy.log
+        - /var/log/nova/nova-cert.log
+        - /var/log/keystone/keystone.log
+        - /var/log/keystone/keystone-manage.log
+        - /var/log/glance/glance-api.log
+        - /var/log/glance/glance-registry.log
+        - /var/log/ceilometer/ceilometer-agent-central.log
+        - /var/log/ceilometer/ceilometer-alarm-notifier.log
+        - /var/log/ceilometer/ceilometer-api.log
+        - /var/log/ceilometer/ceilometer-alarm-evaluator.log
+        - /var/log/ceilometer/ceilometer-collector.log
+        - /var/log/ceilometer/ceilometer-agent-notification.log
+        - /var/log/heat/heat-cnf.log
+        - /var/log/heat/heat-api.log
+        - /var/log/heat/heat-engine.log
+        - /var/log/neutron/neutron-server.log
+        - /var/log/neutron/dhcp-agent.log
+        - /var/log/neutron/l3-agent.log
+        - /var/log/neutron/neutron-metadata-agent.log
+        - /var/log/neutron/neutron-netns-cleanup.log
+        - /var/log/neutron/openvswitch-agent.log
+        - /var/log/neutron/ovs-cleanup.log
+        - /var/log/ceph/ceph.audit.log
+        - /var/log/ceph/ceph.log
+        - /var/log/cinder/cinder.log
+        - /var/log/cinder/cinder-api.log
+        - /var/log/cinder/cinder-scheduler.log
+        - /var/log/mongodb/mongodb.log
+      input_type: log
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - localhost.localdomain:5044

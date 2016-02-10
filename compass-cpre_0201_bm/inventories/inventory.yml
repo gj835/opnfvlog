@@ -1,0 +1,32 @@
+
+
+[controller]
+host-2 ansible_ssh_host=192.168.204.212 ansible_ssh_user=root ansible_ssh_password=root
+host-1 ansible_ssh_host=192.168.204.211 ansible_ssh_user=root ansible_ssh_password=root
+host-3 ansible_ssh_host=192.168.204.213 ansible_ssh_user=root ansible_ssh_password=root
+[compute]
+host-4 ansible_ssh_host=192.168.204.214 ansible_ssh_user=root ansible_ssh_password=root
+host-5 ansible_ssh_host=192.168.204.215 ansible_ssh_user=root ansible_ssh_password=root
+[ha]
+host-2 ansible_ssh_host=192.168.204.212 ansible_ssh_user=root ansible_ssh_password=root
+host-1 ansible_ssh_host=192.168.204.211 ansible_ssh_user=root ansible_ssh_password=root
+host-3 ansible_ssh_host=192.168.204.213 ansible_ssh_user=root ansible_ssh_password=root
+[odl]
+[onos]
+host-2 ansible_ssh_host=192.168.204.212 ansible_ssh_user=root ansible_ssh_password=root
+host-1 ansible_ssh_host=192.168.204.211 ansible_ssh_user=root ansible_ssh_password=root
+host-3 ansible_ssh_host=192.168.204.213 ansible_ssh_user=root ansible_ssh_password=root
+[opencontrail]
+[ceph_adm]
+host-1 ansible_ssh_host=192.168.204.211 ansible_ssh_user=root ansible_ssh_password=root
+[ceph_mon]
+host-2 ansible_ssh_host=192.168.204.212 ansible_ssh_user=root ansible_ssh_password=root
+host-1 ansible_ssh_host=192.168.204.211 ansible_ssh_user=root ansible_ssh_password=root
+host-3 ansible_ssh_host=192.168.204.213 ansible_ssh_user=root ansible_ssh_password=root
+[ceph_osd]
+host-4 ansible_ssh_host=192.168.204.214 ansible_ssh_user=root ansible_ssh_password=root
+host-5 ansible_ssh_host=192.168.204.215 ansible_ssh_user=root ansible_ssh_password=root
+[ceph:children]
+ceph_adm
+ceph_mon
+ceph_osd
