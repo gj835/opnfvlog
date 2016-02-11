@@ -1,0 +1,1176 @@
+2016-02-10 15:44:09,385 p=22856 u=root |   
+2016-02-10 15:44:09,385 p=22856 u=root |  /bin/ansible-playbook -i /var/ansible/run/openstack_liberty-opnfv2/inventories/inventory.yml /var/ansible/run/openstack_liberty-opnfv2/HA-ansible-multinodes.yml
+2016-02-10 15:44:09,386 p=22856 u=root |   
+2016-02-10 15:44:09,450 root create api client http://127.0.0.1/api
+2016-02-10 15:44:09,522 p=22856 u=root |   [WARNING]: non fatal error while trying to template play variables: Failed to
+template {{ lookup('file', 'item') }}: could not locate file in lookup: item
+
+2016-02-10 15:44:10,033 p=22856 u=root |  PLAY [all] ******************************************************************** 
+2016-02-10 15:44:10,033 p=22856 u=root |  GATHERING FACTS *************************************************************** 
+2016-02-10 15:44:12,425 p=22856 u=root |  ok: [host2]
+2016-02-10 15:44:12,433 p=22856 u=root |  ok: [host5]
+2016-02-10 15:44:12,441 p=22856 u=root |  ok: [host4]
+2016-02-10 15:44:12,448 p=22856 u=root |  ok: [host3]
+2016-02-10 15:44:12,463 p=22856 u=root |  ok: [host1]
+2016-02-10 15:44:12,478 p=22856 u=root |  TASK: [make sure ssh dir exist] *********************************************** 
+2016-02-10 15:44:12,685 p=22856 u=root |  changed: [host4] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-10 15:44:12,718 p=22856 u=root |  changed: [host5] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-10 15:44:12,724 p=22856 u=root |  changed: [host2] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-10 15:44:12,727 p=22856 u=root |  changed: [host3] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-10 15:44:12,747 p=22856 u=root |  changed: [host1] => (item={'owner': 'root', 'path': '/root/.ssh', 'group': 'root'})
+2016-02-10 15:44:12,766 p=22856 u=root |  TASK: [write ssh config] ****************************************************** 
+2016-02-10 15:44:13,133 p=22856 u=root |  changed: [host4] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-10 15:44:13,138 p=22856 u=root |  changed: [host5] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-10 15:44:13,142 p=22856 u=root |  changed: [host1] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-10 15:44:13,169 p=22856 u=root |  changed: [host3] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-10 15:44:13,178 p=22856 u=root |  changed: [host2] => (item={'dest': '/root/.ssh/config', 'owner': 'root', 'group': 'root'})
+2016-02-10 15:44:13,216 p=22856 u=root |  TASK: [generate ssh keys] ***************************************************** 
+2016-02-10 15:44:13,566 p=22856 u=root |  changed: [host5]
+2016-02-10 15:44:13,575 p=22856 u=root |  changed: [host2]
+2016-02-10 15:44:13,588 p=22856 u=root |  changed: [host3]
+2016-02-10 15:44:13,702 p=22856 u=root |  changed: [host4]
+2016-02-10 15:44:13,768 p=22856 u=root |  changed: [host1]
+2016-02-10 15:44:13,787 p=22856 u=root |  TASK: [fetch ssh keys] ******************************************************** 
+2016-02-10 15:44:14,013 p=22856 u=root |  changed: [host4]
+2016-02-10 15:44:14,024 p=22856 u=root |  changed: [host1]
+2016-02-10 15:44:14,047 p=22856 u=root |  changed: [host3]
+2016-02-10 15:44:14,052 p=22856 u=root |  changed: [host2]
+2016-02-10 15:44:14,059 p=22856 u=root |  changed: [host5]
+2016-02-10 15:44:14,074 p=22856 u=root |  TASK: [authorized_key ] ******************************************************* 
+2016-02-10 15:44:14,287 p=22856 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host1)
+2016-02-10 15:44:14,288 p=22856 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host1)
+2016-02-10 15:44:14,308 p=22856 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host1)
+2016-02-10 15:44:14,320 p=22856 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host1)
+2016-02-10 15:44:14,321 p=22856 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host1)
+2016-02-10 15:44:14,441 p=22856 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host5)
+2016-02-10 15:44:14,460 p=22856 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host5)
+2016-02-10 15:44:14,474 p=22856 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host5)
+2016-02-10 15:44:14,481 p=22856 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host5)
+2016-02-10 15:44:14,488 p=22856 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host5)
+2016-02-10 15:44:14,614 p=22856 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host3)
+2016-02-10 15:44:14,638 p=22856 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host3)
+2016-02-10 15:44:14,649 p=22856 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host3)
+2016-02-10 15:44:14,652 p=22856 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host3)
+2016-02-10 15:44:14,686 p=22856 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host3)
+2016-02-10 15:44:14,797 p=22856 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host2)
+2016-02-10 15:44:14,815 p=22856 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host2)
+2016-02-10 15:44:14,823 p=22856 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host2)
+2016-02-10 15:44:14,836 p=22856 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host2)
+2016-02-10 15:44:14,847 p=22856 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host2)
+2016-02-10 15:44:14,971 p=22856 u=root |  changed: [host4] => (item=/tmp/ssh-keys-host4)
+2016-02-10 15:44:14,972 p=22856 u=root |  changed: [host1] => (item=/tmp/ssh-keys-host4)
+2016-02-10 15:44:14,984 p=22856 u=root |  changed: [host3] => (item=/tmp/ssh-keys-host4)
+2016-02-10 15:44:14,998 p=22856 u=root |  changed: [host2] => (item=/tmp/ssh-keys-host4)
+2016-02-10 15:44:15,001 p=22856 u=root |  changed: [host5] => (item=/tmp/ssh-keys-host4)
+2016-02-10 15:44:15,025 p=22856 u=root |  TASK: [common | include_vars {{ ansible_os_family }}.yml] ********************* 
+2016-02-10 15:44:15,070 p=22856 u=root |  ok: [host4]
+2016-02-10 15:44:15,074 p=22856 u=root |  ok: [host5]
+2016-02-10 15:44:15,075 p=22856 u=root |  ok: [host3]
+2016-02-10 15:44:15,077 p=22856 u=root |  ok: [host1]
+2016-02-10 15:44:15,078 p=22856 u=root |  ok: [host2]
+2016-02-10 15:44:15,098 p=22856 u=root |  TASK: [common | speed up ansible by purging landscape-common] ***************** 
+2016-02-10 15:44:15,342 p=22856 u=root |  ok: [host1]
+2016-02-10 15:44:15,344 p=22856 u=root |  ok: [host4]
+2016-02-10 15:44:15,359 p=22856 u=root |  ok: [host2]
+2016-02-10 15:44:15,377 p=22856 u=root |  ok: [host5]
+2016-02-10 15:44:15,384 p=22856 u=root |  ok: [host3]
+2016-02-10 15:44:15,396 p=22856 u=root |  TASK: [common | update hosts files to all hosts] ****************************** 
+2016-02-10 15:44:15,717 p=22856 u=root |  changed: [host1]
+2016-02-10 15:44:15,724 p=22856 u=root |  changed: [host4]
+2016-02-10 15:44:15,758 p=22856 u=root |  changed: [host5]
+2016-02-10 15:44:15,781 p=22856 u=root |  changed: [host2]
+2016-02-10 15:44:15,784 p=22856 u=root |  changed: [host3]
+2016-02-10 15:44:15,799 p=22856 u=root |  TASK: [common | get compass-core hostname] ************************************ 
+2016-02-10 15:44:16,049 p=22856 u=root |  changed: [host4 -> 127.0.0.1]
+2016-02-10 15:44:16,073 p=22856 u=root |  changed: [host1 -> 127.0.0.1]
+2016-02-10 15:44:16,085 p=22856 u=root |  changed: [host5 -> 127.0.0.1]
+2016-02-10 15:44:16,107 p=22856 u=root |  changed: [host2 -> 127.0.0.1]
+2016-02-10 15:44:16,139 p=22856 u=root |  changed: [host3 -> 127.0.0.1]
+2016-02-10 15:44:16,152 p=22856 u=root |  TASK: [common | get compass-core addr] **************************************** 
+2016-02-10 15:44:16,330 p=22856 u=root |  changed: [host4]
+2016-02-10 15:44:16,353 p=22856 u=root |  changed: [host5]
+2016-02-10 15:44:16,361 p=22856 u=root |  changed: [host3]
+2016-02-10 15:44:16,364 p=22856 u=root |  changed: [host1]
+2016-02-10 15:44:16,370 p=22856 u=root |  changed: [host2]
+2016-02-10 15:44:16,389 p=22856 u=root |  TASK: [common | update compass-core name and ip to hosts files] *************** 
+2016-02-10 15:44:16,587 p=22856 u=root |  changed: [host5]
+2016-02-10 15:44:16,601 p=22856 u=root |  changed: [host3]
+2016-02-10 15:44:16,610 p=22856 u=root |  changed: [host2]
+2016-02-10 15:44:16,616 p=22856 u=root |  changed: [host1]
+2016-02-10 15:44:16,620 p=22856 u=root |  changed: [host4]
+2016-02-10 15:44:16,636 p=22856 u=root |  TASK: [common | install packages] ********************************************* 
+2016-02-10 15:44:23,736 p=22856 u=root |  changed: [host4] => (item=ubuntu-cloud-keyring)
+2016-02-10 15:44:23,843 p=22856 u=root |  changed: [host3] => (item=ubuntu-cloud-keyring)
+2016-02-10 15:44:23,933 p=22856 u=root |  changed: [host2] => (item=ubuntu-cloud-keyring)
+2016-02-10 15:44:23,933 p=22856 u=root |  changed: [host1] => (item=ubuntu-cloud-keyring)
+2016-02-10 15:44:23,935 p=22856 u=root |  changed: [host5] => (item=ubuntu-cloud-keyring)
+2016-02-10 15:46:05,247 p=22856 u=root |  changed: [host4] => (item=openvswitch-datapath-dkms)
+2016-02-10 15:46:06,162 p=22856 u=root |  changed: [host2] => (item=openvswitch-datapath-dkms)
+2016-02-10 15:46:09,910 p=22856 u=root |  changed: [host5] => (item=openvswitch-datapath-dkms)
+2016-02-10 15:46:09,943 p=22856 u=root |  changed: [host3] => (item=openvswitch-datapath-dkms)
+2016-02-10 15:46:09,944 p=22856 u=root |  changed: [host1] => (item=openvswitch-datapath-dkms)
+2016-02-10 15:46:21,392 p=22856 u=root |  changed: [host4] => (item=openvswitch-switch)
+2016-02-10 15:46:21,445 p=22856 u=root |  changed: [host2] => (item=openvswitch-switch)
+2016-02-10 15:46:26,459 p=22856 u=root |  changed: [host2] => (item=python-memcache)
+2016-02-10 15:46:26,546 p=22856 u=root |  changed: [host4] => (item=python-memcache)
+2016-02-10 15:46:29,014 p=22856 u=root |  changed: [host5] => (item=openvswitch-switch)
+2016-02-10 15:46:29,050 p=22856 u=root |  changed: [host1] => (item=openvswitch-switch)
+2016-02-10 15:46:29,594 p=22856 u=root |  changed: [host3] => (item=openvswitch-switch)
+2016-02-10 15:46:32,022 p=22856 u=root |  changed: [host2] => (item=python-iniparse)
+2016-02-10 15:46:32,071 p=22856 u=root |  changed: [host4] => (item=python-iniparse)
+2016-02-10 15:46:33,471 p=22856 u=root |  changed: [host5] => (item=python-memcache)
+2016-02-10 15:46:33,761 p=22856 u=root |  changed: [host1] => (item=python-memcache)
+2016-02-10 15:46:34,247 p=22856 u=root |  changed: [host3] => (item=python-memcache)
+2016-02-10 15:46:38,885 p=22856 u=root |  changed: [host5] => (item=python-iniparse)
+2016-02-10 15:46:39,140 p=22856 u=root |  changed: [host1] => (item=python-iniparse)
+2016-02-10 15:46:39,482 p=22856 u=root |  changed: [host3] => (item=python-iniparse)
+2016-02-10 15:58:00,035 p=22856 u=root |  changed: [host2] => (item=python-d*)
+2016-02-10 15:58:06,455 p=22856 u=root |  changed: [host1] => (item=python-d*)
+2016-02-10 15:58:39,142 p=22856 u=root |  changed: [host5] => (item=python-d*)
+2016-02-10 15:58:40,112 p=22856 u=root |  changed: [host3] => (item=python-d*)
+2016-02-10 15:58:42,486 p=22856 u=root |  changed: [host4] => (item=python-d*)
+2016-02-10 15:59:32,484 p=22856 u=root |  changed: [host2] => (item=python-pip)
+2016-02-10 15:59:32,804 p=22856 u=root |  ok: [host2] => (item=ntp)
+2016-02-10 15:59:38,650 p=22856 u=root |  changed: [host1] => (item=python-pip)
+2016-02-10 15:59:38,977 p=22856 u=root |  ok: [host1] => (item=ntp)
+2016-02-10 16:00:03,357 p=22856 u=root |  changed: [host5] => (item=python-pip)
+2016-02-10 16:00:03,669 p=22856 u=root |  ok: [host5] => (item=ntp)
+2016-02-10 16:00:03,690 p=22856 u=root |  changed: [host3] => (item=python-pip)
+2016-02-10 16:00:04,014 p=22856 u=root |  ok: [host3] => (item=ntp)
+2016-02-10 16:00:04,170 p=22856 u=root |  changed: [host4] => (item=python-pip)
+2016-02-10 16:00:04,477 p=22856 u=root |  ok: [host4] => (item=ntp)
+2016-02-10 16:00:04,505 p=22856 u=root |  TASK: [common | make config template dir exist] ******************************* 
+2016-02-10 16:00:04,691 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:04,704 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:04,713 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:04,729 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:04,730 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:04,752 p=22856 u=root |  TASK: [common | create pip config directory] ********************************** 
+2016-02-10 16:00:04,928 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:04,935 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:04,937 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:04,939 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:04,941 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:04,960 p=22856 u=root |  TASK: [common | update pip.conf] ********************************************** 
+2016-02-10 16:00:05,309 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:05,321 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:05,348 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:05,361 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:05,365 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:05,380 p=22856 u=root |  TASK: [common | install pip packages] ***************************************** 
+2016-02-10 16:00:06,762 p=22856 u=root |  changed: [host3] => (item=crudini)
+2016-02-10 16:00:06,783 p=22856 u=root |  changed: [host1] => (item=crudini)
+2016-02-10 16:00:06,807 p=22856 u=root |  changed: [host4] => (item=crudini)
+2016-02-10 16:00:06,812 p=22856 u=root |  changed: [host2] => (item=crudini)
+2016-02-10 16:00:06,824 p=22856 u=root |  changed: [host5] => (item=crudini)
+2016-02-10 16:00:08,068 p=22856 u=root |  changed: [host3] => (item=python-keyczar)
+2016-02-10 16:00:08,124 p=22856 u=root |  changed: [host1] => (item=python-keyczar)
+2016-02-10 16:00:08,128 p=22856 u=root |  changed: [host4] => (item=python-keyczar)
+2016-02-10 16:00:08,141 p=22856 u=root |  changed: [host5] => (item=python-keyczar)
+2016-02-10 16:00:08,218 p=22856 u=root |  changed: [host2] => (item=python-keyczar)
+2016-02-10 16:00:08,234 p=22856 u=root |  TASK: [common | install keyczar for accelerate] ******************************* 
+2016-02-10 16:00:10,419 p=22856 u=root |  changed: [host4 -> 127.0.0.1]
+2016-02-10 16:00:10,420 p=22856 u=root |  TASK: [common | update ntp conf] ********************************************** 
+2016-02-10 16:00:10,743 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:10,746 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:10,762 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:10,778 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:10,806 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:10,824 p=22856 u=root |  TASK: [common | use ntpdate once for initial sync time] *********************** 
+2016-02-10 16:00:11,019 p=22856 u=root |  failed: [host4] => {"changed": true, "cmd": "ntpdate 10.1.0.12", "delta": "0:00:00.003564", "end": "2016-02-10 16:00:10.727996", "rc": 1, "start": "2016-02-10 16:00:10.724432", "warnings": []}
+2016-02-10 16:00:11,020 p=22856 u=root |  stderr: 10 Feb 16:00:10 ntpdate[14368]: the NTP socket is in use, exiting
+2016-02-10 16:00:11,020 p=22856 u=root |  ...ignoring
+2016-02-10 16:00:11,020 root task_error: host=host4,data={'cmd': 'ntpdate 10.1.0.12', 'end': '2016-02-10 16:00:10.727996', 'stdout': u'', 'changed': True, 'start': '2016-02-10 16:00:10.724432', 'delta': '0:00:00.003564', 'stderr': '10 Feb 16:00:10 ntpdate[14368]: the NTP socket is in use, exiting', 'rc': 1, 'invocation': {'module_name': u'shell', 'module_args': u'ntpdate 10.1.0.12'}, 'warnings': []}
+2016-02-10 16:00:11,020 root notify_host: host host4 with status failed is not supported
+2016-02-10 16:00:11,041 p=22856 u=root |  failed: [host1] => {"changed": true, "cmd": "ntpdate 10.1.0.12", "delta": "0:00:00.004007", "end": "2016-02-10 16:00:10.475911", "rc": 1, "start": "2016-02-10 16:00:10.471904", "warnings": []}
+2016-02-10 16:00:11,042 p=22856 u=root |  stderr: 10 Feb 16:00:10 ntpdate[14360]: the NTP socket is in use, exiting
+2016-02-10 16:00:11,042 p=22856 u=root |  ...ignoring
+2016-02-10 16:00:11,042 root task_error: host=host1,data={'cmd': 'ntpdate 10.1.0.12', 'end': '2016-02-10 16:00:10.475911', 'stdout': u'', 'changed': True, 'start': '2016-02-10 16:00:10.471904', 'delta': '0:00:00.004007', 'stderr': '10 Feb 16:00:10 ntpdate[14360]: the NTP socket is in use, exiting', 'rc': 1, 'invocation': {'module_name': u'shell', 'module_args': u'ntpdate 10.1.0.12'}, 'warnings': []}
+2016-02-10 16:00:11,042 root notify_host: host host1 with status failed is not supported
+2016-02-10 16:00:11,043 p=22856 u=root |  failed: [host2] => {"changed": true, "cmd": "ntpdate 10.1.0.12", "delta": "0:00:00.003735", "end": "2016-02-10 16:00:10.856337", "rc": 1, "start": "2016-02-10 16:00:10.852602", "warnings": []}
+2016-02-10 16:00:11,044 p=22856 u=root |  stderr: 10 Feb 16:00:10 ntpdate[14387]: the NTP socket is in use, exiting
+2016-02-10 16:00:11,044 p=22856 u=root |  ...ignoring
+2016-02-10 16:00:11,044 root task_error: host=host2,data={'cmd': 'ntpdate 10.1.0.12', 'end': '2016-02-10 16:00:10.856337', 'stdout': u'', 'changed': True, 'start': '2016-02-10 16:00:10.852602', 'delta': '0:00:00.003735', 'stderr': '10 Feb 16:00:10 ntpdate[14387]: the NTP socket is in use, exiting', 'rc': 1, 'invocation': {'module_name': u'shell', 'module_args': u'ntpdate 10.1.0.12'}, 'warnings': []}
+2016-02-10 16:00:11,044 root notify_host: host host2 with status failed is not supported
+2016-02-10 16:00:11,045 p=22856 u=root |  failed: [host5] => {"changed": true, "cmd": "ntpdate 10.1.0.12", "delta": "0:00:00.003618", "end": "2016-02-10 16:00:10.287106", "rc": 1, "start": "2016-02-10 16:00:10.283488", "warnings": []}
+2016-02-10 16:00:11,045 p=22856 u=root |  stderr: 10 Feb 16:00:10 ntpdate[14352]: the NTP socket is in use, exiting
+2016-02-10 16:00:11,045 p=22856 u=root |  ...ignoring
+2016-02-10 16:00:11,046 root task_error: host=host5,data={'cmd': 'ntpdate 10.1.0.12', 'end': '2016-02-10 16:00:10.287106', 'stdout': u'', 'changed': True, 'start': '2016-02-10 16:00:10.283488', 'delta': '0:00:00.003618', 'stderr': '10 Feb 16:00:10 ntpdate[14352]: the NTP socket is in use, exiting', 'rc': 1, 'invocation': {'module_name': u'shell', 'module_args': u'ntpdate 10.1.0.12'}, 'warnings': []}
+2016-02-10 16:00:11,046 root notify_host: host host5 with status failed is not supported
+2016-02-10 16:00:11,049 p=22856 u=root |  failed: [host3] => {"changed": true, "cmd": "ntpdate 10.1.0.12", "delta": "0:00:00.003802", "end": "2016-02-10 16:00:10.293135", "rc": 1, "start": "2016-02-10 16:00:10.289333", "warnings": []}
+2016-02-10 16:00:11,050 p=22856 u=root |  stderr: 10 Feb 16:00:10 ntpdate[14381]: the NTP socket is in use, exiting
+2016-02-10 16:00:11,050 p=22856 u=root |  ...ignoring
+2016-02-10 16:00:11,050 root task_error: host=host3,data={'cmd': 'ntpdate 10.1.0.12', 'end': '2016-02-10 16:00:10.293135', 'stdout': u'', 'changed': True, 'start': '2016-02-10 16:00:10.289333', 'delta': '0:00:00.003802', 'stderr': '10 Feb 16:00:10 ntpdate[14381]: the NTP socket is in use, exiting', 'rc': 1, 'invocation': {'module_name': u'shell', 'module_args': u'ntpdate 10.1.0.12'}, 'warnings': []}
+2016-02-10 16:00:11,050 root notify_host: host host3 with status failed is not supported
+2016-02-10 16:00:11,071 p=22856 u=root |  TASK: [common | sync sys clock to hard clock] ********************************* 
+2016-02-10 16:00:12,068 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:16,696 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:16,797 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:17,261 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:17,268 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:17,282 p=22856 u=root |  TASK: [common | create fireball keys dir] ************************************* 
+2016-02-10 16:00:17,446 p=22856 u=root |  changed: [host4 -> 127.0.0.1]
+2016-02-10 16:00:17,447 p=22856 u=root |  TASK: [common | restart services] ********************************************* 
+2016-02-10 16:00:17,708 p=22856 u=root |  changed: [host4] => (item=ntp)
+2016-02-10 16:00:17,710 p=22856 u=root |  changed: [host5] => (item=ntp)
+2016-02-10 16:00:17,732 p=22856 u=root |  changed: [host2] => (item=ntp)
+2016-02-10 16:00:17,735 p=22856 u=root |  changed: [host3] => (item=ntp)
+2016-02-10 16:00:17,741 p=22856 u=root |  changed: [host1] => (item=ntp)
+2016-02-10 16:00:17,756 p=22856 u=root |  TASK: [common | write services to monitor list] ******************************* 
+2016-02-10 16:00:17,955 p=22856 u=root |  changed: [host4] => (item=ntp)
+2016-02-10 16:00:17,964 p=22856 u=root |  changed: [host5] => (item=ntp)
+2016-02-10 16:00:17,971 p=22856 u=root |  changed: [host1] => (item=ntp)
+2016-02-10 16:00:17,980 p=22856 u=root |  changed: [host2] => (item=ntp)
+2016-02-10 16:00:17,983 p=22856 u=root |  changed: [host3] => (item=ntp)
+2016-02-10 16:00:17,998 p=22856 u=root |  TASK: [common | kill daemon for accelerate] *********************************** 
+2016-02-10 16:00:18,197 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:18,214 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:18,220 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:18,222 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:18,222 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:18,246 p=22856 u=root |  PLAY [all] ******************************************************************** 
+2016-02-10 16:00:18,247 p=22856 u=root |  GATHERING FACTS *************************************************************** 
+2016-02-10 16:00:19,526 p=22856 u=root |  ok: [host5]
+2016-02-10 16:00:19,539 p=22856 u=root |  ok: [host2]
+2016-02-10 16:00:19,542 p=22856 u=root |  ok: [host1]
+2016-02-10 16:00:19,551 p=22856 u=root |  ok: [host4]
+2016-02-10 16:00:19,556 p=22856 u=root |  ok: [host3]
+2016-02-10 16:00:19,572 p=22856 u=root |  TASK: [setup-network | disable NetworkManager] ******************************** 
+2016-02-10 16:00:19,610 p=22856 u=root |  skipping: [host4]
+2016-02-10 16:00:19,617 p=22856 u=root |  skipping: [host5]
+2016-02-10 16:00:19,620 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:00:19,621 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:00:19,626 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:00:19,650 p=22856 u=root |  TASK: [setup-network | enable network service] ******************************** 
+2016-02-10 16:00:19,689 p=22856 u=root |  skipping: [host4]
+2016-02-10 16:00:19,690 p=22856 u=root |  skipping: [host5]
+2016-02-10 16:00:19,695 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:00:19,696 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:00:19,697 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:00:19,725 p=22856 u=root |  TASK: [setup-network | add ovs bridge] **************************************** 
+2016-02-10 16:00:20,170 p=22856 u=root |  changed: [host4] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,171 p=22856 u=root |  changed: [host5] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,201 p=22856 u=root |  changed: [host1] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,221 p=22856 u=root |  changed: [host2] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,223 p=22856 u=root |  changed: [host3] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,238 p=22856 u=root |  TASK: [setup-network | add ovs uplink] **************************************** 
+2016-02-10 16:00:20,627 p=22856 u=root |  changed: [host5] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,629 p=22856 u=root |  changed: [host1] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,631 p=22856 u=root |  changed: [host4] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,633 p=22856 u=root |  changed: [host2] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,634 p=22856 u=root |  changed: [host3] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:20,655 p=22856 u=root |  TASK: [setup-network | add ovs uplink] **************************************** 
+2016-02-10 16:00:21,013 p=22856 u=root |  changed: [host4] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:21,014 p=22856 u=root |  changed: [host5] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:21,026 p=22856 u=root |  changed: [host2] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:21,044 p=22856 u=root |  changed: [host1] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:21,058 p=22856 u=root |  changed: [host3] => (item={'interface': 'eth1', 'role': ['controller', 'compute'], 'type': 'ovs', 'name': 'br-prv', 'network': 'physnet'})
+2016-02-10 16:00:21,071 p=22856 u=root |  TASK: [setup-network | ensure script dir exist] ******************************* 
+2016-02-10 16:00:21,414 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:21,414 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:21,418 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:21,449 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:21,460 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:21,473 p=22856 u=root |  TASK: [setup-network | copy scripts] ****************************************** 
+2016-02-10 16:00:22,135 p=22856 u=root |  changed: [host4] => (item=setup_networks/log.py)
+2016-02-10 16:00:22,136 p=22856 u=root |  changed: [host1] => (item=setup_networks/log.py)
+2016-02-10 16:00:22,189 p=22856 u=root |  changed: [host5] => (item=setup_networks/log.py)
+2016-02-10 16:00:22,237 p=22856 u=root |  changed: [host3] => (item=setup_networks/log.py)
+2016-02-10 16:00:22,242 p=22856 u=root |  changed: [host2] => (item=setup_networks/log.py)
+2016-02-10 16:00:22,668 p=22856 u=root |  changed: [host4] => (item=setup_networks/setup_networks.py)
+2016-02-10 16:00:22,675 p=22856 u=root |  changed: [host1] => (item=setup_networks/setup_networks.py)
+2016-02-10 16:00:22,717 p=22856 u=root |  changed: [host5] => (item=setup_networks/setup_networks.py)
+2016-02-10 16:00:22,762 p=22856 u=root |  changed: [host3] => (item=setup_networks/setup_networks.py)
+2016-02-10 16:00:22,774 p=22856 u=root |  changed: [host2] => (item=setup_networks/setup_networks.py)
+2016-02-10 16:00:22,794 p=22856 u=root |  TASK: [setup-network | copy boot scripts] ************************************* 
+2016-02-10 16:00:23,363 p=22856 u=root |  changed: [host4] => (item=setup_networks/net_init)
+2016-02-10 16:00:23,382 p=22856 u=root |  changed: [host5] => (item=setup_networks/net_init)
+2016-02-10 16:00:23,386 p=22856 u=root |  changed: [host1] => (item=setup_networks/net_init)
+2016-02-10 16:00:23,407 p=22856 u=root |  changed: [host2] => (item=setup_networks/net_init)
+2016-02-10 16:00:23,435 p=22856 u=root |  changed: [host3] => (item=setup_networks/net_init)
+2016-02-10 16:00:23,449 p=22856 u=root |  TASK: [setup-network | copy config files] ************************************* 
+2016-02-10 16:00:24,168 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:24,219 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:24,221 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:24,222 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:24,222 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:24,247 p=22856 u=root |  TASK: [setup-network | make sure python lib exist] **************************** 
+2016-02-10 16:00:24,703 p=22856 u=root |  ok: [host4] => (item=python-yaml)
+2016-02-10 16:00:24,731 p=22856 u=root |  ok: [host5] => (item=python-yaml)
+2016-02-10 16:00:24,745 p=22856 u=root |  ok: [host1] => (item=python-yaml)
+2016-02-10 16:00:24,745 p=22856 u=root |  ok: [host2] => (item=python-yaml)
+2016-02-10 16:00:24,772 p=22856 u=root |  ok: [host3] => (item=python-yaml)
+2016-02-10 16:00:25,078 p=22856 u=root |  ok: [host4] => (item=python-netaddr)
+2016-02-10 16:00:25,111 p=22856 u=root |  ok: [host5] => (item=python-netaddr)
+2016-02-10 16:00:25,120 p=22856 u=root |  ok: [host1] => (item=python-netaddr)
+2016-02-10 16:00:25,122 p=22856 u=root |  ok: [host2] => (item=python-netaddr)
+2016-02-10 16:00:25,154 p=22856 u=root |  ok: [host3] => (item=python-netaddr)
+2016-02-10 16:00:25,166 p=22856 u=root |  TASK: [setup-network | run scripts] ******************************************* 
+2016-02-10 16:00:25,711 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:25,714 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:25,731 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:25,733 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:25,743 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:25,754 p=22856 u=root |  TASK: [setup-network | add to boot scripts] *********************************** 
+2016-02-10 16:00:26,110 p=22856 u=root |  changed: [host4]
+2016-02-10 16:00:26,119 p=22856 u=root |  changed: [host5]
+2016-02-10 16:00:26,134 p=22856 u=root |  changed: [host3]
+2016-02-10 16:00:26,206 p=22856 u=root |  changed: [host1]
+2016-02-10 16:00:26,221 p=22856 u=root |  changed: [host2]
+2016-02-10 16:00:26,235 p=22856 u=root |  PLAY [ha] ********************************************************************* 
+2016-02-10 16:00:26,236 p=22856 u=root |  GATHERING FACTS *************************************************************** 
+2016-02-10 16:00:27,009 p=22856 u=root |  ok: [host1]
+2016-02-10 16:00:27,121 p=22856 u=root |  ok: [host2]
+2016-02-10 16:00:27,131 p=22856 u=root |  ok: [host3]
+2016-02-10 16:00:27,149 p=22856 u=root |  TASK: [ha | include_vars {{ ansible_os_family }}.yml] ************************* 
+2016-02-10 16:00:27,227 p=22856 u=root |  ok: [host1]
+2016-02-10 16:00:27,235 p=22856 u=root |  ok: [host2]
+2016-02-10 16:00:27,264 p=22856 u=root |  ok: [host3]
+2016-02-10 16:00:27,275 p=22856 u=root |  TASK: [ha | install keepalived xinet haproxy] ********************************* 
+2016-02-10 16:00:49,368 p=22856 u=root |  changed: [host1] => (item=keepalived)
+2016-02-10 16:00:49,684 p=22856 u=root |  changed: [host3] => (item=keepalived)
+2016-02-10 16:00:49,772 p=22856 u=root |  changed: [host2] => (item=keepalived)
+2016-02-10 16:01:02,770 p=22856 u=root |  changed: [host1] => (item=xinetd)
+2016-02-10 16:01:04,076 p=22856 u=root |  changed: [host2] => (item=xinetd)
+2016-02-10 16:01:04,092 p=22856 u=root |  changed: [host3] => (item=xinetd)
+2016-02-10 16:01:13,478 p=22856 u=root |  changed: [host1] => (item=haproxy)
+2016-02-10 16:01:14,574 p=22856 u=root |  changed: [host2] => (item=haproxy)
+2016-02-10 16:01:15,092 p=22856 u=root |  changed: [host3] => (item=haproxy)
+2016-02-10 16:01:15,111 p=22856 u=root |  TASK: [ha | generate ha service list] ***************************************** 
+2016-02-10 16:01:15,476 p=22856 u=root |  changed: [host1] => (item=keepalived)
+2016-02-10 16:01:15,479 p=22856 u=root |  changed: [host2] => (item=keepalived)
+2016-02-10 16:01:15,486 p=22856 u=root |  changed: [host3] => (item=keepalived)
+2016-02-10 16:01:15,748 p=22856 u=root |  changed: [host1] => (item=xinetd)
+2016-02-10 16:01:15,754 p=22856 u=root |  changed: [host2] => (item=xinetd)
+2016-02-10 16:01:15,757 p=22856 u=root |  changed: [host3] => (item=xinetd)
+2016-02-10 16:01:16,022 p=22856 u=root |  changed: [host1] => (item=haproxy)
+2016-02-10 16:01:16,030 p=22856 u=root |  changed: [host2] => (item=haproxy)
+2016-02-10 16:01:16,035 p=22856 u=root |  changed: [host3] => (item=haproxy)
+2016-02-10 16:01:16,047 p=22856 u=root |  TASK: [ha | install pexpect] ************************************************** 
+2016-02-10 16:01:17,584 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:17,586 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:17,591 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:17,606 p=22856 u=root |  TASK: [ha | activate ip_nonlocal_bind] **************************************** 
+2016-02-10 16:01:17,938 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:17,939 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:17,945 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:17,960 p=22856 u=root |  TASK: [ha | set net.ipv4.tcp_keepalive_intvl] ********************************* 
+2016-02-10 16:01:18,286 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:18,288 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:18,300 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:18,310 p=22856 u=root |  TASK: [ha | set net.ipv4.tcp_keepalive_probes] ******************************** 
+2016-02-10 16:01:18,644 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:18,652 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:19,675 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:19,689 p=22856 u=root |  TASK: [ha | set net.ipv4.tcp_keepalive_time] ********************************** 
+2016-02-10 16:01:20,025 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:20,032 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:20,051 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:20,062 p=22856 u=root |  TASK: [ha | update haproxy cfg] *********************************************** 
+2016-02-10 16:01:20,660 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:20,709 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:20,716 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:20,730 p=22856 u=root |  TASK: [ha | set haproxy enable flag] ****************************************** 
+2016-02-10 16:01:21,072 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:21,073 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:21,076 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:21,090 p=22856 u=root |  TASK: [ha | set haproxy log] ************************************************** 
+2016-02-10 16:01:21,433 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:21,435 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:21,436 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:21,453 p=22856 u=root |  TASK: [ha | set rsyslog udp module] ******************************************* 
+2016-02-10 16:01:21,804 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:21,810 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:21,812 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:21,828 p=22856 u=root |  TASK: [ha | set rsyslog udp port] ********************************************* 
+2016-02-10 16:01:22,170 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:22,180 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:22,214 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:22,226 p=22856 u=root |  TASK: [ha | copy galera_chk file] ********************************************* 
+2016-02-10 16:01:22,776 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:22,777 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:22,779 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:22,799 p=22856 u=root |  TASK: [ha | add network service] ********************************************** 
+2016-02-10 16:01:23,147 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:23,148 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:23,150 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:23,175 p=22856 u=root |  TASK: [ha | copy mysqlchk file] *********************************************** 
+2016-02-10 16:01:23,721 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:23,727 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:23,734 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:23,753 p=22856 u=root |  TASK: [ha | set keepalived start param] *************************************** 
+2016-02-10 16:01:24,118 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:24,124 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:24,126 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:24,145 p=22856 u=root |  TASK: [ha | set keepalived log] *********************************************** 
+2016-02-10 16:01:24,481 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:24,482 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:24,486 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:24,506 p=22856 u=root |  TASK: [ha | update keepalived info] ******************************************* 
+2016-02-10 16:01:25,063 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:25,101 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:25,107 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:25,120 p=22856 u=root |  TASK: [ha | restart rsyslog] ************************************************** 
+2016-02-10 16:01:25,464 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:25,465 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:25,468 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:25,483 p=22856 u=root |  NOTIFIED: [ha | restart haproxy] ********************************************** 
+2016-02-10 16:01:25,938 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:25,940 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:25,946 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:25,956 p=22856 u=root |  NOTIFIED: [ha | restart xinetd] *********************************************** 
+2016-02-10 16:01:26,402 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:26,404 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:26,410 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:26,424 p=22856 u=root |  NOTIFIED: [ha | restart keepalived] ******************************************* 
+2016-02-10 16:01:26,869 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:26,873 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:26,875 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:26,889 p=22856 u=root |  PLAY [controller] ************************************************************* 
+2016-02-10 16:01:26,891 p=22856 u=root |  GATHERING FACTS *************************************************************** 
+2016-02-10 16:01:27,665 p=22856 u=root |  ok: [host2]
+2016-02-10 16:01:27,673 p=22856 u=root |  ok: [host1]
+2016-02-10 16:01:27,689 p=22856 u=root |  ok: [host3]
+2016-02-10 16:01:27,707 p=22856 u=root |  TASK: [memcached | include_vars {{ ansible_os_family }}.yml] ****************** 
+2016-02-10 16:01:27,777 p=22856 u=root |  ok: [host2]
+2016-02-10 16:01:27,778 p=22856 u=root |  ok: [host1]
+2016-02-10 16:01:27,779 p=22856 u=root |  ok: [host3]
+2016-02-10 16:01:27,794 p=22856 u=root |  TASK: [memcached | install packages] ****************************************** 
+2016-02-10 16:01:28,341 p=22856 u=root |  ok: [host3] => (item=python-memcache)
+2016-02-10 16:01:28,342 p=22856 u=root |  ok: [host1] => (item=python-memcache)
+2016-02-10 16:01:28,345 p=22856 u=root |  ok: [host2] => (item=python-memcache)
+2016-02-10 16:01:28,817 p=22856 u=root |  ok: [host1] => (item=memcached)
+2016-02-10 16:01:28,818 p=22856 u=root |  ok: [host3] => (item=memcached)
+2016-02-10 16:01:28,829 p=22856 u=root |  ok: [host2] => (item=memcached)
+2016-02-10 16:01:28,845 p=22856 u=root |  TASK: [memcached | change memcache listen ip] ********************************* 
+2016-02-10 16:01:29,178 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:29,180 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:29,181 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:29,199 p=22856 u=root |  TASK: [memcached | restart services] ****************************************** 
+2016-02-10 16:01:29,650 p=22856 u=root |  changed: [host1] => (item=memcached)
+2016-02-10 16:01:29,656 p=22856 u=root |  changed: [host3] => (item=memcached)
+2016-02-10 16:01:29,658 p=22856 u=root |  changed: [host2] => (item=memcached)
+2016-02-10 16:01:29,679 p=22856 u=root |  TASK: [database | include_vars {{ ansible_os_family }}.yml] ******************* 
+2016-02-10 16:01:29,757 p=22856 u=root |  ok: [host1]
+2016-02-10 16:01:29,761 p=22856 u=root |  ok: [host2]
+2016-02-10 16:01:29,792 p=22856 u=root |  ok: [host3]
+2016-02-10 16:01:29,803 p=22856 u=root |  TASK: [database | disable auto start] ***************************************** 
+2016-02-10 16:01:30,349 p=22856 u=root |  changed: [host3]
+2016-02-10 16:01:30,379 p=22856 u=root |  changed: [host2]
+2016-02-10 16:01:30,382 p=22856 u=root |  changed: [host1]
+2016-02-10 16:01:30,398 p=22856 u=root |  TASK: [database | install python-mysqldb] ************************************* 
+2016-02-10 16:01:34,456 p=22856 u=root |  changed: [host1] => (item=libaio1)
+2016-02-10 16:01:34,462 p=22856 u=root |  changed: [host2] => (item=libaio1)
+2016-02-10 16:01:34,589 p=22856 u=root |  changed: [host3] => (item=libaio1)
+2016-02-10 16:01:40,480 p=22856 u=root |  changed: [host3] => (item=libssl0.9.8)
+2016-02-10 16:01:40,653 p=22856 u=root |  changed: [host1] => (item=libssl0.9.8)
+2016-02-10 16:01:40,671 p=22856 u=root |  changed: [host2] => (item=libssl0.9.8)
+2016-02-10 16:01:49,879 p=22856 u=root |  changed: [host3] => (item=python-mysqldb)
+2016-02-10 16:01:50,249 p=22856 u=root |  changed: [host1] => (item=python-mysqldb)
+2016-02-10 16:01:50,374 p=22856 u=root |  changed: [host2] => (item=python-mysqldb)
+2016-02-10 16:03:14,018 p=22856 u=root |  changed: [host3] => (item=mysql-wsrep-server-5.5)
+2016-02-10 16:03:17,900 p=22856 u=root |  changed: [host1] => (item=mysql-wsrep-server-5.5)
+2016-02-10 16:03:18,104 p=22856 u=root |  changed: [host2] => (item=mysql-wsrep-server-5.5)
+2016-02-10 16:03:18,604 p=22856 u=root |  changed: [host3] => (item=galera-3)
+2016-02-10 16:03:23,191 p=22856 u=root |  changed: [host2] => (item=galera-3)
+2016-02-10 16:03:23,291 p=22856 u=root |  changed: [host1] => (item=galera-3)
+2016-02-10 16:03:23,311 p=22856 u=root |  TASK: [database | change open file limit] ************************************* 
+2016-02-10 16:03:23,886 p=22856 u=root |  changed: [host2]
+2016-02-10 16:03:23,925 p=22856 u=root |  changed: [host1]
+2016-02-10 16:03:23,932 p=22856 u=root |  changed: [host3]
+2016-02-10 16:03:23,953 p=22856 u=root |  TASK: [database | update mariadb config file] ********************************* 
+2016-02-10 16:03:24,512 p=22856 u=root |  changed: [host3] => (item={'dest': '/etc/mysql/my.cnf', 'src': 'my.cnf'})
+2016-02-10 16:03:24,514 p=22856 u=root |  changed: [host1] => (item={'dest': '/etc/mysql/my.cnf', 'src': 'my.cnf'})
+2016-02-10 16:03:24,518 p=22856 u=root |  changed: [host2] => (item={'dest': '/etc/mysql/my.cnf', 'src': 'my.cnf'})
+2016-02-10 16:03:24,943 p=22856 u=root |  changed: [host3] => (item={'dest': '/etc/mysql/conf.d/wsrep.cnf', 'src': 'wsrep.cnf'})
+2016-02-10 16:03:24,952 p=22856 u=root |  changed: [host1] => (item={'dest': '/etc/mysql/conf.d/wsrep.cnf', 'src': 'wsrep.cnf'})
+2016-02-10 16:03:24,957 p=22856 u=root |  changed: [host2] => (item={'dest': '/etc/mysql/conf.d/wsrep.cnf', 'src': 'wsrep.cnf'})
+2016-02-10 16:03:24,970 p=22856 u=root |  TASK: [database | bugfix for rsync version 3.1] ******************************* 
+2016-02-10 16:03:25,312 p=22856 u=root |  ok: [host2] => (item=\s*uid = \$MYUID$)
+2016-02-10 16:03:25,313 p=22856 u=root |  ok: [host1] => (item=\s*uid = \$MYUID$)
+2016-02-10 16:03:25,320 p=22856 u=root |  ok: [host3] => (item=\s*uid = \$MYUID$)
+2016-02-10 16:03:25,588 p=22856 u=root |  ok: [host2] => (item=\s*gid = \$MYGID$)
+2016-02-10 16:03:25,590 p=22856 u=root |  ok: [host1] => (item=\s*gid = \$MYGID$)
+2016-02-10 16:03:25,592 p=22856 u=root |  ok: [host3] => (item=\s*gid = \$MYGID$)
+2016-02-10 16:03:25,609 p=22856 u=root |  TASK: [database | stat path=/opt/mysql_init_complete] ************************* 
+2016-02-10 16:03:25,950 p=22856 u=root |  ok: [host2]
+2016-02-10 16:03:25,962 p=22856 u=root |  ok: [host1]
+2016-02-10 16:03:25,980 p=22856 u=root |  ok: [host3]
+2016-02-10 16:03:25,992 p=22856 u=root |  TASK: [database | enable auto start] ****************************************** 
+2016-02-10 16:03:26,335 p=22856 u=root |  changed: [host1]
+2016-02-10 16:03:26,337 p=22856 u=root |  changed: [host3]
+2016-02-10 16:03:26,337 p=22856 u=root |  changed: [host2]
+2016-02-10 16:03:26,359 p=22856 u=root |  TASK: [database | rm old datafiles] ******************************************* 
+2016-02-10 16:03:26,708 p=22856 u=root |  changed: [host1]
+2016-02-10 16:03:26,710 p=22856 u=root |  changed: [host3]
+2016-02-10 16:03:26,712 p=22856 u=root |  changed: [host2]
+2016-02-10 16:03:26,730 p=22856 u=root |  TASK: [database | set owner] ************************************************** 
+2016-02-10 16:03:27,086 p=22856 u=root |  changed: [host2]
+2016-02-10 16:03:27,087 p=22856 u=root |  changed: [host1]
+2016-02-10 16:03:27,094 p=22856 u=root |  changed: [host3]
+2016-02-10 16:03:27,107 p=22856 u=root |  TASK: [database | start first node to create new cluster] ********************* 
+2016-02-10 16:03:27,158 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:03:27,160 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:04:25,676 p=22856 u=root |  changed: [host3]
+2016-02-10 16:04:25,696 p=22856 u=root |  TASK: [database | wait for cluster ready] ************************************* 
+2016-02-10 16:04:25,758 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:04:25,764 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:04:26,073 p=22856 u=root |  changed: [host3]
+2016-02-10 16:04:26,092 p=22856 u=root |  TASK: [database | restart other nodes and join cluster] *********************** 
+2016-02-10 16:04:26,155 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:07:12,657 p=22856 u=root |  changed: [host1]
+2016-02-10 16:07:12,689 p=22856 u=root |  changed: [host2]
+2016-02-10 16:07:12,704 p=22856 u=root |  TASK: [database | restart first nodes] **************************************** 
+2016-02-10 16:07:12,768 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:07:12,772 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:07:25,213 p=22856 u=root |  changed: [host3]
+2016-02-10 16:07:25,231 p=22856 u=root |  TASK: [database | create all needed db] *************************************** 
+2016-02-10 16:07:25,312 p=22856 u=root |  skipping: [host2] => (item={'password': u'service', 'db': 'keystone', 'user': 'keystone'})
+2016-02-10 16:07:25,312 p=22856 u=root |  skipping: [host1] => (item={'password': u'service', 'db': 'keystone', 'user': 'keystone'})
+2016-02-10 16:07:25,317 p=22856 u=root |  skipping: [host2] => (item={'password': u'service', 'db': 'neutron', 'user': 'neutron'})
+2016-02-10 16:07:25,317 p=22856 u=root |  skipping: [host1] => (item={'password': u'service', 'db': 'neutron', 'user': 'neutron'})
+2016-02-10 16:07:25,321 p=22856 u=root |  skipping: [host2] => (item={'password': u'service', 'db': 'glance', 'user': 'glance'})
+2016-02-10 16:07:25,321 p=22856 u=root |  skipping: [host1] => (item={'password': u'service', 'db': 'glance', 'user': 'glance'})
+2016-02-10 16:07:25,325 p=22856 u=root |  skipping: [host2] => (item={'password': u'service', 'db': 'nova', 'user': 'nova'})
+2016-02-10 16:07:25,326 p=22856 u=root |  skipping: [host1] => (item={'password': u'service', 'db': 'nova', 'user': 'nova'})
+2016-02-10 16:07:25,329 p=22856 u=root |  skipping: [host2] => (item={'password': u'service', 'db': 'cinder', 'user': 'cinder'})
+2016-02-10 16:07:25,329 p=22856 u=root |  skipping: [host1] => (item={'password': u'service', 'db': 'cinder', 'user': 'cinder'})
+2016-02-10 16:07:25,333 p=22856 u=root |  skipping: [host2] => (item={'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'})
+2016-02-10 16:07:25,333 p=22856 u=root |  skipping: [host1] => (item={'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'})
+2016-02-10 16:07:25,763 p=22856 u=root |  changed: [host3] => (item={'password': u'service', 'db': 'keystone', 'user': 'keystone'})
+2016-02-10 16:07:26,140 p=22856 u=root |  changed: [host3] => (item={'password': u'service', 'db': 'neutron', 'user': 'neutron'})
+2016-02-10 16:07:26,513 p=22856 u=root |  changed: [host3] => (item={'password': u'service', 'db': 'glance', 'user': 'glance'})
+2016-02-10 16:07:26,889 p=22856 u=root |  changed: [host3] => (item={'password': u'service', 'db': 'nova', 'user': 'nova'})
+2016-02-10 16:07:27,260 p=22856 u=root |  changed: [host3] => (item={'password': u'service', 'db': 'cinder', 'user': 'cinder'})
+2016-02-10 16:07:27,633 p=22856 u=root |  changed: [host3] => (item={'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'})
+2016-02-10 16:07:27,649 p=22856 u=root |  TASK: [database | create service db user] ************************************* 
+2016-02-10 16:07:27,716 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, '%'])
+2016-02-10 16:07:27,718 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, '%'])
+2016-02-10 16:07:27,721 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, 'localhost'])
+2016-02-10 16:07:27,723 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, 'localhost'])
+2016-02-10 16:07:27,725 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, 'inventory_hostname'])
+2016-02-10 16:07:27,727 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, 'inventory_hostname'])
+2016-02-10 16:07:27,729 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, '%'])
+2016-02-10 16:07:27,731 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, '%'])
+2016-02-10 16:07:27,733 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, 'localhost'])
+2016-02-10 16:07:27,735 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, 'localhost'])
+2016-02-10 16:07:27,737 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, 'inventory_hostname'])
+2016-02-10 16:07:27,739 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, 'inventory_hostname'])
+2016-02-10 16:07:27,741 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, '%'])
+2016-02-10 16:07:27,743 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, '%'])
+2016-02-10 16:07:27,746 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, 'localhost'])
+2016-02-10 16:07:27,747 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, 'localhost'])
+2016-02-10 16:07:27,750 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, 'inventory_hostname'])
+2016-02-10 16:07:27,751 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, 'inventory_hostname'])
+2016-02-10 16:07:27,754 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, '%'])
+2016-02-10 16:07:27,755 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, '%'])
+2016-02-10 16:07:27,758 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, 'localhost'])
+2016-02-10 16:07:27,759 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, 'localhost'])
+2016-02-10 16:07:27,762 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, 'inventory_hostname'])
+2016-02-10 16:07:27,763 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, 'inventory_hostname'])
+2016-02-10 16:07:27,766 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, '%'])
+2016-02-10 16:07:27,767 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, '%'])
+2016-02-10 16:07:27,770 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, 'localhost'])
+2016-02-10 16:07:27,771 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, 'localhost'])
+2016-02-10 16:07:27,774 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, 'inventory_hostname'])
+2016-02-10 16:07:27,775 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, 'inventory_hostname'])
+2016-02-10 16:07:27,778 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, '%'])
+2016-02-10 16:07:27,779 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, '%'])
+2016-02-10 16:07:27,782 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, 'localhost'])
+2016-02-10 16:07:27,783 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, 'localhost'])
+2016-02-10 16:07:27,786 p=22856 u=root |  skipping: [host1] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, 'inventory_hostname'])
+2016-02-10 16:07:27,787 p=22856 u=root |  skipping: [host2] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, 'inventory_hostname'])
+2016-02-10 16:07:28,230 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, '%'])
+2016-02-10 16:07:28,610 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, 'localhost'])
+2016-02-10 16:07:29,190 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'keystone', 'user': 'keystone'}, 'inventory_hostname'])
+2016-02-10 16:07:29,674 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, '%'])
+2016-02-10 16:07:30,156 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, 'localhost'])
+2016-02-10 16:07:30,638 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'neutron', 'user': 'neutron'}, 'inventory_hostname'])
+2016-02-10 16:07:31,118 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, '%'])
+2016-02-10 16:07:31,598 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, 'localhost'])
+2016-02-10 16:07:31,977 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'glance', 'user': 'glance'}, 'inventory_hostname'])
+2016-02-10 16:07:32,360 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, '%'])
+2016-02-10 16:07:32,739 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, 'localhost'])
+2016-02-10 16:07:33,116 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'nova', 'user': 'nova'}, 'inventory_hostname'])
+2016-02-10 16:07:33,493 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, '%'])
+2016-02-10 16:07:33,872 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, 'localhost'])
+2016-02-10 16:07:34,451 p=22856 u=root |  changed: [host3] => (item=[{'password': u'service', 'db': 'cinder', 'user': 'cinder'}, 'inventory_hostname'])
+2016-02-10 16:07:34,841 p=22856 u=root |  changed: [host3] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, '%'])
+2016-02-10 16:07:35,384 p=22856 u=root |  changed: [host3] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, 'localhost'])
+2016-02-10 16:07:35,866 p=22856 u=root |  changed: [host3] => (item=[{'password': u'heat_db_secret', 'db': 'heat', 'user': 'heat'}, 'inventory_hostname'])
+2016-02-10 16:07:35,890 p=22856 u=root |  TASK: [database | create wsrep db user] *************************************** 
+2016-02-10 16:07:35,974 p=22856 u=root |  skipping: [host1] => (item=%)
+2016-02-10 16:07:35,981 p=22856 u=root |  skipping: [host1] => (item=localhost)
+2016-02-10 16:07:35,982 p=22856 u=root |  skipping: [host2] => (item=%)
+2016-02-10 16:07:35,985 p=22856 u=root |  skipping: [host1] => (item=inventory_hostname)
+2016-02-10 16:07:35,988 p=22856 u=root |  skipping: [host2] => (item=localhost)
+2016-02-10 16:07:35,992 p=22856 u=root |  skipping: [host2] => (item=inventory_hostname)
+2016-02-10 16:07:36,491 p=22856 u=root |  changed: [host3] => (item=%)
+2016-02-10 16:07:36,990 p=22856 u=root |  changed: [host3] => (item=localhost)
+2016-02-10 16:07:37,469 p=22856 u=root |  changed: [host3] => (item=inventory_hostname)
+2016-02-10 16:07:37,483 p=22856 u=root |  TASK: [database | install mongodb packages] *********************************** 
+2016-02-10 16:08:20,062 p=22856 u=root |  changed: [host2] => (item=mongodb-server)
+2016-02-10 16:08:20,443 p=22856 u=root |  ok: [host2] => (item=mongodb-clients)
+2016-02-10 16:08:20,769 p=22856 u=root |  changed: [host1] => (item=mongodb-server)
+2016-02-10 16:08:20,872 p=22856 u=root |  changed: [host3] => (item=mongodb-server)
+2016-02-10 16:08:21,150 p=22856 u=root |  ok: [host1] => (item=mongodb-clients)
+2016-02-10 16:08:21,249 p=22856 u=root |  ok: [host3] => (item=mongodb-clients)
+2016-02-10 16:08:39,355 p=22856 u=root |  changed: [host2] => (item=python-pymongo)
+2016-02-10 16:08:40,699 p=22856 u=root |  changed: [host1] => (item=python-pymongo)
+2016-02-10 16:08:40,869 p=22856 u=root |  changed: [host3] => (item=python-pymongo)
+2016-02-10 16:08:41,005 p=22856 u=root |  TASK: [database | install pymongod packages] ********************************** 
+2016-02-10 16:08:41,063 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:08:41,073 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:08:41,075 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:08:41,090 p=22856 u=root |  TASK: [database | copy ceilometer configs] ************************************ 
+2016-02-10 16:08:41,752 p=22856 u=root |  changed: [host2]
+2016-02-10 16:08:41,764 p=22856 u=root |  changed: [host1]
+2016-02-10 16:08:41,770 p=22856 u=root |  changed: [host3]
+2016-02-10 16:08:41,781 p=22856 u=root |  TASK: [database | update mongodb config file] ********************************* 
+2016-02-10 16:08:42,625 p=22856 u=root |  changed: [host2]
+2016-02-10 16:08:42,628 p=22856 u=root |  changed: [host1]
+2016-02-10 16:08:42,727 p=22856 u=root |  changed: [host3]
+2016-02-10 16:08:42,738 p=22856 u=root |  TASK: [database | rm prealloc files] ****************************************** 
+2016-02-10 16:08:42,783 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:08:42,784 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:08:42,789 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:08:42,803 p=22856 u=root |  TASK: [database | manually restart mongodb server] **************************** 
+2016-02-10 16:08:43,475 p=22856 u=root |  changed: [host2]
+2016-02-10 16:08:43,476 p=22856 u=root |  changed: [host3]
+2016-02-10 16:08:43,480 p=22856 u=root |  changed: [host1]
+2016-02-10 16:08:43,497 p=22856 u=root |  TASK: [database | write mongodb to monitor list] ****************************** 
+2016-02-10 16:08:43,841 p=22856 u=root |  changed: [host1]
+2016-02-10 16:08:43,844 p=22856 u=root |  changed: [host2]
+2016-02-10 16:08:43,846 p=22856 u=root |  changed: [host3]
+2016-02-10 16:08:43,863 p=22856 u=root |  TASK: [database | wait for mongod ready] ************************************** 
+2016-02-10 16:09:23,279 p=22856 u=root |  ok: [host1]
+2016-02-10 16:09:23,289 p=22856 u=root |  ok: [host2]
+2016-02-10 16:09:23,299 p=22856 u=root |  ok: [host3]
+2016-02-10 16:09:23,315 p=22856 u=root |  TASK: [database | copy mongo js] ********************************************** 
+2016-02-10 16:09:23,374 p=22856 u=root |  skipping: [host1] => (item={'dest': '/opt/replica.js', 'src': 'replica.js'})
+2016-02-10 16:09:23,379 p=22856 u=root |  skipping: [host2] => (item={'dest': '/opt/replica.js', 'src': 'replica.js'})
+2016-02-10 16:09:23,895 p=22856 u=root |  changed: [host3] => (item={'dest': '/opt/replica.js', 'src': 'replica.js'})
+2016-02-10 16:09:23,911 p=22856 u=root |  TASK: [database | init replica servers] *************************************** 
+2016-02-10 16:09:23,963 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:09:23,975 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:11:10,388 p=22856 u=root |  changed: [host3]
+2016-02-10 16:11:10,409 p=22856 u=root |  TASK: [database | wait replica servers are ready] ***************************** 
+2016-02-10 16:11:10,474 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:11:10,483 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:13:55,956 p=22856 u=root |  changed: [host3]
+2016-02-10 16:13:55,977 p=22856 u=root |  TASK: [database | debug msg='{{ servers.stdout |int }}'] ********************** 
+2016-02-10 16:13:56,035 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:13:56,037 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:13:56,075 p=22856 u=root |  ok: [host3] => {
+    "msg": "3"
+}
+2016-02-10 16:13:56,088 p=22856 u=root |  TASK: [database | wait replica servers are ready] ***************************** 
+2016-02-10 16:13:56,136 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:13:56,146 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:13:56,547 p=22856 u=root |  changed: [host3]
+2016-02-10 16:13:56,563 p=22856 u=root |  TASK: [database | debug msg='{{ servers.stdout |int }}'] ********************** 
+2016-02-10 16:13:56,618 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:13:56,619 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:13:56,652 p=22856 u=root |  ok: [host3] => {
+    "msg": "1"
+}
+2016-02-10 16:13:56,667 p=22856 u=root |  TASK: [database | create mongodb user and db] ********************************* 
+2016-02-10 16:13:56,724 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:13:56,727 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:13:58,228 p=22856 u=root |  changed: [host3]
+2016-02-10 16:13:58,244 p=22856 u=root |  TASK: [database | grant user privilege] *************************************** 
+2016-02-10 16:13:58,293 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:13:58,298 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:13:59,297 p=22856 u=root |  ok: [host3]
+2016-02-10 16:13:59,317 p=22856 u=root |  TASK: [mq | include_vars {{ ansible_os_family }}.yml] ************************* 
+2016-02-10 16:13:59,403 p=22856 u=root |  ok: [host2]
+2016-02-10 16:13:59,440 p=22856 u=root |  ok: [host3]
+2016-02-10 16:13:59,468 p=22856 u=root |  ok: [host1]
+2016-02-10 16:13:59,480 p=22856 u=root |  TASK: [mq | create rabbitmq directory] **************************************** 
+2016-02-10 16:14:00,217 p=22856 u=root |  changed: [host2]
+2016-02-10 16:14:00,252 p=22856 u=root |  changed: [host1]
+2016-02-10 16:14:00,754 p=22856 u=root |  changed: [host3]
+2016-02-10 16:14:01,067 p=22856 u=root |  TASK: [mq | disable auto start] *********************************************** 
+2016-02-10 16:14:02,899 p=22856 u=root |  changed: [host3]
+2016-02-10 16:14:04,458 p=22856 u=root |  changed: [host2]
+2016-02-10 16:14:04,898 p=22856 u=root |  changed: [host1]
+2016-02-10 16:14:08,075 p=22856 u=root |  TASK: [mq | install rabbitmq-server] ****************************************** 
+2016-02-10 16:15:27,204 p=22856 u=root |  changed: [host3] => (item=rabbitmq-server)
+2016-02-10 16:15:27,304 p=22856 u=root |  changed: [host2] => (item=rabbitmq-server)
+2016-02-10 16:15:29,511 p=22856 u=root |  changed: [host1] => (item=rabbitmq-server)
+2016-02-10 16:15:29,530 p=22856 u=root |  TASK: [mq | enable auto start] ************************************************ 
+2016-02-10 16:15:29,883 p=22856 u=root |  changed: [host3]
+2016-02-10 16:15:29,888 p=22856 u=root |  changed: [host2]
+2016-02-10 16:15:29,889 p=22856 u=root |  changed: [host1]
+2016-02-10 16:15:29,905 p=22856 u=root |  TASK: [mq | make sure rabbitmq-server stopped] ******************************** 
+2016-02-10 16:15:30,960 p=22856 u=root |  ok: [host3]
+2016-02-10 16:15:30,977 p=22856 u=root |  ok: [host2]
+2016-02-10 16:15:31,153 p=22856 u=root |  ok: [host1]
+2016-02-10 16:15:31,167 p=22856 u=root |  TASK: [mq | replace cookie] *************************************************** 
+2016-02-10 16:15:31,718 p=22856 u=root |  changed: [host2]
+2016-02-10 16:15:31,727 p=22856 u=root |  changed: [host1]
+2016-02-10 16:15:31,767 p=22856 u=root |  changed: [host3]
+2016-02-10 16:15:31,782 p=22856 u=root |  TASK: [mq | replace config] *************************************************** 
+2016-02-10 16:15:32,327 p=22856 u=root |  changed: [host2]
+2016-02-10 16:15:32,388 p=22856 u=root |  changed: [host1]
+2016-02-10 16:15:32,389 p=22856 u=root |  changed: [host3]
+2016-02-10 16:15:32,403 p=22856 u=root |  TASK: [mq | set open file limit for rabbitmq] ********************************* 
+2016-02-10 16:15:32,942 p=22856 u=root |  changed: [host1]
+2016-02-10 16:15:32,976 p=22856 u=root |  changed: [host2]
+2016-02-10 16:15:32,994 p=22856 u=root |  changed: [host3]
+2016-02-10 16:15:33,004 p=22856 u=root |  TASK: [mq | restart rabbitmq-server] ****************************************** 
+2016-02-10 16:15:41,684 p=22856 u=root |  changed: [host2]
+2016-02-10 16:15:41,777 p=22856 u=root |  changed: [host1]
+2016-02-10 16:15:41,993 p=22856 u=root |  changed: [host3]
+2016-02-10 16:15:42,012 p=22856 u=root |  TASK: [mq | enable queue mirroring] ******************************************* 
+2016-02-10 16:15:43,381 p=22856 u=root |  changed: [host3]
+2016-02-10 16:15:43,382 p=22856 u=root |  changed: [host1]
+2016-02-10 16:15:43,476 p=22856 u=root |  changed: [host2]
+2016-02-10 16:15:43,488 p=22856 u=root |  TASK: [mq | stop rabbitmq app] ************************************************ 
+2016-02-10 16:15:43,534 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:15:47,536 p=22856 u=root |  changed: [host2]
+2016-02-10 16:15:47,555 p=22856 u=root |  changed: [host1]
+2016-02-10 16:15:47,680 p=22856 u=root |  TASK: [mq | join cluster] ***************************************************** 
+2016-02-10 16:15:47,772 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:15:57,469 p=22856 u=root |  changed: [host1]
+2016-02-10 16:15:57,558 p=22856 u=root |  changed: [host2]
+2016-02-10 16:15:57,574 p=22856 u=root |  TASK: [mq | start rabbitmq app] *********************************************** 
+2016-02-10 16:15:57,630 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:16:00,235 p=22856 u=root |  changed: [host2]
+2016-02-10 16:16:00,836 p=22856 u=root |  changed: [host1]
+2016-02-10 16:16:00,854 p=22856 u=root |  TASK: [mq | generate mq service list] ***************************************** 
+2016-02-10 16:16:01,215 p=22856 u=root |  changed: [host2] => (item=rabbitmq-server)
+2016-02-10 16:16:01,217 p=22856 u=root |  changed: [host1] => (item=rabbitmq-server)
+2016-02-10 16:16:01,222 p=22856 u=root |  changed: [host3] => (item=rabbitmq-server)
+2016-02-10 16:16:01,239 p=22856 u=root |  TASK: [mq | remove default guest user is removed] ***************************** 
+2016-02-10 16:16:01,287 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:16:01,288 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:16:02,883 p=22856 u=root |  changed: [host3]
+2016-02-10 16:16:02,897 p=22856 u=root |  TASK: [mq | add rabbitmq user] ************************************************ 
+2016-02-10 16:16:02,942 p=22856 u=root |  skipping: [host1]
+2016-02-10 16:16:02,945 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:16:05,047 p=22856 u=root |  changed: [host3]
+2016-02-10 16:16:05,062 p=22856 u=root |  TASK: [keystone | include_vars {{ ansible_os_family }}.yml] ******************* 
+2016-02-10 16:16:05,188 p=22856 u=root |  ok: [host2]
+2016-02-10 16:16:05,222 p=22856 u=root |  ok: [host1]
+2016-02-10 16:16:05,264 p=22856 u=root |  ok: [host3]
+2016-02-10 16:16:05,275 p=22856 u=root |  TASK: [keystone | install keystone packages] ********************************** 
+2016-02-10 16:18:51,101 p=22856 u=root |  changed: [host2] => (item=keystone)
+2016-02-10 16:18:51,218 p=22856 u=root |  changed: [host1] => (item=keystone)
+2016-02-10 16:18:51,486 p=22856 u=root |  ok: [host2] => (item=python-keystoneclient)
+2016-02-10 16:18:51,599 p=22856 u=root |  ok: [host1] => (item=python-keystoneclient)
+2016-02-10 16:18:52,338 p=22856 u=root |  changed: [host3] => (item=keystone)
+2016-02-10 16:18:52,716 p=22856 u=root |  ok: [host3] => (item=python-keystoneclient)
+2016-02-10 16:18:52,739 p=22856 u=root |  TASK: [keystone | generate keystone service list] ***************************** 
+2016-02-10 16:18:53,148 p=22856 u=root |  changed: [host2] => (item=keystone)
+2016-02-10 16:18:53,152 p=22856 u=root |  changed: [host1] => (item=keystone)
+2016-02-10 16:18:53,154 p=22856 u=root |  changed: [host3] => (item=keystone)
+2016-02-10 16:18:53,181 p=22856 u=root |  TASK: [keystone | update keystone conf] *************************************** 
+2016-02-10 16:18:53,799 p=22856 u=root |  changed: [host1]
+2016-02-10 16:18:53,844 p=22856 u=root |  changed: [host2]
+2016-02-10 16:18:53,852 p=22856 u=root |  changed: [host3]
+2016-02-10 16:18:53,867 p=22856 u=root |  TASK: [keystone | delete sqlite database] ************************************* 
+2016-02-10 16:18:54,268 p=22856 u=root |  changed: [host1]
+2016-02-10 16:18:54,271 p=22856 u=root |  changed: [host2]
+2016-02-10 16:18:54,275 p=22856 u=root |  changed: [host3]
+2016-02-10 16:18:54,294 p=22856 u=root |  TASK: [keystone | keystone source files] ************************************** 
+2016-02-10 16:18:54,904 p=22856 u=root |  changed: [host1] => (item=admin-openrc.sh)
+2016-02-10 16:18:54,940 p=22856 u=root |  changed: [host3] => (item=admin-openrc.sh)
+2016-02-10 16:18:54,941 p=22856 u=root |  changed: [host2] => (item=admin-openrc.sh)
+2016-02-10 16:18:55,328 p=22856 u=root |  changed: [host1] => (item=demo-openrc.sh)
+2016-02-10 16:18:55,368 p=22856 u=root |  changed: [host2] => (item=demo-openrc.sh)
+2016-02-10 16:18:55,372 p=22856 u=root |  changed: [host3] => (item=demo-openrc.sh)
+2016-02-10 16:18:55,385 p=22856 u=root |  TASK: [keystone | restart keystone services] ********************************** 
+2016-02-10 16:18:55,921 p=22856 u=root |  changed: [host3] => (item=keystone)
+2016-02-10 16:18:55,923 p=22856 u=root |  changed: [host2] => (item=keystone)
+2016-02-10 16:18:55,924 p=22856 u=root |  changed: [host1] => (item=keystone)
+2016-02-10 16:18:55,951 p=22856 u=root |  TASK: [keystone | keystone-manage db-sync] ************************************ 
+2016-02-10 16:18:56,048 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:18:56,052 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:20:45,214 p=22856 u=root |  changed: [host1]
+2016-02-10 16:20:45,237 p=22856 u=root |  TASK: [keystone | wait for keystone ready] ************************************ 
+2016-02-10 16:20:45,344 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:20:45,357 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:20:48,654 p=22856 u=root |  ok: [host1]
+2016-02-10 16:20:48,680 p=22856 u=root |  TASK: [keystone | cron job to purge expired tokens hourly] ******************** 
+2016-02-10 16:20:48,792 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:20:48,796 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:20:49,194 p=22856 u=root |  changed: [host1]
+2016-02-10 16:20:49,234 p=22856 u=root |  TASK: [keystone | add tenants] ************************************************ 
+2016-02-10 16:20:49,388 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:20:49,394 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:20:49,399 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,402 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,404 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,406 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,408 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,410 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,412 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,414 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,416 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,418 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,419 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,422 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,423 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,426 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:20:49,427 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:49,431 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:20:51,373 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:20:52,456 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:53,137 p=22856 u=root |  ok: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:53,820 p=22856 u=root |  ok: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:54,510 p=22856 u=root |  ok: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:55,194 p=22856 u=root |  ok: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:55,878 p=22856 u=root |  ok: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:56,573 p=22856 u=root |  ok: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,664 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:20:57,689 p=22856 u=root |  TASK: [keystone | add users] ************************************************** 
+2016-02-10 16:20:57,822 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:20:57,826 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:20:57,827 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,831 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,831 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,835 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,835 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,838 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,839 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,842 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,843 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,846 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,847 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,850 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,851 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,854 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:20:57,856 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:20:57,858 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:20:59,435 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:21:00,634 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:02,019 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:03,455 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:04,648 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:05,835 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:07,023 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:08,136 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,131 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:21:09,157 p=22856 u=root |  TASK: [keystone | grant roles] ************************************************ 
+2016-02-10 16:21:09,280 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:21:09,283 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:21:09,285 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,287 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,289 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,291 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,293 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,295 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,297 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,299 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,300 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,304 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,304 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,307 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,308 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,311 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:09,312 p=22856 u=root |  skipping: [host3] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:21:09,315 p=22856 u=root |  skipping: [host2] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:21:10,796 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Admin Tenant', 'role': 'admin', 'user': 'admin', 'password': u'console', 'email': 'admin@admin.com', 'tenant': 'admin'})
+2016-02-10 16:21:11,681 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'glance', 'password': u'console', 'email': 'glance@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:12,565 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'nova', 'password': u'console', 'email': 'nova@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:13,449 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'keystone', 'password': u'console', 'email': 'keystone@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:14,643 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'neutron', 'password': u'console', 'email': 'neutron@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:15,626 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'ceilometer', 'password': u'console', 'email': 'ceilometer@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:16,612 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'cinder', 'password': u'console', 'email': 'cinder@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:17,501 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Service Tenant', 'role': 'admin', 'user': 'heat', 'password': u'heat_secret', 'email': 'heat@admin.com', 'tenant': 'service'})
+2016-02-10 16:21:18,598 p=22856 u=root |  changed: [host1] => (item={'tenant_description': 'Demo Tenant', 'role': 'heat_stack_user', 'user': 'demo', 'password': '', 'email': 'heat@demo.com', 'tenant': 'demo'})
+2016-02-10 16:21:18,619 p=22856 u=root |  TASK: [keystone | add endpoints] ********************************************** 
+2016-02-10 16:21:18,780 p=22856 u=root |  skipping: [host2] => (item={'name': 'keystone', 'adminurl': u'http://172.16.1.222:35357/v2.0', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:5000/v2.0', 'type': 'identity', 'internalurl': u'http://172.16.1.222:5000/v2.0', 'description': 'OpenStack Identity'})
+2016-02-10 16:21:18,781 p=22856 u=root |  skipping: [host3] => (item={'name': 'keystone', 'adminurl': u'http://172.16.1.222:35357/v2.0', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:5000/v2.0', 'type': 'identity', 'internalurl': u'http://172.16.1.222:5000/v2.0', 'description': 'OpenStack Identity'})
+2016-02-10 16:21:18,784 p=22856 u=root |  skipping: [host2] => (item={'name': 'glance', 'adminurl': u'http://172.16.1.222:9292', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9292', 'type': 'image', 'internalurl': u'http://172.16.1.222:9292', 'description': 'OpenStack Image Service'})
+2016-02-10 16:21:18,786 p=22856 u=root |  skipping: [host3] => (item={'name': 'glance', 'adminurl': u'http://172.16.1.222:9292', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9292', 'type': 'image', 'internalurl': u'http://172.16.1.222:9292', 'description': 'OpenStack Image Service'})
+2016-02-10 16:21:18,788 p=22856 u=root |  skipping: [host2] => (item={'name': 'nova', 'adminurl': u'http://172.16.1.222:8774/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8774/v2/%(tenant_id)s', 'type': 'compute', 'internalurl': u'http://172.16.1.222:8774/v2/%(tenant_id)s', 'description': 'OpenStack Compute'})
+2016-02-10 16:21:18,790 p=22856 u=root |  skipping: [host3] => (item={'name': 'nova', 'adminurl': u'http://172.16.1.222:8774/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8774/v2/%(tenant_id)s', 'type': 'compute', 'internalurl': u'http://172.16.1.222:8774/v2/%(tenant_id)s', 'description': 'OpenStack Compute'})
+2016-02-10 16:21:18,792 p=22856 u=root |  skipping: [host2] => (item={'name': 'neutron', 'adminurl': u'http://172.16.1.222:9696', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9696', 'type': 'network', 'internalurl': u'http://172.16.1.222:9696', 'description': 'OpenStack Networking'})
+2016-02-10 16:21:18,793 p=22856 u=root |  skipping: [host3] => (item={'name': 'neutron', 'adminurl': u'http://172.16.1.222:9696', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9696', 'type': 'network', 'internalurl': u'http://172.16.1.222:9696', 'description': 'OpenStack Networking'})
+2016-02-10 16:21:18,796 p=22856 u=root |  skipping: [host2] => (item={'name': 'ceilometer', 'adminurl': u'http://172.16.1.222:8777', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8777', 'type': 'metering', 'internalurl': u'http://172.16.1.222:8777', 'description': 'OpenStack Telemetry'})
+2016-02-10 16:21:18,797 p=22856 u=root |  skipping: [host3] => (item={'name': 'ceilometer', 'adminurl': u'http://172.16.1.222:8777', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8777', 'type': 'metering', 'internalurl': u'http://172.16.1.222:8777', 'description': 'OpenStack Telemetry'})
+2016-02-10 16:21:18,800 p=22856 u=root |  skipping: [host2] => (item={'name': 'cinder', 'adminurl': u'http://172.16.1.222:8776/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v1/%(tenant_id)s', 'type': 'volume', 'internalurl': u'http://172.16.1.222:8776/v1/%(tenant_id)s', 'description': 'OpenStack Block Storage'})
+2016-02-10 16:21:18,801 p=22856 u=root |  skipping: [host3] => (item={'name': 'cinder', 'adminurl': u'http://172.16.1.222:8776/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v1/%(tenant_id)s', 'type': 'volume', 'internalurl': u'http://172.16.1.222:8776/v1/%(tenant_id)s', 'description': 'OpenStack Block Storage'})
+2016-02-10 16:21:18,804 p=22856 u=root |  skipping: [host2] => (item={'name': 'cinderv2', 'adminurl': u'http://172.16.1.222:8776/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v2/%(tenant_id)s', 'type': 'volumev2', 'internalurl': u'http://172.16.1.222:8776/v2/%(tenant_id)s', 'description': 'OpenStack Block Storage v2'})
+2016-02-10 16:21:18,805 p=22856 u=root |  skipping: [host3] => (item={'name': 'cinderv2', 'adminurl': u'http://172.16.1.222:8776/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v2/%(tenant_id)s', 'type': 'volumev2', 'internalurl': u'http://172.16.1.222:8776/v2/%(tenant_id)s', 'description': 'OpenStack Block Storage v2'})
+2016-02-10 16:21:18,808 p=22856 u=root |  skipping: [host2] => (item={'name': 'heat', 'adminurl': u'http://172.16.1.222:8004/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8004/v1/%(tenant_id)s', 'type': 'orchestration', 'internalurl': u'http://172.16.1.222:8004/v1/%(tenant_id)s', 'description': 'OpenStack Orchestration'})
+2016-02-10 16:21:18,809 p=22856 u=root |  skipping: [host3] => (item={'name': 'heat', 'adminurl': u'http://172.16.1.222:8004/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8004/v1/%(tenant_id)s', 'type': 'orchestration', 'internalurl': u'http://172.16.1.222:8004/v1/%(tenant_id)s', 'description': 'OpenStack Orchestration'})
+2016-02-10 16:21:18,812 p=22856 u=root |  skipping: [host2] => (item={'name': 'heat-cfn', 'adminurl': u'http://172.16.1.222:8000/v1', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8000/v1', 'type': 'cloudformation', 'internalurl': u'http://172.16.1.222:8000/v1', 'description': 'OpenStack CloudFormation Orchestration'})
+2016-02-10 16:21:18,813 p=22856 u=root |  skipping: [host3] => (item={'name': 'heat-cfn', 'adminurl': u'http://172.16.1.222:8000/v1', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8000/v1', 'type': 'cloudformation', 'internalurl': u'http://172.16.1.222:8000/v1', 'description': 'OpenStack CloudFormation Orchestration'})
+2016-02-10 16:21:21,020 p=22856 u=root |  changed: [host1] => (item={'name': 'keystone', 'adminurl': u'http://172.16.1.222:35357/v2.0', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:5000/v2.0', 'type': 'identity', 'internalurl': u'http://172.16.1.222:5000/v2.0', 'description': 'OpenStack Identity'})
+2016-02-10 16:21:22,820 p=22856 u=root |  changed: [host1] => (item={'name': 'glance', 'adminurl': u'http://172.16.1.222:9292', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9292', 'type': 'image', 'internalurl': u'http://172.16.1.222:9292', 'description': 'OpenStack Image Service'})
+2016-02-10 16:21:24,319 p=22856 u=root |  changed: [host1] => (item={'name': 'nova', 'adminurl': u'http://172.16.1.222:8774/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8774/v2/%(tenant_id)s', 'type': 'compute', 'internalurl': u'http://172.16.1.222:8774/v2/%(tenant_id)s', 'description': 'OpenStack Compute'})
+2016-02-10 16:21:26,610 p=22856 u=root |  changed: [host1] => (item={'name': 'neutron', 'adminurl': u'http://172.16.1.222:9696', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:9696', 'type': 'network', 'internalurl': u'http://172.16.1.222:9696', 'description': 'OpenStack Networking'})
+2016-02-10 16:21:28,001 p=22856 u=root |  changed: [host1] => (item={'name': 'ceilometer', 'adminurl': u'http://172.16.1.222:8777', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8777', 'type': 'metering', 'internalurl': u'http://172.16.1.222:8777', 'description': 'OpenStack Telemetry'})
+2016-02-10 16:21:29,511 p=22856 u=root |  changed: [host1] => (item={'name': 'cinder', 'adminurl': u'http://172.16.1.222:8776/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v1/%(tenant_id)s', 'type': 'volume', 'internalurl': u'http://172.16.1.222:8776/v1/%(tenant_id)s', 'description': 'OpenStack Block Storage'})
+2016-02-10 16:21:30,912 p=22856 u=root |  changed: [host1] => (item={'name': 'cinderv2', 'adminurl': u'http://172.16.1.222:8776/v2/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8776/v2/%(tenant_id)s', 'type': 'volumev2', 'internalurl': u'http://172.16.1.222:8776/v2/%(tenant_id)s', 'description': 'OpenStack Block Storage v2'})
+2016-02-10 16:21:32,203 p=22856 u=root |  changed: [host1] => (item={'name': 'heat', 'adminurl': u'http://172.16.1.222:8004/v1/%(tenant_id)s', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8004/v1/%(tenant_id)s', 'type': 'orchestration', 'internalurl': u'http://172.16.1.222:8004/v1/%(tenant_id)s', 'description': 'OpenStack Orchestration'})
+2016-02-10 16:21:33,797 p=22856 u=root |  changed: [host1] => (item={'name': 'heat-cfn', 'adminurl': u'http://172.16.1.222:8000/v1', 'region': 'regionOne', 'publicurl': u'http://10.145.88.99:8000/v1', 'type': 'cloudformation', 'internalurl': u'http://172.16.1.222:8000/v1', 'description': 'OpenStack CloudFormation Orchestration'})
+2016-02-10 16:21:33,827 p=22856 u=root |  TASK: [nova-controller | include_vars {{ ansible_os_family }}.yml] ************ 
+2016-02-10 16:21:33,919 p=22856 u=root |  ok: [host1]
+2016-02-10 16:21:33,925 p=22856 u=root |  ok: [host2]
+2016-02-10 16:21:33,930 p=22856 u=root |  ok: [host3]
+2016-02-10 16:21:33,942 p=22856 u=root |  TASK: [nova-controller | install nova related packages] *********************** 
+2016-02-10 16:27:01,417 p=22856 u=root |  changed: [host2] => (item=nova-api)
+2016-02-10 16:27:12,879 p=22856 u=root |  changed: [host2] => (item=nova-cert)
+2016-02-10 16:27:16,670 p=22856 u=root |  changed: [host3] => (item=nova-api)
+2016-02-10 16:27:20,468 p=22856 u=root |  changed: [host1] => (item=nova-api)
+2016-02-10 16:27:22,784 p=22856 u=root |  changed: [host2] => (item=nova-conductor)
+2016-02-10 16:27:28,776 p=22856 u=root |  changed: [host3] => (item=nova-cert)
+2016-02-10 16:27:33,491 p=22856 u=root |  changed: [host1] => (item=nova-cert)
+2016-02-10 16:27:36,298 p=22856 u=root |  changed: [host2] => (item=nova-consoleauth)
+2016-02-10 16:27:40,784 p=22856 u=root |  changed: [host3] => (item=nova-conductor)
+2016-02-10 16:27:45,806 p=22856 u=root |  changed: [host1] => (item=nova-conductor)
+2016-02-10 16:27:51,998 p=22856 u=root |  changed: [host3] => (item=nova-consoleauth)
+2016-02-10 16:27:56,537 p=22856 u=root |  changed: [host1] => (item=nova-consoleauth)
+2016-02-10 16:28:24,287 p=22856 u=root |  changed: [host2] => (item=nova-novncproxy)
+2016-02-10 16:28:35,622 p=22856 u=root |  changed: [host2] => (item=nova-scheduler)
+2016-02-10 16:28:36,009 p=22856 u=root |  ok: [host2] => (item=python-oslo.rootwrap)
+2016-02-10 16:28:38,544 p=22856 u=root |  changed: [host3] => (item=nova-novncproxy)
+2016-02-10 16:28:43,075 p=22856 u=root |  changed: [host1] => (item=nova-novncproxy)
+2016-02-10 16:28:47,051 p=22856 u=root |  changed: [host3] => (item=nova-scheduler)
+2016-02-10 16:28:47,443 p=22856 u=root |  ok: [host3] => (item=python-oslo.rootwrap)
+2016-02-10 16:28:53,348 p=22856 u=root |  changed: [host1] => (item=nova-scheduler)
+2016-02-10 16:28:53,744 p=22856 u=root |  ok: [host1] => (item=python-oslo.rootwrap)
+2016-02-10 16:28:53,765 p=22856 u=root |  TASK: [nova-controller | generate nova control service list] ****************** 
+2016-02-10 16:28:54,194 p=22856 u=root |  changed: [host2] => (item=nova-api)
+2016-02-10 16:28:54,320 p=22856 u=root |  changed: [host3] => (item=nova-api)
+2016-02-10 16:28:54,443 p=22856 u=root |  changed: [host1] => (item=nova-api)
+2016-02-10 16:28:54,479 p=22856 u=root |  changed: [host2] => (item=nova-cert)
+2016-02-10 16:28:54,603 p=22856 u=root |  changed: [host3] => (item=nova-cert)
+2016-02-10 16:28:54,769 p=22856 u=root |  changed: [host2] => (item=nova-conductor)
+2016-02-10 16:28:54,797 p=22856 u=root |  changed: [host1] => (item=nova-cert)
+2016-02-10 16:28:54,884 p=22856 u=root |  changed: [host3] => (item=nova-conductor)
+2016-02-10 16:28:55,050 p=22856 u=root |  changed: [host2] => (item=nova-consoleauth)
+2016-02-10 16:28:55,092 p=22856 u=root |  changed: [host1] => (item=nova-conductor)
+2016-02-10 16:28:55,165 p=22856 u=root |  changed: [host3] => (item=nova-consoleauth)
+2016-02-10 16:28:55,334 p=22856 u=root |  changed: [host2] => (item=nova-novncproxy)
+2016-02-10 16:28:55,379 p=22856 u=root |  changed: [host1] => (item=nova-consoleauth)
+2016-02-10 16:28:55,456 p=22856 u=root |  changed: [host3] => (item=nova-novncproxy)
+2016-02-10 16:28:55,730 p=22856 u=root |  changed: [host2] => (item=nova-scheduler)
+2016-02-10 16:28:55,741 p=22856 u=root |  changed: [host3] => (item=nova-scheduler)
+2016-02-10 16:28:55,770 p=22856 u=root |  changed: [host1] => (item=nova-novncproxy)
+2016-02-10 16:28:56,072 p=22856 u=root |  changed: [host1] => (item=nova-scheduler)
+2016-02-10 16:28:56,089 p=22856 u=root |  TASK: [nova-controller | update nova conf] ************************************ 
+2016-02-10 16:28:56,711 p=22856 u=root |  changed: [host3]
+2016-02-10 16:28:56,731 p=22856 u=root |  changed: [host2]
+2016-02-10 16:28:56,756 p=22856 u=root |  changed: [host1]
+2016-02-10 16:28:56,782 p=22856 u=root |  TASK: [nova-controller | nova db sync] **************************************** 
+2016-02-10 16:28:56,858 p=22856 u=root |  skipping: [host2]
+2016-02-10 16:28:56,869 p=22856 u=root |  skipping: [host3]
+2016-02-10 16:36:56,849 p=22856 u=root |  changed: [host1]
+2016-02-10 16:36:56,878 p=22856 u=root |  NOTIFIED: [nova-controller | restart nova service] **************************** 
+2016-02-10 16:36:57,668 p=22856 u=root |  changed: [host2] => (item=nova-api)
+2016-02-10 16:36:57,678 p=22856 u=root |  changed: [host1] => (item=nova-api)
+2016-02-10 16:36:58,253 p=22856 u=root |  changed: [host2] => (item=nova-cert)
+2016-02-10 16:36:58,264 p=22856 u=root |  changed: [host1] => (item=nova-cert)
+2016-02-10 16:36:58,750 p=22856 u=root |  changed: [host2] => (item=nova-conductor)
+2016-02-10 16:36:58,858 p=22856 u=root |  changed: [host1] => (item=nova-conductor)
+2016-02-10 16:36:59,337 p=22856 u=root |  changed: [host2] => (item=nova-consoleauth)
+2016-02-10 16:36:59,560 p=22856 u=root |  changed: [host1] => (item=nova-consoleauth)
+2016-02-10 16:37:00,029 p=22856 u=root |  changed: [host2] => (item=nova-novncproxy)
+2016-02-10 16:37:00,372 p=22856 u=root |  changed: [host1] => (item=nova-novncproxy)
+2016-02-10 16:37:00,921 p=22856 u=root |  changed: [host2] => (item=nova-scheduler)
+2016-02-10 16:37:01,365 p=22856 u=root |  changed: [host1] => (item=nova-scheduler)
+2016-02-10 16:37:02,324 p=22856 u=root |  changed: [host3] => (item=nova-api)
+2016-02-10 16:37:03,017 p=22856 u=root |  changed: [host3] => (item=nova-cert)
+2016-02-10 16:37:03,708 p=22856 u=root |  changed: [host3] => (item=nova-conductor)
+2016-02-10 16:37:04,295 p=22856 u=root |  changed: [host3] => (item=nova-consoleauth)
+2016-02-10 16:37:04,997 p=22856 u=root |  changed: [host3] => (item=nova-novncproxy)
+2016-02-10 16:37:05,878 p=22856 u=root |  changed: [host3] => (item=nova-scheduler)
+2016-02-10 16:37:05,898 p=22856 u=root |  NOTIFIED: [nova-controller | remove nova-sqlite-db] *************************** 
+2016-02-10 16:37:06,258 p=22856 u=root |  changed: [host2]
+2016-02-10 16:37:06,262 p=22856 u=root |  changed: [host1]
+2016-02-10 16:37:06,357 p=22856 u=root |  changed: [host3]
+2016-02-10 16:37:06,374 p=22856 u=root |  TASK: [neutron-controller | include_vars {{ ansible_os_family }}.yml] ********* 
+2016-02-10 16:37:06,456 p=22856 u=root |  ok: [host1]
+2016-02-10 16:37:06,562 p=22856 u=root |  ok: [host2]
+2016-02-10 16:37:06,563 p=22856 u=root |  ok: [host3]
+2016-02-10 16:37:06,586 p=22856 u=root |  TASK: [neutron-controller | install controller-related neutron packages] ****** 
+2016-02-10 16:38:59,034 p=22856 u=root |  changed: [host2] => (item=neutron-server)
+2016-02-10 16:38:59,423 p=22856 u=root |  ok: [host2] => (item=neutron-plugin-ml2)
+2016-02-10 16:38:59,684 p=22856 u=root |  changed: [host1] => (item=neutron-server)
+2016-02-10 16:39:00,063 p=22856 u=root |  ok: [host1] => (item=neutron-plugin-ml2)
+2016-02-10 16:39:04,565 p=22856 u=root |  changed: [host3] => (item=neutron-server)
+2016-02-10 16:39:04,966 p=22856 u=root |  ok: [host3] => (item=neutron-plugin-ml2)
+2016-02-10 16:39:04,985 p=22856 u=root |  TASK: [neutron-controller | generate neutron control service list] ************ 
+2016-02-10 16:39:05,353 p=22856 u=root |  changed: [host1] => (item=neutron-server)
+2016-02-10 16:39:05,356 p=22856 u=root |  changed: [host3] => (item=neutron-server)
+2016-02-10 16:39:05,358 p=22856 u=root |  changed: [host2] => (item=neutron-server)
+2016-02-10 16:39:05,373 p=22856 u=root |  TASK: [neutron-controller | get tenant id to fill neutron.conf] *************** 
+2016-02-10 16:39:06,624 p=22856 u=root |  changed: [host1]
+2016-02-10 16:39:09,630 p=22856 u=root |  changed: [host3]
+2016-02-10 16:39:10,460 p=22856 u=root |  changed: [host2]
+2016-02-10 16:39:10,476 p=22856 u=root |  TASK: [neutron-controller | update neutron conf] ****************************** 
+2016-02-10 16:39:11,059 p=22856 u=root |  changed: [host1]
+2016-02-10 16:39:11,151 p=22856 u=root |  changed: [host2]
+2016-02-10 16:39:11,153 p=22856 u=root |  changed: [host3]
+2016-02-10 16:39:11,183 p=22856 u=root |  TASK: [neutron-controller | update ml2 plugin conf] *************************** 
+2016-02-10 16:39:11,750 p=22856 u=root |  changed: [host2]
+2016-02-10 16:39:11,794 p=22856 u=root |  changed: [host3]
+2016-02-10 16:39:11,801 p=22856 u=root |  changed: [host1]
+2016-02-10 16:39:11,812 p=22856 u=root |  TASK: [neutron-controller | ln plugin.ini] ************************************ 
+2016-02-10 16:39:12,148 p=22856 u=root |  changed: [host2]
+2016-02-10 16:39:12,153 p=22856 u=root |  changed: [host1]
+2016-02-10 16:39:12,158 p=22856 u=root |  changed: [host3]
+2016-02-10 16:39:12,171 p=22856 u=root |  TASK: [neutron-controller | neutron-db-manage upgrade to Juno] **************** 
+2016-02-10 16:42:09,374 p=22856 u=root |  failed: [host1] => {"attempts": 5, "changed": true, "cmd": "neutron-db-manage --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/plugins/ml2/ml2_conf.ini upgrade head", "delta": "0:00:01.356951", "end": "2016-02-10 16:42:08.517089", "failed": true, "rc": 1, "start": "2016-02-10 16:42:07.160138", "warnings": []}
+2016-02-10 16:42:09,374 p=22856 u=root |  stderr: No handlers could be found for logger "neutron.quota"
+INFO  [alembic.runtime.migration] Context impl MySQLImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Context impl MySQLImpl.
+INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> juno, juno_initial
+Traceback (most recent call last):
+  File "/usr/bin/neutron-db-manage", line 10, in <module>
+    sys.exit(main())
+  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/cli.py", line 554, in main
+    CONF.command.func(config, CONF.command.name)
+  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/cli.py", line 190, in do_upgrade
+    desc=branch, sql=CONF.command.sql)
+  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/cli.py", line 108, in do_alembic_command
+    getattr(alembic_command, cmd)(config, *args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/alembic/command.py", line 174, in upgrade
+    script.run_env()
+  File "/usr/lib/python2.7/dist-packages/alembic/script/base.py", line 397, in run_env
+    util.load_python_file(self.dir, 'env.py')
+  File "/usr/lib/python2.7/dist-packages/alembic/util/pyfiles.py", line 81, in load_python_file
+    module = load_module_py(module_id, path)
+  File "/usr/lib/python2.7/dist-packages/alembic/util/compat.py", line 79, in load_module_py
+    mod = imp.load_source(module_id, path, fp)
+  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/alembic_migrations/env.py", line 135, in <module>
+    run_migrations_online()
+  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/alembic_migrations/env.py", line 125, in run_migrations_online
+    context.run_migrations()
+  File "<string>", line 8, in run_migrations
+  File "/usr/lib/python2.7/dist-packages/alembic/runtime/environment.py", line 797, in run_migrations
+    self.get_context().run_migrations(**kw)
+  File "/usr/lib/python2.7/dist-packages/alembic/runtime/migration.py", line 312, in run_migrations
+    step.migration_fn(**kw)
+  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/alembic_migrations/versions/juno_initial.py", line 53, in upgrade
+    agent_init_ops.upgrade()
+  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/alembic_migrations/agent_init_ops.py", line 42, in upgrade
+    name='uniq_agents0agent_type0host'))
+  File "<string>", line 8, in create_table
+  File "<string>", line 3, in create_table
+  File "/usr/lib/python2.7/dist-packages/alembic/operations/ops.py", line 1098, in create_table
+    return operations.invoke(op)
+  File "/usr/lib/python2.7/dist-packages/alembic/operations/base.py", line 318, in invoke
+    return fn(self, operation)
+  File "/usr/lib/python2.7/dist-packages/alembic/operations/toimpl.py", line 101, in create_table
+    operations.impl.create_table(table)
+  File "/usr/lib/python2.7/dist-packages/alembic/ddl/impl.py", line 194, in create_table
+    self._exec(schema.CreateTable(table))
+  File "/usr/lib/python2.7/dist-packages/alembic/ddl/impl.py", line 118, in _exec
+    return conn.execute(construct, *multiparams, **params)
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 914, in execute
+    return meth(self, multiparams, params)
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/sql/ddl.py", line 68, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 968, in _execute_ddl
+    compiled
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1146, in _execute_context
+    context)
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1337, in _handle_dbapi_exception
+    util.raise_from_cause(newraise, exc_info)
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb)
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1139, in _execute_context
+    context)
+  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+  File "/usr/lib/python2.7/dist-packages/pymysql/cursors.py", line 132, in execute
+    result = self._query(query)
+  File "/usr/lib/python2.7/dist-packages/pymysql/cursors.py", line 271, in _query
+    conn.query(q)
+  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 726, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 861, in _read_query_result
+    result.read()
+  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 1064, in read
+    first_packet = self.connection._read_packet()
+  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 826, in _read_packet
+    packet.check_error()
+  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 370, in check_error
+    raise_mysql_exception(self._data)
+  File "/usr/lib/python2.7/dist-packages/pymysql/err.py", line 116, in raise_mysql_exception
+    _check_mysql_exception(errinfo)
+  File "/usr/lib/python2.7/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception
+    raise InternalError(errno, errorvalue)
+oslo_db.exception.DBError: (pymysql.err.InternalError) (1050, u"Table 'agents' already exists") [SQL: u'\nCREATE TABLE agents (\n\tid VARCHAR(36) NOT NULL, \n\tagent_type VARCHAR(255) NOT NULL, \n\t`binary` VARCHAR(255) NOT NULL, \n\ttopic VARCHAR(255) NOT NULL, \n\thost VARCHAR(255) NOT NULL, \n\tadmin_state_up BOOL NOT NULL DEFAULT true, \n\tcreated_at DATETIME NOT NULL, \n\tstarted_at DATETIME NOT NULL, \n\theartbeat_timestamp DATETIME NOT NULL, \n\tdescription VARCHAR(255), \n\tconfigurations VARCHAR(4095) NOT NULL, \n\tPRIMARY KEY (id), \n\tCONSTRAINT uniq_agents0agent_type0host UNIQUE (agent_type, host), \n\tCHECK (admin_state_up IN (0, 1))\n)ENGINE=InnoDB\n\n']
+2016-02-10 16:42:09,374 p=22856 u=root |  stdout: Running upgrade for neutron ...
+2016-02-10 16:42:09,374 p=22856 u=root |  msg: Task failed as maximum retries was encountered
+2016-02-10 16:42:09,375 root task_error: host=host1,data={'cmd': 'neutron-db-manage --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/plugins/ml2/ml2_conf.ini upgrade head', 'end': '2016-02-10 16:42:08.517089', 'failed': True, 'stdout': 'Running upgrade for neutron ...', 'changed': True, 'attempts': 5, 'invocation': {'module_name': u'shell', 'module_args': u'neutron-db-manage --config-file=/etc/neutron/neutron.conf --config-file=/etc/neutron/plugins/ml2/ml2_conf.ini upgrade head'}, 'start': '2016-02-10 16:42:07.160138', 'delta': '0:00:01.356951', 'stderr': 'No handlers could be found for logger "neutron.quota"\nINFO  [alembic.runtime.migration] Context impl MySQLImpl.\nINFO  [alembic.runtime.migration] Will assume non-transactional DDL.\nINFO  [alembic.runtime.migration] Context impl MySQLImpl.\nINFO  [alembic.runtime.migration] Will assume non-transactional DDL.\nINFO  [alembic.runtime.migration] Running upgrade  -> juno, juno_initial\nTraceback (most recent call last):\n  File "/usr/bin/neutron-db-manage", line 10, in <module>\n    sys.exit(main())\n  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/cli.py", line 554, in main\n    CONF.command.func(config, CONF.command.name)\n  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/cli.py", line 190, in do_upgrade\n    desc=branch, sql=CONF.command.sql)\n  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/cli.py", line 108, in do_alembic_command\n    getattr(alembic_command, cmd)(config, *args, **kwargs)\n  File "/usr/lib/python2.7/dist-packages/alembic/command.py", line 174, in upgrade\n    script.run_env()\n  File "/usr/lib/python2.7/dist-packages/alembic/script/base.py", line 397, in run_env\n    util.load_python_file(self.dir, \'env.py\')\n  File "/usr/lib/python2.7/dist-packages/alembic/util/pyfiles.py", line 81, in load_python_file\n    module = load_module_py(module_id, path)\n  File "/usr/lib/python2.7/dist-packages/alembic/util/compat.py", line 79, in load_module_py\n    mod = imp.load_source(module_id, path, fp)\n  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/alembic_migrations/env.py", line 135, in <module>\n    run_migrations_online()\n  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/alembic_migrations/env.py", line 125, in run_migrations_online\n    context.run_migrations()\n  File "<string>", line 8, in run_migrations\n  File "/usr/lib/python2.7/dist-packages/alembic/runtime/environment.py", line 797, in run_migrations\n    self.get_context().run_migrations(**kw)\n  File "/usr/lib/python2.7/dist-packages/alembic/runtime/migration.py", line 312, in run_migrations\n    step.migration_fn(**kw)\n  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/alembic_migrations/versions/juno_initial.py", line 53, in upgrade\n    agent_init_ops.upgrade()\n  File "/usr/lib/python2.7/dist-packages/neutron/db/migration/alembic_migrations/agent_init_ops.py", line 42, in upgrade\n    name=\'uniq_agents0agent_type0host\'))\n  File "<string>", line 8, in create_table\n  File "<string>", line 3, in create_table\n  File "/usr/lib/python2.7/dist-packages/alembic/operations/ops.py", line 1098, in create_table\n    return operations.invoke(op)\n  File "/usr/lib/python2.7/dist-packages/alembic/operations/base.py", line 318, in invoke\n    return fn(self, operation)\n  File "/usr/lib/python2.7/dist-packages/alembic/operations/toimpl.py", line 101, in create_table\n    operations.impl.create_table(table)\n  File "/usr/lib/python2.7/dist-packages/alembic/ddl/impl.py", line 194, in create_table\n    self._exec(schema.CreateTable(table))\n  File "/usr/lib/python2.7/dist-packages/alembic/ddl/impl.py", line 118, in _exec\n    return conn.execute(construct, *multiparams, **params)\n  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 914, in execute\n    return meth(self, multiparams, params)\n  File "/usr/lib/python2.7/dist-packages/sqlalchemy/sql/ddl.py", line 68, in _execute_on_connection\n    return connection._execute_ddl(self, multiparams, params)\n  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 968, in _execute_ddl\n    compiled\n  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1146, in _execute_context\n    context)\n  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1337, in _handle_dbapi_exception\n    util.raise_from_cause(newraise, exc_info)\n  File "/usr/lib/python2.7/dist-packages/sqlalchemy/util/compat.py", line 199, in raise_from_cause\n    reraise(type(exception), exception, tb=exc_tb)\n  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/base.py", line 1139, in _execute_context\n    context)\n  File "/usr/lib/python2.7/dist-packages/sqlalchemy/engine/default.py", line 450, in do_execute\n    cursor.execute(statement, parameters)\n  File "/usr/lib/python2.7/dist-packages/pymysql/cursors.py", line 132, in execute\n    result = self._query(query)\n  File "/usr/lib/python2.7/dist-packages/pymysql/cursors.py", line 271, in _query\n    conn.query(q)\n  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 726, in query\n    self._affected_rows = self._read_query_result(unbuffered=unbuffered)\n  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 861, in _read_query_result\n    result.read()\n  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 1064, in read\n    first_packet = self.connection._read_packet()\n  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 826, in _read_packet\n    packet.check_error()\n  File "/usr/lib/python2.7/dist-packages/pymysql/connections.py", line 370, in check_error\n    raise_mysql_exception(self._data)\n  File "/usr/lib/python2.7/dist-packages/pymysql/err.py", line 116, in raise_mysql_exception\n    _check_mysql_exception(errinfo)\n  File "/usr/lib/python2.7/dist-packages/pymysql/err.py", line 112, in _check_mysql_exception\n    raise InternalError(errno, errorvalue)\noslo_db.exception.DBError: (pymysql.err.InternalError) (1050, u"Table \'agents\' already exists") [SQL: u\'\\nCREATE TABLE agents (\\n\\tid VARCHAR(36) NOT NULL, \\n\\tagent_type VARCHAR(255) NOT NULL, \\n\\t`binary` VARCHAR(255) NOT NULL, \\n\\ttopic VARCHAR(255) NOT NULL, \\n\\thost VARCHAR(255) NOT NULL, \\n\\tadmin_state_up BOOL NOT NULL DEFAULT true, \\n\\tcreated_at DATETIME NOT NULL, \\n\\tstarted_at DATETIME NOT NULL, \\n\\theartbeat_timestamp DATETIME NOT NULL, \\n\\tdescription VARCHAR(255), \\n\\tconfigurations VARCHAR(4095) NOT NULL, \\n\\tPRIMARY KEY (id), \\n\\tCONSTRAINT uniq_agents0agent_type0host UNIQUE (agent_type, host), \\n\\tCHECK (admin_state_up IN (0, 1))\\n)ENGINE=InnoDB\\n\\n\']', 'rc': 1, 'msg': 'Task failed as maximum retries was encountered', 'warnings': []}
+2016-02-10 16:42:09,375 root notify_host: host host1 with status failed is not supported
+2016-02-10 16:42:09,376 p=22856 u=root |  FATAL: all hosts have already failed -- aborting
+2016-02-10 16:42:09,395 p=22856 u=root |  PLAY RECAP ******************************************************************** 
+2016-02-10 16:42:09,395 root playbook_on_stats enter
+2016-02-10 16:42:13,698 root host=localhost,url=/api/clusterhosts/1/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$Q/nkE4Vr$RtqnkhknO/5nUZc00a/vM.'}
+2016-02-10 16:42:16,013 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-10 15:15:04",
+    "updated_at": "2016-02-10 16:42:14",
+    "id": 1,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-10 16:42:16,488 root host=localhost,url=/api/clusterhosts/2/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$Znegtpi8$odqBw8IpIR0.n40TJ44xU.'}
+2016-02-10 16:42:17,019 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-10 15:15:04",
+    "updated_at": "2016-02-10 16:42:16",
+    "id": 2,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-10 16:42:17,327 root host=localhost,url=/api/clusterhosts/3/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$sDzUgnLu$0jC66tNG9Dek9lGk/b.WU1'}
+2016-02-10 16:42:17,506 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-10 15:15:04",
+    "updated_at": "2016-02-10 16:42:17",
+    "id": 3,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-10 16:42:17,637 root host=localhost,url=/api/clusterhosts/4/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$.aoy9WLT$/MMwCo2QUg3zVcFLDvhup/'}
+2016-02-10 16:42:17,930 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-10 15:15:04",
+    "updated_at": "2016-02-10 16:42:17",
+    "id": 4,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-10 16:42:18,152 root host=localhost,url=/api/clusterhosts/5/state,body={"state": "ERROR"},headers={'Content-type': 'application/json', 'Accept': '*/*', 'X-Auth-Token': u'$1$YuJt128e$eFsW6wm0PpOO01cB9oPgf0'}
+2016-02-10 16:42:18,336 root notify host status success!!! status=200, body={
+    "severity": "INFO",
+    "created_at": "2016-02-10 15:15:04",
+    "updated_at": "2016-02-10 16:42:18",
+    "id": 5,
+    "state": "ERROR",
+    "ready": false,
+    "percentage": 0.0,
+    "message": ""
+}
+
+2016-02-10 16:42:18,337 p=22856 u=root |             to retry, use: --limit @/root/HA-ansible-multinodes.retry
+
+2016-02-10 16:42:18,337 p=22856 u=root |  host1                      : ok=129  changed=105  unreachable=0    failed=1   
+2016-02-10 16:42:18,337 p=22856 u=root |  host2                      : ok=125  changed=98   unreachable=0    failed=1   
+2016-02-10 16:42:18,337 p=22856 u=root |  host3                      : ok=133  changed=107  unreachable=0    failed=1   
+2016-02-10 16:42:18,338 p=22856 u=root |  host4                      : ok=36   changed=31   unreachable=0    failed=0   
+2016-02-10 16:42:18,338 p=22856 u=root |  host5                      : ok=36   changed=31   unreachable=0    failed=0   
