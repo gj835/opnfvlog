@@ -29,3 +29,20 @@ Demo3: Scalability | depending on Compass4NFV enviroment | |
 Demo4: L3 Agent | depending on Compass4NFV enviroment | |
 Demo5: Inter Tenant | depending on Compass4NFV enviroment | |
 Demo6: External Network | depending on Compass4NFV enviroment | |
+
+
+How deploy OPNFV baremetal environment using compass4nfv
+--------------------
+1. git clone https://gerrit.opnfv.org/gerrit/compass4nfv
+2. wget http://artifacts.opnfv.org/compass4nfv/opnfv-2016-02-11_14-01-03.iso
+3. add os-onos-nofeature-ha.yml and network.yml file to /home/onos/compass4nfv/
+4. add base.conf and compass.conf to /home/onos/compass4nfv/deploy/conf/
+4. export INSTALL_NIC=eth1
+5. export OS_VERSION=trusty
+6. export OPENSTACK_VERSION=liberty
+7. export ISO_URL=file:///home/onos/opnfv-2016-02-11_14-01-03.iso
+8. ./deploy.sh --dha os-onos-nofeature-ha.yml --network network.yml
+9. During compass vm is installing, change file at 
+	/home/onos/compass4nfv/work/deploy/installer/compass-install/install/group_vars/all
+
+
