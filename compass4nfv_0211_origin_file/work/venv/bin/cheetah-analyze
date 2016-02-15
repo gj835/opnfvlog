@@ -1,0 +1,6 @@
+#!/home/onos/compass4nfv/work/deploy/venv/bin/python
+
+from Cheetah import DirectiveAnalyzer
+
+if __name__ == '__main__':
+    DirectiveAnalyzer.main()

@@ -1,0 +1,7 @@
+---
+- name: create switch file if test mode enabled
+  template: src=switch_machines_file.j2
+            dest=/etc/compass/switch_machines_file
+
+- name: inject switches and mac addresses
+  shell: /opt/compass/bin/manage_db.py set_switch_machines --switch_machines_file /etc/compass/switch_machines_file

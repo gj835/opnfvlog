@@ -1,0 +1,133 @@
+
+ 
+
+
+
+enable_secgroup: True
+enable_fwaas: False
+enable_vpnaas: False
+onos_nic: eth2
+ip_settings: {'host5': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.91', 'alias': 'br-prv', 'netmask': 23, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/23'}, 'storage': {'name': 'storage', 'ip': '192.168.202.15', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.202.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.201.15', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.201.0/24'}}, 'host4': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.90', 'alias': 'br-prv', 'netmask': 23, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/23'}, 'storage': {'name': 'storage', 'ip': '192.168.202.14', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.202.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.201.14', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.201.0/24'}}, 'host3': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.89', 'alias': 'br-prv', 'netmask': 23, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/23'}, 'storage': {'name': 'storage', 'ip': '192.168.202.13', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.202.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.201.13', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.201.0/24'}}, 'host2': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.88', 'alias': 'br-prv', 'netmask': 23, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/23'}, 'storage': {'name': 'storage', 'ip': '192.168.202.12', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.202.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.201.12', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.201.0/24'}}, 'host1': {'br-prv': {'gw': '10.145.88.1', 'name': 'external', 'ip': '10.145.88.87', 'alias': 'br-prv', 'netmask': 23, 'role': ['controller', 'compute'], 'cidr': '10.145.88.0/23'}, 'storage': {'name': 'storage', 'ip': '192.168.202.11', 'alias': 'storage', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.202.0/24'}, 'mgmt': {'name': 'mgmt', 'ip': '192.168.201.11', 'alias': 'mgmt', 'netmask': 24, 'role': ['controller', 'compute'], 'cidr': '192.168.201.0/24'}}}
+network_cfg: {'bond_mappings': [], 'internal_vip': {'interface': 'mgmt', 'ip': '192.168.201.99', 'netmask': '24'}, 'public_vip': {'interface': 'external', 'ip': '10.145.88.99', 'netmask': '23'}, 'provider_net_mappings': [{'interface': 'eth0', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'br-prv', 'network': 'physnet'}], 'sys_intf_mappings': [{'interface': 'eth0', 'type': 'vlan', 'vlan_tag': 201, 'role': ['controller', 'compute'], 'name': 'mgmt'}, {'interface': 'eth0', 'type': 'vlan', 'vlan_tag': 202, 'role': ['controller', 'compute'], 'name': 'storage'}, {'interface': 'br-prv', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'external'}], 'ip_settings': [{'cidr': '192.168.201.0/24', 'role': ['controller', 'compute'], 'name': 'mgmt', 'ip_ranges': [['192.168.201.11', '192.168.201.254']]}, {'cidr': '192.168.202.0/24', 'role': ['controller', 'compute'], 'name': 'storage', 'ip_ranges': [['192.168.202.11', '192.168.202.254']]}, {'gw': '10.145.88.1', 'cidr': '10.145.88.0/23', 'role': ['controller', 'compute'], 'name': 'external', 'ip_ranges': [['10.145.88.87', '10.145.88.91']]}], 'nic_mappings': [], 'public_net_info': {'no_gateway': False, 'external_gw': '10.145.88.1', 'floating_ip_cidr': '10.145.88.0/23', 'network': 'ext-net', 'enable_dhcp': False, 'segment_id': 10, 'subnet': 'ext-subnet', 'type': 'flat', 'enable': True, 'floating_ip_start': '10.145.88.92', 'floating_ip_end': '10.145.88.98', 'router': 'router-ext', 'provider_network': 'physnet'}, 'onos_nic': 'eth0'}
+sys_intf_mappings: {'storage': {'interface': 'eth0', 'type': 'vlan', 'vlan_tag': 202, 'role': ['controller', 'compute'], 'name': 'storage'}, 'external': {'interface': 'br-prv', 'type': 'ovs', 'role': ['controller', 'compute'], 'name': 'external'}, 'mgmt': {'interface': 'eth0', 'type': 'vlan', 'vlan_tag': 201, 'role': ['controller', 'compute'], 'name': 'mgmt'}}
+deploy_type: baremetal
+
+public_cidr: 192.168.204.0/24
+storage_cidr: "{{ ip_settings[inventory_hostname]['storage']['cidr'] }}"
+mgmt_cidr: "{{ ip_settings[inventory_hostname]['mgmt']['cidr'] }}"
+
+public_net_info: "{{ network_cfg.public_net_info }}"
+host_ip_settings: "{{ ip_settings[inventory_hostname] }}"
+
+ntp_server: 192.168.204.30
+internal_vip:
+  ip: 192.168.201.99
+  netmask: 24
+  interface: mgmt
+
+public_vip:
+  ip: 10.145.88.99
+  netmask: 23
+  interface: br-prv
+
+db_host: "{{ internal_vip.ip }}"
+rabbit_host: "{{ internal_vip.ip }}"
+
+internal_ip: "{{ ip_settings[inventory_hostname]['mgmt']['ip'] }}"
+internal_nic: mgmt
+
+vrouter_id_internal: 213
+vrouter_id_public: 213
+
+identity_host: "{{ internal_ip }}"
+controllers_host: "{{ internal_ip }}"
+storage_controller_host: "{{ internal_ip }}"
+compute_controller_host: "{{ internal_ip }}"
+image_host: "{{ internal_ip }}"
+network_server_host: "{{ internal_ip }}"
+dashboard_host: "{{ internal_ip }}"
+
+haproxy_hosts:
+  host1: 192.168.201.11
+  host2: 192.168.201.12
+  host3: 192.168.201.13
+
+host_index:
+  host1: 0
+  host2: 1
+  host3: 2
+
+ERLANG_TOKEN: YOWSJSJIGGAUFZTIBRAD
+
+cluster_name: opnfv2
+
+odl_controller: 10.1.0.15
+
+DEBUG: true
+VERBOSE: true
+NTP_SERVER_LOCAL: "{{ controllers_host }}"
+DB_HOST: "{{ db_host }}"
+MQ_BROKER: rabbitmq
+
+OPENSTACK_REPO: cloudarchive-juno.list
+juno_cloud_archive: deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/juno main
+ADMIN_TOKEN: admin
+CEILOMETER_TOKEN: c095d479023a0fd58a54
+erlang.cookie: DJJVECFMCJPVYQTJTDWG
+
+RABBIT_USER: service
+RABBIT_PASS: service
+KEYSTONE_DBPASS: service
+KEYSTONE_PASS: console
+CEILOMETER_DBPASS: service
+CEILOMETER_PASS: console
+GLANCE_DBPASS: service
+GLANCE_PASS: console
+NOVA_DBPASS: service
+NOVA_PASS: console
+DASH_DBPASS: service
+CINDER_DBPASS: service
+CINDER_PASS: console
+NEUTRON_DBPASS: service
+NEUTRON_PASS: console
+HEAT_DBPASS: heat_db_secret
+HEAT_PASS: heat_secret
+DEMO_PASS: console
+ADMIN_PASS: console
+
+
+
+
+NEUTRON_SERVICE_PLUGINS: ['router']
+NEUTRON_TYPE_DRIVERS: ['flat', 'gre', 'vxlan', 'vlan']
+NEUTRON_TENANT_NETWORK_TYPES: ['vxlan']
+NEUTRON_OVS_BRIDGE_MAPPINGS: ['physnet:br-prv']
+NEUTRON_VLAN_RANGES: ['physnet:1:4094']
+NEUTRON_TUNNEL_ID_RANGES: []
+
+#NEUTRON_MECHANISM_DRIVERS: ['opendaylight']
+NEUTRON_MECHANISM_DRIVERS: ['openvswitch']
+NEUTRON_TUNNEL_TYPES: ['vxlan']
+METADATA_SECRET: metadata_secret
+WSREP_SST_USER: wsrep_sst
+WSREP_SST_PASS: wsrep_sst_sercet
+
+INSTANCE_TUNNELS_INTERFACE_IP_ADDRESS: "{{ internal_ip }}"
+
+#build_in_image: http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img
+build_in_image: http://192.168.121.12:9999/img/cirros-0.3.3-x86_64-disk.img
+build_in_image_name: cirros-0.3.3-x86_64-disk.img
+
+physical_device: /dev/sdb
+
+odl_username: admin
+odl_password: admin
+odl_api_port: 8080
+
+odl_pkg_url: https://nexus.opendaylight.org/content/groups/public/org/opendaylight/integration/distribution-karaf/0.2.2-Helium-SR2/distribution-karaf-0.2.2-Helium-SR2.tar.gz
+odl_pkg_name: karaf.tar.gz
+odl_home: "/opt/opendaylight-0.2.2/"
+odl_base_features: ['config', 'standard', 'region', 'package', 'kar', 'ssh', 'management', 'http', 'odl-base-all','odl-aaa-authn','odl-restconf','odl-nsf-all','odl-adsal-northbound','odl-mdsal-apidocs', 'odl-openflowplugin-all']
+odl_extra_features: ['odl-l2switch-switch', 'odl-ovsdb-plugin', 'odl-ovsdb-openstack', 'odl-ovsdb-northbound','odl-dlux-core', 'odl-restconf-all', 'odl-mdsal-clustering', 'odl-openflowplugin-flow-services', 'odl-netconf-connector', 'odl-netconf-connector-ssh', 'jolokia-osgi']
+odl_features: "{{ odl_base_features + odl_extra_features }}"
+odl_api_port: 8080

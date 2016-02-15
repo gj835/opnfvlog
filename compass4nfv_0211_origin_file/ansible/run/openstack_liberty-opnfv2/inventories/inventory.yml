@@ -1,0 +1,27 @@
+
+
+[controller]
+host1 ansible_ssh_host=192.168.204.11 ansible_ssh_user=root ansible_ssh_password=root
+host2 ansible_ssh_host=192.168.204.12 ansible_ssh_user=root ansible_ssh_password=root
+host3 ansible_ssh_host=192.168.204.13 ansible_ssh_user=root ansible_ssh_password=root
+[compute]
+host4 ansible_ssh_host=192.168.204.14 ansible_ssh_user=root ansible_ssh_password=root
+host5 ansible_ssh_host=192.168.204.15 ansible_ssh_user=root ansible_ssh_password=root
+[ha]
+host1 ansible_ssh_host=192.168.204.11 ansible_ssh_user=root ansible_ssh_password=root
+host2 ansible_ssh_host=192.168.204.12 ansible_ssh_user=root ansible_ssh_password=root
+host3 ansible_ssh_host=192.168.204.13 ansible_ssh_user=root ansible_ssh_password=root
+[odl]
+[onos]
+host1 ansible_ssh_host=192.168.204.11 ansible_ssh_user=root ansible_ssh_password=root
+host2 ansible_ssh_host=192.168.204.12 ansible_ssh_user=root ansible_ssh_password=root
+host3 ansible_ssh_host=192.168.204.13 ansible_ssh_user=root ansible_ssh_password=root
+[opencontrail]
+[ceph_adm]
+[ceph_mon]
+[ceph_osd]
+[ceph:children]
+ceph_adm
+ceph_mon
+ceph_osd
+

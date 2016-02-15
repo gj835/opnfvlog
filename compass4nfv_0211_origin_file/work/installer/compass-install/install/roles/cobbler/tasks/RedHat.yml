@@ -1,0 +1,217 @@
+---
+- name: install packages
+  yum: name={{ item }} state=present
+  with_items: cobbler_packages
+
+- name: turn off iptables
+  service: name=iptables state=stopped enabled=no
+
+- name: replace config files
+  copy: src={{ item.name }} dest={{ item.dest }}
+  with_items:
+    - { name: rsync, dest: /etc/xinetd.d/rsync }
+    - { name: debmirror.conf, dest: /etc/debmirror.conf }
+
+- name: restart xinetd service
+  service: name=xinetd state=restarted enabled=yes
+
+- name: configure interface for dhcp
+  command: ifconfig {{ mgmt_nic }}:1 {{ mgmt_next_ip }} netmask {{ mgmt_subnet_mask }}
+  when: not mgmt_ip_same
+
+- name: copy httpd configuration files
+  file: src={{ item }} dest=/etc/httpd/conf.d/{{ item }} mode=0644
+  with_items:
+    - cobbler_web.conf
+    - ssl.conf
+  notify:
+    restart httpd
+
+- name: disable selinux
+  selinux: state=disabled
+
+- name: copy cobbler configuration files
+  template: src={{ item.name }} dest=/etc/cobbler/{{ item.file_name }} mode=0644
+  with_items:
+    - { name: tftpd.template, file_name: tftpd.template }
+    - { name: modules.conf, file_name: modules.conf }
+    - { name: dhcp.template.nodocker.j2, file_name: dhcp.template }
+    - { name: named.template.nodocker.j2, file_name: named.template }
+    - { name: settings.j2, file_name: settings }
+  notify:
+    - restart httpd
+    - restart cobbler
+
+- meta: flush_handlers
+
+- name: remove old cobbler folders
+  shell: rm -rf path=/var/lib/cobbler/{{ item }}
+  with_items:
+    - snippets
+    - scripts
+    - triggers
+    - kickstarts
+
+- name: create cobbler folders
+  file: path=/var/lib/cobbler/{{ item }} state=directory mode=0755
+  with_items:
+    - snippets
+    - scripts
+    - triggers
+    - kickstarts
+    - repo_mirror
+
+- name: copy snippets to cobbler folder
+  shell: cp -rf /opt/compass-adapters/cobbler/{{ item }}/* /var/lib/cobbler/{{ item }}/
+  with_items:
+    - snippets
+    - scripts
+    - triggers
+    - kickstarts
+
+- name: change snippets mode
+  file: path=/var/lib/cobbler mode=0755 recurse=yes
+
+- name: create cblr_ks folder
+  file: path=/var/www/cblr_ks mode=0755 state=directory
+
+- name: change kickstart mode
+  file: path=/var/lib/cobbler/kickstarts mode=0666 recurse=yes
+
+- name: clean cobbler log folder
+  file: path=/var/log/cobbler state=absent
+
+- name: create cobbler log directories
+  file: path={{ item }} mode=0777 state=directory recurse=yes
+  with_items:
+    - /var/log/cobbler
+    - /var/log/cobbler/anamon
+    - /var/log/cobbler/tasks
+
+- name: get all ppa file
+  shell: find /opt/cobbler -name *.tar.gz
+  register: ppa_files
+
+- name: untar cobbler ppa repo
+  unarchive: src={{ item }} dest=/var/lib/cobbler/repo_mirror/ copy=no
+  with_items: ppa_files.stdout_lines
+
+- name: get all ppa dir
+  shell: ls /var/lib/cobbler/repo_mirror/
+  register: ppa_dirs
+
+- name: create repo conf directory
+  file: path=/var/lib/cobbler/repo_mirror/{{ item }}/conf state=directory mode=0644
+  with_items: ppa_dirs.stdout_lines
+
+- name: create repo conf file
+  template: src=distributions dest=/var/lib/cobbler/repo_mirror/{{ item }}/conf/distributions mode=0644
+  with_items: ppa_dirs.stdout_lines
+
+- name: start cobbler and httpd services
+  service: name={{ item }} state=restarted enabled=yes
+  with_items:
+    - httpd
+    - cobblerd
+
+- name: import iso
+  shell: |
+    for i in `ls /opt/cobbler/{{ item.key}}/iso/*`; do
+        name=`basename $i | sed -e 's/.iso//g' -e 's/-amd64//g' -e 's/-x86_64//g'`-x86_64
+        if [[ `mount | grep "$name"` ]]; then
+            continue
+        fi
+        mkdir -p /mnt/$name
+        mount -o loop $i /mnt/$name
+        cobbler import --path=/mnt/$name \
+                       --name $name \
+                       --arch=x86_64 \
+                       --kickstart=/var/lib/cobbler/kickstarts/{{ item.value.kickstart }} \
+                       --breed={{ item.value.breed }}
+    done
+  with_dict: distros
+  ignore_errors: yes
+  run_once: True
+
+- name: get default repo
+  shell: cobbler repo list
+  register: default_repos
+
+- name: remove default repo
+  command: cobbler repo remove --name {{ item }}
+  with_items: default_repos.stdout_lines
+
+- name: add repos
+  shell: |
+    for i in `ls /opt/cobbler/{{ item.key }}/ppa/*`; do
+        filename=`basename $i | sed 's/.tar.gz//g'`
+        cobbler repo add --name $filename --mirror=/var/lib/cobbler/repo_mirror/$filename \
+                         --mirror-locally=Y --arch=x86_64 {{ item.value.extra | default()}}
+    done
+  with_dict: distros
+  args:
+    creates: /opt/repo_added.txt
+  ignore_errors: yes
+  run_once: True
+
+- name: copy loader files
+  shell: cp -f /opt/{{ cobbler_loaders_name }} /var/lib/cobbler/
+
+- name: untar loaders file
+  unarchive: src=/var/lib/cobbler/{{ cobbler_loaders_name }} dest=/var/lib/cobbler/
+             copy=no
+
+- name: cobbler get loaders
+  command: cobbler get-loaders
+
+- name: generate public key file for ssh
+  template: src=id_rsa.pub.j2 dest=/var/lib/cobbler/id_rsa.pub
+  when: push_ssh_key is defined
+
+- name: generate ssh key for root
+  user: name=root generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa
+  when: push_ssh_key is not defined
+
+- name: make push_ssh_keys var
+  shell: echo "push_ssh_keys=/var/lib/cobbler/id_rsa.pub"
+  register: push_ssh_keys_vars
+  when: push_ssh_key is defined
+
+- name: edit profiles
+  shell: |
+    for i in `ls /opt/cobbler/{{ item.key }}/iso/*`; do
+        name=`basename $i | sed -e 's/.iso//g' -e 's/-amd64//g' -e 's/-x86_64//g'`-x86_64
+        cobbler profile edit --name=$name \
+            --distro=$name --ksmeta="tree=http://{{ mgmt_next_ip }}/cobbler/ks_mirror/$name" \
+            {{ push_ssh_keys_vars | default() }} \
+            --kickstart=/var/lib/cobbler/kickstarts/{{ item.value.kickstart }} \
+            --kopts="{{ item.value.kopts | default("") }}" \
+            --kopts-post="{{ item.value.kopts_post | default("") }}"
+    done
+  with_dict: distros
+  args:
+    creates: /opt/add_profile.txt
+
+- name: cobbler repo sync again
+  shell: cobbler reposync
+
+- name: cobbler sync
+  shell: cobbler sync
+
+- name: restart xinetd
+  service: name=xinetd state=restarted
+
+- name: restart dhcpd
+  service: name=dhcpd state=restarted enabled=yes
+
+- name: cobbler check
+  shell: cobbler check
+
+- name: get all systems
+  shell: cobbler system list
+  register: cobbler_systems
+
+- name: remove all systems
+  shell: cobbler system remove --name {{ item }}
+  with_items: cobbler_systems.stdout_lines
+  when: cobbler_systems and test is defined and test == True
