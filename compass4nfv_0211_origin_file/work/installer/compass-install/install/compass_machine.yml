@@ -1,7 +1,0 @@
----
-- hosts: compass_nodocker
-  sudo: True
-  roles:
-    - machines
-  vars:
-    - dockerized: False

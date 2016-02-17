@@ -1,7 +1,0 @@
----
-
-- hostname: name=compass
-- lineinfile: dest=/etc/hosts line="127.0.0.1 compass"
-
-- name: ln libcrypto.so
-  file: src=/usr/lib64/libcrypto.so.10 dest=/usr/lib64/libcrypto.so state=link

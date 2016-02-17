@@ -41,7 +41,7 @@ function install_compass() {
     sed -i "s/mgmt_next_ip:.*/mgmt_next_ip: ${COMPASS_SERVER}/g" $WORK_DIR/installer/compass-install/install/group_vars/all
     # jin gan
     sed -i "s/mgmt_subnet_ip:.*/mgmt_subnet_ip: ${COMPASS_SERVER_SUBNET}/g" $WORK_DIR/installer/compass-install/install/group_vars/all
-    sed -i "s/mgmt_subnet:.*/mgmt_subnet: ${COMPASS_SERVER_CIR}/g" $WORK_DIR/installer/compass-install/install/group_vars/all
+    sed -i "s#mgmt_subnet:.*#mgmt_subnet: ${COMPASS_SERVER_CIR}#g" $WORK_DIR/installer/compass-install/install/group_vars/all
     sed -i "s/mgmt_router:.*/mgmt_router: ${COMPASS_SERVER_GATEWAY}/g" $WORK_DIR/installer/compass-install/install/group_vars/all
     sed -i "s/mgmt_subnet_mask:.*/mgmt_subnet_mask: ${COMPASS_SERVER_MASK}/g" $WORK_DIR/installer/compass-install/install/group_vars/all
     sed -i "s/mgmt_dhcp_range:.*/mgmt_dhcp_range: ${COMPASS_SERVER_IP_START} ${COMPASS_SERVER_IP_END}/g" $WORK_DIR/installer/compass-install/install/group_vars/all
